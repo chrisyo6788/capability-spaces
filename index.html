@@ -5,15 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Capability Spaces – A Model by Christian Meyer</title>
-<!-- CRITICAL: set data-lang immediately, before any CSS or DOM paint -->
-<script>
-  // Runs synchronously in <head> – no flash of wrong language
-  (function() {
-    var saved = localStorage.getItem('cs-lang') || 'en';
-    document.documentElement.setAttribute('data-lang', saved);
-    document.documentElement.lang = saved;
-  })();
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -75,33 +66,16 @@ border-color: rgba(255,255,255,0.4);
 color: rgba(255,255,255,0.65);
 }
 
-/* ── LANGUAGE VISIBILITY ──────────────────────────────────────────
-Keyed on html[data-lang] – set synchronously in <head> script,
-so there is NEVER a flash of hidden / wrong-language content.
-We use explicit selectors for every display type needed.
-──────────────────────────────────────────────────────────────────── */
-
-/* block elements */
-[lang-content]                               { display: none !important; }
-html[data-lang=“en”] [lang-content=“en”]     { display: block !important; }
-html[data-lang=“de”] [lang-content=“de”]     { display: block !important; }
-
-/* inline elements (spans, anchors inside text) */
-span[lang-content], a[lang-content]                        { display: none !important; }
-html[data-lang=“en”] span[lang-content=“en”],
-html[data-lang=“en”] a[lang-content=“en”]                  { display: inline !important; }
-html[data-lang=“de”] span[lang-content=“de”],
-html[data-lang=“de”] a[lang-content=“de”]                  { display: inline !important; }
-
-/* flex containers (path-selector, viz sidebar items etc.) */
-.flex-lang-en, .flex-lang-de                               { display: none !important; }
-html[data-lang=“en”] .flex-lang-en                         { display: flex !important; }
-html[data-lang=“de”] .flex-lang-de                         { display: flex !important; }
-
-/* grid containers */
-.grid-lang-en, .grid-lang-de                               { display: none !important; }
-html[data-lang=“en”] .grid-lang-en                         { display: grid !important; }
-html[data-lang=“de”] .grid-lang-de                         { display: grid !important; }
+/* ── LANGUAGE ────────────────────────────────────────────────────
+EN is the default. .lc-de elements start hidden.
+setLang() JS directly toggles display on each element.
+Simple class selectors – no attribute selectors, no cascade fights.
+────────────────────────────────────────────────────────────────── */
+.lc-de { display: none; }
+.lc-flex-de { display: none; }
+.lc-grid-de { display: none; }
+.lc-flex-en { display: flex; }
+.lc-grid-en { display: grid; }
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 .hero {
@@ -1190,8 +1164,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <nav class="hero-nav">
     <div class="hero-logo">Capability <span>Spaces</span></div>
     <div class="hero-nav-right">
-      <div class="hero-author" lang-content="en">A model by Christian Meyer</div>
-      <div class="hero-author" lang-content="de">Ein Modell von Christian Meyer</div>
+      <div class="hero-author lc-en">A model by Christian Meyer</div>
+      <div class="hero-author lc-de">Ein Modell von Christian Meyer</div>
       <div class="lang-switcher">
         <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
         <button class="lang-btn" onclick="setLang('de')" id="btn-de">DE</button>
@@ -1202,8 +1176,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div class="hero-content">
     <!-- eyebrow -->
     <div class="hero-eyebrow">
-      <span lang-content="en">A Diagnostic Model for Teams</span>
-      <span lang-content="de">Ein Diagnosemodell für Teams</span>
+      <span class="lc-en">A Diagnostic Model for Teams</span>
+      <span class="lc-de">Ein Diagnosemodell für Teams</span>
     </div>
 
 ```
@@ -1213,18 +1187,18 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 </h1>
 
 <p class="hero-subtitle">
-  <span lang-content="en">Why teams fail – and what's really behind it.</span>
-  <span lang-content="de">Warum Teams scheitern – und was wirklich dahinter steckt.</span>
+  <span class="lc-en">Why teams fail – and what's really behind it.</span>
+  <span class="lc-de">Warum Teams scheitern – und was wirklich dahinter steckt.</span>
 </p>
 
 <!-- Mini-Story -->
 <div class="hero-story">
-  <p lang-content="en">A product team works hard for three months – talented people, clear processes. Results stay flat. The diagnosis: poor performance. The real cause: <strong>the organisation prevented the team from working on the right problems.</strong> Capability Spaces makes that difference visible.</p>
-  <p lang-content="de">Ein Produktteam arbeitet drei Monate hart – erfahrene Leute, klare Prozesse, trotzdem bleibt die Wirkung aus. Die Diagnose lautet: schlechte Performance. Die wahre Ursache: <strong>Die Organisation hat verhindert, dass das Team an den richtigen Problemen arbeiten konnte.</strong> Capability Spaces macht diesen Unterschied sichtbar.</p>
+  <p class="lc-en">A product team works hard for three months – talented people, clear processes. Results stay flat. The diagnosis: poor performance. The real cause: <strong>the organisation prevented the team from working on the right problems.</strong> Capability Spaces makes that difference visible.</p>
+  <p class="lc-de">Ein Produktteam arbeitet drei Monate hart – erfahrene Leute, klare Prozesse, trotzdem bleibt die Wirkung aus. Die Diagnose lautet: schlechte Performance. Die wahre Ursache: <strong>Die Organisation hat verhindert, dass das Team an den richtigen Problemen arbeiten konnte.</strong> Capability Spaces macht diesen Unterschied sichtbar.</p>
 </div>
 
 <!-- Path cards – EN -->
-<div class="path-selector flex-lang-en">
+<div class="path-selector lc-flex-en">
   <a class="path-card a" href="#path-a-en">
     <span class="path-tag">For Newcomers</span>
     <div class="path-question">My team is good – but something keeps slowing us down.</div>
@@ -1240,7 +1214,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 </div>
 
 <!-- Path cards – DE -->
-<div class="path-selector flex-lang-de">
+<div class="path-selector lc-flex-de">
   <a class="path-card a" href="#path-a-de">
     <span class="path-tag">Für Einsteiger*innen</span>
     <div class="path-question">Mein Team ist gut – aber irgendetwas bremst uns.</div>
@@ -1261,8 +1235,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div class="hero-bottom">
     <div class="scroll-hint">
       <div class="scroll-line"></div>
-      <span lang-content="en">Scroll to explore</span>
-      <span lang-content="de">Scrollen zum Einstieg</span>
+      <span class="lc-en">Scroll to explore</span>
+      <span class="lc-de">Scrollen zum Einstieg</span>
       <div class="scroll-line"></div>
     </div>
   </div>
@@ -1274,8 +1248,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div class="quote-banner-inner">
     <div class="qb-mark">"</div>
     <div class="qb-text">
-      <span lang-content="en">A team that consistently shows Yellow or Red is not a weak team. It is an organisation that hasn't yet learned to diagnose its own structures.</span>
-      <span lang-content="de">Ein Team, das dauerhaft Gelb oder Rot zeigt, ist kein schwaches Team. Es ist eine Organisation, die noch nicht gelernt hat, ihre eigenen Strukturen zu diagnostizieren.</span>
+      <span class="lc-en">A team that consistently shows Yellow or Red is not a weak team. It is an organisation that hasn't yet learned to diagnose its own structures.</span>
+      <span class="lc-de">Ein Team, das dauerhaft Gelb oder Rot zeigt, ist kein schwaches Team. Es ist eine Organisation, die noch nicht gelernt hat, ihre eigenen Strukturen zu diagnostizieren.</span>
     </div>
   </div>
 </div>
@@ -1286,17 +1260,17 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div style="max-width:1100px;margin:0 auto;padding:80px 64px 48px;">
     <div class="reveal">
       <span class="section-label">
-        <span lang-content="en">The Core Question</span>
-        <span lang-content="de">Die Grundfrage</span>
+        <span class="lc-en">The Core Question</span>
+        <span class="lc-de">Die Grundfrage</span>
       </span>
       <h2 class="section-title">
-        <span lang-content="en">Teams almost <em>never</em> fail because of themselves.</span>
-        <span lang-content="de">Teams scheitern fast <em>nie</em> an sich selbst.</span>
+        <span class="lc-en">Teams almost <em>never</em> fail because of themselves.</span>
+        <span class="lc-de">Teams scheitern fast <em>nie</em> an sich selbst.</span>
       </h2>
-      <p class="lead" lang-content="en">When a team doesn't reach its goals, the most common diagnosis is: the team did something wrong. The real cause is almost always elsewhere.</p>
-      <p class="lead" lang-content="de">Wenn ein Team seine Ziele nicht erreicht, ist die häufigste Diagnose: das Team hat es falsch gemacht. Die eigentliche Ursache liegt fast immer woanders.</p>
-      <p class="body" lang-content="en">Capability Spaces makes that visible – and gives teams and leaders a shared language for it.</p>
-      <p class="body" lang-content="de">Capability Spaces macht sichtbar, wo – und gibt Teams und Führungskräften eine gemeinsame Sprache dafür.</p>
+      <p class="lead lc-en">When a team doesn't reach its goals, the most common diagnosis is: the team did something wrong. The real cause is almost always elsewhere.</p>
+      <p class="lead lc-de">Wenn ein Team seine Ziele nicht erreicht, ist die häufigste Diagnose: das Team hat es falsch gemacht. Die eigentliche Ursache liegt fast immer woanders.</p>
+      <p class="body lc-en">Capability Spaces makes that visible – and gives teams and leaders a shared language for it.</p>
+      <p class="body lc-de">Capability Spaces macht sichtbar, wo – und gibt Teams und Führungskräften eine gemeinsame Sprache dafür.</p>
     </div>
   </div>
 </div>
@@ -1307,15 +1281,15 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div style="max-width:1100px;margin:0 auto;padding:48px 64px 24px;">
     <div class="reveal" style="margin-bottom:32px;">
       <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A227;">
-        <span lang-content="en">The Model</span>
-        <span lang-content="de">Das Modell</span>
+        <span class="lc-en">The Model</span>
+        <span class="lc-de">Das Modell</span>
       </span>
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-0.5px;">
-        <span lang-content="en">Three layers – one metaphor.</span>
-        <span lang-content="de">Drei Ebenen – eine Metapher.</span>
+        <span class="lc-en">Three layers – one metaphor.</span>
+        <span class="lc-de">Drei Ebenen – eine Metapher.</span>
       </h2>
-      <p style="font-size:17px;font-weight:300;color:rgba(220,230,245,0.65);max-width:620px;line-height:1.7;margin-top:12px;font-style:italic;" lang-content="en">Imagine your team starts on an unknown world. At first it only knows its immediate surroundings – the small area where it can act safely. <strong style="color:rgba(255,255,255,0.8);font-style:normal;">The more problems it solves, the larger that area grows.</strong> Unless something keeps it artificially small.</p>
-      <p style="font-size:17px;font-weight:300;color:rgba(220,230,245,0.65);max-width:620px;line-height:1.7;margin-top:12px;font-style:italic;" lang-content="de">Stell dir vor, dein Team startet auf einer unbekannten Welt. Es kennt zunächst nur seine direkte Umgebung – den kleinen Bereich, in dem es sicher handeln kann. <strong style="color:rgba(255,255,255,0.8);font-style:normal;">Je mehr Probleme es löst, desto größer wird dieser Bereich.</strong> Außer: etwas hält ihn künstlich klein.</p>
+      <p style="font-size:17px;font-weight:300;color:rgba(220,230,245,0.65);max-width:620px;line-height:1.7;margin-top:12px;font-style:italic;" class="lc-en">Imagine your team starts on an unknown world. At first it only knows its immediate surroundings – the small area where it can act safely. <strong style="color:rgba(255,255,255,0.8);font-style:normal;">The more problems it solves, the larger that area grows.</strong> Unless something keeps it artificially small.</p>
+      <p style="font-size:17px;font-weight:300;color:rgba(220,230,245,0.65);max-width:620px;line-height:1.7;margin-top:12px;font-style:italic;" class="lc-de">Stell dir vor, dein Team startet auf einer unbekannten Welt. Es kennt zunächst nur seine direkte Umgebung – den kleinen Bereich, in dem es sicher handeln kann. <strong style="color:rgba(255,255,255,0.8);font-style:normal;">Je mehr Probleme es löst, desto größer wird dieser Bereich.</strong> Außer: etwas hält ihn künstlich klein.</p>
     </div>
   </div>
 
@@ -1323,8 +1297,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <header class="viz-page-header">
       <div class="viz-logo">Capability <span>Spaces</span></div>
       <div class="viz-header-sub">
-        <span lang-content="en">The Model visualised · Christian Meyer</span>
-        <span lang-content="de">Das Modell visualisiert · Christian Meyer</span>
+        <span class="lc-en">The Model visualised · Christian Meyer</span>
+        <span class="lc-de">Das Modell visualisiert · Christian Meyer</span>
       </div>
     </header>
 
@@ -1478,33 +1452,33 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="viz-stage-tag">01 · Core Concept</span>
       <div class="viz-stage-num">01</div>
       <h2 class="viz-stage-title">The Map</h2>
-      <p class="viz-stage-body" lang-content="en">The team starts knowing only its immediate surroundings – its action space (Capability Space). The more problems it solves and the more impact it creates, the larger this space grows.</p>
-      <p class="viz-stage-body" lang-content="de">Das Team kennt zunächst nur seine direkte Umgebung – seinen Handlungsraum (Capability Space). Je mehr Probleme es löst und Wirkung erzeugt, desto größer wird dieser Raum.</p>
+      <p class="viz-stage-body lc-en">The team starts knowing only its immediate surroundings – its action space (Capability Space). The more problems it solves and the more impact it creates, the larger this space grows.</p>
+      <p class="viz-stage-body lc-de">Das Team kennt zunächst nur seine direkte Umgebung – seinen Handlungsraum (Capability Space). Je mehr Probleme es löst und Wirkung erzeugt, desto größer wird dieser Raum.</p>
       <div class="viz-stage-items">
         <div class="viz-stage-item highlight s1-h">
           <span class="viz-item-icon">🗺️</span>
           <div>
             <div class="viz-item-name">The Map = Capability Space</div>
-            <div class="viz-item-desc" lang-content="en">The area in which the team can independently identify and solve problems.</div>
-            <div class="viz-item-desc" lang-content="de">Der Bereich, in dem das Team eigenständig Probleme erkennen und lösen kann.</div>
+            <div class="viz-item-desc lc-en">The area in which the team can independently identify and solve problems.</div>
+            <div class="viz-item-desc lc-de">Der Bereich, in dem das Team eigenständig Probleme erkennen und lösen kann.</div>
           </div>
         </div>
         <div class="viz-stage-item">
           <span class="viz-item-icon">⚡</span>
           <div>
-            <div class="viz-item-name" lang-content="en">Grows through outcomes</div>
-            <div class="viz-item-name" lang-content="de">Wächst durch Outcomes</div>
-            <div class="viz-item-desc" lang-content="en">Every solved problem, every achieved impact expands the action space.</div>
-            <div class="viz-item-desc" lang-content="de">Jedes gelöste Problem, jede erreichte Wirkung vergrößert den Handlungsraum.</div>
+            <div class="viz-item-name lc-en">Grows through outcomes</div>
+            <div class="viz-item-name lc-de">Wächst durch Outcomes</div>
+            <div class="viz-item-desc lc-en">Every solved problem, every achieved impact expands the action space.</div>
+            <div class="viz-item-desc lc-de">Jedes gelöste Problem, jede erreichte Wirkung vergrößert den Handlungsraum.</div>
           </div>
         </div>
         <div class="viz-stage-item">
           <span class="viz-item-icon">⏳</span>
           <div>
-            <div class="viz-item-name" lang-content="en">Time is a natural boundary</div>
-            <div class="viz-item-name" lang-content="de">Zeit ist natürliche Boundary</div>
-            <div class="viz-item-desc" lang-content="en">Growth takes time – that's normal. Unnatural boundaries are the problem.</div>
-            <div class="viz-item-desc" lang-content="de">Wachstum braucht Zeit – das ist normal. Unnatürliche Boundaries sind das Problem.</div>
+            <div class="viz-item-name lc-en">Time is a natural boundary</div>
+            <div class="viz-item-name lc-de">Zeit ist natürliche Boundary</div>
+            <div class="viz-item-desc lc-en">Growth takes time – that's normal. Unnatural boundaries are the problem.</div>
+            <div class="viz-item-desc lc-de">Wachstum braucht Zeit – das ist normal. Unnatürliche Boundaries sind das Problem.</div>
           </div>
         </div>
       </div>
@@ -1515,13 +1489,13 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="viz-stage-tag">02 · The Problem</span>
       <div class="viz-stage-num">02</div>
       <h2 class="viz-stage-title">The Boundaries</h2>
-      <p class="viz-stage-body" lang-content="en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. These are not team failures. They are diagnostic signals.</p>
-      <p class="viz-stage-body" lang-content="de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Das sind keine Teamfehler. Es sind Diagnosezeichen.</p>
+      <p class="viz-stage-body lc-en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. These are not team failures. They are diagnostic signals.</p>
+      <p class="viz-stage-body lc-de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Das sind keine Teamfehler. Es sind Diagnosezeichen.</p>
       <div class="viz-stage-items">
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">👥</span><div><div class="viz-item-name" lang-content="en">Roles</div><div class="viz-item-name" lang-content="de">Rollen</div><div class="viz-item-desc" lang-content="en">Responsibilities prevent people from working on the problems they're most suited to solve.</div><div class="viz-item-desc" lang-content="de">Zuständigkeiten hindern Menschen daran, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div></div></div>
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📋</span><div><div class="viz-item-name">Requirements</div><div class="viz-item-desc" lang-content="en">Tasks arrive as finished solutions, not as problems. No room to understand why.</div><div class="viz-item-desc" lang-content="de">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div></div></div>
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">⚙️</span><div><div class="viz-item-name" lang-content="en">Processes</div><div class="viz-item-name" lang-content="de">Prozesse</div><div class="viz-item-desc" lang-content="en">Workflows that prevent independent decisions or experiments.</div><div class="viz-item-desc" lang-content="de">Abläufe, die eigenständige Entscheidungen oder Experimente verhindern.</div></div></div>
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📏</span><div><div class="viz-item-name" lang-content="en">Rules</div><div class="viz-item-name" lang-content="de">Regeln</div><div class="viz-item-desc" lang-content="en">Implicit norms that constrain the space – without anyone having consciously decided so.</div><div class="viz-item-desc" lang-content="de">Implizite Spielregeln, die den Raum einschränken – ohne dass jemand das bewusst entschieden hat.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">👥</span><div><div class="viz-item-name lc-en">Roles</div><div class="viz-item-name lc-de">Rollen</div><div class="viz-item-desc lc-en">Responsibilities prevent people from working on the problems they're most suited to solve.</div><div class="viz-item-desc lc-de">Zuständigkeiten hindern Menschen daran, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📋</span><div><div class="viz-item-name">Requirements</div><div class="viz-item-desc lc-en">Tasks arrive as finished solutions, not as problems. No room to understand why.</div><div class="viz-item-desc lc-de">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">⚙️</span><div><div class="viz-item-name lc-en">Processes</div><div class="viz-item-name lc-de">Prozesse</div><div class="viz-item-desc lc-en">Workflows that prevent independent decisions or experiments.</div><div class="viz-item-desc lc-de">Abläufe, die eigenständige Entscheidungen oder Experimente verhindern.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📏</span><div><div class="viz-item-name lc-en">Rules</div><div class="viz-item-name lc-de">Regeln</div><div class="viz-item-desc lc-en">Implicit norms that constrain the space – without anyone having consciously decided so.</div><div class="viz-item-desc lc-de">Implizite Spielregeln, die den Raum einschränken – ohne dass jemand das bewusst entschieden hat.</div></div></div>
       </div>
     </div>
 
@@ -1530,13 +1504,13 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="viz-stage-tag">03 · The Counterweight</span>
       <div class="viz-stage-num">03</div>
       <h2 class="viz-stage-title">The Compass</h2>
-      <p class="viz-stage-body" lang-content="en">The Compass describes four forces that actively strengthen the action space from the outside – giving the team the energy to keep going even when boundaries exist.</p>
-      <p class="viz-stage-body" lang-content="de">The Compass beschreibt vier Kräfte, die den Handlungsraum von außen aktiv stärken – und dem Team Energie geben, weiterzumachen, auch wenn Boundaries bestehen.</p>
+      <p class="viz-stage-body lc-en">The Compass describes four forces that actively strengthen the action space from the outside – giving the team the energy to keep going even when boundaries exist.</p>
+      <p class="viz-stage-body lc-de">The Compass beschreibt vier Kräfte, die den Handlungsraum von außen aktiv stärken – und dem Team Energie geben, weiterzumachen, auch wenn Boundaries bestehen.</p>
       <div class="viz-stage-items">
-        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔍</span><div><div class="viz-item-name">Assumption Testing</div><div class="viz-item-desc" lang-content="en">Test assumptions. Feedback shows whether direction is right – and corrects early.</div><div class="viz-item-desc" lang-content="de">Annahmen testen. Feedback zeigt, ob die Richtung stimmt – und korrigiert frühzeitig.</div></div></div>
-        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">⭐</span><div><div class="viz-item-name">Trust</div><div class="viz-item-desc" lang-content="en">Trust from leadership and stakeholders expands the action space from the outside.</div><div class="viz-item-desc" lang-content="de">Vertrauen von Führung und Stakeholdern stärkt den Handlungsspielraum von außen.</div></div></div>
-        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">📚</span><div><div class="viz-item-name">Knowledge</div><div class="viz-item-desc" lang-content="en">Knowledge that directly helps solve problems within the team's space more effectively.</div><div class="viz-item-desc" lang-content="de">Wissen, das direkt dabei hilft, Probleme im eigenen Space besser zu lösen.</div></div></div>
-        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔗</span><div><div class="viz-item-name">Connection</div><div class="viz-item-desc" lang-content="en">Good work opens new doors. Stakeholders bring new problems that fit the space.</div><div class="viz-item-desc" lang-content="de">Gute Arbeit öffnet neue Türen. Stakeholder bringen neue Probleme, die in den Space passen.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔍</span><div><div class="viz-item-name">Assumption Testing</div><div class="viz-item-desc lc-en">Test assumptions. Feedback shows whether direction is right – and corrects early.</div><div class="viz-item-desc lc-de">Annahmen testen. Feedback zeigt, ob die Richtung stimmt – und korrigiert frühzeitig.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">⭐</span><div><div class="viz-item-name">Trust</div><div class="viz-item-desc lc-en">Trust from leadership and stakeholders expands the action space from the outside.</div><div class="viz-item-desc lc-de">Vertrauen von Führung und Stakeholdern stärkt den Handlungsspielraum von außen.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">📚</span><div><div class="viz-item-name">Knowledge</div><div class="viz-item-desc lc-en">Knowledge that directly helps solve problems within the team's space more effectively.</div><div class="viz-item-desc lc-de">Wissen, das direkt dabei hilft, Probleme im eigenen Space besser zu lösen.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔗</span><div><div class="viz-item-name">Connection</div><div class="viz-item-desc lc-en">Good work opens new doors. Stakeholders bring new problems that fit the space.</div><div class="viz-item-desc lc-de">Gute Arbeit öffnet neue Türen. Stakeholder bringen neue Probleme, die in den Space passen.</div></div></div>
       </div>
     </div>
   </div>
@@ -1565,7 +1539,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <!-- ═══════════════════════ PATH A – EN ═══════════════════════════ -->
 
-<div id="path-a-en" class="path-header path-a" lang-content="en">
+<div id="path-a-en" class="path-header path-a lc-en">
   <div class="path-header-inner">
     <div class="path-badge">For Newcomers</div>
     <h2>Frameworks can't solve problems they can't see.</h2>
@@ -1573,7 +1547,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="section" lang-content="en">
+<div class="section lc-en">
   <div class="reveal">
     <span class="section-label">What is a Capability Space?</span>
     <h2 class="section-title">The space in which a team can actually work.</h2>
@@ -1621,9 +1595,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="divider" lang-content="en"></div>
+<div class="divider lc-en"></div>
 
-<div class="section" lang-content="en">
+<div class="section lc-en">
   <div class="reveal">
     <span class="section-label">The Traffic Light System</span>
     <h2 class="section-title">See every day how free a team really is.</h2>
@@ -1641,9 +1615,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="divider" lang-content="en"></div>
+<div class="divider lc-en"></div>
 
-<div class="section" lang-content="en">
+<div class="section lc-en">
   <div class="reveal">
     <span class="section-label">The Compass</span>
     <h2 class="section-title">Why the work still <em>makes sense.</em></h2>
@@ -1664,7 +1638,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <!-- PATH A – DE -->
 
-<div id="path-a-de" class="path-header path-a" lang-content="de">
+<div id="path-a-de" class="path-header path-a lc-de">
   <div class="path-header-inner">
     <div class="path-badge">Für Einsteiger*innen</div>
     <h2>Frameworks lösen keine Probleme, die sie nicht sehen können.</h2>
@@ -1672,7 +1646,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="section" lang-content="de">
+<div class="section lc-de">
   <div class="reveal">
     <span class="section-label">Was ist ein Capability Space?</span>
     <h2 class="section-title">Der Raum, in dem ein Team wirklich arbeiten kann.</h2>
@@ -1720,9 +1694,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="divider" lang-content="de"></div>
+<div class="divider lc-de"></div>
 
-<div class="section" lang-content="de">
+<div class="section lc-de">
   <div class="reveal">
     <span class="section-label">Das Ampel-System</span>
     <h2 class="section-title">Jeden Tag sehen, wie frei ein Team wirklich ist.</h2>
@@ -1740,9 +1714,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="divider" lang-content="de"></div>
+<div class="divider lc-de"></div>
 
-<div class="section" lang-content="de">
+<div class="section lc-de">
   <div class="reveal">
     <span class="section-label">The Compass</span>
     <h2 class="section-title">Warum die Arbeit trotzdem <em>Sinn ergibt.</em></h2>
@@ -1763,7 +1737,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <!-- ═══════════════════════ PATH B – EN ═══════════════════════════ -->
 
-<div id="path-b-en" class="path-header path-b" lang-content="en">
+<div id="path-b-en" class="path-header path-b lc-en">
   <div class="path-header-inner">
     <div class="path-badge">For Agilists</div>
     <h2>Impediments are not the same as Boundaries.</h2>
@@ -1771,7 +1745,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="section" lang-content="en">
+<div class="section lc-en">
   <div class="reveal">
     <span class="section-label">Capability Spaces vs. Scrum</span>
     <h2 class="section-title">The structural gap no framework fills.</h2>
@@ -1790,9 +1764,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </table>
 </div>
 
-<div class="divider" lang-content="en"></div>
+<div class="divider lc-en"></div>
 
-<div class="section" lang-content="en">
+<div class="section lc-en">
   <div class="reveal">
     <span class="section-label">Leadership in the Model</span>
     <h2 class="section-title">Hearing about Boundaries is not the same as <em>experiencing</em> them.</h2>
@@ -1819,9 +1793,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="divider" lang-content="en"></div>
+<div class="divider lc-en"></div>
 
-<div class="section" lang-content="en">
+<div class="section lc-en">
   <div class="reveal">
     <span class="section-label">Scaling</span>
     <h2 class="section-title">Cutting teams by topic creates dependencies. <em>That can be solved.</em></h2>
@@ -1846,7 +1820,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <!-- PATH B – DE -->
 
-<div id="path-b-de" class="path-header path-b" lang-content="de">
+<div id="path-b-de" class="path-header path-b lc-de">
   <div class="path-header-inner">
     <div class="path-badge">Für Agilist*innen</div>
     <h2>Impediments sind nicht dasselbe wie Boundaries.</h2>
@@ -1854,7 +1828,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="section" lang-content="de">
+<div class="section lc-de">
   <div class="reveal">
     <span class="section-label">Capability Spaces vs. Scrum</span>
     <h2 class="section-title">Die strukturelle Lücke, die kein Framework füllt.</h2>
@@ -1873,9 +1847,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </table>
 </div>
 
-<div class="divider" lang-content="de"></div>
+<div class="divider lc-de"></div>
 
-<div class="section" lang-content="de">
+<div class="section lc-de">
   <div class="reveal">
     <span class="section-label">Führung im Modell</span>
     <h2 class="section-title">Boundaries hören ist nicht dasselbe wie sie <em>erleben.</em></h2>
@@ -1902,9 +1876,9 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<div class="divider" lang-content="de"></div>
+<div class="divider lc-de"></div>
 
-<div class="section" lang-content="de">
+<div class="section lc-de">
   <div class="reveal">
     <span class="section-label">Skalierung</span>
     <h2 class="section-title">Teams nach Themen zu schneiden erzeugt Abhängigkeiten. <em>Das lässt sich lösen.</em></h2>
@@ -1934,51 +1908,87 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
     <div class="footer-left">
       <div class="fl-name">Capability <span>Spaces</span></div>
       <div class="fl-sub">
-        <span lang-content="en">A Diagnostic Model for Teams &amp; Organisations</span>
-        <span lang-content="de">Ein Diagnosemodell für Teams &amp; Organisationen</span>
+        <span class="lc-en">A Diagnostic Model for Teams &amp; Organisations</span>
+        <span class="lc-de">Ein Diagnosemodell für Teams &amp; Organisationen</span>
       </div>
     </div>
     <div class="footer-right">
-      <span lang-content="en">A model by <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>Practical guide for teams</span>
-      <span lang-content="de">Ein Modell von <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>Praxisleitfaden für Teams</span>
+      <span class="lc-en">A model by <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>Practical guide for teams</span>
+      <span class="lc-de">Ein Modell von <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>Praxisleitfaden für Teams</span>
     </div>
   </div>
 </footer>
 
 <script>
-// ── Language switcher ────────────────────────────────────────────
-// Uses data-lang on <html> – already set synchronously in <head>
-// so CSS rules fire before any paint. This function just updates
-// the attribute + saves preference.
-function setLang(lang) {
-  document.documentElement.setAttribute('data-lang', lang);
-  document.documentElement.lang = lang;
-  localStorage.setItem('cs-lang', lang);
+// ── Language system ───────────────────────────────────────────────
+// Directly sets element.style.display on every language element.
+// No CSS attribute selectors. Works on all browsers including iOS Safari.
+
+function applyLang(lang) {
+  // EN elements
+  var enBlock  = document.querySelectorAll('.lc-en');
+  var enInline = document.querySelectorAll('span.lc-en, a.lc-en');
+  var enFlex   = document.querySelectorAll('.lc-flex-en');
+  var enGrid   = document.querySelectorAll('.lc-grid-en');
+  // DE elements
+  var deBlock  = document.querySelectorAll('.lc-de');
+  var deInline = document.querySelectorAll('span.lc-de, a.lc-de');
+  var deFlex   = document.querySelectorAll('.lc-flex-de');
+  var deGrid   = document.querySelectorAll('.lc-grid-de');
+
+  if (lang === 'en') {
+    enBlock.forEach(function(el)  { el.style.display = ''; });
+    enInline.forEach(function(el) { el.style.display = 'inline'; });
+    enFlex.forEach(function(el)   { el.style.display = 'flex'; });
+    enGrid.forEach(function(el)   { el.style.display = 'grid'; });
+    deBlock.forEach(function(el)  { el.style.display = 'none'; });
+    deInline.forEach(function(el) { el.style.display = 'none'; });
+    deFlex.forEach(function(el)   { el.style.display = 'none'; });
+    deGrid.forEach(function(el)   { el.style.display = 'none'; });
+  } else {
+    deBlock.forEach(function(el)  { el.style.display = ''; });
+    deInline.forEach(function(el) { el.style.display = 'inline'; });
+    deFlex.forEach(function(el)   { el.style.display = 'flex'; });
+    deGrid.forEach(function(el)   { el.style.display = 'grid'; });
+    enBlock.forEach(function(el)  { el.style.display = 'none'; });
+    enInline.forEach(function(el) { el.style.display = 'none'; });
+    enFlex.forEach(function(el)   { el.style.display = 'none'; });
+    enGrid.forEach(function(el)   { el.style.display = 'none'; });
+  }
+
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-  // Trigger reveal for any newly-visible elements
-  setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-      const rect = el.getBoundingClientRect();
+  document.documentElement.lang = lang;
+
+  // Re-check reveals for newly visible sections
+  setTimeout(function() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight * 0.95) el.classList.add('visible');
     });
   }, 60);
 }
 
-// ── Sync buttons to whichever lang the head script already set ───
-document.addEventListener('DOMContentLoaded', function() {
-  var lang = document.documentElement.getAttribute('data-lang') || 'en';
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-});
+function setLang(lang) {
+  try { localStorage.setItem('cs-lang', lang); } catch(e) {}
+  applyLang(lang);
+}
 
-// ── Scroll reveal ────────────────────────────────────────────────
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.10 });
-
+// ── On page load ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  var saved = 'en';
+  try { saved = localStorage.getItem('cs-lang') || 'en'; } catch(e) {}
+  applyLang(saved);
+
+  // ── Scroll reveal ───────────────────────────────────────────────
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
 });
 </script>
 
