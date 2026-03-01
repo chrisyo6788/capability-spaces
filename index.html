@@ -8,21 +8,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
+a { color: inherit; text-decoration: none; }
+
 :root {
-  --navy: #1B3A5C;
-  --navy-deep: #0F2238;
-  --gold: #C9A227;
-  --gold-light: #E8C96A;
-  --blue: #4A9CC9;
-  --blue-pale: #EBF4FA;
-  --text: #2C2C2C;
-  --text-mid: #5A5A5A;
-  --text-light: #8A8A8A;
-  --bg: #F8F7F4;
-  --white: #FFFFFF;
-  --border: #E4E2DC;
-  --path-a: #1B3A5C;
-  --path-b: #2E6B4F;
+–navy: #1B3A5C;
+–navy-deep: #0F2238;
+–gold: #C9A227;
+–gold-light: #E8C96A;
+–blue: #4A9CC9;
+–blue-pale: #EBF4FA;
+–text: #2C2C2C;
+–text-mid: #5A5A5A;
+–text-light: #8A8A8A;
+–bg: #F8F7F4;
+–white: #FFFFFF;
+–border: #E4E2DC;
+–path-a: #1B3A5C;
+–path-b: #2E6B4F;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,15 +32,15 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
 font-family: ‘Cormorant Garamond’, Georgia, serif;
-background: var(–bg);
-color: var(–text);
+background: #F8F7F4;
+color: #2C2C2C;
 overflow-x: hidden;
 }
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 .hero {
 min-height: 100vh;
-background: var(–navy-deep);
+background: #0F2238;
 display: grid;
 grid-template-rows: auto 1fr auto;
 position: relative;
@@ -70,6 +72,7 @@ align-items: center;
 padding: 32px 64px;
 position: relative;
 z-index: 10;
+background: transparent;
 }
 
 .hero-logo {
@@ -162,8 +165,10 @@ transition: all 0.3s ease;
 text-align: left;
 position: relative;
 overflow: hidden;
-text-decoration: none;
+text-decoration: none !important;
 display: block;
+color: #FFFFFF;
+-webkit-text-fill-color: inherit;
 }
 
 .path-card::before {
@@ -195,14 +200,15 @@ margin-bottom: 16px;
 display: block;
 }
 
-.path-card.a .path-tag { color: var(–gold); }
-.path-card.b .path-tag { color: var(–blue); }
+.path-card.a .path-tag { color: #C9A227 !important; -webkit-text-fill-color: #C9A227; }
+.path-card.b .path-tag { color: #4A9CC9 !important; -webkit-text-fill-color: #4A9CC9; }
 
 .path-question {
 font-family: ‘Cormorant Garamond’, serif;
 font-size: 20px;
 font-weight: 600;
-color: var(–white);
+color: #FFFFFF !important;
+-webkit-text-fill-color: #FFFFFF;
 line-height: 1.35;
 margin-bottom: 14px;
 }
@@ -210,7 +216,8 @@ margin-bottom: 14px;
 .path-desc {
 font-size: 14px;
 font-weight: 300;
-color: rgba(255,255,255,0.45);
+color: rgba(255,255,255,0.55) !important;
+-webkit-text-fill-color: rgba(255,255,255,0.55);
 line-height: 1.6;
 font-style: italic;
 }
@@ -252,6 +259,8 @@ gap: 12px;
 .scroll-line {
 width: 40px; height: 1px;
 background: rgba(255,255,255,0.15);
+display: block;
+flex-shrink: 0;
 }
 
 /* ─── SHARED CONTENT STYLES ─────────────────────────────────────── */
@@ -875,9 +884,9 @@ transform: translateY(0);
 
   <div class="hero-bottom">
     <div class="scroll-hint">
-      <span class="scroll-line"></span>
+      <div class="scroll-line"></div>
       Scrollen zum Einstieg
-      <span class="scroll-line"></span>
+      <div class="scroll-line"></div>
     </div>
   </div>
 </div>
