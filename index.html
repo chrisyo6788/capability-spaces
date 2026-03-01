@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Capability Spaces – A Model by Christian Meyer</title>
+<!-- CRITICAL: set data-lang immediately, before any CSS or DOM paint -->
+<script>
+  // Runs synchronously in <head> – no flash of wrong language
+  (function() {
+    var saved = localStorage.getItem('cs-lang') || 'en';
+    document.documentElement.setAttribute('data-lang', saved);
+    document.documentElement.lang = saved;
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -66,29 +75,33 @@ border-color: rgba(255,255,255,0.4);
 color: rgba(255,255,255,0.65);
 }
 
-/* Language visibility */
-[lang-content] { display: none; }
-.lang-en [lang-content=“en”] { display: block; }
-.lang-de [lang-content=“de”] { display: block; }
+/* ── LANGUAGE VISIBILITY ──────────────────────────────────────────
+Keyed on html[data-lang] – set synchronously in <head> script,
+so there is NEVER a flash of hidden / wrong-language content.
+We use explicit selectors for every display type needed.
+──────────────────────────────────────────────────────────────────── */
 
-/* For inline spans */
-span[lang-content], a[lang-content] { display: none; }
-.lang-en span[lang-content=“en”],
-.lang-en a[lang-content=“en”] { display: inline; }
-.lang-de span[lang-content=“de”],
-.lang-de a[lang-content=“de”] { display: inline; }
+/* block elements */
+[lang-content]                               { display: none !important; }
+html[data-lang=“en”] [lang-content=“en”]     { display: block !important; }
+html[data-lang=“de”] [lang-content=“de”]     { display: block !important; }
 
-/* For flex containers that need lang switching */
-.lang-en .flex-lang-en { display: flex; }
-.lang-en .flex-lang-de { display: none; }
-.lang-de .flex-lang-de { display: flex; }
-.lang-de .flex-lang-en { display: none; }
+/* inline elements (spans, anchors inside text) */
+span[lang-content], a[lang-content]                        { display: none !important; }
+html[data-lang=“en”] span[lang-content=“en”],
+html[data-lang=“en”] a[lang-content=“en”]                  { display: inline !important; }
+html[data-lang=“de”] span[lang-content=“de”],
+html[data-lang=“de”] a[lang-content=“de”]                  { display: inline !important; }
 
-/* For grid containers */
-.lang-en .grid-lang-en { display: grid; }
-.lang-en .grid-lang-de { display: none; }
-.lang-de .grid-lang-de { display: grid; }
-.lang-de .grid-lang-en { display: none; }
+/* flex containers (path-selector, viz sidebar items etc.) */
+.flex-lang-en, .flex-lang-de                               { display: none !important; }
+html[data-lang=“en”] .flex-lang-en                         { display: flex !important; }
+html[data-lang=“de”] .flex-lang-de                         { display: flex !important; }
+
+/* grid containers */
+.grid-lang-en, .grid-lang-de                               { display: none !important; }
+html[data-lang=“en”] .grid-lang-en                         { display: grid !important; }
+html[data-lang=“de”] .grid-lang-de                         { display: grid !important; }
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 .hero {
@@ -170,6 +183,7 @@ text-transform: uppercase;
 color: var(–gold);
 margin-bottom: 28px;
 opacity: 0;
+-webkit-font-smoothing: antialiased;
 animation: fadeUp 0.8s ease 0.2s forwards;
 }
 
@@ -177,18 +191,21 @@ animation: fadeUp 0.8s ease 0.2s forwards;
 font-family: ‘Cormorant Garamond’, serif;
 font-size: clamp(52px, 8vw, 110px);
 font-weight: 300;
-color: var(–white);
+color: #FFFFFF;
 line-height: 1;
 letter-spacing: -2px;
 margin-bottom: 8px;
 opacity: 0;
+-webkit-font-smoothing: antialiased;
+transform: translateZ(0); /* force own GPU layer so color is correct */
 animation: fadeUp 0.8s ease 0.4s forwards;
 }
 
 .hero-title strong {
 font-weight: 700;
-color: var(–gold);
+color: #E8C96A; /* explicit hex – avoids var() resolution issues on iOS */
 display: block;
+-webkit-font-smoothing: antialiased;
 }
 
 .hero-subtitle {
@@ -1119,8 +1136,8 @@ transition: all 0.2s;
 
 /* ─── ANIMATIONS ─────────────────────────────────────────────────── */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(20px); }
-to   { opacity: 1; transform: translateY(0); }
+from { opacity: 0.01; transform: translateY(20px) translateZ(0); }
+to   { opacity: 1;    transform: translateY(0)    translateZ(0); }
 }
 
 @keyframes breathe {
@@ -1163,9 +1180,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 
 </head>
 
-<!-- Default: English. JS will set class on body -->
-
-<body class="lang-en">
+<body>
 
 <!-- ═══════════════════════ HERO ═══════════════════════════════════ -->
 
@@ -1932,26 +1947,39 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <script>
 // ── Language switcher ────────────────────────────────────────────
+// Uses data-lang on <html> – already set synchronously in <head>
+// so CSS rules fire before any paint. This function just updates
+// the attribute + saves preference.
 function setLang(lang) {
-  document.body.className = 'lang-' + lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang;
+  localStorage.setItem('cs-lang', lang);
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-  document.documentElement.lang = lang;
-  // Re-run reveal observer after DOM changes
+  // Trigger reveal for any newly-visible elements
   setTimeout(() => {
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.9) el.classList.add('visible');
+      if (rect.top < window.innerHeight * 0.95) el.classList.add('visible');
     });
-  }, 50);
+  }, 60);
 }
+
+// ── Sync buttons to whichever lang the head script already set ───
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = document.documentElement.getAttribute('data-lang') || 'en';
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+});
 
 // ── Scroll reveal ────────────────────────────────────────────────
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
+}, { threshold: 0.10 });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+});
 </script>
 
 </body>
