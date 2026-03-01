@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capability Spaces – Ein Modell von Christian Meyer</title>
+<title>Capability Spaces – A Model by Christian Meyer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -23,8 +23,6 @@ a { color: inherit; text-decoration: none; }
 –bg: #F8F7F4;
 –white: #FFFFFF;
 –border: #E4E2DC;
-–path-a: #1B3A5C;
-–path-b: #2E6B4F;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,6 +34,61 @@ background: #F8F7F4;
 color: #2C2C2C;
 overflow-x: hidden;
 }
+
+/* ─── LANG SWITCHER ──────────────────────────────────────────────── */
+.lang-switcher {
+display: flex;
+gap: 4px;
+align-items: center;
+}
+
+.lang-btn {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+padding: 5px 10px;
+border: 1px solid rgba(255,255,255,0.2);
+background: transparent;
+color: rgba(255,255,255,0.35);
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.lang-btn.active {
+border-color: var(–gold);
+color: var(–gold);
+background: rgba(201,162,39,0.08);
+}
+
+.lang-btn:hover:not(.active) {
+border-color: rgba(255,255,255,0.4);
+color: rgba(255,255,255,0.65);
+}
+
+/* Language visibility */
+[lang-content] { display: none; }
+.lang-en [lang-content=“en”] { display: block; }
+.lang-de [lang-content=“de”] { display: block; }
+
+/* For inline spans */
+span[lang-content], a[lang-content] { display: none; }
+.lang-en span[lang-content=“en”],
+.lang-en a[lang-content=“en”] { display: inline; }
+.lang-de span[lang-content=“de”],
+.lang-de a[lang-content=“de”] { display: inline; }
+
+/* For flex containers that need lang switching */
+.lang-en .flex-lang-en { display: flex; }
+.lang-en .flex-lang-de { display: none; }
+.lang-de .flex-lang-de { display: flex; }
+.lang-de .flex-lang-en { display: none; }
+
+/* For grid containers */
+.lang-en .grid-lang-en { display: grid; }
+.lang-en .grid-lang-de { display: none; }
+.lang-de .grid-lang-de { display: grid; }
+.lang-de .grid-lang-en { display: none; }
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 .hero {
@@ -55,7 +108,6 @@ radial-gradient(ellipse 40% 60% at 10% 80%, rgba(74,156,201,0.06) 0%, transparen
 pointer-events: none;
 }
 
-/* grid lines */
 .hero-bg::after {
 content: ‘’;
 position: absolute; inset: 0;
@@ -85,6 +137,12 @@ color: rgba(255,255,255,0.9);
 }
 
 .hero-logo span { color: var(–gold); }
+
+.hero-nav-right {
+display: flex;
+align-items: center;
+gap: 20px;
+}
 
 .hero-author {
 font-family: ‘DM Mono’, monospace;
@@ -136,13 +194,42 @@ display: block;
 .hero-subtitle {
 font-size: 20px;
 font-weight: 300;
-color: rgba(255,255,255,0.5);
+/* FIX 1: was rgba(255,255,255,0.5) – rendered brownish on some displays */
+color: rgba(220,230,245,0.72);
 max-width: 520px;
 line-height: 1.6;
-margin: 24px 0 64px;
+margin: 24px 0 36px;
 font-style: italic;
 opacity: 0;
 animation: fadeUp 0.8s ease 0.6s forwards;
+}
+
+/* ─── HERO STORY TEASER ─────────────────────────────────────────── */
+.hero-story {
+max-width: 600px;
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(201,162,39,0.25);
+border-left: 3px solid var(–gold);
+padding: 20px 28px;
+margin-bottom: 40px;
+text-align: left;
+opacity: 0;
+animation: fadeUp 0.8s ease 0.75s forwards;
+}
+
+.hero-story p {
+font-size: 16px;
+font-style: italic;
+font-weight: 300;
+/* FIX 1: brighter, clearly white-toned */
+color: rgba(220,230,245,0.80);
+line-height: 1.65;
+}
+
+.hero-story strong {
+color: #E8C96A;
+font-style: normal;
+font-weight: 600;
 }
 
 /* ─── PATH SELECTOR ─────────────────────────────────────────────── */
@@ -153,7 +240,7 @@ gap: 16px;
 max-width: 760px;
 width: 100%;
 opacity: 0;
-animation: fadeUp 0.8s ease 0.8s forwards;
+animation: fadeUp 0.8s ease 0.9s forwards;
 }
 
 .path-card {
@@ -200,8 +287,8 @@ margin-bottom: 16px;
 display: block;
 }
 
-.path-card.a .path-tag { color: #C9A227 !important; -webkit-text-fill-color: #C9A227; }
-.path-card.b .path-tag { color: #4A9CC9 !important; -webkit-text-fill-color: #4A9CC9; }
+.path-card.a .path-tag { color: #E8C96A !important; -webkit-text-fill-color: #E8C96A; }
+.path-card.b .path-tag { color: #6BB8D8 !important; -webkit-text-fill-color: #6BB8D8; }
 
 .path-question {
 font-family: ‘Cormorant Garamond’, serif;
@@ -216,8 +303,9 @@ margin-bottom: 14px;
 .path-desc {
 font-size: 14px;
 font-weight: 300;
-color: rgba(255,255,255,0.55) !important;
--webkit-text-fill-color: rgba(255,255,255,0.55);
+/* FIX 1: brighter than before */
+color: rgba(220,230,245,0.65) !important;
+-webkit-text-fill-color: rgba(220,230,245,0.65);
 line-height: 1.6;
 font-style: italic;
 }
@@ -249,7 +337,7 @@ font-family: ‘DM Mono’, monospace;
 font-size: 10px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: rgba(255,255,255,0.2);
+color: rgba(255,255,255,0.25);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -312,6 +400,39 @@ max-width: 680px;
 margin-bottom: 18px;
 }
 
+/* ─── QUOTE BANNER ──────────────────────────────────────────────── */
+.quote-banner {
+background: var(–navy);
+padding: 52px 64px;
+}
+
+.quote-banner-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+align-items: flex-start;
+gap: 28px;
+}
+
+.qb-mark {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 80px;
+line-height: 0.8;
+color: var(–gold);
+flex-shrink: 0;
+margin-top: 8px;
+opacity: 0.6;
+}
+
+.qb-text {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 24px;
+font-weight: 300;
+font-style: italic;
+color: rgba(255,255,255,0.85);
+line-height: 1.55;
+}
+
 /* ─── DIVIDER ───────────────────────────────────────────────────── */
 .divider {
 width: 100%;
@@ -320,93 +441,11 @@ background: linear-gradient(90deg, transparent, var(–border), transparent);
 margin: 0;
 }
 
-/* ─── SECTION: WHY ──────────────────────────────────────────────── */
+/* ─── WHY SECTION ───────────────────────────────────────────────── */
 .why-section {
 background: var(–white);
 padding: 0;
 }
-
-.why-inner {
-max-width: 1100px;
-margin: 0 auto;
-padding: 100px 64px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 80px;
-align-items: center;
-}
-
-.why-text {}
-
-.why-visual {
-position: relative;
-height: 320px;
-}
-
-/* Animated space visualization */
-.space-viz {
-position: relative;
-width: 100%; height: 100%;
-}
-
-.space-circle {
-position: absolute;
-border-radius: 50%;
-border: 1.5px solid;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.space-outer {
-width: 280px; height: 280px;
-border-color: rgba(27,58,92,0.15);
-top: 50%; left: 50%;
-transform: translate(-50%,-50%);
-animation: breathe 4s ease-in-out infinite;
-}
-
-.space-inner {
-width: 160px; height: 160px;
-border-color: var(–navy);
-background: rgba(27,58,92,0.04);
-top: 50%; left: 50%;
-transform: translate(-50%,-50%);
-}
-
-.space-label {
-font-family: ‘DM Mono’, monospace;
-font-size: 9px;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: var(–navy);
-text-align: center;
-}
-
-.boundary-dot {
-position: absolute;
-width: 8px; height: 8px;
-border-radius: 50%;
-background: var(–gold);
-}
-
-.bd1 { top: 10%; right: 20%; animation: pulse 3s ease-in-out 0s infinite; }
-.bd2 { bottom: 15%; left: 15%; animation: pulse 3s ease-in-out 0.8s infinite; }
-.bd3 { top: 40%; right: 5%; animation: pulse 3s ease-in-out 1.6s infinite; }
-
-.bd-label {
-position: absolute;
-font-family: ‘DM Mono’, monospace;
-font-size: 8px;
-letter-spacing: 1px;
-text-transform: uppercase;
-color: var(–gold);
-white-space: nowrap;
-}
-
-.bd1-l { top: 6%; right: 28%; }
-.bd2-l { bottom: 19%; left: 23%; }
-.bd3-l { top: 36%; right: 13%; }
 
 /* ─── PATH SECTIONS ─────────────────────────────────────────────── */
 .path-header {
@@ -485,6 +524,9 @@ color: var(–text);
 
 .callout.blue { border-left-color: var(–blue); }
 .callout.blue .cl-label { color: var(–blue); }
+
+.callout.green { border-left-color: #2E7D52; }
+.callout.green .cl-label { color: #2E7D52; }
 
 /* ─── BOUNDARY CARDS ────────────────────────────────────────────── */
 .boundary-grid {
@@ -595,7 +637,7 @@ line-height: 1.55;
 color: var(–text-light);
 }
 
-/* ─── BORDER CARDS ──────────────────────────────────────────────── */
+/* ─── COMPASS ───────────────────────────────────────────────────── */
 .compass-grid {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
@@ -625,7 +667,72 @@ display: block;
 
 .compass-card p { font-size: 15px; line-height: 1.6; color: var(–text-mid); }
 
-/* ─── HOW TO USE ─────────────────────────────────────────────────── */
+.compass-mechanic {
+background: #F0F7F4;
+border: 1px solid rgba(46,155,111,0.2);
+padding: 28px 32px;
+max-width: 720px;
+margin-bottom: 36px;
+}
+
+.compass-mechanic .cm-label {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: #2E7D52;
+margin-bottom: 10px;
+display: block;
+}
+
+.compass-mechanic p {
+font-size: 16px;
+line-height: 1.65;
+color: var(–text-mid);
+}
+
+/* ─── OWNERSHIP GRID ────────────────────────────────────────────── */
+.ownership-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+margin: 28px 0 36px;
+max-width: 800px;
+}
+
+.ow-card {
+padding: 20px 18px;
+background: var(–white);
+border: 1px solid var(–border);
+border-top: 2px solid var(–navy);
+}
+
+.ow-card .ow-q {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–text-light);
+margin-bottom: 8px;
+display: block;
+}
+
+.ow-card .ow-action {
+font-family: ‘Syne’, sans-serif;
+font-size: 13px;
+font-weight: 700;
+color: var(–navy);
+margin-bottom: 8px;
+display: block;
+}
+
+.ow-card p {
+font-size: 13px;
+line-height: 1.55;
+color: var(–text-mid);
+}
+
+/* ─── FORMAT CARDS ──────────────────────────────────────────────── */
 .format-cards {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -658,7 +765,34 @@ letter-spacing: 0.3px;
 
 .fmt-card p { font-size: 14px; line-height: 1.6; color: var(–text-mid); }
 
-/* ─── SCRUM TABLE ────────────────────────────────────────────────── */
+.fmt-card .fmt-steps {
+margin-top: 14px;
+padding-top: 14px;
+border-top: 1px solid var(–border);
+}
+
+.fmt-card .fmt-step {
+display: flex;
+gap: 10px;
+align-items: flex-start;
+margin-bottom: 8px;
+}
+
+.fmt-step-num {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: var(–gold);
+flex-shrink: 0;
+margin-top: 2px;
+}
+
+.fmt-step-text {
+font-size: 13px;
+line-height: 1.5;
+color: var(–text-mid);
+}
+
+/* ─── COMPARE TABLE ─────────────────────────────────────────────── */
 .compare-table {
 width: 100%; max-width: 820px;
 border-collapse: collapse;
@@ -699,7 +833,7 @@ color: var(–navy);
 white-space: nowrap;
 }
 
-/* ─── SCALE SECTION ──────────────────────────────────────────────── */
+/* ─── SCALE SECTION ─────────────────────────────────────────────── */
 .scale-2col {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -725,34 +859,6 @@ letter-spacing: 0.3px;
 }
 
 .scale-card p { font-size: 14px; line-height: 1.6; color: var(–text-mid); }
-
-/* ─── QUOTE ──────────────────────────────────────────────────────── */
-.big-quote {
-max-width: 1100px;
-margin: 0 auto;
-padding: 80px 64px;
-display: flex;
-align-items: flex-start;
-gap: 32px;
-}
-
-.bq-mark {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 100px;
-line-height: 0.8;
-color: var(–gold);
-flex-shrink: 0;
-margin-top: 10px;
-}
-
-.bq-text {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 28px;
-font-weight: 300;
-font-style: italic;
-color: var(–navy);
-line-height: 1.5;
-}
 
 /* ─── FOOTER ─────────────────────────────────────────────────────── */
 footer {
@@ -795,6 +901,222 @@ text-align: right;
 line-height: 1.7;
 }
 
+/* ─── MODEL VIZ ─────────────────────────────────────────────────── */
+#model-viz {
+background: #0C1A2E;
+font-family: ‘Cormorant Garamond’, Georgia, serif;
+color: #F0EDE8;
+}
+
+.viz-page-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 28px 48px;
+border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.viz-logo {
+font-family: ‘Syne’, sans-serif;
+font-size: 15px;
+font-weight: 700;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: rgba(255,255,255,0.9);
+}
+.viz-logo span { color: #C9A227; }
+
+.viz-header-sub {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 1.5px;
+color: rgba(255,255,255,0.3);
+}
+
+.viz-stage-nav {
+display: flex;
+justify-content: center;
+gap: 8px;
+padding: 28px 24px 20px;
+}
+
+.viz-stage-btn {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding: 10px 20px;
+border: 1px solid rgba(255,255,255,0.15);
+background: transparent;
+color: rgba(255,255,255,0.4);
+cursor: pointer;
+transition: all 0.25s;
+position: relative;
+}
+
+.viz-stage-btn::after {
+content: ‘’;
+position: absolute;
+bottom: -1px; left: 0; right: 0;
+height: 2px;
+transform: scaleX(0);
+transition: transform 0.25s;
+}
+
+.viz-stage-btn.s1::after { background: #4A9CC9; }
+.viz-stage-btn.s2::after { background: #C9402A; }
+.viz-stage-btn.s3::after { background: #2E9B6F; }
+
+.viz-stage-btn:hover, .viz-stage-btn.active {
+color: rgba(255,255,255,0.9);
+border-color: rgba(255,255,255,0.3);
+background: rgba(255,255,255,0.04);
+}
+
+.viz-stage-btn.active::after { transform: scaleX(1); }
+
+.viz-main {
+display: grid;
+grid-template-columns: 1fr 340px;
+gap: 0;
+width: 100%;
+padding: 0 0 60px;
+overflow: hidden;
+}
+
+.viz-canvas-wrap {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px 16px 20px 24px;
+min-width: 0;
+}
+
+#cs-canvas {
+width: 100%;
+max-width: 680px;
+height: auto;
+}
+
+.viz-sidebar {
+border-left: 1px solid rgba(255,255,255,0.07);
+padding: 32px 24px 32px 28px;
+display: flex;
+flex-direction: column;
+min-width: 0;
+overflow: hidden;
+}
+
+.viz-stage-info { display: none; animation: fadeIn 0.4s ease; }
+.viz-stage-info.active { display: block; }
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(8px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.viz-stage-tag {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 3px;
+text-transform: uppercase;
+margin-bottom: 16px;
+padding: 6px 12px;
+display: inline-block;
+}
+
+.s1 .viz-stage-tag { color: #4A9CC9; border: 1px solid rgba(74,156,201,0.3); }
+.s2 .viz-stage-tag { color: #E06040; border: 1px solid rgba(224,96,64,0.3); }
+.s3 .viz-stage-tag { color: #2E9B6F; border: 1px solid rgba(46,155,111,0.3); }
+
+.viz-stage-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 72px;
+font-weight: 300;
+line-height: 1;
+margin-bottom: 4px;
+}
+
+.s1 .viz-stage-num { color: rgba(74,156,201,0.2); }
+.s2 .viz-stage-num { color: rgba(224,96,64,0.2); }
+.s3 .viz-stage-num { color: rgba(46,155,111,0.2); }
+
+.viz-stage-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 32px;
+font-weight: 700;
+line-height: 1.2;
+margin-bottom: 20px;
+color: #F0EDE8;
+}
+
+.viz-stage-body {
+font-size: 17px;
+font-weight: 300;
+line-height: 1.75;
+color: rgba(240,237,232,0.65);
+margin-bottom: 20px;
+}
+
+.viz-stage-items {
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-top: 8px;
+}
+
+.viz-stage-item {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+padding: 14px 16px;
+background: rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.06);
+transition: background 0.2s, border-color 0.2s;
+}
+
+.viz-stage-item.highlight.s1-h { background: rgba(74,156,201,0.08); border-color: rgba(74,156,201,0.25); }
+.viz-stage-item.highlight.s2-h { background: rgba(224,96,64,0.08); border-color: rgba(224,96,64,0.25); }
+.viz-stage-item.highlight.s3-h { background: rgba(46,155,111,0.08); border-color: rgba(46,155,111,0.25); }
+
+.viz-item-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+.viz-item-name {
+font-family: ‘Syne’, sans-serif;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.5px;
+margin-bottom: 4px;
+}
+
+.s1 .viz-item-name { color: #4A9CC9; }
+.s2 .viz-item-name { color: #E06040; }
+.s3 .viz-item-name { color: #2E9B6F; }
+
+.viz-item-desc {
+font-size: 13px;
+line-height: 1.55;
+color: rgba(240,237,232,0.5);
+}
+
+.viz-progress-row {
+display: flex;
+gap: 6px;
+justify-content: center;
+margin-bottom: 24px;
+}
+
+.viz-prog-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+background: rgba(255,255,255,0.15);
+cursor: pointer;
+transition: all 0.2s;
+}
+
+.viz-prog-dot.active { background: #C9A227; transform: scale(1.4); }
+
 /* ─── ANIMATIONS ─────────────────────────────────────────────────── */
 @keyframes fadeUp {
 from { opacity: 0; transform: translateY(20px); }
@@ -811,16 +1133,12 @@ to   { opacity: 1; transform: translateY(0); }
 50%       { transform: scale(1.5); opacity: 1; }
 }
 
-/* scroll reveal */
 .reveal {
 opacity: 0;
 transform: translateY(24px);
 transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.visible {
-opacity: 1;
-transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
@@ -828,12 +1146,13 @@ transform: translateY(0);
 /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
 @media (max-width: 840px) {
 .path-selector { grid-template-columns: 1fr; }
-.why-inner { grid-template-columns: 1fr; }
-.why-visual { display: none; }
 .section { padding: 64px 28px; }
 .path-header { padding: 60px 28px; }
-.boundary-grid, .compass-grid, .scale-2col, .ampel-row, .format-cards { grid-template-columns: 1fr; }
-.hero-nav, .big-quote { padding: 28px; }
+.boundary-grid, .compass-grid, .scale-2col, .ampel-row, .format-cards, .ownership-grid { grid-template-columns: 1fr; }
+.hero-nav { padding: 24px 28px; }
+.hero-nav-right { gap: 12px; }
+.hero-author { display: none; }
+.quote-banner { padding: 40px 28px; }
 .footer-inner { flex-direction: column; gap: 24px; }
 .footer-right { text-align: left; }
 .viz-main { grid-template-columns: 1fr; }
@@ -843,36 +1162,78 @@ transform: translateY(0);
 </style>
 
 </head>
-<body>
 
-<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<!-- Default: English. JS will set class on body -->
+
+<body class="lang-en">
+
+<!-- ═══════════════════════ HERO ═══════════════════════════════════ -->
 
 <div class="hero">
   <div class="hero-bg"></div>
 
   <nav class="hero-nav">
     <div class="hero-logo">Capability <span>Spaces</span></div>
-    <div class="hero-author">Ein Modell von Christian Meyer</div>
+    <div class="hero-nav-right">
+      <div class="hero-author" lang-content="en">A model by Christian Meyer</div>
+      <div class="hero-author" lang-content="de">Ein Modell von Christian Meyer</div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="setLang('de')" id="btn-de">DE</button>
+      </div>
+    </div>
   </nav>
 
   <div class="hero-content">
-    <div class="hero-eyebrow">Ein Diagnosemodell für Teams</div>
-    <h1 class="hero-title">
-      Capability
-      <strong>Spaces</strong>
-    </h1>
-    <p class="hero-subtitle">Warum Teams scheitern – und was wirklich dahinter steckt.</p>
+    <!-- eyebrow -->
+    <div class="hero-eyebrow">
+      <span lang-content="en">A Diagnostic Model for Teams</span>
+      <span lang-content="de">Ein Diagnosemodell für Teams</span>
+    </div>
 
 ```
-<div class="path-selector">
-  <a class="path-card a" href="#path-a">
-    <span class="path-tag">Für Einsteiger</span>
+<h1 class="hero-title">
+  Capability
+  <strong>Spaces</strong>
+</h1>
+
+<p class="hero-subtitle">
+  <span lang-content="en">Why teams fail – and what's really behind it.</span>
+  <span lang-content="de">Warum Teams scheitern – und was wirklich dahinter steckt.</span>
+</p>
+
+<!-- Mini-Story -->
+<div class="hero-story">
+  <p lang-content="en">A product team works hard for three months – talented people, clear processes. Results stay flat. The diagnosis: poor performance. The real cause: <strong>the organisation prevented the team from working on the right problems.</strong> Capability Spaces makes that difference visible.</p>
+  <p lang-content="de">Ein Produktteam arbeitet drei Monate hart – erfahrene Leute, klare Prozesse, trotzdem bleibt die Wirkung aus. Die Diagnose lautet: schlechte Performance. Die wahre Ursache: <strong>Die Organisation hat verhindert, dass das Team an den richtigen Problemen arbeiten konnte.</strong> Capability Spaces macht diesen Unterschied sichtbar.</p>
+</div>
+
+<!-- Path cards – EN -->
+<div class="path-selector flex-lang-en">
+  <a class="path-card a" href="#path-a-en">
+    <span class="path-tag">For Newcomers</span>
+    <div class="path-question">My team is good – but something keeps slowing us down.</div>
+    <div class="path-desc">You don't know Scrum or OKR – but you sense something in your organisation isn't right.</div>
+    <span class="path-arrow">→</span>
+  </a>
+  <a class="path-card b" href="#path-b-en">
+    <span class="path-tag">For Agilists</span>
+    <div class="path-question">We work agile – so why aren't we moving forward?</div>
+    <div class="path-desc">You know OKR, Scrum, SAFe. You know frameworks alone aren't enough. You're looking for the missing piece.</div>
+    <span class="path-arrow">→</span>
+  </a>
+</div>
+
+<!-- Path cards – DE -->
+<div class="path-selector flex-lang-de">
+  <a class="path-card a" href="#path-a-de">
+    <span class="path-tag">Für Einsteiger*innen</span>
     <div class="path-question">Mein Team ist gut – aber irgendetwas bremst uns.</div>
     <div class="path-desc">Sie kennen Frameworks wie Scrum oder OKR nicht – aber merken, dass etwas in Ihrer Organisation nicht stimmt.</div>
     <span class="path-arrow">→</span>
   </a>
-  <a class="path-card b" href="#path-b">
-    <span class="path-tag">Für Agilisten</span>
+  <a class="path-card b" href="#path-b-de">
+    <span class="path-tag">Für Agilist*innen</span>
     <div class="path-question">Wir arbeiten agil – warum kommen wir trotzdem nicht weiter?</div>
     <div class="path-desc">Sie kennen OKR, Scrum, SAFe. Sie wissen, dass Frameworks allein nicht reichen. Sie suchen das fehlende Stück.</div>
     <span class="path-arrow">→</span>
@@ -885,300 +1246,74 @@ transform: translateY(0);
   <div class="hero-bottom">
     <div class="scroll-hint">
       <div class="scroll-line"></div>
-      Scrollen zum Einstieg
+      <span lang-content="en">Scroll to explore</span>
+      <span lang-content="de">Scrollen zum Einstieg</span>
       <div class="scroll-line"></div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ WHY ════════════════════════════════ -->
+<!-- ═══════════════════════ QUOTE BANNER ══════════════════════════ -->
 
-<div class="why-section">
-  <div style="max-width:1100px;margin:0 auto;padding:80px 64px 48px;">
-    <div class="reveal">
-      <span class="section-label">Die Grundfrage</span>
-      <h2 class="section-title">Teams scheitern fast <em>nie</em> an sich selbst.</h2>
-      <p class="lead">Wenn ein Team seine Ziele nicht erreicht, ist die häufigste Diagnose: das Team hat es falsch gemacht. Die eigentliche Ursache liegt fast immer woanders.</p>
-      <p class="body">Capability Spaces macht sichtbar, wo – und gibt Teams und Führungskräften eine gemeinsame Sprache dafür.</p>
+<div class="quote-banner reveal">
+  <div class="quote-banner-inner">
+    <div class="qb-mark">"</div>
+    <div class="qb-text">
+      <span lang-content="en">A team that consistently shows Yellow or Red is not a weak team. It is an organisation that hasn't yet learned to diagnose its own structures.</span>
+      <span lang-content="de">Ein Team, das dauerhaft Gelb oder Rot zeigt, ist kein schwaches Team. Es ist eine Organisation, die noch nicht gelernt hat, ihre eigenen Strukturen zu diagnostizieren.</span>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ MODEL VISUAL ═══════════════════════ -->
+<!-- ═══════════════════════ WHY ════════════════════════════════════ -->
 
-<div style="background:#0C1A2E; padding:0; overflow:hidden;">
-  <div style="max-width:1100px;margin:0 auto;padding:48px 64px 24px;">
-    <div class="reveal" style="margin-bottom:32px;">
-      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A227;">Das Modell</span>
-      <h2 style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-0.5px;">Drei Ebenen – eine Metapher.</h2>
+<div class="why-section">
+  <div style="max-width:1100px;margin:0 auto;padding:80px 64px 48px;">
+    <div class="reveal">
+      <span class="section-label">
+        <span lang-content="en">The Core Question</span>
+        <span lang-content="de">Die Grundfrage</span>
+      </span>
+      <h2 class="section-title">
+        <span lang-content="en">Teams almost <em>never</em> fail because of themselves.</span>
+        <span lang-content="de">Teams scheitern fast <em>nie</em> an sich selbst.</span>
+      </h2>
+      <p class="lead" lang-content="en">When a team doesn't reach its goals, the most common diagnosis is: the team did something wrong. The real cause is almost always elsewhere.</p>
+      <p class="lead" lang-content="de">Wenn ein Team seine Ziele nicht erreicht, ist die häufigste Diagnose: das Team hat es falsch gemacht. Die eigentliche Ursache liegt fast immer woanders.</p>
+      <p class="body" lang-content="en">Capability Spaces makes that visible – and gives teams and leaders a shared language for it.</p>
+      <p class="body" lang-content="de">Capability Spaces macht sichtbar, wo – und gibt Teams und Führungskräften eine gemeinsame Sprache dafür.</p>
     </div>
   </div>
-  <div style="width:100%;">
+</div>
 
-<style>
-/* ── MODEL VISUALIZATION ─────────────────── */
-#model-viz {
-  background: #0C1A2E;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  color: #F0EDE8;
-}
+<!-- ═══════════════════════ MODEL VISUAL ══════════════════════════ -->
 
-/* body/html resets removed - inherits from parent page */
+<div style="background:#0C1A2E;padding:0;overflow:hidden;">
+  <div style="max-width:1100px;margin:0 auto;padding:48px 64px 24px;">
+    <div class="reveal" style="margin-bottom:32px;">
+      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A227;">
+        <span lang-content="en">The Model</span>
+        <span lang-content="de">Das Modell</span>
+      </span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-0.5px;">
+        <span lang-content="en">Three layers – one metaphor.</span>
+        <span lang-content="de">Drei Ebenen – eine Metapher.</span>
+      </h2>
+      <p style="font-size:17px;font-weight:300;color:rgba(220,230,245,0.65);max-width:620px;line-height:1.7;margin-top:12px;font-style:italic;" lang-content="en">Imagine your team starts on an unknown world. At first it only knows its immediate surroundings – the small area where it can act safely. <strong style="color:rgba(255,255,255,0.8);font-style:normal;">The more problems it solves, the larger that area grows.</strong> Unless something keeps it artificially small.</p>
+      <p style="font-size:17px;font-weight:300;color:rgba(220,230,245,0.65);max-width:620px;line-height:1.7;margin-top:12px;font-style:italic;" lang-content="de">Stell dir vor, dein Team startet auf einer unbekannten Welt. Es kennt zunächst nur seine direkte Umgebung – den kleinen Bereich, in dem es sicher handeln kann. <strong style="color:rgba(255,255,255,0.8);font-style:normal;">Je mehr Probleme es löst, desto größer wird dieser Bereich.</strong> Außer: etwas hält ihn künstlich klein.</p>
+    </div>
+  </div>
 
-/* ── HEADER ─────────────────────────────── */
-.viz-page-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
+  <div id="model-viz">
+    <header class="viz-page-header">
+      <div class="viz-logo">Capability <span>Spaces</span></div>
+      <div class="viz-header-sub">
+        <span lang-content="en">The Model visualised · Christian Meyer</span>
+        <span lang-content="de">Das Modell visualisiert · Christian Meyer</span>
+      </div>
+    </header>
 
-.logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
-}
-.logo span { color: #C9A227; }
-
-.viz-header-sub {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.3);
-}
-
-/* ── STAGE SELECTOR ─────────────────────── */
-.viz-stage-nav {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 28px 24px 20px;
-}
-
-.viz-stage-btn {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: transparent;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  transition: all 0.25s;
-  position: relative;
-}
-
-.viz-stage-btn::after {
-  content: '';
-  position: absolute;
-  bottom: -1px; left: 0; right: 0;
-  height: 2px;
-  transform: scaleX(0);
-  transition: transform 0.25s;
-}
-
-.viz-stage-btn.s1::after { background: #4A9CC9; }
-.viz-stage-btn.s2::after { background: #C9402A; }
-.viz-stage-btn.s3::after { background: #2E9B6F; }
-
-.viz-stage-btn:hover, .viz-stage-btn.active {
-  color: rgba(255,255,255,0.9);
-  border-color: rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.04);
-}
-
-.viz-stage-btn.active::after { transform: scaleX(1); }
-
-/* ── MAIN LAYOUT ────────────────────────── */
-.viz-main {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 0;
-  width: 100%;
-  max-width: 100%;
-  padding: 0 0 60px;
-  overflow: hidden;
-}
-
-/* ── CANVAS AREA ────────────────────────── */
-.viz-canvas-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 16px 20px 24px;
-  min-width: 0;
-}
-
-#cs-canvas {
-  width: 100%;
-  max-width: 680px;
-  height: auto;
-}
-
-/* ── SIDEBAR ────────────────────────────── */
-.viz-sidebar {
-  border-left: 1px solid rgba(255,255,255,0.07);
-  padding: 32px 24px 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.viz-stage-info {
-  display: none;
-  animation: fadeIn 0.4s ease;
-}
-.viz-stage-info.active { display: block; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.viz-stage-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  display: block;
-  padding: 6px 12px;
-  display: inline-block;
-}
-
-.s1 .viz-stage-tag { color: #4A9CC9; border: 1px solid rgba(74,156,201,0.3); }
-.s2 .viz-stage-tag { color: #E06040; border: 1px solid rgba(224,96,64,0.3); }
-.s3 .viz-stage-tag { color: #2E9B6F; border: 1px solid rgba(46,155,111,0.3); }
-
-.viz-stage-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 72px;
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.s1 .viz-stage-num { color: rgba(74,156,201,0.2); }
-.s2 .viz-stage-num { color: rgba(224,96,64,0.2); }
-.s3 .viz-stage-num { color: rgba(46,155,111,0.2); }
-
-.viz-stage-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: #F0EDE8;
-}
-
-.viz-stage-body {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.75;
-  color: rgba(240,237,232,0.65);
-  margin-bottom: 28px;
-}
-
-.viz-stage-items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.viz-stage-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.viz-stage-item:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.12);
-}
-
-.viz-stage-item.highlight {
-  background: rgba(74,156,201,0.08);
-  border-color: rgba(74,156,201,0.25);
-}
-
-.s2 .viz-stage-item.highlight {
-  background: rgba(224,96,64,0.08);
-  border-color: rgba(224,96,64,0.25);
-}
-
-.s3 .viz-stage-item.highlight {
-  background: rgba(46,155,111,0.08);
-  border-color: rgba(46,155,111,0.25);
-}
-
-.viz-item-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-
-.viz-item-text {}
-.viz-item-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-}
-
-.s1 .viz-item-name { color: #4A9CC9; }
-.s2 .viz-item-name { color: #E06040; }
-.s3 .viz-item-name { color: #2E9B6F; }
-
-.viz-item-desc {
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(240,237,232,0.5);
-}
-
-/* ── PROGRESS BAR ───────────────────────── */
-.viz-progress-row {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.viz-prog-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.viz-prog-dot.active { background: #C9A227; transform: scale(1.4); }
-
-/* ── SVG ANIMATION STYLES ───────────────── */
-.viz-map-fog { transition: opacity 1.2s ease; }
-.viz-map-revealed { transition: r 1.5s cubic-bezier(0.34,1.56,0.64,1); }
-.viz-boundary-ring { transition: opacity 0.6s; }
-.viz-compass-ray { transition: opacity 0.6s; }
-
-</style>
-
-<div id="model-viz">
-
-<header class="viz-page-header">
-  <div class="logo">Capability <span>Spaces</span></div>
-  <div class="viz-header-sub">Das Modell visualisiert · Christian Meyer</div>
-</header>
-
+```
 <div class="viz-progress-row" style="padding-top:24px;">
   <div class="viz-prog-dot active" onclick="setStage(1)"></div>
   <div class="viz-prog-dot" onclick="setStage(2)"></div>
@@ -1192,345 +1327,201 @@ transform: translateY(0);
 </div>
 
 <div class="viz-main">
-
-  <!-- CANVAS -->
-
   <div class="viz-canvas-wrap">
     <svg id="cs-canvas" viewBox="0 0 680 560" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Planet surface gradient -->
         <radialGradient id="planetGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#1E3A5C"/>
-          <stop offset="100%" stop-color="#0C1A2E"/>
+          <stop offset="0%" stop-color="#1E3A5C"/><stop offset="100%" stop-color="#0C1A2E"/>
         </radialGradient>
+        <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#C9A227" stop-opacity="0.3"/><stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#2E9B6F" stop-opacity="0.25"/><stop offset="100%" stop-color="#2E9B6F" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="gridPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <line x1="40" y1="0" x2="0" y2="0" stroke="rgba(74,156,201,0.08)" stroke-width="0.5"/>
+          <line x1="0" y1="0" x2="0" y2="40" stroke="rgba(74,156,201,0.08)" stroke-width="0.5"/>
+        </pattern>
+        <filter id="glowFilter">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
 
-```
-    <!-- Fog of war gradient -->
-    <radialGradient id="fogGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="transparent"/>
-      <stop offset="70%" stop-color="transparent"/>
-      <stop offset="100%" stop-color="#0C1A2E"/>
-    </radialGradient>
+      <ellipse cx="340" cy="360" rx="300" ry="90" fill="url(#planetGrad)" stroke="rgba(74,156,201,0.2)" stroke-width="1"/>
+      <ellipse cx="340" cy="360" rx="300" ry="90" fill="url(#gridPat)" opacity="0.5"/>
+      <ellipse cx="340" cy="360" rx="300" ry="90" fill="none" stroke="rgba(74,156,201,0.15)" stroke-width="2"/>
 
-    <!-- Map revealed area -->
-    <radialGradient id="mapGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1A3D5C" stop-opacity="1"/>
-      <stop offset="85%" stop-color="#1A3D5C" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#1A3D5C" stop-opacity="0"/>
-    </radialGradient>
+      <g opacity="0.6">
+        <line x1="40" y1="360" x2="40" y2="430" stroke="#C9A227" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="640" y1="360" x2="640" y2="430" stroke="#C9A227" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="32" y="445" fill="#C9A227" font-size="16" opacity="0.7">↓</text>
+        <text x="633" y="445" fill="#C9A227" font-size="16" opacity="0.7">↓</text>
+      </g>
 
-    <!-- Gold glow -->
-    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#C9A227" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#C9A227" stop-opacity="0"/>
-    </radialGradient>
+      <g id="fogLayer">
+        <ellipse id="fog-full" cx="340" cy="360" rx="298" ry="88" fill="#0C1A2E" opacity="0.85"/>
+      </g>
 
-    <!-- Blue glow -->
-    <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#4A9CC9" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#4A9CC9" stop-opacity="0"/>
-    </radialGradient>
+      <g id="mapLayer">
+        <circle id="map-s1" cx="340" cy="320" r="65" fill="rgba(26,61,92,0.9)" opacity="1"/>
+        <circle cx="340" cy="320" r="65" fill="url(#gridPat)" opacity="0.8"/>
+        <circle cx="340" cy="320" r="65" fill="none" stroke="rgba(74,156,201,0.4)" stroke-width="1.5"/>
+        <circle id="map-s2" cx="340" cy="310" r="130" fill="rgba(26,61,92,0.7)" opacity="0"/>
+        <circle id="map-s2-grid" cx="340" cy="310" r="130" fill="url(#gridPat)" opacity="0"/>
+        <circle id="map-s2-border" cx="340" cy="310" r="130" fill="none" stroke="rgba(74,156,201,0.3)" stroke-width="1" opacity="0"/>
+        <circle id="map-s3" cx="340" cy="295" r="210" fill="rgba(26,61,92,0.5)" opacity="0"/>
+        <circle id="map-s3-grid" cx="340" cy="295" r="210" fill="url(#gridPat)" opacity="0"/>
+        <circle id="map-s3-border" cx="340" cy="295" r="210" fill="none" stroke="rgba(74,156,201,0.2)" stroke-width="1" opacity="0"/>
+      </g>
 
-    <!-- Green glow -->
-    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#2E9B6F" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#2E9B6F" stop-opacity="0"/>
-    </radialGradient>
+      <g id="mapDetails" opacity="0.5">
+        <circle cx="310" cy="330" r="3" fill="rgba(74,156,201,0.6)"/>
+        <circle cx="365" cy="310" r="2" fill="rgba(74,156,201,0.4)"/>
+        <circle cx="330" cy="295" r="2.5" fill="rgba(74,156,201,0.5)"/>
+        <line x1="300" y1="320" x2="340" y2="340" stroke="rgba(74,156,201,0.2)" stroke-width="0.5"/>
+        <line x1="370" y1="315" x2="340" y2="340" stroke="rgba(74,156,201,0.2)" stroke-width="0.5"/>
+      </g>
 
-    <!-- Grid pattern -->
-    <pattern id="gridPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-      <line x1="40" y1="0" x2="0" y2="0" stroke="rgba(74,156,201,0.08)" stroke-width="0.5"/>
-      <line x1="0" y1="0" x2="0" y2="40" stroke="rgba(74,156,201,0.08)" stroke-width="0.5"/>
-    </pattern>
+      <g id="teamGroup" transform="translate(340, 330)">
+        <circle cx="0" cy="10" r="30" fill="url(#goldGlow)"/>
+        <circle cx="0" cy="0" r="10" fill="#C9A227" opacity="0.95"/>
+        <circle cx="0" cy="0" r="10" fill="none" stroke="rgba(201,162,39,0.4)" stroke-width="4">
+          <animate attributeName="r" values="10;18;10" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0;0.4" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <text x="0" y="28" fill="rgba(201,162,39,0.8)" font-family="'DM Mono'" font-size="8" letter-spacing="1.5" text-anchor="middle">TEAM</text>
+      </g>
 
-    <!-- Clip circles for map -->
-    <clipPath id="mapClip1"><circle cx="340" cy="280" r="80"/></clipPath>
-    <clipPath id="mapClip2"><circle cx="340" cy="280" r="160"/></clipPath>
-    <clipPath id="mapClip3"><circle cx="340" cy="280" r="230"/></clipPath>
+      <g id="boundaryGroup" opacity="0">
+        <circle cx="340" cy="310" r="95" fill="none" stroke="#E06040" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.6">
+          <animateTransform attributeName="transform" type="rotate" from="0 340 310" to="360 340 310" dur="40s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="340" cy="310" r="115" fill="none" stroke="#E06040" stroke-width="1" stroke-dasharray="4,8" opacity="0.4">
+          <animateTransform attributeName="transform" type="rotate" from="360 340 310" to="0 340 310" dur="60s" repeatCount="indefinite"/>
+        </circle>
+        <g opacity="0.85">
+          <path d="M340,310 L420,240 L450,270 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
+          <circle cx="435" cy="252" r="5" fill="#E06040"/>
+          <text x="460" y="248" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">ROLES</text>
+          <path d="M340,310 L240,235 L215,265 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
+          <circle cx="226" cy="248" r="5" fill="#E06040"/>
+          <text x="100" y="244" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">REQUIRE-</text>
+          <text x="100" y="256" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">MENTS</text>
+          <path d="M340,310 L360,175 L395,185 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
+          <circle cx="378" cy="178" r="5" fill="#E06040"/>
+          <text x="400" y="174" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">PROCESSES</text>
+          <path d="M340,310 L300,175 L265,188 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
+          <circle cx="280" cy="179" r="5" fill="#E06040"/>
+          <text x="155" y="174" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">RULES</text>
+          <path d="M 160,390 A 185,60 0 0 1 520,390" fill="none" stroke="#E06040" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+          <text x="300" y="418" fill="rgba(224,96,64,0.6)" font-family="'DM Mono'" font-size="8" letter-spacing="1.5" text-anchor="middle">NATURAL BOUNDARY: TIME</text>
+        </g>
+      </g>
 
-    <!-- Planet clip -->
-    <clipPath id="planetClip"><ellipse cx="340" cy="340" rx="310" ry="100"/></clipPath>
+      <g id="compassGroup" opacity="0">
+        <g>
+          <line x1="340" y1="295" x2="200" y2="130" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="200" cy="130" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="200" y="107" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">ASSUMPTION</text>
+          <text x="200" y="118" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">TESTING</text>
+          <text x="200" y="133" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">🔍</text>
+        </g>
+        <g>
+          <line x1="340" y1="295" x2="500" y2="120" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="500" cy="120" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="500" y="97" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">TRUST</text>
+          <text x="500" y="115" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">⭐</text>
+        </g>
+        <g>
+          <line x1="340" y1="295" x2="130" y2="210" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="130" cy="210" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="130" y="188" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">KNOWLEDGE</text>
+          <text x="130" y="213" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">📚</text>
+        </g>
+        <g>
+          <line x1="340" y1="295" x2="560" y2="215" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="560" cy="215" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="560" y="193" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">CONNECTION</text>
+          <text x="560" y="218" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">🔗</text>
+        </g>
+        <circle cx="340" cy="295" r="60" fill="url(#greenGlow)" opacity="0.8"/>
+      </g>
 
-    <filter id="softBlur">
-      <feGaussianBlur stdDeviation="3"/>
-    </filter>
-
-    <filter id="glowFilter">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
-  <!-- ── PLANET BASE ───────────────────────────── -->
-  <!-- Flat world surface -->
-  <ellipse cx="340" cy="360" rx="300" ry="90" fill="url(#planetGrad)" stroke="rgba(74,156,201,0.2)" stroke-width="1"/>
-
-  <!-- Grid on planet -->
-  <ellipse cx="340" cy="360" rx="300" ry="90" fill="url(#gridPat)" opacity="0.5"/>
-
-  <!-- Planet edge glow -->
-  <ellipse cx="340" cy="360" rx="300" ry="90" fill="none" stroke="rgba(74,156,201,0.15)" stroke-width="2"/>
-
-  <!-- Edge of world - danger lines -->
-  <g id="edgeWarning" opacity="0.6">
-    <line x1="40" y1="360" x2="40" y2="430" stroke="#C9A227" stroke-width="1" stroke-dasharray="4,4"/>
-    <line x1="640" y1="360" x2="640" y2="430" stroke="#C9A227" stroke-width="1" stroke-dasharray="4,4"/>
-    <!-- Arrows pointing down at edges -->
-    <text x="32" y="445" fill="#C9A227" font-size="16" opacity="0.7">↓</text>
-    <text x="633" y="445" fill="#C9A227" font-size="16" opacity="0.7">↓</text>
-  </g>
-
-  <!-- ── FOG OF WAR ─────────────────────────────── -->
-  <!-- Dark fog covering most of the planet surface -->
-  <g id="fogLayer">
-    <!-- Full fog -->
-    <ellipse id="fog-full" cx="340" cy="360" rx="298" ry="88" fill="#0C1A2E" opacity="0.85"/>
-  </g>
-
-  <!-- ── THE MAP ─────────────────────────────────── -->
-  <!-- Map revealed area - grows with stage -->
-  <g id="mapLayer">
-    <!-- Stage 1: small map -->
-    <circle id="map-s1" cx="340" cy="320" r="65" fill="rgba(26,61,92,0.9)" opacity="1"/>
-    <circle cx="340" cy="320" r="65" fill="url(#gridPat)" opacity="0.8"/>
-    <circle cx="340" cy="320" r="65" fill="none" stroke="rgba(74,156,201,0.4)" stroke-width="1.5"/>
-
-    <!-- Stage 2: medium map (hidden initially) -->
-    <circle id="map-s2" cx="340" cy="310" r="130" fill="rgba(26,61,92,0.7)" opacity="0"/>
-    <circle id="map-s2-grid" cx="340" cy="310" r="130" fill="url(#gridPat)" opacity="0"/>
-    <circle id="map-s2-border" cx="340" cy="310" r="130" fill="none" stroke="rgba(74,156,201,0.3)" stroke-width="1" opacity="0"/>
-
-    <!-- Stage 3: large map (hidden initially) -->
-    <circle id="map-s3" cx="340" cy="295" r="210" fill="rgba(26,61,92,0.5)" opacity="0"/>
-    <circle id="map-s3-grid" cx="340" cy="295" r="210" fill="url(#gridPat)" opacity="0"/>
-    <circle id="map-s3-border" cx="340" cy="295" r="210" fill="none" stroke="rgba(74,156,201,0.2)" stroke-width="1" opacity="0"/>
-  </g>
-
-  <!-- Map detail marks (only visible in map area) -->
-  <g id="mapDetails" opacity="0.5">
-    <circle cx="310" cy="330" r="3" fill="rgba(74,156,201,0.6)"/>
-    <circle cx="365" cy="310" r="2" fill="rgba(74,156,201,0.4)"/>
-    <circle cx="330" cy="295" r="2.5" fill="rgba(74,156,201,0.5)"/>
-    <line x1="300" y1="320" x2="340" y2="340" stroke="rgba(74,156,201,0.2)" stroke-width="0.5"/>
-    <line x1="370" y1="315" x2="340" y2="340" stroke="rgba(74,156,201,0.2)" stroke-width="0.5"/>
-  </g>
-
-  <!-- ── TEAM (the player) ───────────────────────── -->
-  <g id="teamGroup" transform="translate(340, 330)">
-    <!-- Glow underneath -->
-    <circle cx="0" cy="10" r="30" fill="url(#goldGlow)"/>
-    <!-- Team figure -->
-    <circle cx="0" cy="0" r="10" fill="#C9A227" opacity="0.95"/>
-    <circle cx="0" cy="0" r="10" fill="none" stroke="rgba(201,162,39,0.4)" stroke-width="4">
-      <animate attributeName="r" values="10;18;10" dur="2.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.4;0;0.4" dur="2.5s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Team label -->
-    <text x="0" y="28" fill="rgba(201,162,39,0.8)" font-family="'DM Mono'" font-size="8" letter-spacing="1.5" text-anchor="middle">TEAM</text>
-  </g>
-
-  <!-- ── BOUNDARY RINGS (stage 2) ───────────────── -->
-  <g id="boundaryGroup" opacity="0">
-    <!-- Boundary ring 1 - Rollen -->
-    <circle cx="340" cy="310" r="95" fill="none" stroke="#E06040" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.6">
-      <animateTransform attributeName="transform" type="rotate" from="0 340 310" to="360 340 310" dur="40s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Boundary ring 2 - Prozesse -->
-    <circle cx="340" cy="310" r="115" fill="none" stroke="#E06040" stroke-width="1" stroke-dasharray="4,8" opacity="0.4">
-      <animateTransform attributeName="transform" type="rotate" from="360 340 310" to="0 340 310" dur="60s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- Boundary blocks - solid wedges blocking map growth -->
-    <g opacity="0.85">
-      <!-- Rollen block -->
-      <path id="b-rollen" d="M340,310 L420,240 L450,270 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-      <circle cx="435" cy="252" r="5" fill="#E06040"/>
-      <text x="460" y="248" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">ROLLEN</text>
-
-      <!-- Requirements block -->
-      <path id="b-req" d="M340,310 L240,235 L215,265 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-      <circle cx="226" cy="248" r="5" fill="#E06040"/>
-      <text x="120" y="244" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">REQUIRE-</text>
-      <text x="120" y="256" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">MENTS</text>
-
-      <!-- Prozesse block -->
-      <path id="b-proc" d="M340,310 L360,175 L395,185 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-      <circle cx="378" cy="178" r="5" fill="#E06040"/>
-      <text x="400" y="174" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">PROZESSE</text>
-
-      <!-- Regeln block -->
-      <path id="b-rules" d="M340,310 L300,175 L265,188 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-      <circle cx="280" cy="179" r="5" fill="#E06040"/>
-      <text x="160" y="174" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">REGELN</text>
-
-      <!-- Time arc at bottom -->
-      <path d="M 160,390 A 185,60 0 0 1 520,390" fill="none" stroke="#E06040" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
-      <text x="300" y="418" fill="rgba(224,96,64,0.6)" font-family="'DM Mono'" font-size="8" letter-spacing="1.5" text-anchor="middle">NATÜRLICHE BOUNDARY: ZEIT</text>
-    </g>
-  </g>
-
-  <!-- ── BORDER RAYS (stage 3) ───────────────────── -->
-  <g id="compassGroup" opacity="0">
-    <!-- Assumption Testing ray -->
-    <g>
-      <line x1="340" y1="295" x2="200" y2="130" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-      <circle cx="200" cy="130" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-      <text x="200" y="107" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">ASSUMPTION</text>
-      <text x="200" y="118" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">TESTING</text>
-      <text x="200" y="133" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">🔍</text>
-    </g>
-
-    <!-- Trust ray -->
-    <g>
-      <line x1="340" y1="295" x2="500" y2="120" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-      <circle cx="500" cy="120" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-      <text x="500" y="97" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">TRUST</text>
-      <text x="500" y="115" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">⭐</text>
-    </g>
-
-    <!-- Knowledge ray -->
-    <g>
-      <line x1="340" y1="295" x2="130" y2="210" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-      <circle cx="130" cy="210" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-      <text x="130" y="188" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">KNOWLEDGE</text>
-      <text x="130" y="213" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">📚</text>
-    </g>
-
-    <!-- Connection ray -->
-    <g>
-      <line x1="340" y1="295" x2="560" y2="215" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-      <circle cx="560" cy="215" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-      <text x="560" y="193" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">CONNECTION</text>
-      <text x="560" y="218" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">🔗</text>
-    </g>
-
-    <!-- Glow on map center -->
-    <circle cx="340" cy="295" r="60" fill="url(#greenGlow)" opacity="0.8"/>
-  </g>
-
-  <!-- ── STAGE LABELS ────────────────────────────── -->
-  <!-- "The Map" label always shown -->
-  <g id="mapLabel">
-    <text x="340" y="268" fill="rgba(74,156,201,0.9)" font-family="'Cormorant Garamond'" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">THE MAP</text>
-    <text x="340" y="282" fill="rgba(74,156,201,0.5)" font-family="'DM Mono'" font-size="8" text-anchor="middle" letter-spacing="1.5">CAPABILITY SPACE</text>
-  </g>
-
-  <!-- Planet label -->
-  <text x="340" y="465" fill="rgba(74,156,201,0.3)" font-family="'DM Mono'" font-size="9" text-anchor="middle" letter-spacing="2">DER PLANET · FLACHE WELT</text>
-
-</svg>
-```
-
+      <g id="mapLabel">
+        <text x="340" y="268" fill="rgba(74,156,201,0.9)" font-family="'Cormorant Garamond'" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">THE MAP</text>
+        <text x="340" y="282" fill="rgba(74,156,201,0.5)" font-family="'DM Mono'" font-size="8" text-anchor="middle" letter-spacing="1.5">CAPABILITY SPACE</text>
+      </g>
+      <text x="340" y="465" fill="rgba(74,156,201,0.3)" font-family="'DM Mono'" font-size="9" text-anchor="middle" letter-spacing="2">THE TEAM'S ACTION SPACE</text>
+    </svg>
   </div>
-
-  <!-- SIDEBAR -->
 
   <div class="viz-sidebar">
+    <!-- Stage 1 -->
+    <div class="viz-stage-info s1 active">
+      <span class="viz-stage-tag">01 · Core Concept</span>
+      <div class="viz-stage-num">01</div>
+      <h2 class="viz-stage-title">The Map</h2>
+      <p class="viz-stage-body" lang-content="en">The team starts knowing only its immediate surroundings – its action space (Capability Space). The more problems it solves and the more impact it creates, the larger this space grows.</p>
+      <p class="viz-stage-body" lang-content="de">Das Team kennt zunächst nur seine direkte Umgebung – seinen Handlungsraum (Capability Space). Je mehr Probleme es löst und Wirkung erzeugt, desto größer wird dieser Raum.</p>
+      <div class="viz-stage-items">
+        <div class="viz-stage-item highlight s1-h">
+          <span class="viz-item-icon">🗺️</span>
+          <div>
+            <div class="viz-item-name">The Map = Capability Space</div>
+            <div class="viz-item-desc" lang-content="en">The area in which the team can independently identify and solve problems.</div>
+            <div class="viz-item-desc" lang-content="de">Der Bereich, in dem das Team eigenständig Probleme erkennen und lösen kann.</div>
+          </div>
+        </div>
+        <div class="viz-stage-item">
+          <span class="viz-item-icon">⚡</span>
+          <div>
+            <div class="viz-item-name" lang-content="en">Grows through outcomes</div>
+            <div class="viz-item-name" lang-content="de">Wächst durch Outcomes</div>
+            <div class="viz-item-desc" lang-content="en">Every solved problem, every achieved impact expands the action space.</div>
+            <div class="viz-item-desc" lang-content="de">Jedes gelöste Problem, jede erreichte Wirkung vergrößert den Handlungsraum.</div>
+          </div>
+        </div>
+        <div class="viz-stage-item">
+          <span class="viz-item-icon">⏳</span>
+          <div>
+            <div class="viz-item-name" lang-content="en">Time is a natural boundary</div>
+            <div class="viz-item-name" lang-content="de">Zeit ist natürliche Boundary</div>
+            <div class="viz-item-desc" lang-content="en">Growth takes time – that's normal. Unnatural boundaries are the problem.</div>
+            <div class="viz-item-desc" lang-content="de">Wachstum braucht Zeit – das ist normal. Unnatürliche Boundaries sind das Problem.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-```
-<!-- Stage 1: The Map -->
-<div class="viz-stage-info s1 active">
-  <span class="viz-stage-tag">01 · Grundkonzept</span>
-  <div class="viz-stage-num">01</div>
-  <h2 class="viz-stage-title">The Map</h2>
-  <p class="viz-stage-body">Wir spawnen auf einem flachen Planeten. Ohne Karte können wir vom Rand fallen. The Map zeigt uns, wo wir sicher handeln können – das ist unser Capability Space.</p>
-  <p class="viz-stage-body">Am Anfang ist die Karte winzig: so groß wie wir gucken können. Je mehr Probleme wir lösen und Outcomes erreichen, desto größer wird sie.</p>
-  <div class="viz-viz-stage-items">
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">🗺️</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">The Map = Capability Space</div>
-        <div class="viz-item-desc">Der Bereich, in dem das Team eigenständig Probleme erkennen und lösen kann.</div>
+    <!-- Stage 2 -->
+    <div class="viz-stage-info s2">
+      <span class="viz-stage-tag">02 · The Problem</span>
+      <div class="viz-stage-num">02</div>
+      <h2 class="viz-stage-title">The Boundaries</h2>
+      <p class="viz-stage-body" lang-content="en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. These are not team failures. They are diagnostic signals.</p>
+      <p class="viz-stage-body" lang-content="de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Das sind keine Teamfehler. Es sind Diagnosezeichen.</p>
+      <div class="viz-stage-items">
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">👥</span><div><div class="viz-item-name" lang-content="en">Roles</div><div class="viz-item-name" lang-content="de">Rollen</div><div class="viz-item-desc" lang-content="en">Responsibilities prevent people from working on the problems they're most suited to solve.</div><div class="viz-item-desc" lang-content="de">Zuständigkeiten hindern Menschen daran, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📋</span><div><div class="viz-item-name">Requirements</div><div class="viz-item-desc" lang-content="en">Tasks arrive as finished solutions, not as problems. No room to understand why.</div><div class="viz-item-desc" lang-content="de">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">⚙️</span><div><div class="viz-item-name" lang-content="en">Processes</div><div class="viz-item-name" lang-content="de">Prozesse</div><div class="viz-item-desc" lang-content="en">Workflows that prevent independent decisions or experiments.</div><div class="viz-item-desc" lang-content="de">Abläufe, die eigenständige Entscheidungen oder Experimente verhindern.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📏</span><div><div class="viz-item-name" lang-content="en">Rules</div><div class="viz-item-name" lang-content="de">Regeln</div><div class="viz-item-desc" lang-content="en">Implicit norms that constrain the space – without anyone having consciously decided so.</div><div class="viz-item-desc" lang-content="de">Implizite Spielregeln, die den Raum einschränken – ohne dass jemand das bewusst entschieden hat.</div></div></div>
       </div>
     </div>
-    <div class="viz-stage-item">
-      <span class="viz-item-icon">⚡</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Wächst durch Outcomes</div>
-        <div class="viz-item-desc">Jedes gelöste Problem, jede erreichte Wirkung vergrößert die Karte.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item">
-      <span class="viz-item-icon">⏳</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Zeit ist natürliche Boundary</div>
-        <div class="viz-item-desc">Wachstum braucht Zeit – das ist normal. Unnatürliche Boundaries sind das Problem.</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Stage 2: The Boundaries -->
-<div class="viz-stage-info s2">
-  <span class="viz-stage-tag">02 · Das Problem</span>
-  <div class="viz-stage-num">02</div>
-  <h2 class="viz-stage-title">The Boundaries</h2>
-  <p class="viz-stage-body">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum der Karte künstlich. Das sind keine Teamfehler. Es sind Diagnosezeichen.</p>
-  <div class="viz-viz-stage-items">
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">👥</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Rollen</div>
-        <div class="viz-item-desc">Zuständigkeiten, die Menschen daran hindern, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">📋</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Requirements</div>
-        <div class="viz-item-desc">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">⚙️</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Prozesse</div>
-        <div class="viz-item-desc">Abläufe, die eigenständige Entscheidungen oder Experimente verhindern.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">📏</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Regeln</div>
-        <div class="viz-item-desc">Implizite Spielregeln, die den Raum einschränken – ohne dass das jemand bewusst entschieden hat.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Stage 3: The Compass -->
-<div class="viz-stage-info s3">
-  <span class="viz-stage-tag">03 · Das Gegengewicht</span>
-  <div class="viz-stage-num">03</div>
-  <h2 class="viz-stage-title">The Compass</h2>
-  <p class="viz-stage-body">The Compass beschreibt, was die Karte aktiv wachsen lässt – trotz Boundaries. Vier Kräfte, die den Capability Space von außen stärken und dem Team Energie geben, weiterzumachen.</p>
-  <div class="viz-viz-stage-items">
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">🔍</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Assumption Testing</div>
-        <div class="viz-item-desc">Annahmen aktiv testen. Feedback zeigt, ob die Richtung stimmt – und korrigiert frühzeitig.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">⭐</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Trust</div>
-        <div class="viz-item-desc">Vertrauen von Führung und Stakeholdern stärkt den Handlungsspielraum von außen.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">📚</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Knowledge</div>
-        <div class="viz-item-desc">Wissen, das direkt dabei hilft, Probleme im eigenen Space besser zu lösen.</div>
-      </div>
-    </div>
-    <div class="viz-stage-item highlight">
-      <span class="viz-item-icon">🔗</span>
-      <div class="viz-item-text">
-        <div class="viz-item-name">Connection</div>
-        <div class="viz-item-desc">Gute Arbeit öffnet neue Türen. Stakeholder bringen neue Probleme, die in den Space passen.</div>
+    <!-- Stage 3 -->
+    <div class="viz-stage-info s3">
+      <span class="viz-stage-tag">03 · The Counterweight</span>
+      <div class="viz-stage-num">03</div>
+      <h2 class="viz-stage-title">The Compass</h2>
+      <p class="viz-stage-body" lang-content="en">The Compass describes four forces that actively strengthen the action space from the outside – giving the team the energy to keep going even when boundaries exist.</p>
+      <p class="viz-stage-body" lang-content="de">The Compass beschreibt vier Kräfte, die den Handlungsraum von außen aktiv stärken – und dem Team Energie geben, weiterzumachen, auch wenn Boundaries bestehen.</p>
+      <div class="viz-stage-items">
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔍</span><div><div class="viz-item-name">Assumption Testing</div><div class="viz-item-desc" lang-content="en">Test assumptions. Feedback shows whether direction is right – and corrects early.</div><div class="viz-item-desc" lang-content="de">Annahmen testen. Feedback zeigt, ob die Richtung stimmt – und korrigiert frühzeitig.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">⭐</span><div><div class="viz-item-name">Trust</div><div class="viz-item-desc" lang-content="en">Trust from leadership and stakeholders expands the action space from the outside.</div><div class="viz-item-desc" lang-content="de">Vertrauen von Führung und Stakeholdern stärkt den Handlungsspielraum von außen.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">📚</span><div><div class="viz-item-name">Knowledge</div><div class="viz-item-desc" lang-content="en">Knowledge that directly helps solve problems within the team's space more effectively.</div><div class="viz-item-desc" lang-content="de">Wissen, das direkt dabei hilft, Probleme im eigenen Space besser zu lösen.</div></div></div>
+        <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔗</span><div><div class="viz-item-name">Connection</div><div class="viz-item-desc" lang-content="en">Good work opens new doors. Stakeholders bring new problems that fit the space.</div><div class="viz-item-desc" lang-content="de">Gute Arbeit öffnet neue Türen. Stakeholder bringen neue Probleme, die in den Space passen.</div></div></div>
       </div>
     </div>
   </div>
@@ -1540,111 +1531,139 @@ transform: translateY(0);
   </div>
 </div>
 
-</div>
 <script>
-// Model visualization logic
-
-let current = 1;
-
+let currentStage = 1;
 function setStage(n) {
-current = n;
-
-// Update buttons
-document.querySelectorAll(’.viz-stage-btn’).forEach((b,i) => {
-b.classList.toggle(‘active’, i+1 === n);
-});
-
-// Update dots
-document.querySelectorAll(’.viz-prog-dot’).forEach((d,i) => {
-d.classList.toggle(‘active’, i+1 === n);
-});
-
-// Update sidebar
-document.querySelectorAll(’.viz-stage-info’).forEach((s,i) => {
-s.classList.toggle(‘active’, i+1 === n);
-});
-
-// Update SVG
-updateSVG(n);
+  currentStage = n;
+  document.querySelectorAll('.viz-stage-btn').forEach((b,i) => b.classList.toggle('active', i+1===n));
+  document.querySelectorAll('.viz-prog-dot').forEach((d,i) => d.classList.toggle('active', i+1===n));
+  document.querySelectorAll('.viz-stage-info').forEach((s,i) => s.classList.toggle('active', i+1===n));
+  const fog=document.getElementById('fog-full'), mapS2=document.getElementById('map-s2'), mapS2g=document.getElementById('map-s2-grid'), mapS2b=document.getElementById('map-s2-border'), mapS3=document.getElementById('map-s3'), mapS3g=document.getElementById('map-s3-grid'), mapS3b=document.getElementById('map-s3-border'), boundary=document.getElementById('boundaryGroup'), compassEl=document.getElementById('compassGroup');
+  if(n===1){fog.setAttribute('opacity','0.85');[mapS2,mapS2g,mapS2b,mapS3,mapS3g,mapS3b].forEach(e=>e.setAttribute('opacity','0'));boundary.style.cssText='transition:opacity 0.5s;opacity:0';compassEl.style.cssText='transition:opacity 0.5s;opacity:0';}
+  else if(n===2){fog.setAttribute('opacity','0.6');mapS2.setAttribute('opacity','0.85');mapS2g.setAttribute('opacity','0.7');mapS2b.setAttribute('opacity','1');[mapS3,mapS3g,mapS3b].forEach(e=>e.setAttribute('opacity','0'));boundary.style.cssText='transition:opacity 0.6s;opacity:1';compassEl.style.cssText='transition:opacity 0.3s;opacity:0';}
+  else{fog.setAttribute('opacity','0.25');mapS2.setAttribute('opacity','0.7');mapS2g.setAttribute('opacity','0.6');mapS2b.setAttribute('opacity','0.8');mapS3.setAttribute('opacity','0.5');mapS3g.setAttribute('opacity','0.5');mapS3b.setAttribute('opacity','0.8');boundary.style.cssText='transition:opacity 0.5s;opacity:0.25';compassEl.style.cssText='transition:opacity 0.6s 0.3s;opacity:1';}
 }
-
-function updateSVG(n) {
-const fog = document.getElementById(‘fog-full’);
-const mapS2 = document.getElementById(‘map-s2’);
-const mapS2g = document.getElementById(‘map-s2-grid’);
-const mapS2b = document.getElementById(‘map-s2-border’);
-const mapS3 = document.getElementById(‘map-s3’);
-const mapS3g = document.getElementById(‘map-s3-grid’);
-const mapS3b = document.getElementById(‘map-s3-border’);
-const boundary = document.getElementById(‘boundaryGroup’);
-const compassEl = document.getElementById(‘compassGroup’);
-
-if (n === 1) {
-// Small map, thick fog, no boundaries, no border
-fog.setAttribute(‘opacity’, ‘0.85’);
-[mapS2, mapS2g, mapS2b].forEach(e => e.setAttribute(‘opacity’, ‘0’));
-[mapS3, mapS3g, mapS3b].forEach(e => e.setAttribute(‘opacity’, ‘0’));
-boundary.style.transition = ‘opacity 0.5s’;
-boundary.style.opacity = ‘0’;
-compassEl.style.transition = ‘opacity 0.5s’;
-compassEl.style.opacity = ‘0’;
-
-} else if (n === 2) {
-// Medium map, boundaries visible, no border
-fog.setAttribute(‘opacity’, ‘0.6’);
-mapS2.setAttribute(‘opacity’, ‘0.85’);
-mapS2g.setAttribute(‘opacity’, ‘0.7’);
-mapS2b.setAttribute(‘opacity’, ‘1’);
-[mapS3, mapS3g, mapS3b].forEach(e => e.setAttribute(‘opacity’, ‘0’));
-boundary.style.transition = ‘opacity 0.6s’;
-boundary.style.opacity = ‘1’;
-compassEl.style.transition = ‘opacity 0.3s’;
-compassEl.style.opacity = ‘0’;
-
-} else if (n === 3) {
-// Large map, no boundary blocks (border pushes through), compass rays
-fog.setAttribute(‘opacity’, ‘0.25’);
-mapS2.setAttribute(‘opacity’, ‘0.7’);
-mapS2g.setAttribute(‘opacity’, ‘0.6’);
-mapS2b.setAttribute(‘opacity’, ‘0.8’);
-mapS3.setAttribute(‘opacity’, ‘0.5’);
-mapS3g.setAttribute(‘opacity’, ‘0.5’);
-mapS3b.setAttribute(‘opacity’, ‘0.8’);
-boundary.style.transition = ‘opacity 0.5s’;
-boundary.style.opacity = ‘0.25’; // faded, still there but weakened
-compassEl.style.transition = ‘opacity 0.6s 0.3s’;
-compassEl.style.opacity = ‘1’;
-}
-}
-
-// Animate SVG elements on load
-document.addEventListener(‘DOMContentLoaded’, () => {
-updateSVG(1);
-});
-
+document.addEventListener('DOMContentLoaded',()=>setStage(1));
 </script>
-
-  </div>
-</div>
 
 <div class="divider"></div>
 
-<!-- ═══════════════════════════════ PATH A ═════════════════════════════ -->
+<!-- ═══════════════════════ PATH A – EN ═══════════════════════════ -->
 
-<div id="path-a" class="path-header path-a">
+<div id="path-a-en" class="path-header path-a" lang-content="en">
   <div class="path-header-inner">
-    <div class="path-badge">Für Einsteiger</div>
+    <div class="path-badge">For Newcomers</div>
+    <h2>Frameworks can't solve problems they can't see.</h2>
+    <p>Many organisations introduce new ways of working – and then wonder why nothing changed. The reason is rarely the method.</p>
+  </div>
+</div>
+
+<div class="section" lang-content="en">
+  <div class="reveal">
+    <span class="section-label">What is a Capability Space?</span>
+    <h2 class="section-title">The space in which a team can actually work.</h2>
+    <p class="lead">Every team has an area in which it can independently identify and solve problems. That is its <strong>Capability Space</strong> – its action space.</p>
+    <p class="body">The larger this space, the more effective the team. It doesn't grow through more processes – it grows by removing what's in the way.</p>
+    <p class="body">A small Capability Space looks like this: the team sees a problem with the user – but isn't allowed to decide whether to solve it. It waits for a ticket from above. The problem stays unsolved. A large Capability Space looks like this: the team spots the problem, is allowed to prioritise it, and solves it.</p>
+  </div>
+
+  <div class="callout reveal reveal-d1">
+    <span class="cl-label">The key point</span>
+    <p>When a team doesn't reach its goals, Capability Spaces doesn't ask: "What did the team do wrong?" It asks: "What is preventing the team from doing the right things?"</p>
+  </div>
+
+  <div class="reveal reveal-d2">
+    <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin:48px 0 20px;">What holds teams back? The four Boundaries.</h3>
+    <p class="body">Capability Spaces identifies four typical obstacles – <strong>Boundaries</strong> – that prevent teams from working on the problems that truly matter:</p>
+  </div>
+
+  <div class="boundary-grid reveal reveal-d1">
+    <div class="b-card">
+      <span class="bc-name">Roles</span>
+      <p class="bc-body">People cannot work on the problems they have the right skills for – because their role doesn't permit it.</p>
+      <div class="bc-symptom">"That's not our area" – even though the team could solve it.</div>
+    </div>
+    <div class="b-card">
+      <span class="bc-name">Requirements</span>
+      <p class="bc-body">Tasks arrive as ready-made solutions, not as problems. The team isn't allowed to understand why – only to implement.</p>
+      <div class="bc-symptom">Ticket instead of problem. The team implements without knowing why.</div>
+    </div>
+    <div class="b-card">
+      <span class="bc-name">Processes</span>
+      <p class="bc-body">Existing workflows prevent teams from making independent decisions or running experiments – regardless of how sensible the goal is.</p>
+      <div class="bc-symptom">"For that we'd first need approval from…" – and then nothing happens.</div>
+    </div>
+    <div class="b-card">
+      <span class="bc-name">Rules</span>
+      <p class="bc-body">Implicit norms constrain the space without anyone having consciously decided so. They're just "how things are".</p>
+      <div class="bc-symptom">"We've always done it this way." Or: "That's Team X's job, not ours."</div>
+    </div>
+  </div>
+
+  <div class="callout reveal">
+    <span class="cl-label">Important</span>
+    <p>Boundaries are not excuses. They are diagnostic points. Name them and you can work on them. Ignore them and you keep turning the dial on a problem that isn't in the team at all.</p>
+  </div>
+</div>
+
+<div class="divider" lang-content="en"></div>
+
+<div class="section" lang-content="en">
+  <div class="reveal">
+    <span class="section-label">The Traffic Light System</span>
+    <h2 class="section-title">See every day how free a team really is.</h2>
+    <p class="lead">Capability Spaces comes with a simple tool: the traffic light system. It answers one single question: can the team currently work on its most important problems?</p>
+    <p class="body">The traffic light works in any format – a weekly team meeting, a retrospective, or a dedicated session where leaders participate and experience boundaries first-hand.</p>
+  </div>
+  <div class="ampel-row reveal reveal-d1">
+    <div class="amp-card green"><div class="amp-dot"></div><span class="amp-name">Green</span><p>The team is independently working on its most important problems. Maximum impact possible.</p></div>
+    <div class="amp-card amber"><div class="amp-dot"></div><span class="amp-name">Amber</span><p>The team is working on the most important problem, but also serving a boundary in parallel. Impact is reduced.</p></div>
+    <div class="amp-card red"><div class="amp-dot"></div><span class="amp-name">Red</span><p>Boundaries dominate. The team is mainly working on assigned tasks, not on problems it has identified itself.</p></div>
+  </div>
+  <div class="callout blue reveal reveal-d2">
+    <span class="cl-label">What happens next</span>
+    <p>Amber or Red doesn't trigger blame – it triggers diagnosis. Which boundary is it? Who can resolve it? Does it sit inside or outside the team? These questions lead to structural decisions, not to finger-pointing.</p>
+  </div>
+</div>
+
+<div class="divider" lang-content="en"></div>
+
+<div class="section" lang-content="en">
+  <div class="reveal">
+    <span class="section-label">The Compass</span>
+    <h2 class="section-title">Why the work still <em>makes sense.</em></h2>
+    <p class="lead">Boundaries describe what constrains a team. The Compass describes the opposite: moments when work has real impact and gives energy – despite all obstacles.</p>
+    <div class="compass-mechanic reveal">
+      <span class="cm-label">Why these four forces?</span>
+      <p>Boundaries can be pushed back from the outside – through trust given by leadership (Trust), through knowledge that expands the action space (Knowledge), through connections to new problems (Connection), and through testing assumptions that generate feedback (Assumption Testing). Each of these four forces enlarges the Capability Space – not by directly removing boundaries, but by demonstrating that the team is capable of carrying more.</p>
+    </div>
+    <p class="body reveal">This counterweight is essential. Without visible moments of success, teams gradually lose the willingness to name boundaries honestly at all. In the retrospective, four Compass categories are actively reflected on:</p>
+  </div>
+  <div class="compass-grid reveal reveal-d1">
+    <div class="compass-card"><span class="cpc-title">Assumption Testing</span><p>We actively tested assumptions about problems and solutions – and received real feedback that confirmed or corrected our direction.</p></div>
+    <div class="compass-card"><span class="cpc-title">Connection</span><p>Through our work we learned about new problems from stakeholders that we are able to solve. Good work opens new doors.</p></div>
+    <div class="compass-card"><span class="cpc-title">Knowledge</span><p>We built new knowledge that directly helps solve the problems in our area better. Learning with impact.</p></div>
+    <div class="compass-card"><span class="cpc-title">Trust</span><p>We received positive feedback from leaders or stakeholders. External trust strengthens the space to act.</p></div>
+  </div>
+</div>
+
+<!-- PATH A – DE -->
+
+<div id="path-a-de" class="path-header path-a" lang-content="de">
+  <div class="path-header-inner">
+    <div class="path-badge">Für Einsteiger*innen</div>
     <h2>Frameworks lösen keine Probleme, die sie nicht sehen können.</h2>
     <p>Viele Organisationen führen neue Arbeitsmethoden ein – und fragen sich danach, warum sich nichts verändert hat. Der Grund liegt selten in der Methode.</p>
   </div>
 </div>
 
-<div class="section">
+<div class="section" lang-content="de">
   <div class="reveal">
     <span class="section-label">Was ist ein Capability Space?</span>
     <h2 class="section-title">Der Raum, in dem ein Team wirklich arbeiten kann.</h2>
-    <p class="lead">Jedes Team hat einen Bereich, in dem es eigenständig Probleme erkennen und lösen kann. Das ist sein Capability Space.</p>
+    <p class="lead">Jedes Team hat einen Bereich, in dem es eigenständig Probleme erkennen und lösen kann. Das ist sein <strong>Capability Space</strong> – sein Handlungsraum.</p>
     <p class="body">Je größer dieser Raum, desto wirksamer ist das Team. Er wächst nicht durch mehr Prozesse – sondern dadurch, dass Hindernisse aus dem Weg geräumt werden.</p>
+    <p class="body">Ein kleiner Capability Space bedeutet zum Beispiel: Das Team sieht ein Problem bei der Nutzerin oder dem Nutzer – darf aber nicht eigenständig entscheiden, ob es dieses Problem löst. Es wartet auf ein Ticket von oben. Das Problem bleibt ungelöst. Ein großer Capability Space bedeutet: Das Team erkennt das Problem, darf es priorisieren, und löst es.</p>
   </div>
 
   <div class="callout reveal reveal-d1">
@@ -1654,13 +1673,13 @@ updateSVG(1);
 
   <div class="reveal reveal-d2">
     <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin:48px 0 20px;">Was hält Teams zurück? Die vier Boundaries.</h3>
-    <p class="body">Capability Spaces nennt vier typische Hindernisse – <strong>Boundaries</strong> – die Teams daran hindern, an den wirklich wichtigen Problemen zu arbeiten:</p>
+    <p class="body">Capability Spaces nennt vier typische Hindernisse – <strong>Boundaries</strong> (Grenzen des Handlungsraums) – die Teams daran hindern, an den wirklich wichtigen Problemen zu arbeiten:</p>
   </div>
 
   <div class="boundary-grid reveal reveal-d1">
     <div class="b-card">
       <span class="bc-name">Rollen</span>
-      <p class="bc-body">Menschen können nicht an den Problemen arbeiten, für die sie eigentlich die richtigen Fähigkeiten hätten – weil ihre Rolle es nicht erlaubt.</p>
+      <p class="bc-body">Teammitglieder können nicht an den Problemen arbeiten, für die sie eigentlich die richtigen Fähigkeiten hätten – weil ihre Rolle es nicht erlaubt.</p>
       <div class="bc-symptom">„Das ist nicht unser Thema" – obwohl das Team es lösen könnte.</div>
     </div>
     <div class="b-card">
@@ -1686,231 +1705,253 @@ updateSVG(1);
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="divider" lang-content="de"></div>
 
-<div class="section">
+<div class="section" lang-content="de">
   <div class="reveal">
     <span class="section-label">Das Ampel-System</span>
     <h2 class="section-title">Jeden Tag sehen, wie frei ein Team wirklich ist.</h2>
     <p class="lead">Aus Capability Spaces stammt ein einfaches Werkzeug: das Ampel-System. Es beantwortet eine einzige Frage: Kann das Team gerade an seinen wichtigsten Problemen arbeiten?</p>
     <p class="body">Das Ampel-System lässt sich in jedem Arbeitsformat nutzen – in einem wöchentlichen Team-Meeting, einer Retrospektive oder einem eigens dafür eingerichteten Format, bei dem Führungskräfte dabei sind und Boundaries direkt miterleben.</p>
   </div>
-
   <div class="ampel-row reveal reveal-d1">
-    <div class="amp-card green">
-      <div class="amp-dot"></div>
-      <span class="amp-name">Grün</span>
-      <p>Das Team arbeitet eigenständig an seinen wichtigsten Problemen. Maximale Wirkung möglich.</p>
-    </div>
-    <div class="amp-card amber">
-      <div class="amp-dot"></div>
-      <span class="amp-name">Gelb</span>
-      <p>Das Team arbeitet am wichtigsten Problem, muss aber parallel eine Boundary bedienen. Wirkung eingeschränkt.</p>
-    </div>
-    <div class="amp-card red">
-      <div class="amp-dot"></div>
-      <span class="amp-name">Rot</span>
-      <p>Boundaries dominieren. Das Team arbeitet hauptsächlich an vorgegebenen Aufgaben, nicht an eigenen Problemen.</p>
-    </div>
+    <div class="amp-card green"><div class="amp-dot"></div><span class="amp-name">Grün</span><p>Das Team arbeitet eigenständig an seinen wichtigsten Problemen. Maximale Wirkung möglich.</p></div>
+    <div class="amp-card amber"><div class="amp-dot"></div><span class="amp-name">Gelb</span><p>Das Team arbeitet am wichtigsten Problem, muss aber parallel eine Boundary bedienen. Wirkung eingeschränkt.</p></div>
+    <div class="amp-card red"><div class="amp-dot"></div><span class="amp-name">Rot</span><p>Boundaries dominieren. Das Team arbeitet hauptsächlich an vorgegebenen Aufgaben, nicht an eigenen Problemen.</p></div>
   </div>
-
   <div class="callout blue reveal reveal-d2">
     <span class="cl-label">Was dann passiert</span>
     <p>Gelb oder Rot löst keine Kritik aus – sondern eine Diagnose. Welche Boundary ist es? Wer kann sie lösen? Liegt sie im Team oder außerhalb? Diese Fragen führen zu strukturellen Entscheidungen, nicht zu Schuldzuweisungen.</p>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="divider" lang-content="de"></div>
 
-<div class="section">
+<div class="section" lang-content="de">
   <div class="reveal">
     <span class="section-label">The Compass</span>
     <h2 class="section-title">Warum die Arbeit trotzdem <em>Sinn ergibt.</em></h2>
     <p class="lead">Boundaries beschreiben, was ein Team einschränkt. The Compass beschreibt das Gegenteil: Momente, in denen die Arbeit wirkt und Energie gibt – trotz aller Hindernisse.</p>
-    <p class="body">Dieses Gegengewicht ist entscheidend. Ohne sichtbare Erfolgsmomente verlieren Teams über Zeit die Bereitschaft, Boundaries überhaupt noch ehrlich zu benennen. In der Retrospektive werden vier Compass-Kategorien aktiv reflektiert:</p>
+    <div class="compass-mechanic reveal">
+      <span class="cm-label">Warum diese vier Kräfte?</span>
+      <p>Boundaries können von außen aufgebrochen werden – durch Vertrauen, das Führungspersonen geben (Trust), durch Wissen, das den Handlungsraum erweitert (Knowledge), durch Verbindungen zu neuen Problemen (Connection) und durch das Testen von Annahmen, das Feedback erzeugt (Assumption Testing). Jede dieser vier Kräfte vergrößert den Capability Space – nicht weil sie Boundaries direkt entfernt, sondern weil sie zeigt, dass das Team in der Lage ist, mehr zu tragen.</p>
+    </div>
+    <p class="body reveal">Dieses Gegengewicht ist entscheidend. Ohne sichtbare Erfolgsmomente verlieren Teams über Zeit die Bereitschaft, Boundaries überhaupt noch ehrlich zu benennen. In der Retrospektive werden vier Compass-Kategorien aktiv reflektiert:</p>
   </div>
-
   <div class="compass-grid reveal reveal-d1">
-    <div class="compass-card">
-      <span class="cpc-title">Assumption Testing</span>
-      <p>Wir haben Annahmen über Probleme und Lösungen aktiv getestet – und echtes Feedback bekommen, das unsere Richtung bestätigt oder korrigiert hat.</p>
-    </div>
-    <div class="compass-card">
-      <span class="cpc-title">Connection</span>
-      <p>Durch unsere Arbeit haben wir neue Probleme von Stakeholdern erfahren, die wir lösen können. Gute Arbeit öffnet neue Türen.</p>
-    </div>
-    <div class="compass-card">
-      <span class="cpc-title">Knowledge</span>
-      <p>Wir haben neues Wissen aufgebaut, das direkt hilft, die Probleme in unserem Bereich besser zu lösen. Lernen mit Wirkung.</p>
-    </div>
-    <div class="compass-card">
-      <span class="cpc-title">Trust</span>
-      <p>Wir haben positives Feedback von Führungskräften oder Stakeholdern bekommen. Vertrauen von außen stärkt den Handlungsspielraum.</p>
-    </div>
+    <div class="compass-card"><span class="cpc-title">Assumption Testing · Annahmen testen</span><p>Wir haben Annahmen über Probleme und Lösungen aktiv getestet – und echtes Feedback bekommen, das unsere Richtung bestätigt oder korrigiert hat.</p></div>
+    <div class="compass-card"><span class="cpc-title">Connection · Verbindung</span><p>Durch unsere Arbeit haben wir neue Probleme von Stakeholdern erfahren, die wir lösen können. Gute Arbeit öffnet neue Türen.</p></div>
+    <div class="compass-card"><span class="cpc-title">Knowledge · Wissen</span><p>Wir haben neues Wissen aufgebaut, das direkt hilft, die Probleme in unserem Bereich besser zu lösen. Lernen mit Wirkung.</p></div>
+    <div class="compass-card"><span class="cpc-title">Trust · Vertrauen</span><p>Wir haben positives Feedback von Führungskräften oder Stakeholdern bekommen. Vertrauen von außen stärkt den Handlungsspielraum.</p></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ PATH B ═════════════════════════════ -->
+<!-- ═══════════════════════ PATH B – EN ═══════════════════════════ -->
 
-<div id="path-b" class="path-header path-b">
+<div id="path-b-en" class="path-header path-b" lang-content="en">
   <div class="path-header-inner">
-    <div class="path-badge">Für Agilisten</div>
+    <div class="path-badge">For Agilists</div>
+    <h2>Impediments are not the same as Boundaries.</h2>
+    <p>Understanding this difference is understanding why agile working in large organisations fails despite correct methodology.</p>
+  </div>
+</div>
+
+<div class="section" lang-content="en">
+  <div class="reveal">
+    <span class="section-label">Capability Spaces vs. Scrum</span>
+    <h2 class="section-title">The structural gap no framework fills.</h2>
+    <p class="lead">Scrum is a delivery framework. It assumes the team is already empowered – but doesn't ask whether the conditions actually allow for that.</p>
+    <p class="body">A Scrum Master who doesn't deeply understand agile product development won't recognise the difference between "the team is performing poorly" and "the organisation is preventing the team from doing the right things". Impediments describe disruptions in process. Boundaries describe why the team <em>cannot</em> work on the right problems at all.</p>
+  </div>
+  <table class="compare-table reveal reveal-d1">
+    <thead><tr><th>Aspect</th><th>Scrum / Impediment</th><th>Capability Spaces / Boundary</th></tr></thead>
+    <tbody>
+      <tr><td>Focus</td><td>Process improvement within the sprint</td><td>Team empowerment – can it solve the right problems?</td></tr>
+      <tr><td>Who sees obstacles?</td><td>Scrum Master and team; leadership receives reports</td><td>Leadership experiences boundaries live in a shared format</td></tr>
+      <tr><td>What is named?</td><td>What disrupts the process</td><td>What prevents work on the biggest opportunity</td></tr>
+      <tr><td>Response</td><td>Escalation by Scrum Master – requires methodological understanding</td><td>Leader as active boundary owner, anchored in the format</td></tr>
+      <tr><td>Energy &amp; motivation</td><td>Sprint Review shows delivery progress</td><td>The Compass shows why work makes sense despite boundaries</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="divider" lang-content="en"></div>
+
+<div class="section" lang-content="en">
+  <div class="reveal">
+    <span class="section-label">Leadership in the Model</span>
+    <h2 class="section-title">Hearing about Boundaries is not the same as <em>experiencing</em> them.</h2>
+    <p class="lead">The biggest structural problem in agile transformations: the decoupling between what teams experience daily and what leaders perceive.</p>
+    <p class="body">Retros and impediment lists end up as reports. They reach a leader as summarised information – not as a lived pattern. Capability Spaces works differently.</p>
+    <p class="body">The leader is not a recipient of reports. They sit in live – in a dedicated format that fits any existing frame: a weekly meeting in Scrum, a Kanban stand-up, an OKR Weekly. The key point is that leadership is there to diagnose – not to approve.</p>
+  </div>
+  <div class="reveal reveal-d1">
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin:0 0 16px;">What leadership concretely does as Boundary Owner:</h3>
+    <div class="ownership-grid">
+      <div class="ow-card"><span class="ow-q">Boundary: Roles</span><span class="ow-action">Clarify responsibility</span><p>Make a decision: is the team allowed to solve this problem? If yes, update the role description or explicitly authorise.</p></div>
+      <div class="ow-card"><span class="ow-q">Boundary: Processes</span><span class="ow-action">Grant authorisation</span><p>Temporarily suspend a process, approve an exception, or bring the team into the process change itself.</p></div>
+      <div class="ow-card"><span class="ow-q">Boundary: Requirements</span><span class="ow-action">Open the problem space</span><p>Replace the ticket with a problem statement. Clarify with the requesting side: what should change, for whom?</p></div>
+    </div>
+  </div>
+  <div class="callout reveal reveal-d2">
+    <span class="cl-label">The core condition</span>
+    <p>Capability Spaces works – but only if leadership is not just present, but actively takes responsibility for boundaries the team cannot resolve itself. This is not a weakness of the model. It is its core condition.</p>
+  </div>
+  <div class="format-cards reveal reveal-d3">
+    <div class="fmt-card"><span class="fmt-icon">🔁</span><span class="fmt-title">In Scrum</span><p>A dedicated weekly format with leaders. Teams name traffic-light status and active boundaries directly. Leadership experiences live what constrains teams.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Check in with traffic-light status (Green / Amber / Red)</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Name active boundaries and assign category</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Leadership: clarify ownership or make a decision</span></div></div></div>
+    <div class="fmt-card"><span class="fmt-icon">📋</span><span class="fmt-title">In Kanban</span><p>Boundaries as an explicit category on the board. Prioritised and assigned in the stand-up with leadership.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Add a Boundary column to the board</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Boundaries as cards with category and owner</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Review weekly, make progress visible</span></div></div></div>
+    <div class="fmt-card"><span class="fmt-icon">🎯</span><span class="fmt-title">In OKR</span><p>Traffic-light status before every Weekly. Side Topics name active boundaries – escalable, visible to leadership.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Record traffic-light status in writing before Weekly</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Side Topics = active boundaries (who, what, since when)</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Quarterly Review: analyse boundary patterns</span></div></div></div>
+  </div>
+</div>
+
+<div class="divider" lang-content="en"></div>
+
+<div class="section" lang-content="en">
+  <div class="reveal">
+    <span class="section-label">Scaling</span>
+    <h2 class="section-title">Cutting teams by topic creates dependencies. <em>That can be solved.</em></h2>
+    <p class="lead">Agile scaling frameworks like SAFe or LeSS treat the symptom: they coordinate the dependencies that arise because teams are cut by topic and feature.</p>
+    <p class="body">Capability Spaces offers a conceptual alternative: teams are not cut by topic, but by which problems they can independently identify and solve. Scaling then emerges through the natural growth of spaces – not through periodic org design from above.</p>
+    <div class="callout green reveal">
+      <span class="cl-label">Related thinking</span>
+      <p>For a deeper look at how to cut teams, <strong>Team Topologies</strong> (Skelton &amp; Pais) offers a complementary model: cutting teams by cognitive load and interaction mode rather than by feature. Capability Spaces and Team Topologies are compatible – Team Topologies describes the how of cutting, Capability Spaces describes why a cut needs to change in the first place.</p>
+    </div>
+  </div>
+  <div class="scale-2col reveal reveal-d1">
+    <div class="scale-card"><span class="sc-title">Classic scaling</span><p>Teams cut by topic. Dependencies unavoidable. Coordination through PI Planning, Scrum of Scrums. The framework treats the symptom.</p></div>
+    <div class="scale-card"><span class="sc-title">Capability Spaces scaling</span><p>Teams cut by problem-solving ability. Dependencies become visible as boundaries. Structure follows organic growth of spaces.</p></div>
+    <div class="scale-card"><span class="sc-title">Reorganisation</span><p>Periodic top-down decision. High effort, disconnected from what teams can actually do. Often outdated before implemented.</p></div>
+    <div class="scale-card"><span class="sc-title">Organic growth</span><p>Continuous diagnosis via boundaries. Structure adapts when spaces become too tight. No reorg project – ongoing self-correction.</p></div>
+  </div>
+  <div class="callout reveal reveal-d2">
+    <span class="cl-label">In short</span>
+    <p>Scaling is not a one-time org-design project. It is the result of teams continuously growing – in capability and in responsibility. Boundaries show where that growth process is currently stuck.</p>
+  </div>
+</div>
+
+<!-- PATH B – DE -->
+
+<div id="path-b-de" class="path-header path-b" lang-content="de">
+  <div class="path-header-inner">
+    <div class="path-badge">Für Agilist*innen</div>
     <h2>Impediments sind nicht dasselbe wie Boundaries.</h2>
     <p>Wer diesen Unterschied versteht, versteht, warum agiles Arbeiten in großen Organisationen trotz korrekter Methodik scheitert.</p>
   </div>
 </div>
 
-<div class="section">
+<div class="section" lang-content="de">
   <div class="reveal">
     <span class="section-label">Capability Spaces vs. Scrum</span>
     <h2 class="section-title">Die strukturelle Lücke, die kein Framework füllt.</h2>
     <p class="lead">Scrum ist ein Lieferframework. Es setzt voraus, dass das Team bereits empowered ist – fragt aber nicht, ob die Rahmenbedingungen das überhaupt erlauben.</p>
-    <p class="body">Ein Scrum Master, der agile Produktentwicklung nicht tief versteht, erkennt den Unterschied zwischen „Das Team arbeitet schlecht" und „Die Organisation verhindert, dass das Team die richtigen Dinge tun kann" nicht. Impediments beschreiben Störungen im Prozess. Boundaries beschreiben, warum das Team nicht an den richtigen Problemen arbeiten <em>kann</em>.</p>
+    <p class="body">Scrum Master*innen, die agile Produktentwicklung nicht tief verstehen, erkennen den Unterschied zwischen „Das Team arbeitet schlecht" und „Die Organisation verhindert, dass das Team die richtigen Dinge tun kann" nicht. Impediments beschreiben Störungen im Prozess. Boundaries beschreiben, warum das Team nicht an den richtigen Problemen arbeiten <em>kann</em>.</p>
   </div>
-
   <table class="compare-table reveal reveal-d1">
-    <thead>
-      <tr>
-        <th>Aspekt</th>
-        <th>Scrum / Impediment</th>
-        <th>Capability Spaces / Boundary</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Aspekt</th><th>Scrum / Impediment</th><th>Capability Spaces / Boundary</th></tr></thead>
     <tbody>
-      <tr>
-        <td>Fokus</td>
-        <td>Prozessverbesserung im Sprint</td>
-        <td>Empowerment des Teams – kann es die richtigen Probleme lösen?</td>
-      </tr>
-      <tr>
-        <td>Wer sieht Hindernisse?</td>
-        <td>Scrum Master und Team; Führung erhält Reports</td>
-        <td>Führung erlebt Boundaries live im gemeinsamen Format</td>
-      </tr>
-      <tr>
-        <td>Was wird benannt?</td>
-        <td>Was stört den Prozess</td>
-        <td>Was verhindert Arbeit an der größten Opportunity</td>
-      </tr>
-      <tr>
-        <td>Reaktion</td>
-        <td>Eskalation durch Scrum Master – setzt Methodenverständnis voraus</td>
-        <td>Führungskraft als aktive Boundary-Ownerin im Format verankert</td>
-      </tr>
-      <tr>
-        <td>Energie &amp; Motivation</td>
-        <td>Sprint Review zeigt Lieferfortschritt</td>
-        <td>The Compass zeigt, warum die Arbeit trotz Boundaries Sinn ergibt</td>
-      </tr>
+      <tr><td>Fokus</td><td>Prozessverbesserung im Sprint</td><td>Empowerment des Teams – kann es die richtigen Probleme lösen?</td></tr>
+      <tr><td>Wer sieht Hindernisse?</td><td>Scrum Master*in und Team; Führung erhält Reports</td><td>Führung erlebt Boundaries live im gemeinsamen Format</td></tr>
+      <tr><td>Was wird benannt?</td><td>Was stört den Prozess</td><td>Was verhindert Arbeit an der größten Opportunity</td></tr>
+      <tr><td>Reaktion</td><td>Eskalation durch Scrum Master*in – setzt Methodenverständnis voraus</td><td>Führungskraft als aktive Boundary-Owner*in im Format verankert</td></tr>
+      <tr><td>Energie &amp; Motivation</td><td>Sprint Review zeigt Lieferfortschritt</td><td>The Compass zeigt, warum die Arbeit trotz Boundaries Sinn ergibt</td></tr>
     </tbody>
   </table>
 </div>
 
-<div class="divider"></div>
+<div class="divider" lang-content="de"></div>
 
-<div class="section">
+<div class="section" lang-content="de">
   <div class="reveal">
     <span class="section-label">Führung im Modell</span>
     <h2 class="section-title">Boundaries hören ist nicht dasselbe wie sie <em>erleben.</em></h2>
     <p class="lead">Das größte strukturelle Problem agiler Transformationen: Die Entkopplung zwischen dem, was Teams täglich erleben, und dem, was Führungskräfte wahrnehmen.</p>
     <p class="body">Retros und Impediment-Listen enden als Reports. Sie landen bei einer Führungskraft als zusammengefasste Information – nicht als erlebtes Muster. Capability Spaces löst das anders.</p>
-    <p class="body">Die Führungskraft ist nicht Empfängerin von Berichten. Sie sitzt live dabei – in einem dedizierten Format, das in jeden bestehenden Rahmen passt: ein wöchentliches Meeting in Scrum, ein Kanban-Jour-Fixe, ein OKR Weekly. Der entscheidende Punkt ist, dass Führung dabei ist, um zu diagnostizieren – nicht um zu genehmigen.</p>
+    <p class="body">Führungskräfte sind nicht Empfänger*innen von Berichten. Sie sitzen live dabei – in einem dedizierten Format, das in jeden bestehenden Rahmen passt: ein wöchentliches Meeting in Scrum, ein Kanban-Jour-Fixe, ein OKR Weekly. Der entscheidende Punkt ist, dass Führung dabei ist, um zu diagnostizieren – nicht um zu genehmigen.</p>
   </div>
-
-  <div class="format-cards reveal reveal-d1">
-    <div class="fmt-card">
-      <span class="fmt-icon">🔁</span>
-      <span class="fmt-title">In Scrum</span>
-      <p>Ein eigenes wöchentliches Format zusätzlich zum Daily – mit Führungskräften. Teams benennen Boundaries direkt. Führung erlebt live, was Teams einschränkt.</p>
-    </div>
-    <div class="fmt-card">
-      <span class="fmt-icon">📋</span>
-      <span class="fmt-title">In Kanban</span>
-      <p>Boundaries werden als explizite Kategorie im Board sichtbar gemacht – und regelmäßig im Jour-Fixe mit Führung besprochen und priorisiert.</p>
-    </div>
-    <div class="fmt-card">
-      <span class="fmt-icon">🎯</span>
-      <span class="fmt-title">In OKR</span>
-      <p>Das Ampel-System wird vor jedem Weekly eingeschätzt. Side Topics benennen aktive Boundaries – eskalierbar und für Führung sichtbar.</p>
+  <div class="reveal reveal-d1">
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin:0 0 16px;">Was Führungskräfte konkret tun, wenn sie Boundary-Owner*in sind:</h3>
+    <div class="ownership-grid">
+      <div class="ow-card"><span class="ow-q">Boundary: Rollen</span><span class="ow-action">Zuständigkeit klären</span><p>Entscheidung treffen: Darf das Team dieses Problem lösen? Wenn ja, Rollenbeschreibung anpassen oder explizit freigeben.</p></div>
+      <div class="ow-card"><span class="ow-q">Boundary: Prozesse</span><span class="ow-action">Freigabe erteilen</span><p>Prozess kurzfristig suspendieren, Ausnahme genehmigen oder das Team in die Prozessveränderung einbinden.</p></div>
+      <div class="ow-card"><span class="ow-q">Boundary: Requirements</span><span class="ow-action">Problemraum öffnen</span><p>Ticket durch Problemformulierung ersetzen. Mit der anfragenden Person klären: Was soll sich für wen verändern?</p></div>
     </div>
   </div>
-
   <div class="callout reveal reveal-d2">
     <span class="cl-label">Die Kernbedingung</span>
-    <p>Capability Spaces funktioniert – aber nur, wenn Führung nicht nur dabei ist, sondern aktiv Verantwortung für Boundaries übernimmt, die das Team nicht selbst lösen kann. Das ist keine Schwäche des Modells. Es ist seine Kernbedingung.</p>
+    <p>Capability Spaces funktioniert – aber nur, wenn Führungskräfte nicht nur dabei sind, sondern aktiv Verantwortung für Boundaries übernehmen, die das Team nicht selbst lösen kann. Das ist keine Schwäche des Modells. Es ist seine Kernbedingung.</p>
+  </div>
+  <div class="format-cards reveal reveal-d3">
+    <div class="fmt-card"><span class="fmt-icon">🔁</span><span class="fmt-title">In Scrum</span><p>Eigenes wöchentliches Format mit Führungskräften. Teams benennen Ampelstatus und aktive Boundaries direkt. Führung erlebt live, was Teams einschränkt.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Ampelstatus einchecken (Grün / Gelb / Rot)</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Aktive Boundaries benennen und Kategorie zuordnen</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Führung: Ownership klären oder Entscheidung treffen</span></div></div></div>
+    <div class="fmt-card"><span class="fmt-icon">📋</span><span class="fmt-title">In Kanban</span><p>Boundaries als explizite Kategorie im Board sichtbar. Im Jour-Fixe mit Führung priorisiert und zugewiesen.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Boundary-Spalte im Board einführen</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Boundaries als Cards mit Kategorie und Owner*in</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Wöchentlich reviewen, Fortschritt sichtbar machen</span></div></div></div>
+    <div class="fmt-card"><span class="fmt-icon">🎯</span><span class="fmt-title">In OKR</span><p>Ampelstatus vor jedem Weekly. Side Topics benennen aktive Boundaries – eskalierbar, für Führung sichtbar.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Ampelstatus vor Weekly schriftlich eintragen</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Side Topics = aktive Boundaries (wer, was, seit wann)</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Quarterly Review: Boundary-Muster analysieren</span></div></div></div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="divider" lang-content="de"></div>
 
-<div class="section">
+<div class="section" lang-content="de">
   <div class="reveal">
     <span class="section-label">Skalierung</span>
     <h2 class="section-title">Teams nach Themen zu schneiden erzeugt Abhängigkeiten. <em>Das lässt sich lösen.</em></h2>
     <p class="lead">Agile Skalierungsframeworks wie SAFe oder LeSS behandeln das Symptom: Sie koordinieren die Abhängigkeiten, die entstehen, weil Teams nach Themen und Features geschnitten sind.</p>
     <p class="body">Capability Spaces bietet einen konzeptionellen Gegenentwurf: Teams werden nicht nach Themen geschnitten, sondern danach, welche Probleme sie eigenständig identifizieren und lösen können. Skalierung entsteht dann durch das natürliche Wachstum der Spaces – nicht durch periodisches Org-Design von oben.</p>
+    <div class="callout green reveal">
+      <span class="cl-label">Verwandtes Denken</span>
+      <p>Wer tiefer in die Frage des Team-Schnitts einsteigen möchte, findet in <strong>Team Topologies</strong> (Skelton &amp; Pais) ein ergänzendes Modell: Teams nach Kognitionsbelastung und Interaktionsmustern zu schneiden statt nach Features. Capability Spaces und Team Topologies sind kompatibel – Team Topologies beschreibt das Wie des Schnitts, Capability Spaces beschreibt, warum ein Schnitt überhaupt verändert werden muss.</p>
+    </div>
   </div>
-
   <div class="scale-2col reveal reveal-d1">
-    <div class="scale-card">
-      <span class="sc-title">Klassische Skalierung</span>
-      <p>Teams nach Themen geschnitten. Abhängigkeiten unvermeidlich. Koordination durch PI Planning, Scrum of Scrums. Das Framework behandelt das Symptom.</p>
-    </div>
-    <div class="scale-card">
-      <span class="sc-title">Capability Spaces Skalierung</span>
-      <p>Teams nach Problemlösungsfähigkeit geschnitten. Abhängigkeiten werden als Boundaries sichtbar. Struktur folgt organischem Wachstum der Spaces.</p>
-    </div>
-    <div class="scale-card">
-      <span class="sc-title">Reorganisation</span>
-      <p>Periodische Top-down-Entscheidung. Hoher Aufwand, losgelöst vom tatsächlichen Teamkönnen. Oft schon veraltet, bevor sie umgesetzt ist.</p>
-    </div>
-    <div class="scale-card">
-      <span class="sc-title">Organisches Wachstum</span>
-      <p>Kontinuierliche Diagnose über Boundaries. Struktur passt sich an, wenn Spaces zu eng werden. Kein Reorganisationsprojekt, sondern laufende Selbstkorrektur.</p>
-    </div>
+    <div class="scale-card"><span class="sc-title">Klassische Skalierung</span><p>Teams nach Themen geschnitten. Abhängigkeiten unvermeidlich. Koordination durch PI Planning, Scrum of Scrums. Das Framework behandelt das Symptom.</p></div>
+    <div class="scale-card"><span class="sc-title">Capability Spaces Skalierung</span><p>Teams nach Problemlösungsfähigkeit geschnitten. Abhängigkeiten werden als Boundaries sichtbar. Struktur folgt organischem Wachstum der Spaces.</p></div>
+    <div class="scale-card"><span class="sc-title">Reorganisation</span><p>Periodische Top-down-Entscheidung. Hoher Aufwand, losgelöst vom tatsächlichen Teamkönnen. Oft schon veraltet, bevor sie umgesetzt ist.</p></div>
+    <div class="scale-card"><span class="sc-title">Organisches Wachstum</span><p>Kontinuierliche Diagnose über Boundaries. Struktur passt sich an, wenn Spaces zu eng werden. Kein Reorganisationsprojekt, sondern laufende Selbstkorrektur.</p></div>
   </div>
-
   <div class="callout reveal reveal-d2">
     <span class="cl-label">Kurz gesagt</span>
     <p>Skalierung ist kein einmaliges Org-Design-Projekt. Es ist das Ergebnis davon, dass Teams kontinuierlich wachsen – in Fähigkeiten und in Verantwortung. Boundaries zeigen, wo dieser Wachstumsprozess gerade hängt.</p>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ QUOTE ══════════════════════════════ -->
-
-<div style="background:var(--white)">
-  <div class="big-quote reveal">
-    <div class="bq-mark">"</div>
-    <div class="bq-text">Ein Team, das dauerhaft Gelb oder Rot zeigt, ist kein schwaches Team. Es ist eine Organisation, die noch nicht gelernt hat, ihre eigenen Strukturen zu diagnostizieren.</div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════ FOOTER ═════════════════════════════ -->
+<!-- ═══════════════════════ FOOTER ═══════════════════════════════ -->
 
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
       <div class="fl-name">Capability <span>Spaces</span></div>
-      <div class="fl-sub">Ein Diagnosemodell für Teams &amp; Organisationen</div>
+      <div class="fl-sub">
+        <span lang-content="en">A Diagnostic Model for Teams &amp; Organisations</span>
+        <span lang-content="de">Ein Diagnosemodell für Teams &amp; Organisationen</span>
+      </div>
     </div>
     <div class="footer-right">
-      Ein Modell von <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>
-      Praxisleitfaden für Teams
+      <span lang-content="en">A model by <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>Practical guide for teams</span>
+      <span lang-content="de">Ein Modell von <strong style="color:rgba(255,255,255,0.7)">Christian Meyer</strong><br>Praxisleitfaden für Teams</span>
     </div>
   </div>
 </footer>
 
 <script>
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
-  });
+// ── Language switcher ────────────────────────────────────────────
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.documentElement.lang = lang;
+  // Re-run reveal observer after DOM changes
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.9) el.classList.add('visible');
+    });
+  }, 50);
+}
+
+// ── Scroll reveal ────────────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 
 </body>
