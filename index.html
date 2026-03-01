@@ -1921,52 +1921,39 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <script>
 // ── Language system ───────────────────────────────────────────────
-// Directly sets element.style.display on every language element.
-// No CSS attribute selectors. Works on all browsers including iOS Safari.
-
 function applyLang(lang) {
-  // EN elements
-  var enBlock  = document.querySelectorAll('.lc-en');
-  var enInline = document.querySelectorAll('span.lc-en, a.lc-en');
-  var enFlex   = document.querySelectorAll('.lc-flex-en');
-  var enGrid   = document.querySelectorAll('.lc-grid-en');
-  // DE elements
-  var deBlock  = document.querySelectorAll('.lc-de');
-  var deInline = document.querySelectorAll('span.lc-de, a.lc-de');
-  var deFlex   = document.querySelectorAll('.lc-flex-de');
-  var deGrid   = document.querySelectorAll('.lc-grid-de');
+  var isEN = (lang === 'en');
 
-  if (lang === 'en') {
-    enBlock.forEach(function(el)  { el.style.display = ''; });
-    enInline.forEach(function(el) { el.style.display = 'inline'; });
-    enFlex.forEach(function(el)   { el.style.display = 'flex'; });
-    enGrid.forEach(function(el)   { el.style.display = 'grid'; });
-    deBlock.forEach(function(el)  { el.style.display = 'none'; });
-    deInline.forEach(function(el) { el.style.display = 'none'; });
-    deFlex.forEach(function(el)   { el.style.display = 'none'; });
-    deGrid.forEach(function(el)   { el.style.display = 'none'; });
-  } else {
-    deBlock.forEach(function(el)  { el.style.display = ''; });
-    deInline.forEach(function(el) { el.style.display = 'inline'; });
-    deFlex.forEach(function(el)   { el.style.display = 'flex'; });
-    deGrid.forEach(function(el)   { el.style.display = 'grid'; });
-    enBlock.forEach(function(el)  { el.style.display = 'none'; });
-    enInline.forEach(function(el) { el.style.display = 'none'; });
-    enFlex.forEach(function(el)   { el.style.display = 'none'; });
-    enGrid.forEach(function(el)   { el.style.display = 'none'; });
+  function showEl(el) {
+    var tag = el.tagName.toLowerCase();
+    if (tag === 'span' || tag === 'a' || tag === 'strong' || tag === 'em' || tag === 'button') {
+      el.style.display = 'inline';
+    } else if (el.classList.contains('lc-flex-en') || el.classList.contains('lc-flex-de')) {
+      el.style.display = 'flex';
+    } else if (el.classList.contains('lc-grid-en') || el.classList.contains('lc-grid-de')) {
+      el.style.display = 'grid';
+    } else {
+      el.style.display = 'block';
+    }
   }
+  function hideEl(el) { el.style.display = 'none'; }
 
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.querySelectorAll('.lc-en').forEach(function(el) { isEN ? showEl(el) : hideEl(el); });
+  document.querySelectorAll('.lc-de').forEach(function(el) { isEN ? hideEl(el) : showEl(el); });
+  document.querySelectorAll('.lc-flex-en').forEach(function(el) { el.style.display = isEN ? 'flex' : 'none'; });
+  document.querySelectorAll('.lc-flex-de').forEach(function(el) { el.style.display = isEN ? 'none' : 'flex'; });
+  document.querySelectorAll('.lc-grid-en').forEach(function(el) { el.style.display = isEN ? 'grid' : 'none'; });
+  document.querySelectorAll('.lc-grid-de').forEach(function(el) { el.style.display = isEN ? 'none' : 'grid'; });
+
+  // Make ALL reveal elements visible immediately on language switch
+  // (they were invisible because IntersectionObserver never saw them)
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    el.classList.add('visible');
+  });
+
+  document.getElementById('btn-en').classList.toggle('active', isEN);
+  document.getElementById('btn-de').classList.toggle('active', !isEN);
   document.documentElement.lang = lang;
-
-  // Re-check reveals for newly visible sections
-  setTimeout(function() {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.95) el.classList.add('visible');
-    });
-  }, 60);
 }
 
 function setLang(lang) {
@@ -1980,12 +1967,13 @@ document.addEventListener('DOMContentLoaded', function() {
   try { saved = localStorage.getItem('cs-lang') || 'en'; } catch(e) {}
   applyLang(saved);
 
-  // ── Scroll reveal ───────────────────────────────────────────────
+  // Scroll reveal – only for elements NOT yet visible
   var revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) e.target.classList.add('visible');
     });
-  }, { threshold: 0.10 });
+  }, { threshold: 0.08 });
+
   document.querySelectorAll('.reveal').forEach(function(el) {
     revealObserver.observe(el);
   });
