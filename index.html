@@ -1343,6 +1343,204 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   </div>
 </div>
 
+<!-- ═══════════════════════ FRAMEWORK LANDSCAPE ══════════════════════ -->
+
+<style>
+.landscape-section {
+  background: #F8F7F4;
+  padding: 80px 64px;
+}
+.landscape-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.landscape-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+  max-width: 900px;
+}
+.lf-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-top: 3px solid #8A8A8A;
+  padding: 28px 24px;
+}
+.lf-card .lf-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5A5A5A;
+  margin-bottom: 10px;
+  display: block;
+}
+.lf-card .lf-what {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8A8A8A;
+  margin-bottom: 10px;
+  display: block;
+}
+.lf-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5A5A5A;
+  margin-bottom: 12px;
+}
+.lf-card .lf-limit {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #B03030;
+  font-style: italic;
+  line-height: 1.5;
+  padding-top: 12px;
+  border-top: 1px solid #E4E2DC;
+}
+.lf-highlight {
+  background: #0F2238;
+  border: none;
+  border-top: 3px solid #C9A227;
+}
+.lf-highlight .lf-name { color: #E8C96A; }
+.lf-highlight .lf-what { color: rgba(255,255,255,0.45); }
+.lf-highlight p { color: rgba(220,230,245,0.85); }
+.lf-highlight .lf-limit {
+  color: #E8C96A;
+  border-top-color: rgba(255,255,255,0.1);
+  font-style: normal;
+  font-weight: 400;
+}
+@media (max-width: 840px) {
+  .landscape-section { padding: 64px 28px; }
+  .landscape-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="landscape-section">
+  <div class="landscape-inner">
+
+    <div class="reveal">
+      <span class="section-label">
+        <span class="lc-en">Where Capability Spaces fits</span>
+        <span class="lc-de">Wo Capability Spaces ansetzt</span>
+      </span>
+      <h2 class="section-title">
+        <span class="lc-en">Every framework tells you <em>how</em> to work.<br>None tells you why it stops working.</span>
+        <span class="lc-de">Jedes Framework sagt dir, <em>wie</em> du arbeiten sollst.<br>Keines sagt dir, warum es aufhört zu funktionieren.</span>
+      </h2>
+      <p class="lead lc-en">If you're not deeply familiar with agile frameworks, here's what they each do – and where they all share the same blind spot.</p>
+      <p class="lead lc-de">Wenn du die agilen Frameworks nicht alle kennst: Hier ist, was sie jeweils leisten – und wo sie alle denselben blinden Fleck haben.</p>
+    </div>
+
+    <div class="landscape-grid reveal reveal-d1">
+
+      <!-- Scrum EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Framework</span>
+        <span class="lf-name">Scrum</span>
+        <p>Organises teamwork into short cycles (Sprints). Roles, ceremonies, artefacts are predefined. The Scrum Master removes obstacles that get escalated.</p>
+        <div class="lf-limit">Blind spot: assumes the organisation is ready to act on what teams surface. If it isn't, blockers return every sprint.</div>
+      </div>
+      <!-- Scrum DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Framework</span>
+        <span class="lf-name">Scrum</span>
+        <p>Organisiert Teamarbeit in kurzen Zyklen (Sprints). Rollen, Zeremonien und Artefakte sind vordefiniert. Der Scrum Master räumt eskalierte Hindernisse aus dem Weg.</p>
+        <div class="lf-limit">Blinder Fleck: setzt voraus, dass die Organisation bereit ist, auf das zu reagieren, was Teams benennen. Wenn nicht, kehren Blocker jeden Sprint zurück.</div>
+      </div>
+
+      <!-- Kanban EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Method</span>
+        <span class="lf-name">Kanban</span>
+        <p>Visualises work in progress. Limits how many tasks run in parallel to reduce overload and surface bottlenecks in the workflow.</p>
+        <div class="lf-limit">Blind spot: makes flow problems visible – but not whether teams are working on the right problems in the first place.</div>
+      </div>
+      <!-- Kanban DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Methode</span>
+        <span class="lf-name">Kanban</span>
+        <p>Macht laufende Arbeit sichtbar. Begrenzt parallele Aufgaben, um Überlastung zu reduzieren und Engpässe im Workflow sichtbar zu machen.</p>
+        <div class="lf-limit">Blinder Fleck: macht Flow-Probleme sichtbar – aber nicht, ob Teams überhaupt an den richtigen Problemen arbeiten.</div>
+      </div>
+
+      <!-- SAFe EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Scaling Framework</span>
+        <span class="lf-name">SAFe / LeSS</span>
+        <p>Coordinates multiple teams working on the same product. Adds planning cycles, roles and governance layers so large organisations can move together.</p>
+        <div class="lf-limit">Blind spot: coordinates the dependencies that arise from how teams are structured – but doesn't question whether that structure is the problem.</div>
+      </div>
+      <!-- SAFe DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Skalierungs-Framework</span>
+        <span class="lf-name">SAFe / LeSS</span>
+        <p>Koordiniert mehrere Teams, die am selben Produkt arbeiten. Fügt Planungszyklen, Rollen und Governance-Ebenen hinzu, damit große Organisationen synchron agieren können.</p>
+        <div class="lf-limit">Blinder Fleck: koordiniert die Abhängigkeiten, die durch den Team-Schnitt entstehen – fragt aber nicht, ob dieser Schnitt selbst das Problem ist.</div>
+      </div>
+
+      <!-- OKR EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Goal Framework</span>
+        <span class="lf-name">OKR</span>
+        <p>Aligns teams around shared outcomes. Separates objectives (direction) from key results (measurable progress). Used in parallel with any agile method.</p>
+        <div class="lf-limit">Blind spot: defines where teams should go – but not whether the organisation structurally allows them to get there.</div>
+      </div>
+      <!-- OKR DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Ziel-Framework</span>
+        <span class="lf-name">OKR</span>
+        <p>Richtet Teams auf gemeinsame Outcomes aus. Trennt Ziele (Richtung) von Schlüsselergebnissen (messbarer Fortschritt). Wird parallel zu agilen Methoden eingesetzt.</p>
+        <div class="lf-limit">Blinder Fleck: definiert, wohin Teams sollen – aber nicht, ob die Organisation sie strukturell dorthin lässt.</div>
+      </div>
+
+      <!-- Team Topologies EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Org Design Model</span>
+        <span class="lf-name">Team Topologies</span>
+        <p>Describes how to structure teams to minimise cognitive load and reduce dependencies. Defines team types and interaction patterns.</p>
+        <div class="lf-limit">Blind spot: tells you how to redesign teams – but not why your current design stopped working, or when it's time to change.</div>
+      </div>
+      <!-- Team Topologies DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Org-Design-Modell</span>
+        <span class="lf-name">Team Topologies</span>
+        <p>Beschreibt, wie Teams strukturiert werden sollten, um kognitive Belastung zu minimieren und Abhängigkeiten zu reduzieren. Definiert Teamtypen und Interaktionsmuster.</p>
+        <div class="lf-limit">Blinder Fleck: sagt, wie Teams redesigned werden sollten – aber nicht, warum das aktuelle Design aufgehört hat zu funktionieren.</div>
+      </div>
+
+      <!-- Capability Spaces EN -->
+      <div class="lf-card lf-highlight lc-en">
+        <span class="lf-what">Diagnostic Model</span>
+        <span class="lf-name">Capability Spaces</span>
+        <p>Sits on top of any framework you already use. Doesn't replace Scrum, Kanban, SAFe or OKR. Instead it diagnoses why the framework you have isn't delivering – and shows exactly which structural conditions need to change.</p>
+        <div class="lf-limit">The only model that works on top of all others — and repairs their application instead of replacing them.</div>
+      </div>
+      <!-- Capability Spaces DE -->
+      <div class="lf-card lf-highlight lc-de">
+        <span class="lf-what">Diagnosemodell</span>
+        <span class="lf-name">Capability Spaces</span>
+        <p>Legt sich über jedes Framework, das du bereits verwendest. Ersetzt weder Scrum noch Kanban, SAFe oder OKR. Stattdessen diagnostiziert es, warum dein Framework nicht liefert – und zeigt genau, welche strukturellen Bedingungen sich ändern müssen.</p>
+        <div class="lf-limit">Das einzige Modell, das über allen anderen liegt — und ihre Anwendung repariert, statt sie zu ersetzen.</div>
+      </div>
+
+    </div>
+
+    <div class="callout reveal reveal-d2">
+      <span class="cl-label lc-en">The key distinction</span>
+      <span class="cl-label lc-de">Der entscheidende Unterschied</span>
+      <p class="lc-en">All other models tell you how to work. Capability Spaces tells you why working that way has stopped delivering results — regardless of which model you use.</p>
+      <p class="lc-de">Alle anderen Modelle sagen dir, wie du arbeiten sollst. Capability Spaces sagt dir, warum diese Arbeitsweise aufgehört hat, Ergebnisse zu liefern – unabhängig davon, welches Modell du verwendest.</p>
+    </div>
+
+  </div>
+</div>
+
 <div class="divider"></div>
 
 <div class="quote-banner reveal">
