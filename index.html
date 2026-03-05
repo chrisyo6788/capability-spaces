@@ -1234,7 +1234,10 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .footer-right { text-align: left; }
 .viz-main { grid-template-columns: 1fr; }
 .viz-sidebar { border-left: none; border-top: 1px solid rgba(255,255,255,0.07); padding: 32px 20px; }
-.viz-canvas-wrap { padding: 20px; }
+.viz-canvas-wrap { padding: 12px 8px; }
+.viz-page-header { flex-direction: column; align-items: flex-start; gap: 6px; padding: 20px 20px; }
+.viz-stage-nav { flex-wrap: wrap; padding: 16px 16px 12px; gap: 6px; }
+.viz-stage-btn { font-size: 9px; padding: 8px 12px; letter-spacing: 1px; }
 }
 </style>
 
@@ -1504,7 +1507,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       </div>
     </header>
 
-```
 <div class="viz-progress-row" style="padding-top:24px;">
   <div class="viz-prog-dot active" onclick="setStage(1)"></div>
   <div class="viz-prog-dot" onclick="setStage(2)"></div>
