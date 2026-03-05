@@ -1136,6 +1136,90 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
 
+
+/* ─── EVIDENCE SECTION ───────────────────────────────────────────── */
+.evidence-section {
+  background: #0F2238;
+  padding: 80px 64px;
+  border-top: 1px solid rgba(201,162,39,0.2);
+}
+.evidence-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 48px 0 56px;
+  max-width: 900px;
+}
+.ev-stat {
+  border-left: 3px solid #C9A227;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.03);
+}
+.ev-stat .ev-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #E8C96A;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: -1px;
+}
+.ev-stat .ev-label {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(220,230,245,0.80);
+  line-height: 1.55;
+  margin-bottom: 10px;
+  display: block;
+}
+.ev-stat .ev-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(201,162,39,0.5);
+  text-transform: uppercase;
+}
+.ev-stat .ev-source a {
+  color: rgba(201,162,39,0.6);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ev-context {
+  max-width: 720px;
+  border-left: 3px solid rgba(74,156,201,0.5);
+  padding: 20px 28px;
+  background: rgba(74,156,201,0.05);
+  margin-bottom: 0;
+}
+.ev-context p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(220,230,245,0.82);
+  font-weight: 300;
+}
+.ev-context strong { color: #E8C96A; font-weight: 600; }
+@media (max-width: 840px) {
+  .evidence-section { padding: 64px 28px; }
+  .evidence-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ─── FOOTNOTES ──────────────────────────────────────────────────── */
+.fn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #C9A227;
+  vertical-align: super;
+  line-height: 0;
+  cursor: default;
+  margin-left: 2px;
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
 @media (max-width: 840px) {
 .path-selector { grid-template-columns: 1fr; }
@@ -1176,73 +1260,25 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   </nav>
 
   <div class="hero-content">
-    <!-- eyebrow -->
     <div class="hero-eyebrow">
       <span class="lc-en">For Leaders in agile organisations</span>
       <span class="lc-de">Für Führungskräfte in agilen Organisationen</span>
     </div>
 
-<h1 class="hero-title">
-  <span class="lc-en">You introduced Scrum.<strong>Not agility.</strong></span>
-  <span class="lc-de">Sie haben Scrum eingeführt.<strong>Nicht Agilität.</strong></span>
-</h1>
+    <h1 class="hero-title">
+      <span class="lc-en">You introduced Scrum.<strong>Not agility.</strong></span>
+      <span class="lc-de">Sie haben Scrum eingeführt.<strong>Nicht Agilität.</strong></span>
+    </h1>
 
-<p class="hero-subtitle">
-  <span class="lc-en">This is not a failure of your team. It is a structural problem – and it has a lever only you can pull.</span>
-  <span class="lc-de">Das ist kein Versagen Ihres Teams. Es ist ein Strukturproblem – und es hat einen Hebel, den nur Sie betätigen können.</span>
-</p>
+    <p class="hero-subtitle">
+      <span class="lc-en">This is not a failure of your team. It is a structural problem – and it has a lever only you can pull.</span>
+      <span class="lc-de">Das ist kein Versagen Ihres Teams. Es ist ein Strukturproblem – und es hat einen Hebel, den nur Sie betätigen können.</span>
+    </p>
 
-<!-- Mini-Story -->
-<div class="hero-story">
-  <p class="lc-en">You see the effort. You receive the reports. You unblock what gets escalated. But the results stay flat – and the teams that were once engaged now look tired and detached. They are not the problem. <strong>The structure broke them. Capability Spaces shows you where – and what only you can change.</strong></p>
-  <p class="lc-de">Sie sehen den Aufwand. Sie erhalten die Berichte. Sie lösen, was eskaliert wird. Aber die Ergebnisse bleiben flach – und die Teams, die einmal motiviert waren, wirken erschöpft und gleichgültig. Sie sind nicht das Problem. <strong>Die Struktur hat sie gebrochen. Capability Spaces zeigt Ihnen, wo – und was nur Sie verändern können.</strong></p>
-</div>
-
-<!-- Path cards – EN -->
-<div class="path-selector lc-flex-en" style="grid-template-columns: 1fr 1fr 1fr; max-width: 960px;">
-  <a class="path-card a" href="#path-a-en">
-    <span class="path-tag">For Newcomers</span>
-    <div class="path-question">My team is good – but something keeps slowing us down.</div>
-    <div class="path-desc">You sense something in your organisation isn't right – but you don't have the language to name it yet.</div>
-    <span class="path-arrow">→</span>
-  </a>
-  <a class="path-card b" href="#path-b-en">
-    <span class="path-tag">For Coaches</span>
-    <div class="path-question">I coach, escalate, improve – and the same blockers are back next sprint.</div>
-    <div class="path-desc">You're doing the work. Retros, impediments, team dynamics. It helps – but it doesn't stick. You need a structural explanation for why.</div>
-    <span class="path-arrow">→</span>
-  </a>
-  <a class="path-card" href="#path-c-en" style="border-color:rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);">
-    <span class="path-tag" style="color:#6BB8D8;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;display:block;">For Leaders</span>
-    <div class="path-question" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#FFFFFF;line-height:1.35;margin-bottom:14px;">We invested in agile. Where are the results?</div>
-    <div class="path-desc" style="font-size:14px;font-weight:300;color:rgba(220,230,245,0.65);line-height:1.6;font-style:italic;">You approved the transformation. You see the effort. But team performance stays flat. Capability Spaces shows you the lever only you can pull.</div>
-    <span class="path-arrow" style="position:absolute;bottom:20px;right:24px;font-size:20px;color:#4A9CC9;opacity:0;transition:opacity 0.3s,transform 0.3s;">→</span>
-  </a>
-</div>
-
-<!-- Path cards – DE -->
-<div class="path-selector lc-flex-de" style="grid-template-columns: 1fr 1fr 1fr; max-width: 960px;">
-  <a class="path-card a" href="#path-a-de">
-    <span class="path-tag">Für Einsteiger*innen</span>
-    <div class="path-question">Mein Team ist gut – aber irgendetwas bremst uns.</div>
-    <div class="path-desc">Sie merken, dass etwas in Ihrer Organisation nicht stimmt – aber haben noch keine Sprache dafür.</div>
-    <span class="path-arrow">→</span>
-  </a>
-  <a class="path-card b" href="#path-b-de">
-    <span class="path-tag">Für Coaches</span>
-    <div class="path-question">Ich coache, eskaliere, verbessere – und dieselben Blocker sind nächsten Sprint wieder da.</div>
-    <div class="path-desc">Sie leisten die Arbeit. Retros, Impediments, Teamdynamik. Es hilft – aber es hält nicht. Sie brauchen eine strukturelle Erklärung, warum.</div>
-    <span class="path-arrow">→</span>
-  </a>
-  <a class="path-card" href="#path-c-de" style="border-color:rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);">
-    <span class="path-tag" style="color:#6BB8D8;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;display:block;">Für Führungskräfte</span>
-    <div class="path-question" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#FFFFFF;line-height:1.35;margin-bottom:14px;">Wir haben in Agilität investiert. Wo sind die Ergebnisse?</div>
-    <div class="path-desc" style="font-size:14px;font-weight:300;color:rgba(220,230,245,0.65);line-height:1.6;font-style:italic;">Sie haben die Transformation genehmigt. Sie sehen den Aufwand. Aber die Team-Performance bleibt flach. Capability Spaces zeigt Ihnen den Hebel, den nur Sie betätigen können.</div>
-    <span class="path-arrow" style="position:absolute;bottom:20px;right:24px;font-size:20px;color:#4A9CC9;opacity:0;transition:opacity 0.3s,transform 0.3s;">→</span>
-  </a>
-</div>
-```
-
+    <div class="hero-story">
+      <p class="lc-en">You see the effort. You receive the reports. You unblock what gets escalated. But the results stay flat – and the teams that were once engaged now look tired and detached. They are not the problem. <strong>The structure broke them. Capability Spaces shows you where – and what only you can change.</strong></p>
+      <p class="lc-de">Sie sehen den Aufwand. Sie erhalten die Berichte. Sie lösen, was eskaliert wird. Aber die Ergebnisse bleiben flach – und die Teams, die einmal motiviert waren, wirken erschöpft und gleichgültig. Sie sind nicht das Problem. <strong>Die Struktur hat sie gebrochen. Capability Spaces zeigt Ihnen, wo – und was nur Sie verändern können.</strong></p>
+    </div>
   </div>
 
   <div class="hero-bottom">
@@ -1254,6 +1290,60 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     </div>
   </div>
 </div>
+
+
+
+<!-- ═══════════════════════ EVIDENCE / GRUNDPROBLEM ════════════════ -->
+
+<div class="evidence-section reveal">
+  <div class="evidence-inner">
+
+    <div class="reveal">
+      <span class="section-label" style="color:#C9A227;">
+        <span class="lc-en">The Pattern</span>
+        <span class="lc-de">Das Muster</span>
+      </span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:700;color:#FFFFFF;line-height:1.1;letter-spacing:-1px;margin-bottom:20px;">
+        <span class="lc-en">This is not your organisation's fault.<br><em style="color:#E8C96A;">It is a structural pattern – decades old.</em></span>
+        <span class="lc-de">Das ist kein Versagen Ihrer Organisation.<br><em style="color:#E8C96A;">Es ist ein strukturelles Muster – jahrzehntealt.</em></span>
+      </h2>
+      <p style="font-size:19px;font-weight:300;color:rgba(220,230,245,0.75);max-width:640px;line-height:1.7;font-style:italic;margin-bottom:0;">
+        <span class="lc-en">Scrum was designed to empower teams – to put developers at the centre and give them autonomy. The Scrum Guide still says so. What happened instead is well documented.</span>
+        <span class="lc-de">Scrum wurde entwickelt, um Teams zu empowern – Entwickler in den Mittelpunkt zu stellen und ihnen Autonomie zu geben. Der Scrum Guide sagt das bis heute. Was stattdessen passiert ist, ist gut belegt.</span>
+      </p>
+    </div>
+
+    <div class="evidence-grid reveal reveal-d1">
+      <div class="ev-stat">
+        <span class="ev-num">47%</span>
+        <span class="ev-label lc-en">of all agile transformations fail – estimated by Jeff Sutherland, co-creator of Scrum himself.</span>
+        <span class="ev-label lc-de">aller agilen Transformationen scheitern – so schätzt es Jeff Sutherland, Mitbegründer von Scrum, selbst.</span>
+        <span class="ev-source"><a href="https://www.scruminc.com/why-47-of-agile-transformations-fail/" target="_blank" rel="noopener">Scrum Inc.</a></span>
+      </div>
+      <div class="ev-stat">
+        <span class="ev-num">62%</span>
+        <span class="ev-label lc-en">of top management believe agile has no implications for them. Only 13% fully support the transformation.</span>
+        <span class="ev-label lc-de">des Top-Managements glaubt, Agilität habe keine Konsequenzen für sie. Nur 13 % unterstützen die Transformation vollständig.</span>
+        <span class="ev-source"><a href="https://www.parabol.co/resources/agile-statistics/" target="_blank" rel="noopener">KPMG Survey via Parabol</a></span>
+      </div>
+      <div class="ev-stat">
+        <span class="ev-num">84%</span>
+        <span class="ev-label lc-en">failure rate for digital transformations – with no signs of improvement, according to IDC Research.</span>
+        <span class="ev-label lc-de">Failure Rate bei digitalen Transformationen – ohne erkennbare Verbesserungstendenz, laut IDC Research.</span>
+        <span class="ev-source"><a href="https://www.scrum.org/resources/blog/real-question-we-should-be-asking-about-agile-transformation" target="_blank" rel="noopener">IDC Research via Scrum.org</a></span>
+      </div>
+    </div>
+
+    <div class="ev-context reveal reveal-d2">
+      <p class="lc-en">The most common diagnosis when agile fails: the team did something wrong. The data tells a different story. <strong>Most impediments are at management level</strong> – organisational structure, functional silos, approval processes. Teams are not the weak link. They are waiting for decisions only leaders can make. <strong>Capability Spaces gives you a diagnostic to see exactly where – and a format to act on it.</strong></p>
+      <p class="lc-de">Die häufigste Diagnose, wenn Agilität scheitert: das Team hat etwas falsch gemacht. Die Daten erzählen eine andere Geschichte. <strong>Die meisten Impediments liegen auf Management-Ebene</strong> – Organisationsstruktur, funktionale Silos, Freigabeprozesse. Teams sind nicht das schwache Glied. Sie warten auf Entscheidungen, die nur Führungskräfte treffen können. <strong>Capability Spaces gibt Ihnen eine Diagnose, um genau das zu sehen – und ein Format, um darauf zu reagieren.</strong></p>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
 
 <!-- ═══════════════════════ QUOTE BANNER ══════════════════════════ -->
 
@@ -1353,619 +1443,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   </div>
 </div>
 
-<!-- ═══════════════════════ FRAMEWORK LANDSCAPE ══════════════════════ -->
-
-<style>
-.landscape-section {
-  background: #F8F7F4;
-  padding: 80px 64px;
-}
-.landscape-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.landscape-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin: 40px 0;
-  max-width: 900px;
-}
-.lf-card {
-  background: #FFFFFF;
-  border: 1px solid #E4E2DC;
-  border-top: 3px solid #8A8A8A;
-  padding: 28px 24px;
-}
-.lf-card .lf-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #5A5A5A;
-  margin-bottom: 10px;
-  display: block;
-}
-.lf-card .lf-what {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #8A8A8A;
-  margin-bottom: 10px;
-  display: block;
-}
-.lf-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #5A5A5A;
-  margin-bottom: 12px;
-}
-.lf-card .lf-limit {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: #B03030;
-  font-style: italic;
-  line-height: 1.5;
-  padding-top: 12px;
-  border-top: 1px solid #E4E2DC;
-}
-.lf-highlight {
-  background: #0F2238;
-  border: none;
-  border-top: 3px solid #C9A227;
-}
-.lf-highlight .lf-name { color: #E8C96A; }
-.lf-highlight .lf-what { color: rgba(255,255,255,0.45); }
-.lf-highlight p { color: rgba(220,230,245,0.85); }
-.lf-highlight .lf-limit {
-  color: #E8C96A;
-  border-top-color: rgba(255,255,255,0.1);
-  font-style: normal;
-  font-weight: 400;
-}
-@media (max-width: 840px) {
-  .landscape-section { padding: 64px 28px; }
-  .landscape-grid { grid-template-columns: 1fr; }
-}
-</style>
-
-<div class="landscape-section">
-  <div class="landscape-inner">
-
-    <div class="reveal">
-      <span class="section-label">
-        <span class="lc-en">Where Capability Spaces fits</span>
-        <span class="lc-de">Wo Capability Spaces ansetzt</span>
-      </span>
-      <h2 class="section-title">
-        <span class="lc-en">Every framework tells you <em>how</em> to work.<br>None tells you why it stops working.</span>
-        <span class="lc-de">Jedes Framework sagt dir, <em>wie</em> du arbeiten sollst.<br>Keines sagt dir, warum es aufhört zu funktionieren.</span>
-      </h2>
-      <p class="lead lc-en">If you're not deeply familiar with agile frameworks, here's what they each do – and where they all share the same blind spot.</p>
-      <p class="lead lc-de">Wenn du die agilen Frameworks nicht alle kennst: Hier ist, was sie jeweils leisten – und wo sie alle denselben blinden Fleck haben.</p>
-    </div>
-
-    <div class="landscape-grid reveal reveal-d1">
-
-      <!-- Scrum EN -->
-      <div class="lf-card lc-en">
-        <span class="lf-what">Framework</span>
-        <span class="lf-name">Scrum</span>
-        <p>Organises teamwork into short cycles (Sprints). Roles, ceremonies, artefacts are predefined. The Scrum Master removes obstacles that get escalated.</p>
-        <div class="lf-limit">Blind spot: assumes the organisation is ready to act on what teams surface. If it isn't, blockers return every sprint.</div>
-      </div>
-      <!-- Scrum DE -->
-      <div class="lf-card lc-de">
-        <span class="lf-what">Framework</span>
-        <span class="lf-name">Scrum</span>
-        <p>Organisiert Teamarbeit in kurzen Zyklen (Sprints). Rollen, Zeremonien und Artefakte sind vordefiniert. Der Scrum Master räumt eskalierte Hindernisse aus dem Weg.</p>
-        <div class="lf-limit">Blinder Fleck: setzt voraus, dass die Organisation bereit ist, auf das zu reagieren, was Teams benennen. Wenn nicht, kehren Blocker jeden Sprint zurück.</div>
-      </div>
-
-      <!-- Kanban EN -->
-      <div class="lf-card lc-en">
-        <span class="lf-what">Method</span>
-        <span class="lf-name">Kanban</span>
-        <p>Visualises work in progress. Limits how many tasks run in parallel to reduce overload and surface bottlenecks in the workflow.</p>
-        <div class="lf-limit">Blind spot: optimises how work flows through the system – but not whether the work entering the system should exist at all.</div>
-      </div>
-      <!-- Kanban DE -->
-      <div class="lf-card lc-de">
-        <span class="lf-what">Methode</span>
-        <span class="lf-name">Kanban</span>
-        <p>Macht laufende Arbeit sichtbar. Begrenzt parallele Aufgaben, um Überlastung zu reduzieren und Engpässe im Workflow sichtbar zu machen.</p>
-        <div class="lf-limit">Blinder Fleck: optimiert, wie Arbeit durch das System fließt – aber nicht, ob die Arbeit, die ins System kommt, überhaupt sinnvoll ist.</div>
-      </div>
-
-      <!-- SAFe EN -->
-      <div class="lf-card lc-en">
-        <span class="lf-what">Scaling Framework</span>
-        <span class="lf-name">SAFe / LeSS</span>
-        <p>Coordinates multiple teams working on the same product. Adds planning cycles, roles and governance layers so large organisations can move together.</p>
-        <div class="lf-limit">Blind spot: coordinates the dependencies that arise from how teams are structured – but doesn't question whether that structure is the problem.</div>
-      </div>
-      <!-- SAFe DE -->
-      <div class="lf-card lc-de">
-        <span class="lf-what">Skalierungs-Framework</span>
-        <span class="lf-name">SAFe / LeSS</span>
-        <p>Koordiniert mehrere Teams, die am selben Produkt arbeiten. Fügt Planungszyklen, Rollen und Governance-Ebenen hinzu, damit große Organisationen synchron agieren können.</p>
-        <div class="lf-limit">Blinder Fleck: koordiniert die Abhängigkeiten, die durch den Team-Schnitt entstehen – fragt aber nicht, ob dieser Schnitt selbst das Problem ist.</div>
-      </div>
-
-      <!-- OKR EN -->
-      <div class="lf-card lc-en">
-        <span class="lf-what">Goal Framework</span>
-        <span class="lf-name">OKR</span>
-        <p>Aligns teams around shared outcomes. Separates objectives (direction) from key results (measurable progress). Used in parallel with any agile method.</p>
-        <div class="lf-limit">Blind spot: defines where teams should go – but not whether the organisation structurally allows them to get there.</div>
-      </div>
-      <!-- OKR DE -->
-      <div class="lf-card lc-de">
-        <span class="lf-what">Ziel-Framework</span>
-        <span class="lf-name">OKR</span>
-        <p>Richtet Teams auf gemeinsame Outcomes aus. Trennt Ziele (Richtung) von Schlüsselergebnissen (messbarer Fortschritt). Wird parallel zu agilen Methoden eingesetzt.</p>
-        <div class="lf-limit">Blinder Fleck: definiert, wohin Teams sollen – aber nicht, ob die Organisation sie strukturell dorthin lässt.</div>
-      </div>
-
-      <!-- Team Topologies EN -->
-      <div class="lf-card lc-en">
-        <span class="lf-what">Org Design Model</span>
-        <span class="lf-name">Team Topologies</span>
-        <p>Describes how to structure teams to minimise cognitive load and reduce dependencies. Defines team types and interaction patterns.</p>
-        <div class="lf-limit">Blind spot: tells you how to redesign teams – but not why your current design stopped working, or when it's time to change.</div>
-      </div>
-      <!-- Team Topologies DE -->
-      <div class="lf-card lc-de">
-        <span class="lf-what">Org-Design-Modell</span>
-        <span class="lf-name">Team Topologies</span>
-        <p>Beschreibt, wie Teams strukturiert werden sollten, um kognitive Belastung zu minimieren und Abhängigkeiten zu reduzieren. Definiert Teamtypen und Interaktionsmuster.</p>
-        <div class="lf-limit">Blinder Fleck: sagt, wie Teams redesigned werden sollten – aber nicht, warum das aktuelle Design aufgehört hat zu funktionieren.</div>
-      </div>
-
-      <!-- Capability Spaces EN -->
-      <div class="lf-card lf-highlight lc-en">
-        <span class="lf-what">Diagnostic Model</span>
-        <span class="lf-name">Capability Spaces</span>
-        <p>Sits on top of any framework you already use. Doesn't replace Scrum, Kanban, SAFe or OKR. Instead it diagnoses why the framework you have isn't delivering – and shows exactly which structural conditions need to change.</p>
-        <div class="lf-limit">The only model that works on top of all others — and repairs their application instead of replacing them.</div>
-      </div>
-      <!-- Capability Spaces DE -->
-      <div class="lf-card lf-highlight lc-de">
-        <span class="lf-what">Diagnosemodell</span>
-        <span class="lf-name">Capability Spaces</span>
-        <p>Legt sich über jedes Framework, das du bereits verwendest. Ersetzt weder Scrum noch Kanban, SAFe oder OKR. Stattdessen diagnostiziert es, warum dein Framework nicht liefert – und zeigt genau, welche strukturellen Bedingungen sich ändern müssen.</p>
-        <div class="lf-limit">Das einzige Modell, das über allen anderen liegt — und ihre Anwendung repariert, statt sie zu ersetzen.</div>
-      </div>
-
-    </div>
-
-    <div class="callout reveal reveal-d2">
-      <span class="cl-label lc-en">The shared blind spot</span>
-      <span class="cl-label lc-de">Der gemeinsame blinde Fleck</span>
-      <p class="lc-en">Every framework above assumes the organisation is structurally ready to let teams work on the right problems. None of them diagnoses whether that precondition exists. That is exactly what Capability Spaces does — regardless of which framework you use.</p>
-      <p class="lc-de">Jedes der obigen Frameworks setzt voraus, dass die Organisation strukturell bereit ist, Teams an den richtigen Problemen arbeiten zu lassen. Keines diagnostiziert, ob diese Voraussetzung überhaupt gegeben ist. Genau das tut Capability Spaces – unabhängig davon, welches Framework du verwendest.</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="quote-banner reveal">
-  <div class="quote-banner-inner">
-    <div class="qb-mark">"</div>
-    <div class="qb-text">
-      <span class="lc-en">When agile doesn't deliver results, the first question is never: what did the team do wrong? It is: what is the organisation preventing the team from doing? Teams that look unmotivated were not born that way. Structural helplessness creates that. That is a question only leaders can answer – and only if they know where to look.</span>
-      <span class="lc-de">Wenn Agilität keine Ergebnisse liefert, ist die erste Frage nie: Was hat das Team falsch gemacht? Sondern: Wie hindert die Organisation das Team daran, das Richtige zu tun? Teams, die unmotiviert wirken, waren es nicht von Anfang an. Strukturelle Hilflosigkeit erzeugt das. Das ist eine Frage, die nur Führungskräfte beantworten können – aber nur, wenn sie wissen, wo sie hinschauen müssen.</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════ LEADER ANCHOR SECTION ══════════════════ -->
-
-<style>
-.leader-section {
-  background: #F0EDE8;
-  padding: 80px 64px;
-  border-top: 3px solid #4A9CC9;
-}
-.leader-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.leader-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 48px;
-  max-width: 900px;
-}
-.leader-col .lc-head {
-  font-family: 'Syne', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  display: block;
-}
-.leader-col.coach .lc-head { color: #1B3A5C; }
-.leader-col.exec .lc-head  { color: #4A9CC9; }
-.leader-col .lc-question {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #1B3A5C;
-  line-height: 1.3;
-  margin-bottom: 16px;
-}
-.leader-col .lc-body {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #5A5A5A;
-  margin-bottom: 14px;
-}
-.leader-col .lc-answer {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #2C2C2C;
-  font-weight: 400;
-  padding: 16px 20px;
-  border-left: 3px solid;
-  background: #FFFFFF;
-}
-.leader-col.coach .lc-answer { border-left-color: #1B3A5C; }
-.leader-col.exec  .lc-answer { border-left-color: #4A9CC9; }
-@media (max-width: 840px) {
-  .leader-section { padding: 64px 28px; }
-  .leader-split { grid-template-columns: 1fr; gap: 36px; }
-}
-</style>
-
-<style>
-/* ─── MIRROR MOMENT ─────────────────────────────────────────────── */
-.mirror-section {
-  background: #0F2238;
-  padding: 80px 64px;
-}
-.mirror-inner {
-  max-width: 960px;
-  margin: 0 auto;
-}
-.mirror-intro {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 300;
-  color: rgba(255,255,255,0.92);
-  line-height: 1.25;
-  max-width: 720px;
-  margin-bottom: 14px;
-  letter-spacing: -0.5px;
-}
-.mirror-intro em { color: #E8C96A; font-style: italic; }
-.mirror-sub {
-  font-size: 17px;
-  font-weight: 300;
-  color: rgba(220,230,245,0.65);
-  font-style: italic;
-  margin-bottom: 52px;
-  max-width: 560px;
-  line-height: 1.6;
-}
-.mirror-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 860px;
-}
-.mirror-item {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 20px;
-  align-items: start;
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  opacity: 0;
-  transform: translateX(-12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.mirror-item.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-.mirror-item:nth-child(1) { transition-delay: 0.05s; }
-.mirror-item:nth-child(2) { transition-delay: 0.15s; }
-.mirror-item:nth-child(3) { transition-delay: 0.25s; }
-.mirror-item:nth-child(4) { transition-delay: 0.35s; }
-.mirror-item:nth-child(5) { transition-delay: 0.45s; }
-.mirror-item:nth-child(6) { transition-delay: 0.55s; }
-.mirror-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: rgba(201,162,39,0.45);
-  letter-spacing: 1px;
-  padding-top: 3px;
-}
-.mirror-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: rgba(240,237,232,0.88);
-  line-height: 1.5;
-}
-.mirror-text strong {
-  color: #E8C96A;
-  font-weight: 600;
-}
-.mirror-reveal {
-  margin-top: 52px;
-  padding: 32px 36px;
-  border: 1px solid rgba(201,162,39,0.25);
-  border-left: 3px solid #C9A227;
-  background: rgba(201,162,39,0.04);
-  max-width: 720px;
-}
-.mirror-reveal p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.6;
-  font-style: italic;
-}
-.mirror-reveal strong {
-  color: #E8C96A;
-  font-style: normal;
-  font-weight: 600;
-}
-@media (max-width: 840px) {
-  .mirror-section { padding: 60px 28px; }
-}
-</style>
-
-<div id="path-c-en" class="leader-section lc-en reveal">
-  <div class="leader-inner">
-    <span class="section-label">The Answer</span>
-    <h2 class="section-title">The results are missing because the <em>structure</em> is missing.</h2>
-    <p class="lead">Capability Spaces gives coaches and leaders a shared diagnosis – and shows clearly who needs to act, and where.</p>
-    <div class="leader-split">
-      <div class="leader-col coach">
-        <span class="lc-head">For Coaches</span>
-        <div class="lc-question">Why do my interventions not stick?</div>
-        <p class="lc-body">You improve team dynamics, you name the impediments, you coach the process. But the same blockers return every sprint. The team doesn't grow. That is not a coaching failure.</p>
-        <div class="lc-answer">Capability Spaces shows you: when Boundaries are permanently larger than what the Compass can absorb, no coaching intervention will create lasting change. The constraint isn't in the team – it's in the organisation. That's where you need to look. And that's what you need to show your client.</div>
-      </div>
-      <div class="leader-col exec">
-        <span class="lc-head">For Leaders</span>
-        <div class="lc-question">We invested in agile. Where are the results?</div>
-        <p class="lc-body">You approved the transformation. You provided the resources. You see the effort. But team performance stays flat – and no one can explain why. The explanation is structural.</p>
-        <div class="lc-answer">Your teams are not delivering because the organisation – often unintentionally – prevents them from working on the right problems. Role definitions, approval processes, how requirements reach teams: these are the levers. And only you can move them.<br><br>And the teams that look unmotivated? They weren't unmotivated to begin with. Repeated structural helplessness does that to people. Capability Spaces shows you exactly which levers to pull – so they can do what they came here to do.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="path-c-de" class="leader-section lc-de reveal">
-  <div class="leader-inner">
-    <span class="section-label">Die Antwort</span>
-    <h2 class="section-title">Die Ergebnisse fehlen, weil die <em>Struktur</em> fehlt.</h2>
-    <p class="lead">Capability Spaces gibt Coaches und Führungskräften eine gemeinsame Diagnose – und zeigt klar, wer wo handeln muss.</p>
-    <div class="leader-split">
-      <div class="leader-col coach">
-        <span class="lc-head">Für Coaches</span>
-        <div class="lc-question">Warum greifen meine Interventionen nicht?</div>
-        <p class="lc-body">Sie verbessern die Teamdynamik, benennen die Impediments, coachen den Prozess. Aber dieselben Blocker kommen jeden Sprint zurück. Das Team wächst nicht. Das ist kein Coaching-Versagen.</p>
-        <div class="lc-answer">Capability Spaces zeigt Ihnen: Wenn Boundaries dauerhaft größer sind als das, was der Compass auffangen kann, wird keine Coaching-Intervention nachhaltig wirken. Die Einschränkung liegt nicht im Team – sie liegt in der Organisation. Dort müssen Sie hinschauen. Und das müssen Sie Ihrem Kunden zeigen.</div>
-      </div>
-      <div class="leader-col exec">
-        <span class="lc-head">Für Führungskräfte</span>
-        <div class="lc-question">Wir haben in Agilität investiert. Wo sind die Ergebnisse?</div>
-        <p class="lc-body">Sie haben die Transformation genehmigt. Sie haben Ressourcen bereitgestellt. Sie sehen den Aufwand. Aber die Team-Performance bleibt flach – und niemand kann erklären, warum. Die Erklärung ist strukturell.</p>
-        <div class="lc-answer">Ihre Teams liefern nicht, weil die Organisation – oft unbeabsichtigt – verhindert, dass sie an den richtigen Problemen arbeiten. Rollendefinitionen, Freigabeprozesse, wie Requirements die Teams erreichen: das sind die Hebel. Und nur Sie können sie bewegen.<br><br>Und die Teams, die unmotiviert wirken? Sie waren es nicht von Anfang an. Wiederholte strukturelle Hilflosigkeit macht das mit Menschen. Capability Spaces zeigt Ihnen genau, welche Hebel Sie ansetzen müssen – damit Ihre Teams das tun können, wofür sie hier sind.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════ PREDICTION SECTION ═════════════════════ -->
-
-<style>
-.prediction-section {
-  background: #FFFFFF;
-  padding: 80px 64px;
-}
-.prediction-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.fail-conditions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin: 40px 0;
-  max-width: 860px;
-}
-.fail-card {
-  background: #F8F7F4;
-  border: 1px solid #E4E2DC;
-  border-left: 4px solid #B03030;
-  padding: 28px 28px 24px;
-  position: relative;
-}
-.fail-card .fc-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: rgba(176,48,48,0.5);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  display: block;
-}
-.fail-card .fc-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: #B03030;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
-  display: block;
-}
-.fail-card .fc-body {
-  font-size: 16px;
-  line-height: 1.65;
-  color: #5A5A5A;
-}
-.fail-card .fc-signal {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: #8A8A8A;
-  font-style: italic;
-  padding-top: 14px;
-  margin-top: 14px;
-  border-top: 1px solid #E4E2DC;
-  line-height: 1.55;
-}
-.prediction-formula {
-  background: #0F2238;
-  padding: 36px 40px;
-  max-width: 860px;
-  margin: 12px 0 0;
-  position: relative;
-  overflow: hidden;
-}
-.prediction-formula::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #B03030, #C9A227, #B03030);
-}
-.pf-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(201,162,39,0.7);
-  margin-bottom: 16px;
-  display: block;
-}
-.pf-formula {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 2.5vw, 26px);
-  font-weight: 300;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.5;
-  font-style: italic;
-}
-.pf-formula strong {
-  color: #E8C96A;
-  font-style: normal;
-  font-weight: 600;
-}
-.pf-formula .red { color: #E06060; font-style: normal; }
-@media (max-width: 840px) {
-  .fail-conditions { grid-template-columns: 1fr; }
-  .prediction-section { padding: 64px 28px; }
-  .prediction-formula { padding: 28px 24px; }
-}
-</style>
-
-<div class="prediction-section">
-  <div class="prediction-inner">
-
-    <div class="reveal">
-      <span class="section-label">
-        <span class="lc-en">Predictive Power</span>
-        <span class="lc-de">Vorhersagekraft</span>
-      </span>
-      <h2 class="section-title">
-        <span class="lc-en">You can predict when agile fails – <em>before it does.</em></span>
-        <span class="lc-de">Man kann vorhersagen, wann Agilität scheitert – <em>bevor es passiert.</em></span>
-      </h2>
-      <p class="lead lc-en">Most agile transformations don't fail because of the wrong framework. They fail because the structural preconditions for agile work are missing. Capability Spaces makes those preconditions explicit – and diagnosable.</p>
-      <p class="lead lc-de">Die meisten agilen Transformationen scheitern nicht am falschen Framework. Sie scheitern, weil die strukturellen Voraussetzungen für agiles Arbeiten fehlen. Capability Spaces macht diese Voraussetzungen explizit – und damit diagnosierbar.</p>
-      <p class="body lc-en">The model predicts failure when two conditions are simultaneously present. Both are structural. Both are visible – if you know what to look for.</p>
-      <p class="body lc-de">Das Modell sagt Scheitern voraus, wenn zwei Bedingungen gleichzeitig vorliegen. Beide sind strukturell. Beide sind sichtbar – wenn man weiß, wonach man schauen muss.</p>
-    </div>
-
-    <div class="fail-conditions reveal reveal-d1">
-      <!-- Condition 1 EN -->
-      <div class="fail-card lc-en">
-        <span class="fc-num">Condition 01</span>
-        <span class="fc-title">The Map is missing</span>
-        <p class="fc-body">Teams are not allowed to work problem-oriented. Developer teams, product teams, ops teams receive pre-defined solutions – not problems to solve. The Capability Space cannot grow because there is no space to explore.</p>
-        <div class="fc-signal">Signal: "We implement tickets" · "Strategy is defined above us" · "We're not involved in discovery"</div>
-      </div>
-      <!-- Condition 1 DE -->
-      <div class="fail-card lc-de">
-        <span class="fc-num">Bedingung 01</span>
-        <span class="fc-title">Die Map fehlt</span>
-        <p class="fc-body">Teams dürfen nicht problemorientiert arbeiten. Developer-Teams, Produktteams, Ops-Teams erhalten vordefinierte Lösungen – keine Probleme zum Lösen. Der Capability Space kann nicht wachsen, weil es keinen Raum zum Erkunden gibt.</p>
-        <div class="fc-signal">Signal: „Wir setzen Tickets um" · „Die Strategie wird oben definiert" · „Wir sind nicht in die Discovery eingebunden"</div>
-      </div>
-
-      <!-- Condition 2 EN -->
-      <div class="fail-card lc-en">
-        <span class="fc-num">Condition 02</span>
-        <span class="fc-title">Boundaries persistently exceed the Compass</span>
-        <p class="fc-body">The structural constraints – role definitions, processes, rules, requirements – are permanently larger than what the Compass (Trust, Knowledge, Connection, Assumption Testing) can absorb. The team cannot compensate organisational friction through internal cohesion.</p>
-        <div class="fc-signal">Signal: Every sprint same blockers · Retros improve nothing · "We know the problem but can't fix it"</div>
-      </div>
-      <!-- Condition 2 DE -->
-      <div class="fail-card lc-de">
-        <span class="fc-num">Bedingung 02</span>
-        <span class="fc-title">Boundaries dauerhaft größer als der Compass</span>
-        <p class="fc-body">Die strukturellen Einschränkungen – Rollendefinitionen, Prozesse, Regeln, Requirements – sind dauerhaft größer als das, was der Compass (Trust, Knowledge, Connection, Assumption Testing) auffangen kann. Das Team kann die organisationale Reibung nicht durch inneren Zusammenhalt kompensieren.</p>
-        <div class="fc-signal">Signal: Jeder Sprint dieselben Blocker · Retros verbessern nichts · „Wir kennen das Problem, können es aber nicht lösen"</div>
-      </div>
-    </div>
-
-    <div class="reveal reveal-d1" style="margin:40px 0 0;max-width:860px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
-        <div style="padding:20px 24px;background:#fff;border-top:3px solid #4A9CC9;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;">
-          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;" class="lc-en">The Map</span>
-          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;" class="lc-de">Die Map</span>
-          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-en">The space in which a team can independently identify and pursue opportunities (problems).</p>
-          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-de">Der Raum, in dem ein Team eigenständig Opportunities (Probleme) erkennen und bearbeiten kann.</p>
-        </div>
-        <div style="padding:20px 24px;background:#fff;border:1px solid #E4E2DC;border-top:3px solid #B03030;">
-          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:8px;">Boundaries</span>
-          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-en">Structural constraints – roles, processes, rules, requirements – that prevent teams from working on the right opportunities.</p>
-          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-de">Strukturelle Einschränkungen – Rollen, Prozesse, Regeln, Requirements – die Teams daran hindern, an den richtigen Opportunities zu arbeiten.</p>
-        </div>
-        <div style="padding:20px 24px;background:#fff;border:1px solid #E4E2DC;border-top:3px solid #2E9B6F;">
-          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E9B6F;display:block;margin-bottom:8px;">The Compass</span>
-          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-en">Four forces – Trust, Knowledge, Connection, Assumption Testing – that strengthen the team's space from outside.</p>
-          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-de">Vier Kräfte – Trust, Knowledge, Connection, Assumption Testing – die den Handlungsraum des Teams von außen stärken.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="prediction-formula reveal reveal-d2">
-      <span class="pf-label lc-en">The Failure Condition</span>
-      <span class="pf-label lc-de">Die Scheiterbedingung</span>
-      <p class="pf-formula lc-en">
-        When <strong>no Map exists</strong> (teams work on solutions, not problems) <em>and</em> <strong>Boundaries &gt; Compass</strong> persistently — <span class="red">agile transformation will fail.</span> Not because of the method. Because the <strong>structural preconditions are absent.</strong>
-      </p>
-      <p class="pf-formula lc-de">
-        Wenn <strong>keine Map existiert</strong> (Teams arbeiten an Lösungen, nicht an Problemen) <em>und</em> <strong>Boundaries &gt; Compass</strong> dauerhaft — <span class="red">wird die agile Transformation scheitern.</span> Nicht wegen der Methode. Weil die <strong>strukturellen Voraussetzungen fehlen.</strong>
-      </p>
-    </div>
-
-    <div class="callout reveal reveal-d3" style="margin-top:32px;">
-      <span class="cl-label lc-en">What this means in practice</span>
-      <span class="cl-label lc-de">Was das in der Praxis bedeutet</span>
-      <p class="lc-en">Capability Spaces gives you a diagnostic before the transformation starts – and a shared language to name what's missing. The goal isn't to predict failure in order to give up. It's to see the conditions clearly enough to change them.</p>
-      <p class="lc-de">Capability Spaces liefert eine Diagnose, bevor die Transformation startet – und eine gemeinsame Sprache, um zu benennen, was fehlt. Das Ziel ist nicht, Scheitern vorherzusagen, um aufzugeben. Sondern die Bedingungen klar genug zu sehen, um sie zu verändern.</p>
-    </div>
-
-  </div>
-</div>
 
 <div class="divider"></div>
 
@@ -1989,6 +1466,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     </div>
   </div>
 </div>
+
 
 <!-- ═══════════════════════ MODEL VISUAL ══════════════════════════ -->
 
@@ -2253,15 +1731,211 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <div class="divider"></div>
 
-<!-- ═══════════════════════ PATH A – EN ═══════════════════════════ -->
 
-<div id="path-a-en" class="path-header path-a lc-en">
-  <div class="path-header-inner">
-    <div class="path-badge">For Newcomers</div>
-    <h2>Frameworks can't solve problems they can't see.</h2>
-    <p>Many organisations introduce new ways of working – and then wonder why nothing changed. The reason is rarely the method.</p>
+<div class="divider"></div>
+
+<!-- ═══════════════════════ PREDICTION SECTION ═════════════════════ -->
+
+<style>
+.prediction-section {
+  background: #FFFFFF;
+  padding: 80px 64px;
+}
+.prediction-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.fail-conditions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+  max-width: 860px;
+}
+.fail-card {
+  background: #F8F7F4;
+  border: 1px solid #E4E2DC;
+  border-left: 4px solid #B03030;
+  padding: 28px 28px 24px;
+  position: relative;
+}
+.fail-card .fc-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(176,48,48,0.5);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+.fail-card .fc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #B03030;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+.fail-card .fc-body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #5A5A5A;
+}
+.fail-card .fc-signal {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #8A8A8A;
+  font-style: italic;
+  padding-top: 14px;
+  margin-top: 14px;
+  border-top: 1px solid #E4E2DC;
+  line-height: 1.55;
+}
+.prediction-formula {
+  background: #0F2238;
+  padding: 36px 40px;
+  max-width: 860px;
+  margin: 12px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.prediction-formula::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #B03030, #C9A227, #B03030);
+}
+.pf-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(201,162,39,0.7);
+  margin-bottom: 16px;
+  display: block;
+}
+.pf-formula {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.5;
+  font-style: italic;
+}
+.pf-formula strong {
+  color: #E8C96A;
+  font-style: normal;
+  font-weight: 600;
+}
+.pf-formula .red { color: #E06060; font-style: normal; }
+@media (max-width: 840px) {
+  .fail-conditions { grid-template-columns: 1fr; }
+  .prediction-section { padding: 64px 28px; }
+  .prediction-formula { padding: 28px 24px; }
+}
+</style>
+
+<div class="prediction-section">
+  <div class="prediction-inner">
+
+    <div class="reveal">
+      <span class="section-label">
+        <span class="lc-en">Predictive Power</span>
+        <span class="lc-de">Vorhersagekraft</span>
+      </span>
+      <h2 class="section-title">
+        <span class="lc-en">You can predict when agile fails – <em>before it does.</em></span>
+        <span class="lc-de">Man kann vorhersagen, wann Agilität scheitert – <em>bevor es passiert.</em></span>
+      </h2>
+      <p class="lead lc-en">Most agile transformations don't fail because of the wrong framework. They fail because the structural preconditions for agile work are missing. Capability Spaces makes those preconditions explicit – and diagnosable.</p>
+      <p class="lead lc-de">Die meisten agilen Transformationen scheitern nicht am falschen Framework. Sie scheitern, weil die strukturellen Voraussetzungen für agiles Arbeiten fehlen. Capability Spaces macht diese Voraussetzungen explizit – und damit diagnosierbar.</p>
+      <p class="body lc-en">The model predicts failure when two conditions are simultaneously present. Both are structural. Both are visible – if you know what to look for.</p>
+      <p class="body lc-de">Das Modell sagt Scheitern voraus, wenn zwei Bedingungen gleichzeitig vorliegen. Beide sind strukturell. Beide sind sichtbar – wenn man weiß, wonach man schauen muss.</p>
+    </div>
+
+    <div class="fail-conditions reveal reveal-d1">
+      <!-- Condition 1 EN -->
+      <div class="fail-card lc-en">
+        <span class="fc-num">Condition 01</span>
+        <span class="fc-title">The Map is missing</span>
+        <p class="fc-body">Teams are not allowed to work problem-oriented. Developer teams, product teams, ops teams receive pre-defined solutions – not problems to solve. The Capability Space cannot grow because there is no space to explore.</p>
+        <div class="fc-signal">Signal: "We implement tickets" · "Strategy is defined above us" · "We're not involved in discovery"</div>
+      </div>
+      <!-- Condition 1 DE -->
+      <div class="fail-card lc-de">
+        <span class="fc-num">Bedingung 01</span>
+        <span class="fc-title">Die Map fehlt</span>
+        <p class="fc-body">Teams dürfen nicht problemorientiert arbeiten. Developer-Teams, Produktteams, Ops-Teams erhalten vordefinierte Lösungen – keine Probleme zum Lösen. Der Capability Space kann nicht wachsen, weil es keinen Raum zum Erkunden gibt.</p>
+        <div class="fc-signal">Signal: „Wir setzen Tickets um" · „Die Strategie wird oben definiert" · „Wir sind nicht in die Discovery eingebunden"</div>
+      </div>
+
+      <!-- Condition 2 EN -->
+      <div class="fail-card lc-en">
+        <span class="fc-num">Condition 02</span>
+        <span class="fc-title">Boundaries persistently exceed the Compass</span>
+        <p class="fc-body">The structural constraints – role definitions, processes, rules, requirements – are permanently larger than what the Compass (Trust, Knowledge, Connection, Assumption Testing) can absorb. The team cannot compensate organisational friction through internal cohesion.</p>
+        <div class="fc-signal">Signal: Every sprint same blockers · Retros improve nothing · "We know the problem but can't fix it"</div>
+      </div>
+      <!-- Condition 2 DE -->
+      <div class="fail-card lc-de">
+        <span class="fc-num">Bedingung 02</span>
+        <span class="fc-title">Boundaries dauerhaft größer als der Compass</span>
+        <p class="fc-body">Die strukturellen Einschränkungen – Rollendefinitionen, Prozesse, Regeln, Requirements – sind dauerhaft größer als das, was der Compass (Trust, Knowledge, Connection, Assumption Testing) auffangen kann. Das Team kann die organisationale Reibung nicht durch inneren Zusammenhalt kompensieren.</p>
+        <div class="fc-signal">Signal: Jeder Sprint dieselben Blocker · Retros verbessern nichts · „Wir kennen das Problem, können es aber nicht lösen"</div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d1" style="margin:40px 0 0;max-width:860px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+        <div style="padding:20px 24px;background:#fff;border-top:3px solid #4A9CC9;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;">
+          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;" class="lc-en">The Map</span>
+          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;" class="lc-de">Die Map</span>
+          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-en">The space in which a team can independently identify and pursue opportunities (problems).</p>
+          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-de">Der Raum, in dem ein Team eigenständig Opportunities (Probleme) erkennen und bearbeiten kann.</p>
+        </div>
+        <div style="padding:20px 24px;background:#fff;border:1px solid #E4E2DC;border-top:3px solid #B03030;">
+          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:8px;">Boundaries</span>
+          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-en">Structural constraints – roles, processes, rules, requirements – that prevent teams from working on the right opportunities.</p>
+          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-de">Strukturelle Einschränkungen – Rollen, Prozesse, Regeln, Requirements – die Teams daran hindern, an den richtigen Opportunities zu arbeiten.</p>
+        </div>
+        <div style="padding:20px 24px;background:#fff;border:1px solid #E4E2DC;border-top:3px solid #2E9B6F;">
+          <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E9B6F;display:block;margin-bottom:8px;">The Compass</span>
+          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-en">Four forces – Trust, Knowledge, Connection, Assumption Testing – that strengthen the team's space from outside.</p>
+          <p style="font-size:15px;line-height:1.6;color:#5A5A5A;" class="lc-de">Vier Kräfte – Trust, Knowledge, Connection, Assumption Testing – die den Handlungsraum des Teams von außen stärken.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prediction-formula reveal reveal-d2">
+      <span class="pf-label lc-en">The Failure Condition</span>
+      <span class="pf-label lc-de">Die Scheiterbedingung</span>
+      <p class="pf-formula lc-en">
+        When <strong>no Map exists</strong> (teams work on solutions, not problems) <em>and</em> <strong>Boundaries &gt; Compass</strong> persistently — <span class="red">agile transformation will fail.</span> Not because of the method. Because the <strong>structural preconditions are absent.</strong>
+      </p>
+      <p class="pf-formula lc-de">
+        Wenn <strong>keine Map existiert</strong> (Teams arbeiten an Lösungen, nicht an Problemen) <em>und</em> <strong>Boundaries &gt; Compass</strong> dauerhaft — <span class="red">wird die agile Transformation scheitern.</span> Nicht wegen der Methode. Weil die <strong>strukturellen Voraussetzungen fehlen.</strong>
+      </p>
+    </div>
+
+    <div class="callout reveal reveal-d3" style="margin-top:32px;">
+      <span class="cl-label lc-en">What this means in practice</span>
+      <span class="cl-label lc-de">Was das in der Praxis bedeutet</span>
+      <p class="lc-en">Capability Spaces gives you a diagnostic before the transformation starts – and a shared language to name what's missing. The goal isn't to predict failure in order to give up. It's to see the conditions clearly enough to change them.</p>
+      <p class="lc-de">Capability Spaces liefert eine Diagnose, bevor die Transformation startet – und eine gemeinsame Sprache, um zu benennen, was fehlt. Das Ziel ist nicht, Scheitern vorherzusagen, um aufzugeben. Sondern die Bedingungen klar genug zu sehen, um sie zu verändern.</p>
+    </div>
+
   </div>
 </div>
+
+<div class="divider"></div>
+
+
+<div class="divider"></div>
+
+
 
 <div class="section lc-en">
   <div class="reveal">
@@ -2364,13 +2038,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <!-- PATH A – DE -->
 
-<div id="path-a-de" class="path-header path-a lc-de">
-  <div class="path-header-inner">
-    <div class="path-badge">Für Einsteiger*innen</div>
-    <h2>Frameworks lösen keine Probleme, die sie nicht sehen können.</h2>
-    <p>Viele Organisationen führen neue Arbeitsmethoden ein – und fragen sich danach, warum sich nichts verändert hat. Der Grund liegt selten in der Methode.</p>
-  </div>
-</div>
+
 
 <div class="section lc-de">
   <div class="reveal">
@@ -2471,15 +2139,8 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   </div>
 </div>
 
-<!-- ═══════════════════════ PATH B – EN ═══════════════════════════ -->
 
-<div id="path-b-en" class="path-header path-b lc-en">
-  <div class="path-header-inner">
-    <div class="path-badge">For Coaches</div>
-    <h2>The impediment is gone. The problem stays. Every sprint.</h2>
-    <p>When your interventions don't stick, the issue is structural – not methodological. Capability Spaces gives you the diagnostic to show exactly why.</p>
-  </div>
-</div>
+
 
 <div class="section lc-en">
   <div class="reveal">
@@ -2561,13 +2222,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 
 <!-- PATH B – DE -->
 
-<div id="path-b-de" class="path-header path-b lc-de">
-  <div class="path-header-inner">
-    <div class="path-badge">Für Coaches</div>
-    <h2>Das Impediment ist weg. Das Problem bleibt. Jeden Sprint.</h2>
-    <p>Wenn Ihre Interventionen nicht wirken, ist das Problem strukturell – nicht methodisch. Capability Spaces gibt Ihnen die Diagnose, um das genau zu zeigen.</p>
-  </div>
-</div>
+
 
 <div class="section lc-de">
   <div class="reveal">
@@ -2646,6 +2301,427 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
     <p>Skalierung ist kein einmaliges Org-Design-Projekt. Es ist das Ergebnis davon, dass Teams kontinuierlich wachsen – in Fähigkeiten und in Verantwortung. Boundaries zeigen, wo dieser Wachstumsprozess gerade hängt.</p>
   </div>
 </div>
+
+
+<!-- ═══════════════════════ FRAMEWORK LANDSCAPE ══════════════════════ -->
+
+<style>
+.landscape-section {
+  background: #F8F7F4;
+  padding: 80px 64px;
+}
+.landscape-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.landscape-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+  max-width: 900px;
+}
+.lf-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-top: 3px solid #8A8A8A;
+  padding: 28px 24px;
+}
+.lf-card .lf-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #5A5A5A;
+  margin-bottom: 10px;
+  display: block;
+}
+.lf-card .lf-what {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8A8A8A;
+  margin-bottom: 10px;
+  display: block;
+}
+.lf-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5A5A5A;
+  margin-bottom: 12px;
+}
+.lf-card .lf-limit {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #B03030;
+  font-style: italic;
+  line-height: 1.5;
+  padding-top: 12px;
+  border-top: 1px solid #E4E2DC;
+}
+.lf-highlight {
+  background: #0F2238;
+  border: none;
+  border-top: 3px solid #C9A227;
+}
+.lf-highlight .lf-name { color: #E8C96A; }
+.lf-highlight .lf-what { color: rgba(255,255,255,0.45); }
+.lf-highlight p { color: rgba(220,230,245,0.85); }
+.lf-highlight .lf-limit {
+  color: #E8C96A;
+  border-top-color: rgba(255,255,255,0.1);
+  font-style: normal;
+  font-weight: 400;
+}
+@media (max-width: 840px) {
+  .landscape-section { padding: 64px 28px; }
+  .landscape-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="landscape-section">
+  <div class="landscape-inner">
+
+    <div class="reveal">
+      <span class="section-label">
+        <span class="lc-en">Where Capability Spaces fits</span>
+        <span class="lc-de">Wo Capability Spaces ansetzt</span>
+      </span>
+      <h2 class="section-title">
+        <span class="lc-en">Every framework tells you <em>how</em> to work.<br>None tells you why it stops working.</span>
+        <span class="lc-de">Jedes Framework sagt dir, <em>wie</em> du arbeiten sollst.<br>Keines sagt dir, warum es aufhört zu funktionieren.</span>
+      </h2>
+      <p class="lead lc-en">If you're not deeply familiar with agile frameworks, here's what they each do – and where they all share the same blind spot.</p>
+      <p class="lead lc-de">Wenn du die agilen Frameworks nicht alle kennst: Hier ist, was sie jeweils leisten – und wo sie alle denselben blinden Fleck haben.</p>
+    </div>
+
+    <div class="landscape-grid reveal reveal-d1">
+
+      <!-- Scrum EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Framework</span>
+        <span class="lf-name">Scrum</span>
+        <p>Organises teamwork into short cycles (Sprints). Roles, ceremonies, artefacts are predefined. The Scrum Master removes obstacles that get escalated.</p>
+        <div class="lf-limit">Blind spot: assumes the organisation is ready to act on what teams surface. If it isn't, blockers return every sprint.</div>
+      </div>
+      <!-- Scrum DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Framework</span>
+        <span class="lf-name">Scrum</span>
+        <p>Organisiert Teamarbeit in kurzen Zyklen (Sprints). Rollen, Zeremonien und Artefakte sind vordefiniert. Der Scrum Master räumt eskalierte Hindernisse aus dem Weg.</p>
+        <div class="lf-limit">Blinder Fleck: setzt voraus, dass die Organisation bereit ist, auf das zu reagieren, was Teams benennen. Wenn nicht, kehren Blocker jeden Sprint zurück.</div>
+      </div>
+
+      <!-- Kanban EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Method</span>
+        <span class="lf-name">Kanban</span>
+        <p>Visualises work in progress. Limits how many tasks run in parallel to reduce overload and surface bottlenecks in the workflow.</p>
+        <div class="lf-limit">Blind spot: optimises how work flows through the system – but not whether the work entering the system should exist at all.</div>
+      </div>
+      <!-- Kanban DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Methode</span>
+        <span class="lf-name">Kanban</span>
+        <p>Macht laufende Arbeit sichtbar. Begrenzt parallele Aufgaben, um Überlastung zu reduzieren und Engpässe im Workflow sichtbar zu machen.</p>
+        <div class="lf-limit">Blinder Fleck: optimiert, wie Arbeit durch das System fließt – aber nicht, ob die Arbeit, die ins System kommt, überhaupt sinnvoll ist.</div>
+      </div>
+
+      <!-- SAFe EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Scaling Framework</span>
+        <span class="lf-name">SAFe / LeSS</span>
+        <p>Coordinates multiple teams working on the same product. Adds planning cycles, roles and governance layers so large organisations can move together.</p>
+        <div class="lf-limit">Blind spot: coordinates the dependencies that arise from how teams are structured – but doesn't question whether that structure is the problem.</div>
+      </div>
+      <!-- SAFe DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Skalierungs-Framework</span>
+        <span class="lf-name">SAFe / LeSS</span>
+        <p>Koordiniert mehrere Teams, die am selben Produkt arbeiten. Fügt Planungszyklen, Rollen und Governance-Ebenen hinzu, damit große Organisationen synchron agieren können.</p>
+        <div class="lf-limit">Blinder Fleck: koordiniert die Abhängigkeiten, die durch den Team-Schnitt entstehen – fragt aber nicht, ob dieser Schnitt selbst das Problem ist.</div>
+      </div>
+
+      <!-- OKR EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Goal Framework</span>
+        <span class="lf-name">OKR</span>
+        <p>Aligns teams around shared outcomes. Separates objectives (direction) from key results (measurable progress). Used in parallel with any agile method.</p>
+        <div class="lf-limit">Blind spot: defines where teams should go – but not whether the organisation structurally allows them to get there.</div>
+      </div>
+      <!-- OKR DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Ziel-Framework</span>
+        <span class="lf-name">OKR</span>
+        <p>Richtet Teams auf gemeinsame Outcomes aus. Trennt Ziele (Richtung) von Schlüsselergebnissen (messbarer Fortschritt). Wird parallel zu agilen Methoden eingesetzt.</p>
+        <div class="lf-limit">Blinder Fleck: definiert, wohin Teams sollen – aber nicht, ob die Organisation sie strukturell dorthin lässt.</div>
+      </div>
+
+      <!-- Team Topologies EN -->
+      <div class="lf-card lc-en">
+        <span class="lf-what">Org Design Model</span>
+        <span class="lf-name">Team Topologies</span>
+        <p>Describes how to structure teams to minimise cognitive load and reduce dependencies. Defines team types and interaction patterns.</p>
+        <div class="lf-limit">Blind spot: tells you how to redesign teams – but not why your current design stopped working, or when it's time to change.</div>
+      </div>
+      <!-- Team Topologies DE -->
+      <div class="lf-card lc-de">
+        <span class="lf-what">Org-Design-Modell</span>
+        <span class="lf-name">Team Topologies</span>
+        <p>Beschreibt, wie Teams strukturiert werden sollten, um kognitive Belastung zu minimieren und Abhängigkeiten zu reduzieren. Definiert Teamtypen und Interaktionsmuster.</p>
+        <div class="lf-limit">Blinder Fleck: sagt, wie Teams redesigned werden sollten – aber nicht, warum das aktuelle Design aufgehört hat zu funktionieren.</div>
+      </div>
+
+      <!-- Capability Spaces EN -->
+      <div class="lf-card lf-highlight lc-en">
+        <span class="lf-what">Diagnostic Model</span>
+        <span class="lf-name">Capability Spaces</span>
+        <p>Sits on top of any framework you already use. Doesn't replace Scrum, Kanban, SAFe or OKR. Instead it diagnoses why the framework you have isn't delivering – and shows exactly which structural conditions need to change.</p>
+        <div class="lf-limit">The only model that works on top of all others — and repairs their application instead of replacing them.</div>
+      </div>
+      <!-- Capability Spaces DE -->
+      <div class="lf-card lf-highlight lc-de">
+        <span class="lf-what">Diagnosemodell</span>
+        <span class="lf-name">Capability Spaces</span>
+        <p>Legt sich über jedes Framework, das du bereits verwendest. Ersetzt weder Scrum noch Kanban, SAFe oder OKR. Stattdessen diagnostiziert es, warum dein Framework nicht liefert – und zeigt genau, welche strukturellen Bedingungen sich ändern müssen.</p>
+        <div class="lf-limit">Das einzige Modell, das über allen anderen liegt — und ihre Anwendung repariert, statt sie zu ersetzen.</div>
+      </div>
+
+    </div>
+
+    <div class="callout reveal reveal-d2">
+      <span class="cl-label lc-en">The shared blind spot</span>
+      <span class="cl-label lc-de">Der gemeinsame blinde Fleck</span>
+      <p class="lc-en">Every framework above assumes the organisation is structurally ready to let teams work on the right problems. None of them diagnoses whether that precondition exists. That is exactly what Capability Spaces does — regardless of which framework you use.</p>
+      <p class="lc-de">Jedes der obigen Frameworks setzt voraus, dass die Organisation strukturell bereit ist, Teams an den richtigen Problemen arbeiten zu lassen. Keines diagnostiziert, ob diese Voraussetzung überhaupt gegeben ist. Genau das tut Capability Spaces – unabhängig davon, welches Framework du verwendest.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="quote-banner reveal">
+  <div class="quote-banner-inner">
+    <div class="qb-mark">"</div>
+    <div class="qb-text">
+      <span class="lc-en">When agile doesn't deliver results, the first question is never: what did the team do wrong? It is: what is the organisation preventing the team from doing? Teams that look unmotivated were not born that way. Structural helplessness creates that. That is a question only leaders can answer – and only if they know where to look.</span>
+      <span class="lc-de">Wenn Agilität keine Ergebnisse liefert, ist die erste Frage nie: Was hat das Team falsch gemacht? Sondern: Wie hindert die Organisation das Team daran, das Richtige zu tun? Teams, die unmotiviert wirken, waren es nicht von Anfang an. Strukturelle Hilflosigkeit erzeugt das. Das ist eine Frage, die nur Führungskräfte beantworten können – aber nur, wenn sie wissen, wo sie hinschauen müssen.</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════ LEADER ANCHOR SECTION ══════════════════ -->
+
+<style>
+.leader-section {
+  background: #F0EDE8;
+  padding: 80px 64px;
+  border-top: 3px solid #4A9CC9;
+}
+.leader-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.leader-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 48px;
+  max-width: 900px;
+}
+.leader-col .lc-head {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+.leader-col.coach .lc-head { color: #1B3A5C; }
+.leader-col.exec .lc-head  { color: #4A9CC9; }
+.leader-col .lc-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1B3A5C;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.leader-col .lc-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5A5A5A;
+  margin-bottom: 14px;
+}
+.leader-col .lc-answer {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2C2C2C;
+  font-weight: 400;
+  padding: 16px 20px;
+  border-left: 3px solid;
+  background: #FFFFFF;
+}
+.leader-col.coach .lc-answer { border-left-color: #1B3A5C; }
+.leader-col.exec  .lc-answer { border-left-color: #4A9CC9; }
+@media (max-width: 840px) {
+  .leader-section { padding: 64px 28px; }
+  .leader-split { grid-template-columns: 1fr; gap: 36px; }
+}
+</style>
+
+<style>
+/* ─── MIRROR MOMENT ─────────────────────────────────────────────── */
+.mirror-section {
+  background: #0F2238;
+  padding: 80px 64px;
+}
+.mirror-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.mirror-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.25;
+  max-width: 720px;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+.mirror-intro em { color: #E8C96A; font-style: italic; }
+.mirror-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(220,230,245,0.65);
+  font-style: italic;
+  margin-bottom: 52px;
+  max-width: 560px;
+  line-height: 1.6;
+}
+.mirror-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 860px;
+}
+.mirror-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.mirror-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mirror-item:nth-child(1) { transition-delay: 0.05s; }
+.mirror-item:nth-child(2) { transition-delay: 0.15s; }
+.mirror-item:nth-child(3) { transition-delay: 0.25s; }
+.mirror-item:nth-child(4) { transition-delay: 0.35s; }
+.mirror-item:nth-child(5) { transition-delay: 0.45s; }
+.mirror-item:nth-child(6) { transition-delay: 0.55s; }
+.mirror-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(201,162,39,0.45);
+  letter-spacing: 1px;
+  padding-top: 3px;
+}
+.mirror-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(240,237,232,0.88);
+  line-height: 1.5;
+}
+.mirror-text strong {
+  color: #E8C96A;
+  font-weight: 600;
+}
+.mirror-reveal {
+  margin-top: 52px;
+  padding: 32px 36px;
+  border: 1px solid rgba(201,162,39,0.25);
+  border-left: 3px solid #C9A227;
+  background: rgba(201,162,39,0.04);
+  max-width: 720px;
+}
+.mirror-reveal p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.6;
+  font-style: italic;
+}
+.mirror-reveal strong {
+  color: #E8C96A;
+  font-style: normal;
+  font-weight: 600;
+}
+@media (max-width: 840px) {
+  .mirror-section { padding: 60px 28px; }
+}
+</style>
+
+<div class="leader-section lc-en reveal">
+  <div class="leader-inner">
+    <span class="section-label">The Answer</span>
+    <h2 class="section-title">The results are missing because the <em>structure</em> is missing.</h2>
+    <p class="lead">Capability Spaces gives coaches and leaders a shared diagnosis – and shows clearly who needs to act, and where.</p>
+    <div class="leader-split">
+      <div class="leader-col coach">
+        <span class="lc-head lc-en">Why your coach can't fix this</span>
+        <div class="lc-question">Why do my interventions not stick?</div>
+        <p class="lc-body">You improve team dynamics, you name the impediments, you coach the process. But the same blockers return every sprint. The team doesn't grow. That is not a coaching failure.</p>
+        <div class="lc-answer">Capability Spaces shows you: when Boundaries are permanently larger than what the Compass can absorb, no coaching intervention will create lasting change. The constraint isn't in the team – it's in the organisation. That's where you need to look. And that's what you need to show your client.</div>
+      </div>
+      <div class="leader-col exec">
+        <span class="lc-head">For Leaders</span>
+        <div class="lc-question">We invested in agile. Where are the results?</div>
+        <p class="lc-body">You approved the transformation. You provided the resources. You see the effort. But team performance stays flat – and no one can explain why. The explanation is structural.</p>
+        <div class="lc-answer">Your teams are not delivering because the organisation – often unintentionally – prevents them from working on the right problems. Role definitions, approval processes, how requirements reach teams: these are the levers. And only you can move them.<br><br>And the teams that look unmotivated? They weren't unmotivated to begin with. Repeated structural helplessness does that to people. Capability Spaces shows you exactly which levers to pull – so they can do what they came here to do.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="leader-section lc-de reveal">
+  <div class="leader-inner">
+    <span class="section-label">Die Antwort</span>
+    <h2 class="section-title">Die Ergebnisse fehlen, weil die <em>Struktur</em> fehlt.</h2>
+    <p class="lead">Capability Spaces gibt Coaches und Führungskräften eine gemeinsame Diagnose – und zeigt klar, wer wo handeln muss.</p>
+    <div class="leader-split">
+      <div class="leader-col coach">
+        <span class="lc-head lc-de">Warum Ihr Coach das nicht lösen kann</span>
+        <div class="lc-question">Warum greifen meine Interventionen nicht?</div>
+        <p class="lc-body">Sie verbessern die Teamdynamik, benennen die Impediments, coachen den Prozess. Aber dieselben Blocker kommen jeden Sprint zurück. Das Team wächst nicht. Das ist kein Coaching-Versagen.</p>
+        <div class="lc-answer">Capability Spaces zeigt Ihnen: Wenn Boundaries dauerhaft größer sind als das, was der Compass auffangen kann, wird keine Coaching-Intervention nachhaltig wirken. Die Einschränkung liegt nicht im Team – sie liegt in der Organisation. Dort müssen Sie hinschauen. Und das müssen Sie Ihrem Kunden zeigen.</div>
+      </div>
+      <div class="leader-col exec">
+        <span class="lc-head">Für Führungskräfte</span>
+        <div class="lc-question">Wir haben in Agilität investiert. Wo sind die Ergebnisse?</div>
+        <p class="lc-body">Sie haben die Transformation genehmigt. Sie haben Ressourcen bereitgestellt. Sie sehen den Aufwand. Aber die Team-Performance bleibt flach – und niemand kann erklären, warum. Die Erklärung ist strukturell.</p>
+        <div class="lc-answer">Ihre Teams liefern nicht, weil die Organisation – oft unbeabsichtigt – verhindert, dass sie an den richtigen Problemen arbeiten. Rollendefinitionen, Freigabeprozesse, wie Requirements die Teams erreichen: das sind die Hebel. Und nur Sie können sie bewegen.<br><br>Und die Teams, die unmotiviert wirken? Sie waren es nicht von Anfang an. Wiederholte strukturelle Hilflosigkeit macht das mit Menschen. Capability Spaces zeigt Ihnen genau, welche Hebel Sie ansetzen müssen – damit Ihre Teams das tun können, wofür sie hier sind.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 
 <!-- ═══════════════════════ FOOTER ═══════════════════════════════ -->
 
