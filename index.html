@@ -2731,6 +2731,458 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 @media (max-width: 840px) {
   .mirror-section { padding: 60px 28px; }
 }
+
+/* ─── IN-PRACTICE SECTION ──────────────────────────────────────── */
+.practice-section {
+  background: #F8F7F4;
+  padding: 100px 64px;
+}
+.practice-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.practice-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 56px;
+  border-bottom: 1px solid #E4E2DC;
+  max-width: 860px;
+}
+.ptab {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #8A8A8A;
+  position: relative;
+  transition: color 0.2s;
+}
+.ptab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background 0.2s;
+}
+.ptab.active { color: #1B3A5C; }
+.ptab[data-tab="map"].active::after        { background: #C9A227; }
+.ptab[data-tab="boundaries"].active::after { background: #B03030; }
+.ptab[data-tab="compass"].active::after    { background: #2E7D52; }
+.ptab:hover:not(.active) { color: #2C2C2C; }
+
+.practice-panel { display: none; }
+.practice-panel.active { display: block; }
+
+.pp-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 44px;
+  max-width: 860px;
+}
+.pp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid;
+  margin-bottom: 28px;
+}
+.pp-badge.map        { color: #C9A227; border-color: rgba(201,162,39,0.35); }
+.pp-badge.boundaries { color: #B03030; border-color: rgba(176,48,48,0.35); }
+.pp-badge.compass    { color: #2E7D52; border-color: rgba(46,125,82,0.35); }
+
+.pp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 700;
+  color: #1B3A5C;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  margin-bottom: 16px;
+}
+.pp-title em       { font-style: italic; color: #C9A227; }
+.pp-title em.red   { color: #B03030; }
+.pp-title em.green { color: #2E7D52; }
+
+.pp-intro {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #5A5A5A;
+  max-width: 640px;
+  font-style: italic;
+}
+.pp-cadence {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid #E4E2DC;
+  color: #8A8A8A;
+  white-space: nowrap;
+  height: fit-content;
+  align-self: end;
+}
+
+/* SCRUM CONTEXT NOTE */
+.practice-framework-selector {
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+  flex-wrap: wrap;
+}
+.pfw-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid #E4E2DC;
+  background: #FFFFFF;
+  color: #8A8A8A;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pfw-btn.active {
+  border-color: #1B3A5C;
+  color: #1B3A5C;
+  background: #FFFFFF;
+}
+.pfw-btn.pfw-soon {
+  cursor: default;
+  opacity: 0.5;
+}
+.pfw-soon-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8A8A8A;
+  border: 1px solid #E4E2DC;
+  padding: 2px 6px;
+}
+.practice-scrum-note {
+  max-width: 860px;
+  margin: 32px 0 0;
+  padding: 22px 28px;
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-left: 3px solid #4A9CC9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.practice-scrum-note .psn-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #4A9CC9;
+}
+.practice-scrum-note p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5A5A5A;
+}
+.practice-scrum-note strong { color: #1B3A5C; }
+
+/* MAP */
+.map-journey {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 860px;
+  position: relative;
+  margin-bottom: 44px;
+}
+.map-journey::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: calc(16.66% + 20px);
+  right: calc(16.66% + 20px);
+  height: 1px;
+  background: linear-gradient(90deg, #C9A227, rgba(201,162,39,0.3), #C9A227);
+  z-index: 0;
+}
+.map-step { padding: 0 24px 0 0; position: relative; z-index: 1; }
+.map-step:last-child { padding-right: 0; }
+.ms-num {
+  width: 44px; height: 44px;
+  border: 2px solid #C9A227;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: #C9A227;
+  background: #F8F7F4;
+  margin-bottom: 20px;
+}
+.ms-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B3A5C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: block;
+}
+.ms-body { font-size: 15px; line-height: 1.65; color: #5A5A5A; margin-bottom: 14px; }
+.ms-question {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #C9A227;
+  font-style: italic;
+  padding-top: 14px;
+  border-top: 1px solid rgba(201,162,39,0.2);
+}
+.map-callout {
+  max-width: 860px;
+  padding: 28px 32px;
+  border-left: 3px solid #C9A227;
+  background: #FFFFFF;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+.map-callout .mc-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin-bottom: 10px;
+  display: block;
+}
+.map-callout p { font-size: 16px; line-height: 1.65; color: #2C2C2C; }
+
+/* MAP BUSINESS GOAL CHAIN */
+.map-chain {
+  max-width: 860px;
+  margin-bottom: 0;
+}
+.mc-chain-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin-bottom: 24px;
+  display: block;
+}
+.mc-chain-row {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr 24px 1fr;
+  gap: 0;
+  align-items: start;
+  margin-bottom: 28px;
+}
+.mc-chain-arrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: rgba(201,162,39,0.4);
+  text-align: center;
+  padding-top: 14px;
+}
+.mc-chain-step {
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-top: 3px solid #E4E2DC;
+  padding: 22px 20px;
+  transition: border-top-color 0.2s;
+}
+.mc-chain-step:hover { border-top-color: #C9A227; }
+.mc-chain-step--goal {
+  border-top-color: #C9A227;
+  background: #FFFDF5;
+}
+.mc-chain-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: rgba(201,162,39,0.55);
+  margin-bottom: 8px;
+  display: block;
+}
+.mc-chain-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B3A5C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: block;
+}
+.mc-chain-step p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5A5A5A;
+}
+.mc-chain-insight {
+  padding: 24px 28px;
+  border-left: 3px solid #C9A227;
+  background: #FFFFFF;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+.mc-chain-insight-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin-bottom: 10px;
+  display: block;
+}
+.mc-chain-insight p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #2C2C2C;
+}
+.mc-chain-insight strong { color: #1B3A5C; }
+@media (max-width: 840px) {
+  .mc-chain-row { grid-template-columns: 1fr; }
+  .mc-chain-arrow { transform: rotate(90deg); text-align: left; padding: 4px 0; }
+}
+
+/* BOUNDARIES */
+.boundaries-intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 860px;
+  margin-bottom: 44px;
+}
+.bi-col p { font-size: 16px; line-height: 1.7; color: #5A5A5A; margin-bottom: 14px; }
+.bi-format {
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-top: 3px solid #B03030;
+  padding: 24px 26px;
+}
+.bi-format .bif-head {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #B03030;
+  margin-bottom: 14px;
+  display: block;
+}
+.bi-format ul { list-style: none; padding: 0; margin: 0; }
+.bi-format ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5A5A5A;
+  padding: 6px 0;
+  border-bottom: 1px solid #E4E2DC;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.bi-format ul li:last-child { border-bottom: none; }
+.bi-format ul li::before {
+  content: '→';
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #B03030;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.ampel-demo { max-width: 860px; margin-bottom: 44px; }
+.ad-heading {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #8A8A8A;
+  margin-bottom: 16px;
+  display: block;
+}
+.ampel-demo-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.adc { background: #FFFFFF; border: 1px solid #E4E2DC; padding: 24px 22px; position: relative; overflow: hidden; }
+.adc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.adc.adc-green::before { background: #2E7D52; }
+.adc.adc-amber::before { background: #B8860B; }
+.adc.adc-red::before   { background: #B03030; }
+.adc-indicator { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.adc-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.adc-green .adc-dot { background: #2E7D52; }
+.adc-amber .adc-dot { background: #B8860B; }
+.adc-red   .adc-dot { background: #B03030; }
+.adc-status { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.adc-green .adc-status { color: #2E7D52; }
+.adc-amber .adc-status { color: #B8860B; }
+.adc-red   .adc-status { color: #B03030; }
+.adc-example { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: #1B3A5C; line-height: 1.4; margin-bottom: 10px; }
+.adc-note { font-size: 13px; line-height: 1.55; color: #8A8A8A; font-style: italic; }
+.adc-owner { margin-top: 14px; padding-top: 12px; border-top: 1px solid #E4E2DC; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.adc-green .adc-owner { color: #2E7D52; }
+.adc-amber .adc-owner { color: #B8860B; }
+.adc-red   .adc-owner { color: #B03030; }
+.boundaries-insight { max-width: 860px; background: #1B3A5C; padding: 28px 32px; }
+.boundaries-insight p { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.boundaries-insight strong { color: #E8C96A; font-style: normal; font-weight: 600; }
+
+/* COMPASS */
+.compass-flow { max-width: 860px; margin-bottom: 44px; }
+.cf-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: #2E7D52; margin-bottom: 20px; display: block; }
+.compass-evidence-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid #E4E2DC; background: #FFFFFF; }
+.ce-item { display: grid; grid-template-columns: 40px 1fr auto; gap: 20px; align-items: start; padding: 22px 28px; border-bottom: 1px solid #E4E2DC; transition: background 0.15s; }
+.ce-item:last-child { border-bottom: none; }
+.ce-item:hover { background: #F8F7F4; }
+.ce-num { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(46,125,82,0.5); padding-top: 2px; }
+.ce-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: #1B3A5C; margin-bottom: 6px; display: block; letter-spacing: 0.3px; }
+.ce-desc { font-size: 15px; line-height: 1.6; color: #5A5A5A; }
+.ce-desc em { font-style: italic; color: #2E7D52; }
+.ce-check { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 10px; border: 1px solid rgba(46,125,82,0.25); color: #2E7D52; white-space: nowrap; align-self: center; }
+.compass-retro-box { max-width: 860px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+.crb-card { background: #FFFFFF; border: 1px solid #E4E2DC; padding: 26px 28px; }
+.crb-card .crb-head { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; display: block; }
+.crb-card.celebrate .crb-head { color: #2E7D52; }
+.crb-card.examine   .crb-head { color: #B8860B; }
+.crb-card ul { list-style: none; padding: 0; margin: 0; }
+.crb-card ul li { font-size: 14px; line-height: 1.6; color: #5A5A5A; padding: 5px 0; border-bottom: 1px solid #E4E2DC; padding-left: 16px; position: relative; }
+.crb-card ul li:last-child { border-bottom: none; }
+.crb-card.celebrate ul li::before { content: '✓'; position: absolute; left: 0; color: #2E7D52; font-size: 11px; }
+.crb-card.examine   ul li::before { content: '?'; position: absolute; left: 0; color: #B8860B; font-family: 'DM Mono', monospace; font-size: 11px; }
+.compass-punchline { max-width: 860px; padding: 28px 32px; border-left: 3px solid #2E7D52; background: #FFFFFF; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+.compass-punchline .cpl-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: #2E7D52; margin-bottom: 10px; display: block; }
+.compass-punchline p { font-size: 17px; line-height: 1.65; color: #2C2C2C; }
+.compass-punchline strong { color: #1B3A5C; }
+
+@media (max-width: 840px) {
+  .practice-section { padding: 60px 28px; }
+  .map-journey { grid-template-columns: 1fr; }
+  .map-journey::before { display: none; }
+  .map-step { padding: 0 0 32px 0; }
+  .boundaries-intro-row { grid-template-columns: 1fr; }
+  .ampel-demo-row { grid-template-columns: 1fr; }
+  .compass-retro-box { grid-template-columns: 1fr; }
+  .pp-header { grid-template-columns: 1fr; }
+  .pp-cadence { display: none; }
+  .ce-item { grid-template-columns: 40px 1fr; }
+  .ce-check { display: none; }
+  .practice-tabs { overflow-x: auto; }
+  .ptab { padding: 12px 16px; white-space: nowrap; }
+}
 </style>
 
 <div class="leader-section lc-en reveal">
@@ -2776,6 +3228,358 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
     </div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ IN PRACTICE ══════════════════════════ -->
+
+<section class="practice-section reveal" id="in-practice">
+  <div class="practice-inner">
+
+    <span class="section-label lc-en">In Practice — Framework Examples</span>
+    <span class="section-label lc-de">In der Praxis — Framework-Beispiele</span>
+
+    <h2 class="section-title lc-en">How the model works <em>in your framework</em></h2>
+    <h2 class="section-title lc-de">Wie das Modell <em>in deinem Framework</em> wirkt</h2>
+
+    <p class="lead lc-en">Capability Spaces is not a workshop. It is a set of lightweight, recurring practices — embedded directly into how teams already work.</p>
+    <p class="lead lc-de">Capability Spaces ist kein Workshop. Es ist eine Reihe von leichtgewichtigen, wiederkehrenden Praktiken — eingebettet in die Art, wie Teams bereits arbeiten.</p>
+
+    <div class="practice-framework-selector lc-en">
+      <button class="pfw-btn active">Scrum</button>
+      <button class="pfw-btn pfw-soon">OKR <span class="pfw-soon-tag">coming soon</span></button>
+      <button class="pfw-btn pfw-soon">Kanban <span class="pfw-soon-tag">coming soon</span></button>
+    </div>
+    <div class="practice-framework-selector lc-de">
+      <button class="pfw-btn active">Scrum</button>
+      <button class="pfw-btn pfw-soon">OKR <span class="pfw-soon-tag">demnächst</span></button>
+      <button class="pfw-btn pfw-soon">Kanban <span class="pfw-soon-tag">demnächst</span></button>
+    </div>
+
+    <div class="practice-scrum-note lc-en">
+      <span class="psn-label">In Practice for Scrum</span>
+      <p>The three formats below are shown as additions to an existing Scrum setup. <strong>All standard Scrum events remain unchanged</strong> — Sprint Planning, Daily, Review, Retrospective. Capability Spaces adds three lightweight layers on top: a problem-orientation reset (The Map), a weekly boundary check, and a compass signal in every second retro. Nothing replaces what's already there.</p>
+    </div>
+    <div class="practice-scrum-note lc-de">
+      <span class="psn-label">In der Praxis für Scrum</span>
+      <p>Die drei Formate unten sind als Ergänzungen zu einem bestehenden Scrum-Setup gezeigt. <strong>Alle Standard-Scrum-Events bleiben unverändert</strong> — Sprint Planning, Daily, Review, Retrospektive. Capability Spaces fügt drei leichtgewichtige Ebenen hinzu: einen Problem-Orientierungs-Reset (Die Map), einen wöchentlichen Boundary-Check und ein Compass-Signal in jeder zweiten Retro. Nichts ersetzt, was bereits da ist.</p>
+    </div>
+
+    <div class="practice-tabs" style="margin-top: 44px;">
+      <button class="ptab active" data-tab="map">
+        <span class="lc-en">The Map</span><span class="lc-de">Die Map</span>
+      </button>
+      <button class="ptab" data-tab="boundaries">
+        <span class="lc-en">Boundaries</span><span class="lc-de">Boundaries</span>
+      </button>
+      <button class="ptab" data-tab="compass">
+        <span class="lc-en">Compass</span><span class="lc-de">Compass</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: THE MAP -->
+    <div class="practice-panel active" id="panel-map">
+      <div class="pp-header">
+        <div>
+          <span class="pp-badge map lc-en">01 — The Map</span>
+          <span class="pp-badge map lc-de">01 — Die Map</span>
+          <h3 class="pp-title lc-en">From <em>feature factory</em><br>to problem-oriented team</h3>
+          <h3 class="pp-title lc-de">Von der <em>Feature Factory</em><br>zum problemorientierten Team</h3>
+          <p class="pp-intro lc-en">Most product teams build what they are asked for. The Map reorients them toward the problem behind the request — without changing the process, just the thinking.</p>
+          <p class="pp-intro lc-de">Die meisten Produktteams bauen, was man ihnen aufträgt. Die Map reorientiert sie auf das Problem hinter dem Auftrag — ohne den Prozess zu ändern, nur das Denken.</p>
+        </div>
+        <span class="pp-cadence lc-en">One-time reset / quarterly review</span>
+        <span class="pp-cadence lc-de">Einmalig / quartalsweise</span>
+      </div>
+
+      <div class="map-journey">
+        <div class="map-step">
+          <div class="ms-num">01</div>
+          <span class="ms-label lc-en">The Stakeholder's Problem</span>
+          <span class="ms-label lc-de">Das Problem des Stakeholders</span>
+          <p class="ms-body lc-en">Before writing a single line of code: who has the problem? What is their situation? What can they not do today that they need to do?</p>
+          <p class="ms-body lc-de">Bevor eine Zeile Code geschrieben wird: Wer hat das Problem? Was ist ihre Situation? Was können sie heute nicht tun, was sie brauchen?</p>
+          <span class="ms-question lc-en">"What outcome does this person need — not what feature do they want?"</span>
+          <span class="ms-question lc-de">„Welches Ergebnis braucht diese Person — nicht welches Feature wünscht sie sich?"</span>
+        </div>
+        <div class="map-step">
+          <div class="ms-num">02</div>
+          <span class="ms-label lc-en">The Hypothesis</span>
+          <span class="ms-label lc-de">Die Hypothese</span>
+          <p class="ms-body lc-en">The team formulates a testable assumption: if we build X, then the user can do Y, and this solves problem Z. They ship to test — not to deliver.</p>
+          <p class="ms-body lc-de">Das Team formuliert eine überprüfbare Annahme: Wenn wir X bauen, kann der User Y tun, und das löst Problem Z. Sie liefern zum Testen — nicht zum Abliefern.</p>
+          <span class="ms-question lc-en">"How will we know if we were right?"</span>
+          <span class="ms-question lc-de">„Woran erkennen wir, ob wir richtig lagen?"</span>
+        </div>
+        <div class="map-step">
+          <div class="ms-num">03</div>
+          <span class="ms-label lc-en">The Outcome Signal</span>
+          <span class="ms-label lc-de">Das Outcome-Signal</span>
+          <p class="ms-body lc-en">The user can now do something they couldn't before. The problem is solved. They say so. This signal — not a sprint velocity — is the real measure of success.</p>
+          <p class="ms-body lc-de">Der User kann jetzt etwas, was er vorher nicht konnte. Das Problem ist gelöst. Er sagt es. Dieses Signal — nicht eine Sprint-Velocity — ist das echte Maß für Erfolg.</p>
+          <span class="ms-question lc-en">"Did the user's situation actually change?"</span>
+          <span class="ms-question lc-de">„Hat sich die Situation des Users wirklich verändert?"</span>
+        </div>
+      </div>
+
+      <div class="map-chain lc-en">
+        <span class="mc-chain-label">From solved problem to business goal</span>
+        <div class="mc-chain-row">
+          <div class="mc-chain-step">
+            <span class="mc-chain-num">①</span>
+            <span class="mc-chain-title">User outcome</span>
+            <p>The user can do something they couldn't before. One explicit problem solved.</p>
+          </div>
+          <div class="mc-chain-arrow">→</div>
+          <div class="mc-chain-step">
+            <span class="mc-chain-num">②</span>
+            <span class="mc-chain-title">Product</span>
+            <p>All outcomes together form the product. Not a collection of features — a collection of solved problems.</p>
+          </div>
+          <div class="mc-chain-arrow">→</div>
+          <div class="mc-chain-step mc-chain-step--goal">
+            <span class="mc-chain-num">③</span>
+            <span class="mc-chain-title">Business goal</span>
+            <p>Teams that think in outcomes automatically contribute to business objectives. The alignment happens through the work itself — not through top-down goal cascades.</p>
+          </div>
+        </div>
+        <div class="mc-chain-insight">
+          <span class="mc-chain-insight-label">Why this matters for Capability Spaces</span>
+          <p>A team that thinks in problems and outcomes is operating inside its Compass — building trust through knowledge, testing assumptions in real time. And because each outcome connects to the product, and the product to business goals, <strong>the question of strategic alignment answers itself.</strong></p>
+        </div>
+      </div>
+
+      <div class="map-chain lc-de">
+        <span class="mc-chain-label">Vom gelösten Problem zum Businessziel</span>
+        <div class="mc-chain-row">
+          <div class="mc-chain-step">
+            <span class="mc-chain-num">①</span>
+            <span class="mc-chain-title">User Outcome</span>
+            <p>Der User kann etwas, was er vorher nicht konnte. Ein explizites Problem gelöst.</p>
+          </div>
+          <div class="mc-chain-arrow">→</div>
+          <div class="mc-chain-step">
+            <span class="mc-chain-num">②</span>
+            <span class="mc-chain-title">Produkt</span>
+            <p>Alle Outcomes zusammen ergeben das Produkt. Keine Feature-Sammlung — eine Sammlung gelöster Probleme.</p>
+          </div>
+          <div class="mc-chain-arrow">→</div>
+          <div class="mc-chain-step mc-chain-step--goal">
+            <span class="mc-chain-num">③</span>
+            <span class="mc-chain-title">Businessziel</span>
+            <p>Teams, die in Outcomes denken, zahlen automatisch auf die Businessziele ein. Die Ausrichtung entsteht durch die Arbeit selbst — nicht durch Top-down-Zielkaskaden.</p>
+          </div>
+        </div>
+        <div class="mc-chain-insight">
+          <span class="mc-chain-insight-label">Warum das für Capability Spaces zählt</span>
+          <p>Ein Team, das in Problemen und Outcomes denkt, arbeitet innerhalb seines Compass — baut Vertrauen durch Wissen auf und testet Annahmen in Echtzeit. Und weil jeder Outcome auf das Produkt einzahlt, und das Produkt auf die Businessziele, <strong>beantwortet sich die Frage nach strategischer Ausrichtung von selbst.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: BOUNDARIES -->
+    <div class="practice-panel" id="panel-boundaries">
+      <div class="pp-header">
+        <div>
+          <span class="pp-badge boundaries lc-en">02 — Boundaries</span>
+          <span class="pp-badge boundaries lc-de">02 — Boundaries</span>
+          <h3 class="pp-title lc-en">Name what <em class="red">blocks</em> the team — every week</h3>
+          <h3 class="pp-title lc-de">Benennen, was das Team <em class="red">blockiert</em> — jede Woche</h3>
+          <p class="pp-intro lc-en">Boundaries are constraints imposed from outside the team. Most teams feel them constantly but rarely name them explicitly. This weekly format makes the invisible visible.</p>
+          <p class="pp-intro lc-de">Boundaries sind Einschränkungen, die von außen auferlegt werden. Die meisten Teams spüren sie ständig, benennen sie aber selten explizit. Dieses Wochenformat macht das Unsichtbare sichtbar.</p>
+        </div>
+        <span class="pp-cadence lc-en">Weekly — 15 min</span>
+        <span class="pp-cadence lc-de">Wöchentlich — 15 Min.</span>
+      </div>
+
+      <div class="boundaries-intro-row">
+        <div class="bi-col">
+          <p class="lc-en">The team collects one question per boundary: <em>Is this constraint stable, shifting, or critical right now?</em> Not a complaint session. A structural diagnosis.</p>
+          <p class="lc-de">Das Team sammelt eine Frage pro Boundary: <em>Ist diese Einschränkung stabil, in Bewegung oder gerade kritisch?</em> Keine Beschwerde-Runde. Eine strukturelle Diagnose.</p>
+          <p class="lc-en">The output is a traffic light. Green boundaries can be ignored this week. Amber ones need monitoring. Red ones need leadership action — not team workarounds.</p>
+          <p class="lc-de">Das Ergebnis ist eine Ampel. Grüne Boundaries können diese Woche ignoriert werden. Gelbe brauchen Beobachtung. Rote brauchen Leadership-Handeln — keine Team-Workarounds.</p>
+        </div>
+        <div>
+          <div class="bi-format">
+            <span class="bif-head lc-en">Format (15 min, weekly)</span>
+            <span class="bif-head lc-de">Format (15 Min., wöchentlich)</span>
+            <ul>
+              <li><span class="lc-en">What boundaries are we working against this week?</span><span class="lc-de">Welche Boundaries arbeiten wir diese Woche dagegen an?</span></li>
+              <li><span class="lc-en">Rate each: green / amber / red</span><span class="lc-de">Bewertung: grün / gelb / rot</span></li>
+              <li><span class="lc-en">Red → escalate to leader, not work around</span><span class="lc-de">Rot → Eskalation zur Führungskraft, kein Workaround</span></li>
+              <li><span class="lc-en">Track trend: is it improving or worsening?</span><span class="lc-de">Trend verfolgen: verbessert oder verschlechtert es sich?</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ampel-demo">
+        <span class="ad-heading lc-en">Example — Product Team, Week 12</span>
+        <span class="ad-heading lc-de">Beispiel — Produktteam, Woche 12</span>
+        <div class="ampel-demo-row">
+          <div class="adc adc-green">
+            <div class="adc-indicator">
+              <div class="adc-dot"></div>
+              <span class="adc-status lc-en">Stable</span><span class="adc-status lc-de">Stabil</span>
+            </div>
+            <div class="adc-example lc-en">Deployment pipeline is self-service</div>
+            <div class="adc-example lc-de">Deployment-Pipeline ist Self-Service</div>
+            <p class="adc-note lc-en">No dependency on ops team this sprint. We ship when we're ready.</p>
+            <p class="adc-note lc-de">Keine Abhängigkeit vom Ops-Team in diesem Sprint. Wir liefern, wenn wir bereit sind.</p>
+            <div class="adc-owner lc-en">→ No action needed</div>
+            <div class="adc-owner lc-de">→ Keine Maßnahme nötig</div>
+          </div>
+          <div class="adc adc-amber">
+            <div class="adc-indicator">
+              <div class="adc-dot"></div>
+              <span class="adc-status lc-en">Shifting</span><span class="adc-status lc-de">In Bewegung</span>
+            </div>
+            <div class="adc-example lc-en">Stakeholder availability for feedback unclear</div>
+            <div class="adc-example lc-de">Verfügbarkeit des Stakeholders für Feedback unklar</div>
+            <p class="adc-note lc-en">Last two sprint reviews: absent. We're building without validation.</p>
+            <p class="adc-note lc-de">Letzte zwei Sprint Reviews: nicht erschienen. Wir bauen ohne Validierung.</p>
+            <div class="adc-owner lc-en">→ Monitor — escalate if red next week</div>
+            <div class="adc-owner lc-de">→ Beobachten — eskalieren wenn nächste Woche rot</div>
+          </div>
+          <div class="adc adc-red">
+            <div class="adc-indicator">
+              <div class="adc-dot"></div>
+              <span class="adc-status lc-en">Critical</span><span class="adc-status lc-de">Kritisch</span>
+            </div>
+            <div class="adc-example lc-en">Approval process for API changes: 3-week queue</div>
+            <div class="adc-example lc-de">Freigabeprozess für API-Änderungen: 3-Wochen-Warteschlange</div>
+            <p class="adc-note lc-en">Blocks hypothesis testing entirely. Team is stuck on workarounds.</p>
+            <p class="adc-note lc-de">Blockiert das Testen von Hypothesen vollständig. Team steckt in Workarounds.</p>
+            <div class="adc-owner lc-en">→ Leadership action required</div>
+            <div class="adc-owner lc-de">→ Leadership-Handeln erforderlich</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="boundaries-insight lc-en">
+        <p>The red item above is not a team problem. It is an organisational constraint. <strong>Capability Spaces names it explicitly</strong> — so that leaders can see what their structure is doing to team performance, week by week.</p>
+      </div>
+      <div class="boundaries-insight lc-de">
+        <p>Das rote Element oben ist kein Teamproblem. Es ist eine organisatorische Einschränkung. <strong>Capability Spaces benennt es explizit</strong> — damit Führungskräfte sehen können, was ihre Struktur Woche für Woche mit der Team-Performance macht.</p>
+      </div>
+    </div>
+
+    <!-- TAB 3: COMPASS -->
+    <div class="practice-panel" id="panel-compass">
+      <div class="pp-header">
+        <div>
+          <span class="pp-badge compass lc-en">03 — Compass</span>
+          <span class="pp-badge compass lc-de">03 — Compass</span>
+          <h3 class="pp-title lc-en">Strengthen what <em class="green">works</em> — every other retro</h3>
+          <h3 class="pp-title lc-de">Stärken, was <em class="green">wirkt</em> — jede zweite Retro</h3>
+          <p class="pp-intro lc-en">Every second retrospective, the team collects explicit evidence of problem-oriented work. Not complaints — signals of capability. What actually showed up this sprint?</p>
+          <p class="pp-intro lc-de">Jede zweite Retrospektive sammelt das Team explizite Belege für problemorientiertes Arbeiten. Keine Klagen — Signale von Kompetenz. Was ist in diesem Sprint wirklich passiert?</p>
+        </div>
+        <span class="pp-cadence lc-en">Every 2nd retro — 20 min</span>
+        <span class="pp-cadence lc-de">Jede 2. Retro — 20 Min.</span>
+      </div>
+
+      <div class="compass-flow">
+        <span class="cf-label lc-en">What the team collects — evidence of the Compass working</span>
+        <span class="cf-label lc-de">Was das Team sammelt — Belege dafür, dass der Compass wirkt</span>
+        <div class="compass-evidence-grid">
+          <div class="ce-item">
+            <span class="ce-num">01</span>
+            <div class="ce-body">
+              <span class="ce-title lc-en">Problem understood</span>
+              <span class="ce-title lc-de">Problem verstanden</span>
+              <p class="ce-desc lc-en">We talked directly to the stakeholder or user. We can describe their situation in our own words — not in ticket language. <em>We know why we're building this.</em></p>
+              <p class="ce-desc lc-de">Wir haben direkt mit dem Stakeholder oder User gesprochen. Wir können seine Situation in eigenen Worten beschreiben — nicht in Ticket-Sprache. <em>Wir wissen, warum wir das bauen.</em></p>
+            </div>
+            <span class="ce-check lc-en">Trust + Knowledge</span>
+            <span class="ce-check lc-de">Vertrauen + Wissen</span>
+          </div>
+          <div class="ce-item">
+            <span class="ce-num">02</span>
+            <div class="ce-body">
+              <span class="ce-title lc-en">Hypothesis built and shipped</span>
+              <span class="ce-title lc-de">Hypothese gebaut und geliefert</span>
+              <p class="ce-desc lc-en">We defined what we believed before we built it. We shipped something specifically to test that belief. <em>We didn't just execute a ticket — we ran an experiment.</em></p>
+              <p class="ce-desc lc-de">Wir haben definiert, was wir glaubten, bevor wir es gebaut haben. Wir haben geliefert, um diese Annahme zu testen. <em>Wir haben kein Ticket abgearbeitet — wir haben ein Experiment durchgeführt.</em></p>
+            </div>
+            <span class="ce-check lc-en">Assumption Testing</span>
+            <span class="ce-check lc-de">Annahmen testen</span>
+          </div>
+          <div class="ce-item">
+            <span class="ce-num">03</span>
+            <div class="ce-body">
+              <span class="ce-title lc-en">Outcome reached — user can do something new</span>
+              <span class="ce-title lc-de">Outcome erreicht — User kann etwas Neues</span>
+              <p class="ce-desc lc-en">The user can now do something in the product they couldn't before. Their explicit problem is solved. <em>Not "feature shipped" — problem gone.</em></p>
+              <p class="ce-desc lc-de">Der User kann jetzt etwas in der App tun, was er vorher nicht konnte. Sein explizites Problem ist gelöst. <em>Nicht „Feature geliefert" — Problem beseitigt.</em></p>
+            </div>
+            <span class="ce-check lc-en">Connection</span>
+            <span class="ce-check lc-de">Verbindung</span>
+          </div>
+          <div class="ce-item">
+            <span class="ce-num">04</span>
+            <div class="ce-body">
+              <span class="ce-title lc-en">User feedback received — they said thank you</span>
+              <span class="ce-title lc-de">User-Feedback erhalten — er hat sich bedankt</span>
+              <p class="ce-desc lc-en">The user noticed. They gave the team direct feedback — a message, a comment, a conversation. This is the signal that closes the loop. <em>The work had impact.</em></p>
+              <p class="ce-desc lc-de">Der User hat es bemerkt. Er hat dem Team direktes Feedback gegeben — eine Nachricht, ein Kommentar, ein Gespräch. Das ist das Signal, das den Kreis schließt. <em>Die Arbeit hatte Wirkung.</em></p>
+            </div>
+            <span class="ce-check lc-en">Trust + Connection</span>
+            <span class="ce-check lc-de">Vertrauen + Verbindung</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="compass-retro-box">
+        <div class="crb-card celebrate">
+          <span class="crb-head lc-en">Celebrate this sprint</span>
+          <span class="crb-head lc-de">Diesen Sprint feiern</span>
+          <ul>
+            <li><span class="lc-en">We got direct user feedback — and it was positive</span><span class="lc-de">Wir haben direktes User-Feedback bekommen — und es war positiv</span></li>
+            <li><span class="lc-en">Our hypothesis was correct: the user can now export reports</span><span class="lc-de">Unsere Hypothese stimmte: der User kann jetzt Berichte exportieren</span></li>
+            <li><span class="lc-en">Stakeholder was present at review and engaged</span><span class="lc-de">Stakeholder war beim Review anwesend und engagiert</span></li>
+          </ul>
+        </div>
+        <div class="crb-card examine">
+          <span class="crb-head lc-en">Examine together</span>
+          <span class="crb-head lc-de">Gemeinsam untersuchen</span>
+          <ul>
+            <li><span class="lc-en">We shipped but didn't talk to any user — was the hypothesis real?</span><span class="lc-de">Wir haben geliefert, ohne mit einem User gesprochen zu haben — war die Hypothese real?</span></li>
+            <li><span class="lc-en">Two tickets had no clear problem statement — who owns that?</span><span class="lc-de">Zwei Tickets hatten keine klare Problembeschreibung — wer ist dafür verantwortlich?</span></li>
+            <li><span class="lc-en">We solved the problem, but the user hasn't seen it yet</span><span class="lc-de">Wir haben das Problem gelöst, aber der User hat es noch nicht gesehen</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="compass-punchline lc-en">
+        <span class="cpl-label">The point of the Compass retro</span>
+        <p>The goal is not to improve the process. It is to let the team <strong>recognise its own capability</strong> — and to accumulate evidence that problem-oriented work is possible here, in this organisation, with these constraints. That recognition is what builds the Compass over time.</p>
+      </div>
+      <div class="compass-punchline lc-de">
+        <span class="cpl-label">Der Zweck der Compass-Retro</span>
+        <p>Das Ziel ist nicht, den Prozess zu verbessern. Es ist, dem Team zu ermöglichen, <strong>seine eigene Kompetenz zu erkennen</strong> — und Belege anzusammeln, dass problemorientiertes Arbeiten hier möglich ist, in dieser Organisation, mit diesen Einschränkungen. Diese Erkenntnis ist es, die den Compass über die Zeit aufbaut.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var tabs   = document.querySelectorAll('.ptab');
+  var panels = document.querySelectorAll('.practice-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = this.getAttribute('data-tab');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      this.classList.add('active');
+      var panel = document.getElementById('panel-' + target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
 
 <div class="divider"></div>
 
