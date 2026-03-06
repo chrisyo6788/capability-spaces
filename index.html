@@ -2876,17 +2876,21 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 /* SCRUM CONTEXT NOTE */
 .practice-framework-selector {
   display: flex;
-  gap: 8px;
-  margin: 40px 0 0;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0;
+  margin: 44px 0 0;
+  flex-wrap: nowrap;
+  width: fit-content;
+  overflow: hidden;
 }
 .pfw-btn {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 9px 18px;
+  padding: 14px 32px;
   border: 1px solid #E4E2DC;
+  border-right: none;
   background: #FFFFFF;
   color: #8A8A8A;
   cursor: pointer;
@@ -2895,10 +2899,15 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   align-items: center;
   gap: 10px;
 }
+.pfw-btn:last-child { border-right: 1px solid #E4E2DC; }
 .pfw-btn.active {
+  background: #1B3A5C;
+  color: #FFFFFF;
   border-color: #1B3A5C;
+}
+.pfw-btn:hover:not(.active) {
+  background: #F0EDE8;
   color: #1B3A5C;
-  background: #FFFFFF;
 }
 .pfw-btn.pfw-soon {
   cursor: default;
