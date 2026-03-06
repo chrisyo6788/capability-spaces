@@ -42,7 +42,9 @@ gap: 4px;
 align-items: center;
 }
 
-#btn-de { display: none; }
+#btn-de { display: none !important; }
+#cs-btn-de { display: none !important; }
+#cs-side-btn-de { display: none !important; }
 
 .lang-btn {
 font-family: ‘DM Mono’, monospace;
@@ -1228,7 +1230,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
 @media (max-width: 840px) {
-.path-selector { grid-template-columns: 1fr; }
+  html { scroll-padding-top: 44px; }
+  .path-selector { grid-template-columns: 1fr; }
 .section { padding: 64px 28px; }
 .path-header { padding: 60px 28px; }
 .boundary-grid, .compass-grid, .scale-2col, .ampel-row, .format-cards, .ownership-grid { grid-template-columns: 1fr; }
@@ -1248,6 +1251,93 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .viz-stage-btn { font-size: 9px; padding: 8px 12px; letter-spacing: 1px; }
 .practice-section { padding: 64px 24px; }
 .ptab { padding: 12px 16px; font-size: 9px; }
+}
+
+/* ─── MOBILE FIXES (≤ 480px) ─────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Body scroll offset for fixed top-nav */
+  html { scroll-padding-top: 44px; }
+
+  /* Hero */
+  .hero-title { font-size: 42px; letter-spacing: -1px; }
+  .hero-subtitle { font-size: 17px; }
+  .hero-story p { font-size: 15px; }
+  .hero-content { padding: 36px 20px; }
+  .path-card { padding: 24px 20px; }
+  .path-question { font-size: 17px; }
+
+  /* Sections */
+  .section { padding: 52px 20px; }
+  .section-title { font-size: 28px; letter-spacing: -0.5px; }
+  .lead { font-size: 17px; }
+  p.body { font-size: 16px; }
+
+  /* Evidence */
+  .evidence-section { padding: 52px 20px; }
+  .ev-stat .ev-num { font-size: 34px; }
+  .ev-context p { font-size: 15px; }
+
+  /* Mirror section */
+  .mirror-section { padding: 52px 20px; }
+  .mirror-intro { font-size: 24px; }
+  .mirror-text { font-size: 17px; }
+  .mirror-reveal { padding: 24px 20px; margin-top: 36px; }
+  .mirror-reveal p { font-size: 18px; }
+
+  /* Quote banner */
+  .qb-text { font-size: 19px; }
+  .qb-mark { font-size: 56px; }
+
+  /* Prediction */
+  .prediction-section { padding: 52px 20px; }
+  .fail-card { padding: 22px 20px; }
+  .prediction-formula { padding: 24px 20px; }
+  .pf-formula { font-size: 17px; }
+
+  /* Path headers */
+  .path-header { padding: 48px 20px 40px; }
+
+  /* Callouts */
+  .callout { padding: 20px 20px; }
+
+  /* Boundary / compass / scale grids already 1-col at 840px */
+  .b-card { padding: 20px 18px; }
+  .compass-card { padding: 20px 18px; }
+
+  /* Leader section */
+  .leader-section { padding: 52px 20px; }
+  .leader-split { gap: 28px; }
+  .lc-question { font-size: 19px; }
+  .lc-answer { font-size: 15px; }
+
+  /* Landscape */
+  .landscape-section { padding: 52px 20px; }
+  .lf-card { padding: 20px 18px; }
+
+  /* Hard truth */
+  .hardtruth-section { padding: 52px 20px; }
+  .ht-card { padding: 20px 18px; }
+
+  /* Format cards */
+  .fmt-card { padding: 24px 18px; }
+
+  /* Footer */
+  footer { padding: 48px 20px; }
+  .fl-name { font-size: 18px; }
+
+  /* Compare table — allow horizontal scroll */
+  .compare-table-wrap { margin: 24px -20px; padding: 0 20px; }
+  .compare-table { font-size: 13px; }
+  .compare-table td { padding: 10px 12px; }
+
+  /* Model viz */
+  .viz-stage-title { font-size: 26px; }
+  .viz-stage-body { font-size: 15px; }
+
+  /* OKR / retro */
+  .okr-chain-level { padding: 18px 16px; }
+  .okr-retro-part { padding: 18px 16px; }
+  .okr-event-card { padding: 18px 16px; }
 }
 </style>
 
@@ -1367,7 +1457,67 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   border-bottom-color: #C9A227;
 }
 
-/* ── Responsive show/hide ── */
+/* ─── NAV LANG SWITCHER ──────────────────────────────────────────── */
+.cs-topnav-lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  flex-shrink: 0;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+.cs-lang-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cs-lang-btn.active {
+  border-color: #C9A227;
+  color: #C9A227;
+  background: rgba(201,162,39,0.08);
+}
+.cs-lang-btn:hover:not(.active) {
+  color: rgba(255,255,255,0.75);
+}
+
+/* Sidebar lang switcher */
+.cs-sidenav-lang {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.cs-sidenav-lang-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.cs-sidenav-lang-btn.active {
+  border-color: #C9A227;
+  color: #C9A227;
+  background: rgba(201,162,39,0.08);
+}
+.cs-sidenav-lang-btn:hover:not(.active) {
+  color: rgba(255,255,255,0.7);
+}
 @media (min-width: 1280px) {
   .cs-sidenav { display: flex; }
   .cs-topnav  { display: none !important; }
@@ -1413,6 +1563,10 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <span class="cs-sidenav-label lc-en">In Practice</span>
     <span class="cs-sidenav-label lc-de">In der Praxis</span>
   </a>
+  <div class="cs-sidenav-lang">
+    <button class="cs-sidenav-lang-btn" id="cs-side-btn-en" onclick="setLang('en')">EN</button>
+    <button class="cs-sidenav-lang-btn" id="cs-side-btn-de" onclick="setLang('de')">DE</button>
+  </div>
 </nav>
 
 <!-- ─── TOP NAV (Mobile) ────────────────────────────────────────── -->
@@ -1435,6 +1589,10 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <a class="cs-topnav-item" href="#in-practice">
     <span class="lc-en">In Practice</span><span class="lc-de">In der Praxis</span>
   </a>
+  <div class="cs-topnav-lang">
+    <button class="cs-lang-btn" id="cs-btn-en" onclick="setLang('en')">EN</button>
+    <button class="cs-lang-btn" id="cs-btn-de" onclick="setLang('de')">DE</button>
+  </div>
 </nav>
 
 <!-- ═══════════════════════ HERO ═══════════════════════════════════ -->
@@ -1594,7 +1752,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <p style="color:rgba(240,237,232,0.88);"><em style="color:rgba(201,162,39,0.85);font-style:italic;">Lean UX</em> &amp; <em style="color:rgba(201,162,39,0.85);font-style:italic;">Sense &amp; Respond</em> — "Our goal is not to create a deliverable, it's to change something in the world — to create an outcome." Teams that only receive tickets never get the chance to ask the right question: what behaviour are we actually trying to change? Capability Spaces diagnoses why this question structurally never gets asked.</p>
     </div>
     <div class="mirror-reveal reveal">
-      <p>None of this is a failure of teams working under externally imposed goals. <strong>It is a structural pattern</strong> – and it has a name. The teams are not the problem. They are carrying the weight of a system that was never fixed. Capability Spaces shows you exactly where the organisation is standing in its own way. And what only you can change. <strong>The coaching question comes second:</strong> once teams can set their own goals, the work becomes: how do they reach what they committed to themselves?</p>
+      <p>Capability Spaces shows you exactly where the organisation is standing in its own way – and what only you can change. <strong>The coaching question comes second:</strong> once teams can set their own goals, the work becomes: how do they reach what they committed to themselves?</p>
     </div>
   </div>
 </div>
@@ -1642,7 +1800,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <p style="color:rgba(240,237,232,0.88);"><em style="color:rgba(201,162,39,0.85);font-style:italic;">Lean UX</em> &amp; <em style="color:rgba(201,162,39,0.85);font-style:italic;">Sense &amp; Respond</em> — „Unser Ziel ist nicht, etwas zu liefern – es ist, etwas in der Welt zu verändern: einen Outcome zu erzeugen." Teams, die nur Tickets bekommen, kommen nie dazu, die richtige Frage zu stellen: Welches Verhalten wollen wir eigentlich verändern? Capability Spaces diagnostiziert, warum diese Frage strukturell nie gestellt wird.</p>
     </div>
     <div class="mirror-reveal reveal">
-      <p>Das ist kein Versagen von Teams, die unter extern gesetzten Zielen arbeiten. <strong>Es ist ein strukturelles Muster</strong> – und es hat einen Namen. Die Teams sind nicht das Problem. Sie tragen das Gewicht eines Systems, das nie repariert wurde. Capability Spaces zeigt Ihnen genau, wo die Organisation sich selbst im Weg steht. Und was nur Sie verändern können. <strong>Die Coaching-Frage kommt danach:</strong> Sobald Teams eigene Ziele setzen können, wird die Arbeit: Wie erreichen sie, was sie sich selbst vorgenommen haben?</p>
+      <p>Capability Spaces zeigt Ihnen genau, wo die Organisation sich selbst im Weg steht – und was nur Sie verändern können. <strong>Die Coaching-Frage kommt danach:</strong> Sobald Teams eigene Ziele setzen können, wird die Arbeit: Wie erreichen sie, was sie sich selbst vorgenommen haben?</p>
     </div>
   </div>
 </div>
@@ -1888,8 +2046,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="viz-stage-tag">02 · The Problem</span>
       <div class="viz-stage-num">02</div>
       <h2 class="viz-stage-title">The Boundaries</h2>
-      <p class="viz-stage-body lc-en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. These are not team failures. They are diagnostic signals.</p>
-      <p class="viz-stage-body lc-de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Das sind keine Teamfehler. Es sind Diagnosezeichen.</p>
+      <p class="viz-stage-body lc-en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. They are diagnostic signals, not team failures.</p>
+      <p class="viz-stage-body lc-de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Sie sind Diagnosezeichen, keine Teamfehler.</p>
       <div class="viz-stage-items">
         <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">👥</span><div><div class="viz-item-name lc-en">Roles</div><div class="viz-item-name lc-de">Rollen</div><div class="viz-item-desc lc-en">Responsibilities prevent people from working on the problems they're most suited to solve.</div><div class="viz-item-desc lc-de">Zuständigkeiten hindern Menschen daran, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div></div></div>
         <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📋</span><div><div class="viz-item-name">Requirements</div><div class="viz-item-desc lc-en">Tasks arrive as finished solutions, not as problems. No room to understand why.</div><div class="viz-item-desc lc-de">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div></div></div>
@@ -2749,6 +2907,13 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
       <span class="cl-label lc-de">Der gemeinsame blinde Fleck</span>
       <p class="lc-en">Every framework above assumes the organisation is structurally ready to let teams work on the right problems. None of them diagnoses whether that precondition exists. That is exactly what Capability Spaces does — regardless of which framework you use.</p>
       <p class="lc-de">Jedes der obigen Frameworks setzt voraus, dass die Organisation strukturell bereit ist, Teams an den richtigen Problemen arbeiten zu lassen. Keines diagnostiziert, ob diese Voraussetzung überhaupt gegeben ist. Genau das tut Capability Spaces – unabhängig davon, welches Framework du verwendest.</p>
+    </div>
+
+    <div class="callout green reveal reveal-d3">
+      <span class="cl-label lc-en">What makes this model different</span>
+      <span class="cl-label lc-de">Was dieses Modell unterscheidet</span>
+      <p class="lc-en">Teresa Torres says: <em>"Teams should do continuous discovery."</em> Capability Spaces says: here is why this specific team structurally cannot — and who needs to change that.<br><br>Jeff Gothelf says: <em>"OKRs should be aligned, not cascaded."</em> Capability Spaces says: if the Map is missing, it does not matter how well your OKRs are set up.<br><br>This is not a summary of the literature. It is a meta-level — a diagnostic framework that explains why the known solutions are not working.</p>
+      <p class="lc-de">Teresa Torres sagt: <em>„Teams sollten kontinuierlich Discovery betreiben."</em> Capability Spaces sagt: Hier ist, warum dieses konkrete Team das strukturell nicht kann — und wer das ändern muss.<br><br>Jeff Gothelf sagt: <em>„OKRs sollten ausgerichtet, nicht kaskadiert werden."</em> Capability Spaces sagt: Wenn die Map fehlt, ist es egal, wie gut deine OKRs aufgesetzt sind.<br><br>Das ist keine Zusammenfassung der Literatur. Es ist eine Metaebene — ein Diagnoserahmen, der erklärt, warum die bekannten Lösungen nicht greifen.</p>
     </div>
 
   </div>
@@ -3851,6 +4016,60 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
             <p>Ein Team, das in Problemen und Outcomes denkt, arbeitet innerhalb seines Compass — baut Vertrauen durch Wissen auf und testet Annahmen in Echtzeit. Und weil jeder Outcome auf das Produkt einzahlt, und das Produkt auf die Businessziele, <strong>beantwortet sich die Frage nach strategischer Ausrichtung von selbst.</strong></p>
           </div>
         </div>
+
+        <!-- ── JIRA PRACTICAL GUIDE ─────────────────────────────── -->
+        <div class="callout lc-en" style="margin-top:40px;max-width:860px;border-top:3px solid #C9A227;">
+          <span class="cl-label">The Map in Jira — a practical guide</span>
+          <p>Most teams using Jira have hundreds of tickets, hundreds of dependencies, and no clear picture of what they are actually trying to change. The root cause is almost always the same: tickets describe solutions, not problems. Ron Jeffries invented User Stories in 1998 as a placeholder for a conversation about user need. Mike Cohn later codified the format as <em>"As a [user], I want [X] so that [Y]"</em> — the "so that Y" is the outcome. In practice, that last part is almost always omitted. Jeff Patton's <em>User Story Mapping</em> (2014) goes further: stories should describe the activity the user is trying to complete, not the feature the team plans to build. The problem was understood from the start. Jira just made it easier to ignore.</p>
+          <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">A large outcome — something meaningful that changes for users or the business. If you use OKRs, an Epic maps directly to a Key Result.</p>
+            </div>
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #1B3A5C;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A5C;display:block;margin-bottom:10px;">Story / Ticket</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">The user problem and the desired outcome. Not the solution. Not the feature. The ticket answers: who cannot do what, and what should be different afterwards?</p>
+            </div>
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">Subtask</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Solution ideas and implementation steps — experiments toward the outcome. Optional: if developers prefer not to track subtasks, that is fine. Transparency comes from outcomes, not task lists.</p>
+            </div>
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">Sprint Goal</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">An outcome, not a delivery list. If you are doing Scrum, the Sprint Goal should describe what will be different for users at the end — not what the team plans to ship.</p>
+            </div>
+          </div>
+          <div style="margin-top:20px;background:#F0F4F8;border-left:3px solid #4A9CC9;padding:16px 20px;">
+            <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;"><strong>On transparency:</strong> The concern is sometimes raised that without detailed subtasks, nobody knows what developers are working on. This confuses activity transparency with outcome transparency. A team with clear user problems and defined desired outcomes is far more transparent than one with 400 linked tickets and no shared understanding of what change they are working toward. What the team does is their business. What changes for users is everyone's.</p>
+          </div>
+        </div>
+
+        <div class="callout lc-de" style="margin-top:40px;max-width:860px;border-top:3px solid #C9A227;">
+          <span class="cl-label">Die Map in Jira — ein praktischer Leitfaden</span>
+          <p>Die meisten Teams, die Jira nutzen, haben hunderte Tickets, hunderte Abhängigkeiten — und kein klares Bild davon, was sie eigentlich verändern wollen. Die Ursache ist fast immer dieselbe: Tickets beschreiben Lösungen, keine Probleme. Ron Jeffries erfand User Stories 1998 als Platzhalter für ein Gespräch über Nutzerbedürfnisse. Mike Cohn kodifizierte das Format als <em>„Als [Nutzer] möchte ich [X], damit [Y]"</em> — das „damit Y" ist der Outcome. In der Praxis fällt dieser Teil fast immer weg. Jeff Pattons <em>User Story Mapping</em> (2014) geht weiter: Stories sollten die Aktivität beschreiben, die der Nutzer abschließen möchte — nicht das Feature, das das Team zu bauen plant. Das Problem war von Anfang an bekannt. Jira hat es nur leichter gemacht, es zu ignorieren.</p>
+          <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein großer Outcome — etwas Bedeutsames, das sich für Nutzer oder das Unternehmen verändert. Wenn OKRs genutzt werden, entspricht ein Epic direkt einem Key Result.</p>
+            </div>
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #1B3A5C;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A5C;display:block;margin-bottom:10px;">Story / Ticket</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Das Nutzerproblem und der gewünschte Outcome. Nicht die Lösung. Nicht das Feature. Das Ticket beantwortet: Wer kann was nicht tun, und was soll danach anders sein?</p>
+            </div>
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">Subtask</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Lösungsideen und Implementierungsschritte — Experimente auf dem Weg zum Outcome. Optional: Wenn Entwickler keine Subtasks erfassen möchten, ist das kein Problem. Transparenz entsteht durch Outcomes, nicht durch Aufgabenlisten.</p>
+            </div>
+            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:20px 18px;">
+              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">Sprint Goal</span>
+              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein Outcome, keine Lieferliste. Wenn Scrum gemacht wird, sollte das Sprint Goal beschreiben, was sich am Ende für Nutzer verändert hat — nicht was das Team plant auszuliefern.</p>
+            </div>
+          </div>
+          <div style="margin-top:20px;background:#F0F4F8;border-left:3px solid #4A9CC9;padding:16px 20px;">
+            <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;"><strong>Zur Transparenz:</strong> Manchmal wird eingewandt, dass ohne detaillierte Subtasks niemand weiß, woran Entwickler arbeiten. Das verwechselt Aktivitätstransparenz mit Outcome-Transparenz. Ein Team mit klaren Nutzerproblemen und definierten gewünschten Outcomes ist deutlich transparenter als eines mit 400 verlinkten Tickets und keinem gemeinsamen Verständnis davon, welche Veränderung angestrebt wird. Was das Team tut, ist seine Sache. Was sich für Nutzer verändert, geht alle an.</p>
+          </div>
+        </div>
+
       </div><!-- /panel-map -->
 
       <!-- TAB 2: BOUNDARIES -->
@@ -4033,17 +4252,21 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
             </div>
             <div class="okr-chain-divider">↓</div>
             <div class="okr-chain-level okr-level-product">
-              <span class="okr-level-tag">Product level — Teams + PO</span>
+              <span class="okr-level-tag">Product Level — Teams</span>
               <div class="okr-chain-pair">
                 <div class="okr-chain-item okr-item-problem"><span class="okr-item-label">Product Problems</span><p>Teams describe which user or stakeholder problems, when solved, would contribute to the business OKRs. This is their contribution — not assigned, derived.</p></div>
                 <div class="okr-chain-connector">→</div>
-                <div class="okr-chain-item okr-item-okr okr-item-map"><span class="okr-item-label">Product OKRs = The Map ✦</span><p>Product OKRs remove abstraction for teams. They know exactly which user problem they're solving and how it connects upward. <strong>A complete OKR set is the Map.</strong></p></div>
+                <div class="okr-chain-item okr-item-okr okr-item-map"><span class="okr-item-label">Product OKRs = The Map</span><p>Product OKRs remove abstraction for teams. They know exactly which user problem they're solving and how it connects upward. <strong>A complete OKR set is the Map.</strong></p></div>
               </div>
             </div>
           </div>
           <div class="okr-chain-note">
             <span class="okr-chain-note-label">The alignment guarantee</span>
             <p>Because Product OKRs are derived from Product Problems, and Product Problems are selected for their contribution to Business OKRs — solving product problems <strong>directly and verifiably contributes to business outcomes.</strong> The alignment is structural, not assumed.</p>
+          </div>
+          <div class="callout green lc-en" style="margin-top:24px;max-width:860px;">
+            <span class="cl-label">Related thinking · Jeff Gothelf &amp; Josh Seiden</span>
+            <p>In <em>Who Does What by How Much? A Practical Guide to Customer-Centric OKRs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2024)</span>, Gothelf and Seiden describe exactly this structure: leadership sets high-level OKRs from strategy, teams derive their own OKRs from the problems they can independently solve — and every team OKR has a parent. They call this <strong>aligned autonomy</strong>: teams choose how to reach outcomes, as long as each goal connects upward. Cascading — where leadership dictates the goals down — is explicitly an anti-pattern in their model. The problem-first cascade described here (Business Problem → Business OKR → Product Problem → Product OKR) is the direct application of that principle.</p>
           </div>
         </div>
 
@@ -4060,17 +4283,21 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
             </div>
             <div class="okr-chain-divider">↓</div>
             <div class="okr-chain-level okr-level-product">
-              <span class="okr-level-tag">Produkt-Ebene — Teams + PO</span>
+              <span class="okr-level-tag">Produkt-Ebene — Teams</span>
               <div class="okr-chain-pair">
                 <div class="okr-chain-item okr-item-problem"><span class="okr-item-label">Produkt-Probleme</span><p>Teams beschreiben, welche User- oder Stakeholder-Probleme, wenn gelöst, auf die Business OKRs einzahlen würden. Das ist ihr Beitrag — nicht zugewiesen, abgeleitet.</p></div>
                 <div class="okr-chain-connector">→</div>
-                <div class="okr-chain-item okr-item-okr okr-item-map"><span class="okr-item-label">Produkt-OKRs = Die Map ✦</span><p>Produkt-OKRs nehmen den Abstraktionsgrad für Teams heraus. Sie wissen genau, welches User-Problem sie lösen und wie es nach oben verbindet. <strong>Ein fertiges OKR-Set ist die Map.</strong></p></div>
+                <div class="okr-chain-item okr-item-okr okr-item-map"><span class="okr-item-label">Produkt-OKRs = Die Map</span><p>Produkt-OKRs nehmen den Abstraktionsgrad für Teams heraus. Sie wissen genau, welches User-Problem sie lösen und wie es nach oben verbindet. <strong>Ein fertiges OKR-Set ist die Map.</strong></p></div>
               </div>
             </div>
           </div>
           <div class="okr-chain-note">
             <span class="okr-chain-note-label">Die Ausrichtungsgarantie</span>
             <p>Weil Produkt-OKRs aus Produkt-Problemen abgeleitet sind, und Produkt-Probleme für ihren Beitrag zu Business-OKRs ausgewählt werden — zahlt das Lösen von Produkt-Problemen <strong>direkt und nachweisbar auf die Business-Outcomes ein.</strong> Die Ausrichtung ist strukturell, nicht angenommen.</p>
+          </div>
+          <div class="callout green lc-de" style="margin-top:24px;max-width:860px;">
+            <span class="cl-label">Verwandtes Denken · Jeff Gothelf &amp; Josh Seiden</span>
+            <p>In <em>Who Does What by How Much? A Practical Guide to Customer-Centric OKRs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2024)</span> beschreiben Gothelf und Seiden genau diese Struktur: Führung setzt übergeordnete OKRs aus der Strategie, Teams leiten ihre eigenen OKRs aus den Problemen ab, die sie eigenständig lösen können — und jedes Team-OKR hat ein Parent-OKR. Sie nennen das <strong>Aligned Autonomy</strong>: Teams entscheiden selbst, wie sie Outcomes erreichen, solange jedes Ziel nach oben verbindet. Kaskadierung — bei der Führung die Ziele von oben vorgibt — ist in ihrem Modell explizit ein Anti-Pattern. Die hier beschriebene problem-first Kaskade (Business-Problem → Business OKR → Produkt-Problem → Produkt OKR) ist die direkte Anwendung dieses Prinzips.</p>
           </div>
         </div>
       </div><!-- /panel-okr-map -->
@@ -4295,6 +4522,14 @@ function applyLang(lang) {
 
   document.getElementById('btn-en').classList.toggle('active', isEN);
   document.getElementById('btn-de').classList.toggle('active', !isEN);
+  var csEN = document.getElementById('cs-btn-en');
+  var csDE = document.getElementById('cs-btn-de');
+  var csSideEN = document.getElementById('cs-side-btn-en');
+  var csSideDE = document.getElementById('cs-side-btn-de');
+  if (csEN) csEN.classList.toggle('active', isEN);
+  if (csDE) csDE.classList.toggle('active', !isEN);
+  if (csSideEN) csSideEN.classList.toggle('active', isEN);
+  if (csSideDE) csSideDE.classList.toggle('active', !isEN);
   document.documentElement.lang = lang;
 }
 
