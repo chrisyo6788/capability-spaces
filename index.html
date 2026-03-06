@@ -3312,10 +3312,10 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
   content: '';
   position: absolute;
   top: 22px; /* vertically centred on the 44px circles */
-  left: calc(33.33% / 2 + 22px);  /* centre of circle 1 */
-  right: calc(33.33% / 2 + 22px); /* centre of circle 3 (mirror) */
+  left: 22px;
+  width: calc(100% - 44px);
   height: 1px;
-  background: #C9A227;
+  background: linear-gradient(90deg, #C9A227 0%, #C9A227 100%);
   z-index: 0;
 }
 .map-step { padding: 0 24px 0 0; position: relative; z-index: 1; }
@@ -3408,8 +3408,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
 }
 .mc-chain-step:hover { border-top-color: #C9A227; }
 .mc-chain-step--goal {
-  border-top-color: #C9A227;
-  background: #FFFDF5;
+  /* intentionally no special style — hover shows gold like the others */
 }
 .mc-chain-num {
   font-family: 'DM Mono', monospace;
@@ -4021,7 +4020,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
         <div class="callout lc-en" style="margin-top:40px;max-width:860px;border-top:3px solid #C9A227;">
           <span class="cl-label">The Map in Jira — a practical guide</span>
           <p>Most teams using Jira have hundreds of tickets, hundreds of dependencies, and no clear picture of what they are actually trying to change. The root cause is almost always the same: tickets describe solutions, not problems. Ron Jeffries invented User Stories in 1998 as a placeholder for a conversation about user need. Mike Cohn later codified the format as <em>"As a [user], I want [X] so that [Y]"</em> — the "so that Y" is the outcome. In practice, that last part is almost always omitted. Jeff Patton's <em>User Story Mapping</em> (2014) goes further: stories should describe the activity the user is trying to complete, not the feature the team plans to build. The problem was understood from the start. Jira just made it easier to ignore.</p>
-          <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+          <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
               <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
               <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">A large outcome — something meaningful that changes for users or the business. If you use OKRs, an Epic maps directly to a Key Result.</p>
@@ -4047,7 +4046,7 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
         <div class="callout lc-de" style="margin-top:40px;max-width:860px;border-top:3px solid #C9A227;">
           <span class="cl-label">Die Map in Jira — ein praktischer Leitfaden</span>
           <p>Die meisten Teams, die Jira nutzen, haben hunderte Tickets, hunderte Abhängigkeiten — und kein klares Bild davon, was sie eigentlich verändern wollen. Die Ursache ist fast immer dieselbe: Tickets beschreiben Lösungen, keine Probleme. Ron Jeffries erfand User Stories 1998 als Platzhalter für ein Gespräch über Nutzerbedürfnisse. Mike Cohn kodifizierte das Format als <em>„Als [Nutzer] möchte ich [X], damit [Y]"</em> — das „damit Y" ist der Outcome. In der Praxis fällt dieser Teil fast immer weg. Jeff Pattons <em>User Story Mapping</em> (2014) geht weiter: Stories sollten die Aktivität beschreiben, die der Nutzer abschließen möchte — nicht das Feature, das das Team zu bauen plant. Das Problem war von Anfang an bekannt. Jira hat es nur leichter gemacht, es zu ignorieren.</p>
-          <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+          <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
               <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
               <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein großer Outcome — etwas Bedeutsames, das sich für Nutzer oder das Unternehmen verändert. Wenn OKRs genutzt werden, entspricht ein Epic direkt einem Key Result.</p>
