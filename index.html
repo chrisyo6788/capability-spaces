@@ -26,13 +26,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; width: 100%; }
 
 body {
 font-family: ‘Cormorant Garamond’, Georgia, serif;
 background: #F8F7F4;
 color: #2C2C2C;
-overflow-x: clip;
+overflow-x: hidden;
+width: 100%;
 }
 
 /* ─── LANG SWITCHER ──────────────────────────────────────────────── */
@@ -42,9 +43,7 @@ gap: 4px;
 align-items: center;
 }
 
-#btn-de { display: none !important; }
-#cs-btn-de { display: none !important; }
-#cs-side-btn-de { display: none !important; }
+
 
 .lang-btn {
 font-family: ‘DM Mono’, monospace;
@@ -1262,6 +1261,9 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   /* Body scroll offset for fixed top-nav */
   html { scroll-padding-top: 44px; }
 
+  /* Extra bottom padding when sticky bar is present */
+  .practice-section { padding-bottom: 80px; }
+
   /* Hero */
   .hero-title { font-size: 42px; letter-spacing: -1px; }
   .hero-subtitle { font-size: 17px; }
@@ -1627,19 +1629,19 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 
     <h1 class="hero-title">
       <span class="lc-en">You introduced Scrum.<strong>Not agility.</strong></span>
-      <span class="lc-de">Sie haben Scrum eingeführt.<strong>Nicht Agilität.</strong></span>
+      <span class="lc-de">Du hast Scrum eingeführt.<strong>Nicht Agilität.</strong></span>
     </h1>
 
     <p class="hero-subtitle">
       <span class="lc-en">Any framework gives you structure. Agility is what happens when teams can actually use it.</span>
-      <span class="lc-de">Jedes Framework gibt Ihnen Struktur. Agilität entsteht, wenn Teams sie wirklich nutzen können.</span>
+      <span class="lc-de">Jedes Framework gibt dir Struktur. Agilität entsteht, wenn Teams sie wirklich nutzen können.</span>
     </p>
 
     <div class="hero-story">
       <p class="lc-en">Most teams follow the process correctly. The ceremonies run. The tickets move. But the space to act on what actually matters — that is defined from above.</p>
       <p class="lc-en" style="margin-top:14px;font-size:18px;line-height:1.55;"><strong>Capability Spaces shows you where that space is blocked, and what only you can change.</strong></p>
       <p class="lc-de">Die meisten Teams folgen dem Prozess korrekt. Die Zeremonien laufen. Die Tickets bewegen sich. Aber der Raum, um das zu tun, was wirklich zählt — der wird von oben definiert.</p>
-      <p class="lc-de" style="margin-top:14px;font-size:18px;line-height:1.55;"><strong>Capability Spaces zeigt Ihnen, wo dieser Raum blockiert ist, und was nur Sie verändern können.</strong></p>
+      <p class="lc-de" style="margin-top:14px;font-size:18px;line-height:1.55;"><strong>Capability Spaces zeigt dir, wo dieser Raum blockiert ist, und was nur du verändern kannst.</strong></p>
     </div>
   </div>
 
@@ -1667,7 +1669,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       </span>
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:700;color:#FFFFFF;line-height:1.1;letter-spacing:-1px;margin-bottom:20px;">
         <span class="lc-en">This is not your organisation's fault.<br><em style="color:#E8C96A;">It is a structural pattern – decades old.</em></span>
-        <span class="lc-de">Das ist kein Versagen Ihrer Organisation.<br><em style="color:#E8C96A;">Es ist ein strukturelles Muster – jahrzehntealt.</em></span>
+        <span class="lc-de">Das ist kein Versagen deiner Organisation.<br><em style="color:#E8C96A;">Es ist ein strukturelles Muster – jahrzehntealt.</em></span>
       </h2>
       <p style="font-size:19px;font-weight:300;color:rgba(220,230,245,0.75);max-width:640px;line-height:1.7;font-style:italic;margin-bottom:0;">
         <span class="lc-en">Agile frameworks – Scrum, Kanban, SAFe, OKR – were all designed to move decision-making closer to the work: to give teams the autonomy to solve real problems. Their manifestos and guides still say so. What happened instead is well documented.</span>
@@ -1783,29 +1785,29 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div class="mirror-inner">
     <div class="reveal">
       <span class="section-label">Für Führungskräfte</span>
-      <p class="mirror-intro">Sie genehmigen, investieren, unterstützen.<br><em>Und trotzdem liefern Ihre Teams nicht.</em></p>
-      <p class="mirror-sub">Lesen Sie diese Situationen. Schauen Sie, wie viele Sie wiedererkennen.</p>
+      <p class="mirror-intro">Du genehmigst, investierst, unterstützt.<br><em>Und trotzdem liefern deine Teams nicht.</em></p>
+      <p class="mirror-sub">Lies diese Situationen. Schau, wie viele du wiedererkennst.</p>
     </div>
     <div class="mirror-items" id="mirror-items-de">
       <div class="mirror-item">
         <span class="mirror-num">01</span>
-        <p class="mirror-text">Ihre Teams arbeiten in Sprints – aber beim Sprint Review <strong>überrascht Sie trotzdem, was gebaut wurde.</strong></p>
+        <p class="mirror-text">Deine Teams arbeiten in Sprints – aber beim Sprint Review <strong>überrascht dich trotzdem, was gebaut wurde.</strong></p>
       </div>
       <div class="mirror-item">
         <span class="mirror-num">02</span>
-        <p class="mirror-text">Ihre Teams machen Retrospektiven – aber <strong>es gibt kein Format, in dem Sie direkt erleben, was sie blockiert.</strong> Boundaries bleiben für Sie unsichtbar.</p>
+        <p class="mirror-text">Deine Teams machen Retrospektiven – aber <strong>es gibt kein Format, in dem du direkt erlebst, was sie blockiert.</strong> Boundaries bleiben für dich unsichtbar.</p>
       </div>
       <div class="mirror-item">
         <span class="mirror-num">03</span>
-        <p class="mirror-text">Ihre Teams haben einen Product Owner – aber <strong>Prioritäten kommen trotzdem von oben.</strong> Der Product Owner koordiniert, entscheidet nicht.</p>
+        <p class="mirror-text">Deine Teams haben einen Product Owner – aber <strong>Prioritäten kommen trotzdem von oben.</strong> Der Product Owner koordiniert, entscheidet nicht.</p>
       </div>
       <div class="mirror-item">
         <span class="mirror-num">04</span>
-        <p class="mirror-text">Impediments werden zu Ihnen eskaliert. Sie lösen sie. <strong>Denselben Impediments begegnen Sie im nächsten Sprint wieder.</strong></p>
+        <p class="mirror-text">Impediments werden zu dir eskaliert. Du löst sie. <strong>Denselben Impediments begegnest du im nächsten Sprint wieder.</strong></p>
       </div>
       <div class="mirror-item">
         <span class="mirror-num">05</span>
-        <p class="mirror-text">Ihre Entwickler sind beschäftigt. Tickets werden geschlossen. <strong>Aber die Wirkung sehen Sie nicht</strong> – weder im Produkt noch in den Zahlen.</p>
+        <p class="mirror-text">Deine Entwickler sind beschäftigt. Tickets werden geschlossen. <strong>Aber die Wirkung siehst du nicht</strong> – weder im Produkt noch in den Zahlen.</p>
       </div>
       <div class="mirror-item">
         <span class="mirror-num">06</span>
@@ -1813,7 +1815,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       </div>
       <div class="mirror-item">
         <span class="mirror-num">07</span>
-        <p class="mirror-text">Ihre Teams gelten als <strong>unmotiviert.</strong> Aber sie waren es nicht von Anfang an. <strong>Sie wurden demotiviert</strong> – durch Strukturen, die ihnen die Fähigkeit genommen haben, zu handeln, zu entscheiden, etwas zu bewirken. Das ist kein Personenproblem. Das ist, was kaputtes Pseudo-Agile mit Menschen macht.</p>
+        <p class="mirror-text">Deine Teams gelten als <strong>unmotiviert.</strong> Aber sie waren es nicht von Anfang an. <strong>Sie wurden demotiviert</strong> – durch Strukturen, die ihnen die Fähigkeit genommen haben, zu handeln, zu entscheiden, etwas zu bewirken. Das ist kein Personenproblem. Das ist, was kaputtes Pseudo-Agile mit Menschen macht.</p>
       </div>
     </div>
     <div class="callout blue reveal" style="background:rgba(255,255,255,0.05);border-left-color:#4A9CC9;max-width:860px;margin:32px 0;">
@@ -1821,7 +1823,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <p style="color:rgba(240,237,232,0.88);"><em style="color:rgba(201,162,39,0.85);font-style:italic;">Lean UX</em> &amp; <em style="color:rgba(201,162,39,0.85);font-style:italic;">Sense &amp; Respond</em> — „Unser Ziel ist nicht, etwas zu liefern – es ist, etwas in der Welt zu verändern: einen Outcome zu erzeugen." Teams, die nur Tickets bekommen, kommen nie dazu, die richtige Frage zu stellen: Welches Verhalten wollen wir eigentlich verändern? Capability Spaces diagnostiziert, warum diese Frage strukturell nie gestellt wird.</p>
     </div>
     <div class="mirror-reveal reveal">
-      <p>Capability Spaces zeigt Ihnen genau, wo die Organisation sich selbst im Weg steht – und was nur Sie verändern können. <strong>Die Coaching-Frage kommt danach:</strong> Sobald Teams eigene Ziele setzen können, wird die Arbeit: Wie erreichen sie, was sie sich selbst vorgenommen haben?</p>
+      <p>Capability Spaces zeigt dir genau, wo die Organisation sich selbst im Weg steht – und was nur du verändern kannst. <strong>Die Coaching-Frage kommt danach:</strong> Sobald Teams eigene Ziele setzen können, wird die Arbeit: Wie erreichen sie, was sie sich selbst vorgenommen haben?</p>
     </div>
   </div>
 </div>
@@ -1888,8 +1890,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .viz-sticky-col {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 44px;
+  height: calc(100vh - 44px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2458,7 +2460,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Innovation kommt nicht aus der Strategie.<br><em>Sie kommt von Teams.</em></span>
     </h2>
     <p class="lead lc-en">Innovation is not a process, a workshop, or a roadmap item. It is a specific outcome: a change in user behaviour that drives business results. Only one group in your organisation can produce that – the teams who interact with users, test hypotheses, and learn from what actually happens.</p>
-    <p class="lead lc-de">Innovation ist kein Prozess, kein Workshop und kein Roadmap-Eintrag. Sie ist ein konkreter Outcome: eine Veränderung im Verhalten von Nutzern, die Business-Ergebnisse erzeugt. Nur eine Gruppe in Ihrer Organisation kann das leisten – die Teams, die mit Nutzern interagieren, Hypothesen testen und aus dem lernen, was wirklich passiert.</p>
+    <p class="lead lc-de">Innovation ist kein Prozess, kein Workshop und kein Roadmap-Eintrag. Sie ist ein konkreter Outcome: eine Veränderung im Verhalten von Nutzern, die Business-Ergebnisse erzeugt. Nur eine Gruppe in deiner Organisation kann das leisten – die Teams, die mit Nutzern interagieren, Hypothesen testen und aus dem lernen, was wirklich passiert.</p>
   </div>
 
   <div class="reveal reveal-d1" style="margin-top:48px;max-width:860px;">
@@ -2867,10 +2869,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 8px;">Making Boundaries visible: the traffic-light as your entry point.</h3>
     <p class="body" style="margin-bottom:24px;">The traffic-light looks simple – and it is. That is precisely its strength. You do not need a new tool, a new process, or a new role. You need one honest question asked regularly: <em>are we able to work on what actually matters?</em> Green, Amber, Red. The colour itself opens the conversation. The Boundary that follows gives it structure. Complexity hides problems. Simplicity surfaces them.</p>
   </div>
-  <div class="format-cards reveal reveal-d3">
-    <div class="fmt-card"><span class="fmt-icon">🔁</span><span class="fmt-title">In Scrum</span><p>A dedicated weekly format with leaders. Teams name traffic-light status and active boundaries directly. Leadership experiences live what constrains teams.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Check in with traffic-light status (Green / Amber / Red)</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Name active boundaries and assign category</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Leadership: clarify ownership or make a decision</span></div></div></div>
-    <div class="fmt-card"><span class="fmt-icon">📋</span><span class="fmt-title">In Kanban</span><p>Boundaries as an explicit category on the board. Prioritised and assigned in the stand-up with leadership.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Add a Boundary column to the board</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Boundaries as cards with category and owner</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Review weekly, make progress visible</span></div></div></div>
-    <div class="fmt-card"><span class="fmt-icon">🎯</span><span class="fmt-title">In OKR</span><p>Traffic-light status before every Weekly. Side Topics name active boundaries – escalable, visible to leadership.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Record traffic-light status in writing before Weekly</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Side Topics = active boundaries (who, what, since when)</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Quarterly Review: analyse boundary patterns</span></div></div></div>
   </div>
 </div>
 
@@ -2951,10 +2949,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 8px;">Boundaries sichtbar machen: die Ampel als Einstieg.</h3>
     <p class="body" style="margin-bottom:24px;">Die Ampel sieht simpel aus – und das ist sie auch. Genau darin liegt ihre Stärke. Sie brauchen kein neues Tool, keinen neuen Prozess, keine neue Rolle. Sie brauchen eine ehrliche Frage, die regelmäßig gestellt wird: <em>Können wir gerade an dem arbeiten, was wirklich wichtig ist?</em> Grün, Gelb, Rot. Die Farbe öffnet das Gespräch. Die Boundary, die folgt, gibt ihm Struktur. Komplexität versteckt Probleme. Einfachheit bringt sie ans Licht.</p>
   </div>
-  <div class="format-cards reveal reveal-d3">
-    <div class="fmt-card"><span class="fmt-icon">🔁</span><span class="fmt-title">In Scrum</span><p>Eigenes wöchentliches Format mit Führungskräften. Teams benennen Ampelstatus und aktive Boundaries direkt. Führung erlebt live, was Teams einschränkt.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Ampelstatus einchecken (Grün / Gelb / Rot)</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Aktive Boundaries benennen und Kategorie zuordnen</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Führung: Ownership klären oder Entscheidung treffen</span></div></div></div>
-    <div class="fmt-card"><span class="fmt-icon">📋</span><span class="fmt-title">In Kanban</span><p>Boundaries als explizite Kategorie im Board sichtbar. Im Jour-Fixe mit Führung priorisiert und zugewiesen.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Boundary-Spalte im Board einführen</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Boundaries als Cards mit Kategorie und Owner*in</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Wöchentlich reviewen, Fortschritt sichtbar machen</span></div></div></div>
-    <div class="fmt-card"><span class="fmt-icon">🎯</span><span class="fmt-title">In OKR</span><p>Ampelstatus vor jedem Weekly. Side Topics benennen aktive Boundaries – eskalierbar, für Führung sichtbar.</p><div class="fmt-steps"><div class="fmt-step"><span class="fmt-step-num">01</span><span class="fmt-step-text">Ampelstatus vor Weekly schriftlich eintragen</span></div><div class="fmt-step"><span class="fmt-step-num">02</span><span class="fmt-step-text">Side Topics = aktive Boundaries (wer, was, seit wann)</span></div><div class="fmt-step"><span class="fmt-step-num">03</span><span class="fmt-step-text">Quarterly Review: Boundary-Muster analysieren</span></div></div></div>
   </div>
 </div>
 
@@ -3499,6 +3493,34 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   flex-wrap: nowrap;
   width: fit-content;
   overflow: hidden;
+}
+
+/* ─── STICKY FRAMEWORK SWITCHER (mobile bottom bar) ──────────────── */
+#sticky-fw-bar {
+  display: none;
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+  z-index: 199;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E4E2DC;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+#sticky-fw-bar.visible {
+  transform: translateY(0);
+}
+#sticky-fw-bar .pfw-btn {
+  min-width: 120px;
+  justify-content: center;
+  font-size: 12px;
+  padding: 12px 32px;
 }
 .pfw-btn {
   font-family: 'DM Mono', monospace;
@@ -4179,14 +4201,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <p class="lead lc-en">Capability Spaces is not a workshop. It is a set of lightweight, recurring practices — embedded directly into how teams already work.</p>
     <p class="lead lc-de">Capability Spaces ist kein Workshop. Es ist eine Reihe von leichtgewichtigen, wiederkehrenden Praktiken — eingebettet in die Art, wie Teams bereits arbeiten.</p>
 
-    <div class="practice-framework-selector lc-en">
-      <button class="pfw-btn active" data-fw="scrum">Scrum</button>
-      <button class="pfw-btn" data-fw="okr">OKR</button>
-    </div>
-    <div class="practice-framework-selector lc-de">
-      <button class="pfw-btn active" data-fw="scrum">Scrum</button>
-      <button class="pfw-btn" data-fw="okr">OKR</button>
-    </div>
+
 
     <!-- ══ SCRUM CONTENT ══ -->
     <div class="fw-content fw-content-scrum">
@@ -4283,59 +4298,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
           <div class="mc-chain-insight">
             <span class="mc-chain-insight-label">Warum das für Capability Spaces zählt</span>
             <p>Ein Team, das in Problemen und Outcomes denkt, arbeitet innerhalb seines Compass — baut Vertrauen durch Wissen auf und testet Annahmen in Echtzeit. Und weil jeder Outcome auf das Produkt einzahlt, und das Produkt auf die Businessziele, <strong>beantwortet sich die Frage nach strategischer Ausrichtung von selbst.</strong></p>
-          </div>
-        </div>
-
-        <!-- ── JIRA PRACTICAL GUIDE ─────────────────────────────── -->
-        <div class="callout lc-en" style="margin-top:40px;max-width:860px;border-top:3px solid #C9A227;">
-          <span class="cl-label">The Map in Jira — a practical guide</span>
-          <p>Most teams using Jira have hundreds of tickets, hundreds of dependencies, and no clear picture of what they are actually trying to change. The root cause is almost always the same: tickets describe solutions, not problems. Ron Jeffries invented User Stories in 1998 as a placeholder for a conversation about user need. Mike Cohn later codified the format as <em>"As a [user], I want [X] so that [Y]"</em> — the "so that Y" is the outcome. In practice, that last part is almost always omitted. Jeff Patton's <em>User Story Mapping</em> (2014) goes further: stories should describe the activity the user is trying to complete, not the feature the team plans to build. The problem was understood from the start. Jira just made it easier to ignore.</p>
-          <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">A large outcome — something meaningful that changes for users or the business. If you use OKRs, an Epic maps directly to a Key Result.</p>
-            </div>
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #1B3A5C;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A5C;display:block;margin-bottom:10px;">Story / Ticket</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">The user problem and the desired outcome. Not the solution. Not the feature. The ticket answers: who cannot do what, and what should be different afterwards?</p>
-            </div>
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">Subtask</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Solution ideas and implementation steps — experiments toward the outcome. Optional: if developers prefer not to track subtasks, that is fine. Transparency comes from outcomes, not task lists.</p>
-            </div>
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">Sprint Goal</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">An outcome, not a delivery list. If you are doing Scrum, the Sprint Goal should describe what will be different for users at the end — not what the team plans to ship.</p>
-            </div>
-          </div>
-          <div style="margin-top:20px;background:#F0F4F8;border-left:3px solid #4A9CC9;padding:16px 20px;">
-            <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;"><strong>On transparency:</strong> The concern is sometimes raised that without detailed subtasks, nobody knows what developers are working on. This confuses activity transparency with outcome transparency. A team with clear user problems and defined desired outcomes is far more transparent than one with 400 linked tickets and no shared understanding of what change they are working toward. What the team does is their business. What changes for users is everyone's.</p>
-          </div>
-        </div>
-
-        <div class="callout lc-de" style="margin-top:40px;max-width:860px;border-top:3px solid #C9A227;">
-          <span class="cl-label">Die Map in Jira — ein praktischer Leitfaden</span>
-          <p>Die meisten Teams, die Jira nutzen, haben hunderte Tickets, hunderte Abhängigkeiten — und kein klares Bild davon, was sie eigentlich verändern wollen. Die Ursache ist fast immer dieselbe: Tickets beschreiben Lösungen, keine Probleme. Ron Jeffries erfand User Stories 1998 als Platzhalter für ein Gespräch über Nutzerbedürfnisse. Mike Cohn kodifizierte das Format als <em>„Als [Nutzer] möchte ich [X], damit [Y]"</em> — das „damit Y" ist der Outcome. In der Praxis fällt dieser Teil fast immer weg. Jeff Pattons <em>User Story Mapping</em> (2014) geht weiter: Stories sollten die Aktivität beschreiben, die der Nutzer abschließen möchte — nicht das Feature, das das Team zu bauen plant. Das Problem war von Anfang an bekannt. Jira hat es nur leichter gemacht, es zu ignorieren.</p>
-          <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein großer Outcome — etwas Bedeutsames, das sich für Nutzer oder das Unternehmen verändert. Wenn OKRs genutzt werden, entspricht ein Epic direkt einem Key Result.</p>
-            </div>
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #1B3A5C;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A5C;display:block;margin-bottom:10px;">Story / Ticket</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Das Nutzerproblem und der gewünschte Outcome. Nicht die Lösung. Nicht das Feature. Das Ticket beantwortet: Wer kann was nicht tun, und was soll danach anders sein?</p>
-            </div>
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">Subtask</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Lösungsideen und Implementierungsschritte — Experimente auf dem Weg zum Outcome. Optional: Wenn Entwickler keine Subtasks erfassen möchten, ist das kein Problem. Transparenz entsteht durch Outcomes, nicht durch Aufgabenlisten.</p>
-            </div>
-            <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:20px 18px;">
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">Sprint Goal</span>
-              <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein Outcome, keine Lieferliste. Wenn Scrum gemacht wird, sollte das Sprint Goal beschreiben, was sich am Ende für Nutzer verändert hat — nicht was das Team plant auszuliefern.</p>
-            </div>
-          </div>
-          <div style="margin-top:20px;background:#F0F4F8;border-left:3px solid #4A9CC9;padding:16px 20px;">
-            <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;"><strong>Zur Transparenz:</strong> Manchmal wird eingewandt, dass ohne detaillierte Subtasks niemand weiß, woran Entwickler arbeiten. Das verwechselt Aktivitätstransparenz mit Outcome-Transparenz. Ein Team mit klaren Nutzerproblemen und definierten gewünschten Outcomes ist deutlich transparenter als eines mit 400 verlinkten Tickets und keinem gemeinsamen Verständnis davon, welche Veränderung angestrebt wird. Was das Team tut, ist seine Sache. Was sich für Nutzer verändert, geht alle an.</p>
           </div>
         </div>
 
@@ -4466,6 +4428,138 @@ transition: opacity 0.7s ease, transform 0.7s ease;
           <p>Boundaries werden hier nicht besprochen — die gehören ins Weekly. Die Retro ist team-intern. Der Compass übernimmt den „Was lief gut"-Teil: Das Team benennt, wo Trust, Knowledge, Assumption Testing und Connection in diesem Sprint sichtbar waren. Das Sprint Review ist der Ort, an dem Connection-Signale von außen ankommen — Feedback von Usern und Stakeholdern, das bestätigt, dass die Arbeit etwas bewirkt hat. Zusammen schließen Retro und Review den Kreis.</p>
         </div>
       </div><!-- /panel-compass -->
+
+      <!-- SCRUM WORKED EXAMPLE -->
+      <div class="fw-example reveal" style="margin-top:56px;padding-top:48px;border-top:1px solid #E4E2DC;max-width:860px;">
+
+        <span class="sol-example-eyebrow lc-en">Worked example — a food delivery app</span>
+        <span class="sol-example-eyebrow lc-de">Konkretes Beispiel — eine Food-Delivery-App</span>
+        <h3 class="sol-example-title lc-en">One sprint. One hypothesis. One honest result.</h3>
+        <h3 class="sol-example-title lc-de">Ein Sprint. Eine Hypothese. Ein ehrliches Ergebnis.</h3>
+        <p class="sol-example-intro lc-en">The same food delivery app. Users order once and don't come back. The team is in Sprint 2 of an unknown number. There is no OKR yet — just Scrum, Capability Spaces, and the discipline to ask the right question every two weeks.</p>
+        <p class="sol-example-intro lc-de">Dieselbe Food-Delivery-App. Nutzer bestellen einmal und kommen nicht wieder. Das Team ist in Sprint 2 von einer unbekannten Anzahl. Noch kein OKR — nur Scrum, Capability Spaces und die Disziplin, alle zwei Wochen die richtige Frage zu stellen.</p>
+
+        <!-- MAP -->
+        <div class="fwe-block lc-en">
+          <span class="fwe-label" style="color:#C9A227;">The Map — Sprint Planning</span>
+          <div class="fwe-map-row">
+            <div class="fwe-map-step">
+              <span class="fwe-step-tag">User Problem</span>
+              <p>Users who ordered once don't open the app again the next day — even when they're hungry.</p>
+            </div>
+            <div class="fwe-arrow">→</div>
+            <div class="fwe-map-step">
+              <span class="fwe-step-tag">Hypothesis</span>
+              <p>A single relevant push notification 18h after the first order will increase day-2 app opens.</p>
+            </div>
+            <div class="fwe-arrow">→</div>
+            <div class="fwe-map-step">
+              <span class="fwe-step-tag">Sprint Goal</span>
+              <p>Users who ordered yesterday open the app again tomorrow.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fwe-block lc-de">
+          <span class="fwe-label" style="color:#C9A227;">Die Map — Sprint Planning</span>
+          <div class="fwe-map-row">
+            <div class="fwe-map-step">
+              <span class="fwe-step-tag">User Problem</span>
+              <p>Nutzer, die einmal bestellt haben, öffnen die App am nächsten Tag nicht wieder — auch wenn sie hungrig sind.</p>
+            </div>
+            <div class="fwe-arrow">→</div>
+            <div class="fwe-map-step">
+              <span class="fwe-step-tag">Hypothese</span>
+              <p>Eine einzelne, relevante Push-Benachrichtigung 18h nach der ersten Bestellung erhöht die App-Öffnungen an Tag 2.</p>
+            </div>
+            <div class="fwe-arrow">→</div>
+            <div class="fwe-map-step">
+              <span class="fwe-step-tag">Sprint Goal</span>
+              <p>Nutzer, die gestern bestellt haben, öffnen die App morgen wieder.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOUNDARIES WEEKLY -->
+        <div class="fwe-block lc-en">
+          <span class="fwe-label" style="color:#B03030;">Boundaries — Weekly, Day 8</span>
+          <div class="fwe-ampel-row">
+            <div class="fwe-ampel fwe-amber">
+              <div class="fwe-ampel-dot"></div>
+              <div>
+                <span class="fwe-ampel-status">Amber</span>
+                <p>We want to personalise the notification by cuisine preference — but we can't read the user's order history without a formal data request. We're sending generic notifications instead. Likely reduces conversion.</p>
+                <span class="fwe-ampel-action">→ Leadership: data access approved same day. Personalised version ships in the sprint.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fwe-block lc-de">
+          <span class="fwe-label" style="color:#B03030;">Boundaries — Weekly, Tag 8</span>
+          <div class="fwe-ampel-row">
+            <div class="fwe-ampel fwe-amber">
+              <div class="fwe-ampel-dot"></div>
+              <div>
+                <span class="fwe-ampel-status">Gelb</span>
+                <p>Wir wollen die Benachrichtigung nach Cuisine-Präferenz personalisieren — kommen aber ohne formalen Datenzugriff nicht an die Bestellhistorie. Wir verschicken generische Benachrichtigungen. Das senkt wahrscheinlich die Conversion.</p>
+                <span class="fwe-ampel-action">→ Führung: Datenzugriff noch am gleichen Tag genehmigt. Personalisierte Version wird im Sprint ausgeliefert.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPASS RETRO -->
+        <div class="fwe-block lc-en">
+          <span class="fwe-label" style="color:#2E7D52;">Compass — Retrospective</span>
+          <div class="fwe-compass-grid">
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Assumption Testing ✓</span>
+              <p>We defined the hypothesis before building. We shipped a test, not a feature. Day-2 opens increased 11 points — the assumption was right.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Trust ✓</span>
+              <p>Leadership unblocked the data access in hours, not weeks. The team noticed. It matters.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-no">
+              <span class="fwe-compass-force">Connection — partial</span>
+              <p>Day-2 opens went up — but reorders didn't follow. We don't yet know why users browse and leave. We haven't talked to them. Next sprint: user interviews first.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-no">
+              <span class="fwe-compass-force">Knowledge — gap</span>
+              <p>We don't know what happens between opening the app and leaving without ordering. The data shows the drop — but not the reason. We need to get closer to users.</p>
+            </div>
+          </div>
+          <div class="fwe-punchline">
+            <span class="fwe-punchline-label">What Scrum with Capability Spaces surfaces</span>
+            <p>The Compass makes the gap visible: the metric moved, but the outcome didn't. That is exactly the right thing to know at the end of Sprint 2. <strong>The next sprint starts with the right question — not a new feature, but a user conversation.</strong></p>
+          </div>
+        </div>
+        <div class="fwe-block lc-de">
+          <span class="fwe-label" style="color:#2E7D52;">Compass — Retrospektive</span>
+          <div class="fwe-compass-grid">
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Assumption Testing ✓</span>
+              <p>Wir haben die Hypothese definiert, bevor wir gebaut haben. Wir haben einen Test ausgeliefert, kein Feature. Tag-2-Öffnungen +11 Punkte — die Annahme war richtig.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Vertrauen ✓</span>
+              <p>Die Führung hat den Datenzugriff in Stunden entsperrt, nicht in Wochen. Das Team hat es bemerkt. Es macht einen Unterschied.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-no">
+              <span class="fwe-compass-force">Connection — teilweise</span>
+              <p>Tag-2-Öffnungen stiegen — aber Nachbestellungen folgten nicht. Wir wissen noch nicht, warum Nutzer scrollen und gehen. Wir haben noch nicht mit ihnen gesprochen. Nächster Sprint: zuerst User-Interviews.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-no">
+              <span class="fwe-compass-force">Wissen — Lücke</span>
+              <p>Wir wissen nicht, was zwischen App-Öffnung und Verlassen ohne Bestellung passiert. Die Daten zeigen den Drop — aber nicht den Grund. Wir müssen näher an die Nutzer.</p>
+            </div>
+          </div>
+          <div class="fwe-punchline">
+            <span class="fwe-punchline-label">Was Scrum mit Capability Spaces sichtbar macht</span>
+            <p>Der Compass macht die Lücke sichtbar: die Metrik hat sich bewegt, der Outcome nicht. Das ist genau das Richtige, was man am Ende von Sprint 2 wissen muss. <strong>Der nächste Sprint beginnt mit der richtigen Frage — kein neues Feature, sondern ein Nutzergespräch.</strong></p>
+          </div>
+        </div>
+
+      </div><!-- /fw-example scrum -->
 
     </div><!-- /fw-content-scrum -->
 
@@ -4675,30 +4769,1293 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         </div>
       </div><!-- /panel-okr-compass -->
 
+      <!-- OKR WORKED EXAMPLE -->
+      <div class="fw-example reveal" style="margin-top:56px;padding-top:48px;border-top:1px solid #E4E2DC;max-width:860px;">
+
+        <span class="sol-example-eyebrow lc-en">Worked example — a food delivery app</span>
+        <span class="sol-example-eyebrow lc-de">Konkretes Beispiel — eine Food-Delivery-App</span>
+        <h3 class="sol-example-title lc-en">One quarter. One objective. No sprint structure.</h3>
+        <h3 class="sol-example-title lc-de">Ein Quartal. Ein Objective. Keine Sprint-Struktur.</h3>
+        <p class="sol-example-intro lc-en">Same app, same retention problem. But this team runs OKR without Scrum — continuous flow, weekly cadence, quarterly planning. Capability Spaces integrates directly: The Map comes from OKR Planning, Boundaries surface in the Weekly, Compass closes the quarter.</p>
+        <p class="sol-example-intro lc-de">Dieselbe App, dasselbe Retention-Problem. Aber dieses Team arbeitet mit OKR ohne Scrum — kontinuierlicher Fluss, wöchentlicher Rhythmus, quartalsweises Planning. Capability Spaces integriert sich direkt: Die Map entsteht aus dem OKR Planning, Boundaries tauchen im Weekly auf, der Compass schließt das Quartal ab.</p>
+
+        <!-- THE MAP: OKR CHAIN -->
+        <div class="fwe-block lc-en">
+          <span class="fwe-label" style="color:#7B5EA7;">The Map — OKR Planning</span>
+          <div class="soe-chain" style="margin-bottom:0;">
+            <div class="soe-level soe-level-biz">
+              <span class="soe-level-tag">Business — Objective</span>
+              <p class="soe-level-text">Reduce first-30-day churn to turn one-time buyers into repeat customers.</p>
+            </div>
+            <div class="soe-arrow">↓</div>
+            <div class="soe-level soe-level-kr">
+              <span class="soe-level-tag">Business — Key Result</span>
+              <p class="soe-level-text">Increase 30-day repeat order rate from 18% to 32% by end of quarter.</p>
+            </div>
+            <div class="soe-arrow">↓ derived by product team</div>
+            <div class="soe-level soe-level-prod">
+              <span class="soe-level-tag">Product — Objective</span>
+              <p class="soe-level-text">Make the first-order experience good enough that users return without a coupon.</p>
+            </div>
+            <div class="soe-arrow">↓</div>
+            <div class="soe-level soe-level-pkr">
+              <span class="soe-level-tag">Product — Key Result</span>
+              <p class="soe-level-text">60% of first-time users open the app again within 7 days of their first order (currently 31%).</p>
+            </div>
+          </div>
+          <div class="fwe-note" style="margin-top:12px;">This OKR set <em>is</em> The Map. The team knows exactly what user problem they're solving, how it connects to the business outcome, and what "done" looks like. No backlog prioritisation meeting needed — the Map already answered the question.</div>
+        </div>
+        <div class="fwe-block lc-de">
+          <span class="fwe-label" style="color:#7B5EA7;">Die Map — OKR Planning</span>
+          <div class="soe-chain" style="margin-bottom:0;">
+            <div class="soe-level soe-level-biz">
+              <span class="soe-level-tag">Business — Objective</span>
+              <p class="soe-level-text">Churn in den ersten 30 Tagen senken, um aus Erstkäufern Stammkunden zu machen.</p>
+            </div>
+            <div class="soe-arrow">↓</div>
+            <div class="soe-level soe-level-kr">
+              <span class="soe-level-tag">Business — Key Result</span>
+              <p class="soe-level-text">30-Tage-Wiederbestellrate bis Quartalsende von 18% auf 32% steigern.</p>
+            </div>
+            <div class="soe-arrow">↓ abgeleitet vom Produktteam</div>
+            <div class="soe-level soe-level-prod">
+              <span class="soe-level-tag">Product — Objective</span>
+              <p class="soe-level-text">Die Erfahrung nach der ersten Bestellung so gut machen, dass Nutzer von sich aus zurückkommen.</p>
+            </div>
+            <div class="soe-arrow">↓</div>
+            <div class="soe-level soe-level-pkr">
+              <span class="soe-level-tag">Product — Key Result</span>
+              <p class="soe-level-text">60% der Erstnutzer öffnen die App innerhalb von 7 Tagen nach ihrer ersten Bestellung erneut (aktuell: 31%).</p>
+            </div>
+          </div>
+          <div class="fwe-note" style="margin-top:12px;">Dieses OKR-Set <em>ist</em> die Map. Das Team weiß genau, welches Nutzerproblem es löst, wie es auf den Business-Outcome einzahlt und wie „fertig" aussieht. Kein Backlog-Priorisierungsmeeting nötig — die Map hat die Frage bereits beantwortet.</div>
+        </div>
+
+        <!-- BOUNDARIES WEEKLY -->
+        <div class="fwe-block lc-en">
+          <span class="fwe-label" style="color:#B03030;">Boundaries — OKR Weekly, Week 5</span>
+          <div class="fwe-ampel-row">
+            <div class="fwe-ampel fwe-green">
+              <div class="fwe-ampel-dot" style="background:#2E7D52;"></div>
+              <div>
+                <span class="fwe-ampel-status" style="color:#2E7D52;">Green</span>
+                <p>Users who ordered once don't return within 7 days — even when they're hungry. This is the biggest thing standing between us and the business outcome.</p>
+                <span class="fwe-ampel-action">→ No action needed from leadership this week.</span>
+              </div>
+            </div>
+          </div>
+          <div class="fwe-ampel-row" style="margin-top:12px;">
+            <div class="fwe-ampel fwe-red">
+              <div class="fwe-ampel-dot" style="background:#B03030;"></div>
+              <div>
+                <span class="fwe-ampel-status" style="color:#B03030;">Red — different team</span>
+                <p>The checkout team reports: users who start re-ordering hit a known payment bug on Android — three weeks old, not fixed. Each occurrence is a lost reorder. Directly impacts the shared business KR.</p>
+                <span class="fwe-ampel-action">→ Leadership: bug fix escalated to checkout team's roadmap. Fixed within 5 days. Shared KR accelerates.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fwe-block lc-de">
+          <span class="fwe-label" style="color:#B03030;">Boundaries — OKR Weekly, Woche 5</span>
+          <div class="fwe-ampel-row">
+            <div class="fwe-ampel fwe-green">
+              <div class="fwe-ampel-dot" style="background:#2E7D52;"></div>
+              <div>
+                <span class="fwe-ampel-status" style="color:#2E7D52;">Grün</span>
+                <p>Nutzer, die einmal bestellt haben, kommen innerhalb von 7 Tagen nicht zurück — auch wenn sie hungrig sind. Das ist das Größte, was uns vom Business-Outcome trennt.</p>
+                <span class="fwe-ampel-action">→ Keine Maßnahme der Führung diese Woche nötig.</span>
+              </div>
+            </div>
+          </div>
+          <div class="fwe-ampel-row" style="margin-top:12px;">
+            <div class="fwe-ampel fwe-red">
+              <div class="fwe-ampel-dot" style="background:#B03030;"></div>
+              <div>
+                <span class="fwe-ampel-status" style="color:#B03030;">Rot — anderes Team</span>
+                <p>Das Checkout-Team meldet: Nutzer, die nachbestellen wollen, treffen auf einen bekannten Zahlungsfehler auf Android — drei Wochen alt, noch nicht behoben. Jede Occurrence ist eine verlorene Nachbestellung. Betrifft direkt den geteilten Business-KR.</p>
+                <span class="fwe-ampel-action">→ Führung: Bug-Fix in die Roadmap des Checkout-Teams eskaliert. Behoben innerhalb von 5 Tagen. Geteilter KR beschleunigt sich.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPASS OKR RETRO -->
+        <div class="fwe-block lc-en">
+          <span class="fwe-label" style="color:#2E7D52;">Compass — OKR Retro (quarter end)</span>
+          <div class="fwe-compass-grid">
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Assumption Testing ✓</span>
+              <p>We ran five distinct experiments across the quarter — each with a defined hypothesis. Three worked. Two didn't. All five taught us something. That is the point.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Connection ✓</span>
+              <p>The payment bug fix — surfaced by the checkout team in the Weekly — directly moved our KR. Cross-team learning happened because everyone was in the same room.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Trust ✓</span>
+              <p>Leadership acted on two Boundaries this quarter (data access, payment bug). The team's confidence in naming boundaries honestly increased visibly.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-no">
+              <span class="fwe-compass-force">Knowledge — gap remains</span>
+              <p>KR reached 57%, not 60%. The remaining gap is a natural boundary: it requires a full redesign of the second-order flow — more than one quarter's work. Named, not blamed.</p>
+            </div>
+          </div>
+          <div class="fwe-punchline">
+            <span class="fwe-punchline-label">What OKR with Capability Spaces surfaces</span>
+            <p>The OKR gave the team a shared outcome to aim at — not a list of features to ship. Capability Spaces ensured that what blocked progress was named clearly, and that leadership acted rather than heard reports. The 57% result is not a failure — it is a precise diagnosis: <strong>three points remain because of a structural constraint that needs its own OKR next quarter, not because the team underperformed.</strong></p>
+          </div>
+        </div>
+        <div class="fwe-block lc-de">
+          <span class="fwe-label" style="color:#2E7D52;">Compass — OKR Retro (Quartalsende)</span>
+          <div class="fwe-compass-grid">
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Assumption Testing ✓</span>
+              <p>Wir haben im Quartal fünf verschiedene Experimente durchgeführt — jedes mit einer definierten Hypothese. Drei haben funktioniert. Zwei nicht. Alle fünf haben uns etwas gelehrt. Darum geht es.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Connection ✓</span>
+              <p>Der Payment-Bug-Fix — vom Checkout-Team im Weekly eingebracht — hat unseren KR direkt bewegt. Team-übergreifendes Lernen passierte, weil alle im gleichen Raum waren.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-yes">
+              <span class="fwe-compass-force">Vertrauen ✓</span>
+              <p>Die Führung hat in diesem Quartal zwei Boundaries gelöst (Datenzugriff, Payment-Bug). Das Vertrauen des Teams, Boundaries ehrlich zu benennen, ist sichtbar gewachsen.</p>
+            </div>
+            <div class="fwe-compass-item fwe-compass-no">
+              <span class="fwe-compass-force">Wissen — Lücke bleibt</span>
+              <p>KR bei 57%, nicht 60%. Die verbleibende Lücke ist eine natürliche Boundary: Sie erfordert ein komplettes Redesign des Zweite-Bestellung-Flows — mehr als ein Quartal Arbeit. Benannt, nicht beschuldigt.</p>
+            </div>
+          </div>
+          <div class="fwe-punchline">
+            <span class="fwe-punchline-label">Was OKR mit Capability Spaces sichtbar macht</span>
+            <p>Die OKR gab dem Team einen gemeinsamen Outcome als Ziel — keine Feature-Liste. Capability Spaces sorgte dafür, dass das, was den Fortschritt blockierte, klar benannt wurde und die Führung handelte statt Berichte zu hören. Das 57%-Ergebnis ist kein Versagen — sondern eine präzise Diagnose: <strong>Drei Punkte fehlen wegen einer strukturellen Einschränkung, die im nächsten Quartal ihren eigenen OKR braucht — nicht weil das Team zu wenig geleistet hat.</strong></p>
+          </div>
+        </div>
+
+      </div><!-- /fw-example okr -->
+
     </div><!-- /fw-content-okr -->
+
+    <!-- ══ SCRUM + OKR CONTENT ══ -->
+    <div class="fw-content fw-content-scrum-okr" style="display:none">
+
+      <div class="practice-scrum-note lc-en" style="border-left-color:#2E7D52">
+        <span class="psn-label" style="color:#2E7D52">In Practice — Scrum + OKR</span>
+        <p>Scrum and OKR are designed for the same purpose — but they operate at different time horizons. OKRs set the strategic direction for a quarter. Scrum delivers against it, sprint by sprint. <strong>Capability Spaces is the connective tissue: it ensures that what gets structured at the top actually reaches teams, and that what blocks teams actually reaches leaders.</strong> The result is not two frameworks running in parallel — it is one learning system.</p>
+      </div>
+      <div class="practice-scrum-note lc-de" style="border-left-color:#2E7D52">
+        <span class="psn-label" style="color:#2E7D52">In der Praxis — Scrum + OKR</span>
+        <p>Scrum und OKR verfolgen dieselbe Absicht – aber auf unterschiedlichen Zeithorizonten. OKRs setzen die strategische Richtung für ein Quartal. Scrum liefert dagegen – Sprint für Sprint. <strong>Capability Spaces ist das Bindegewebe: Es stellt sicher, dass das, was oben strukturiert wird, die Teams wirklich erreicht – und dass das, was Teams blockiert, wirklich die Führung erreicht.</strong> Das Ergebnis sind nicht zwei Frameworks, die parallel laufen – sondern ein einziges lernendes System.</p>
+      </div>
+
+      <!-- THE CORE LOGIC BLOCK -->
+      <div class="scrum-okr-logic reveal">
+        <span class="sol-label lc-en">The structural fit — 12 weeks, 6 sprints, one outcome chain</span>
+        <span class="sol-label lc-de">Die strukturelle Passung — 12 Wochen, 6 Sprints, eine Outcome-Kette</span>
+
+        <div class="sol-chain lc-en">
+          <div class="sol-chain-top">
+            <div class="sol-okr-box">
+              <span class="sol-level">Business Level — OKR</span>
+              <span class="sol-title">Objective + Key Result</span>
+              <p>The business problem, expressed as an outcome to achieve. One KR defines what "solved" looks like at the end of the quarter.</p>
+            </div>
+            <div class="sol-chain-down">↓ derived</div>
+            <div class="sol-okr-box sol-okr-product">
+              <span class="sol-level">Product Level — OKR</span>
+              <span class="sol-title">Product Objective + Key Result</span>
+              <p>The user problem the team commits to solving this quarter — contributing directly to the business KR above.</p>
+            </div>
+          </div>
+          <div class="sol-chain-down">↓ broken into 6 Sprint Goals</div>
+          <div class="sol-sprints">
+            <div class="sol-sprint"><span class="ss-num">Sprint 1</span><span class="ss-label">Sprint Goal = small outcome</span><p>One user problem, one hypothesis, one test. Does behaviour change?</p></div>
+            <div class="sol-sprint-arrow">→</div>
+            <div class="sol-sprint"><span class="ss-num">Sprint 2</span><span class="ss-label">Sprint Goal = small outcome</span><p>Building on what was learned. Refine or redirect.</p></div>
+            <div class="sol-sprint-arrow">→</div>
+            <div class="sol-sprint sol-sprint-dots"><span class="ss-num">…</span><span class="ss-label">Learning by doing</span><p>Each sprint contributes a step toward the KR — or surfaces why it cannot.</p></div>
+            <div class="sol-sprint-arrow">→</div>
+            <div class="sol-sprint sol-sprint-last"><span class="ss-num">Sprint 6</span><span class="ss-label">KR reached — or honestly not</span><p>Six outcomes accumulated. Was the Key Result achieved? The answer is honest — because Capability Spaces builds honesty into every step.</p></div>
+          </div>
+          <div class="sol-insight">
+            <span class="sol-insight-label">Why this works — and why it is hard</span>
+            <p>At the start of a quarter, no team can predict with certainty which six Sprint Goals will hit the KR. That is not a planning failure — it is the nature of outcome work. <strong>The discipline comes from learning: does each sprint move us toward the outcome? If not, why not — and what does that tell us about the KR itself?</strong> Capability Spaces forces that question to be asked honestly, every two weeks, with leadership in the room.</p>
+          </div>
+        </div>
+
+        <div class="sol-chain lc-de">
+          <div class="sol-chain-top">
+            <div class="sol-okr-box">
+              <span class="sol-level">Business-Ebene — OKR</span>
+              <span class="sol-title">Objective + Key Result</span>
+              <p>Das Business-Problem, ausgedrückt als zu erreichender Outcome. Ein KR definiert, wie "gelöst" am Ende des Quartals aussieht.</p>
+            </div>
+            <div class="sol-chain-down">↓ abgeleitet</div>
+            <div class="sol-okr-box sol-okr-product">
+              <span class="sol-level">Produkt-Ebene — OKR</span>
+              <span class="sol-title">Product Objective + Key Result</span>
+              <p>Das User-Problem, das das Team in diesem Quartal zu lösen committet – direkt einzahlend auf den Business-KR.</p>
+            </div>
+          </div>
+          <div class="sol-chain-down">↓ aufgeteilt in 6 Sprint Goals</div>
+          <div class="sol-sprints">
+            <div class="sol-sprint"><span class="ss-num">Sprint 1</span><span class="ss-label">Sprint Goal = kleiner Outcome</span><p>Ein User-Problem, eine Hypothese, ein Test. Ändert sich Verhalten?</p></div>
+            <div class="sol-sprint-arrow">→</div>
+            <div class="sol-sprint"><span class="ss-num">Sprint 2</span><span class="ss-label">Sprint Goal = kleiner Outcome</span><p>Auf Basis des Gelernten: verfeinern oder neu ausrichten.</p></div>
+            <div class="sol-sprint-arrow">→</div>
+            <div class="sol-sprint sol-sprint-dots"><span class="ss-num">…</span><span class="ss-label">Learning by doing</span><p>Jeder Sprint trägt einen Schritt zum KR bei – oder zeigt auf, warum er es nicht kann.</p></div>
+            <div class="sol-sprint-arrow">→</div>
+            <div class="sol-sprint sol-sprint-last"><span class="ss-num">Sprint 6</span><span class="ss-label">KR erreicht – oder ehrlich nicht</span><p>Sechs akkumulierte Outcomes. Wurde der Key Result erreicht? Die Antwort ist ehrlich – weil Capability Spaces diese Ehrlichkeit in jeden Schritt einbaut.</p></div>
+          </div>
+          <div class="sol-insight">
+            <span class="sol-insight-label">Warum das funktioniert – und warum es schwer ist</span>
+            <p>Am Anfang eines Quartals kann kein Team mit Sicherheit vorhersagen, welche sechs Sprint Goals den KR treffen werden. Das ist kein Planungsfehler – das ist die Natur von Outcome-Arbeit. <strong>Die Disziplin kommt aus dem Lernen: Bringt uns jeder Sprint dem Outcome näher? Wenn nicht, warum nicht – und was sagt das über den KR selbst aus?</strong> Capability Spaces zwingt dazu, diese Frage ehrlich zu stellen – alle zwei Wochen, mit Führungskräften im Raum.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE EVENTS TABLE -->
+      <div class="sol-events-block reveal reveal-d1">
+        <span class="cf-label lc-en" style="color:#2E7D52">All events — who does what, and when</span>
+        <span class="cf-label lc-de" style="color:#2E7D52">Alle Events — wer macht was, und wann</span>
+
+        <div class="sol-events lc-en">
+          <div class="sol-event sol-event-scrum">
+            <span class="se-tag">Scrum</span>
+            <div class="se-events">
+              <div class="se-item"><span class="se-name">Sprint Planning</span><span class="se-cadence">Every 2 weeks</span><p>Team defines Sprint Goal — a small outcome that contributes to the product KR. Not a ticket list. A hypothesis: if we solve <em>this</em> user problem, we move toward the KR.</p></div>
+              <div class="se-item"><span class="se-name">Daily</span><span class="se-cadence">Daily</span><p>Standard Scrum Daily — unchanged. Coordination toward the Sprint Goal.</p></div>
+              <div class="se-item"><span class="se-name">Sprint Review</span><span class="se-cadence">Every 2 weeks</span><p>Show what was built and — critically — whether the Sprint Goal outcome was actually reached. Did user behaviour change? Did the KR move? Stakeholders and leadership present. Compass signal: Connection.</p></div>
+              <div class="se-item"><span class="se-name">Retrospective</span><span class="se-cadence">Every 2 weeks</span><p>Team-internal. Compass replaces "what went well": Trust, Knowledge, Assumption Testing, Connection. No Boundaries here — those belong in the Weekly.</p></div>
+            </div>
+          </div>
+          <div class="sol-event sol-event-okr">
+            <span class="se-tag se-tag-okr">OKR + Capability Spaces</span>
+            <div class="se-events">
+              <div class="se-item se-item-key"><span class="se-name">OKR Weekly = CS Weekly</span><span class="se-cadence">Weekly — 15–20 min</span><p><strong>This is the integration point.</strong> The OKR Weekly is the Capability Spaces Weekly. Each team names its most important opportunity right now. Traffic-light status (Green / Amber / Red). If Amber or Red: name the Boundary. Leadership is present — not as observers, but as Boundary Owners. They act or escalate. The meeting ends when all opportunities have been named.</p></div>
+              <div class="se-item"><span class="se-name">OKR Planning</span><span class="se-cadence">Quarterly — start of cycle</span><p>Business Problems → Business OKRs → Product Problems → Product OKRs = The Map. The team derives its six Sprint Goal hypotheses from the product KR. These are not commitments — they are a shared understanding of what winning might look like.</p></div>
+              <div class="se-item"><span class="se-name">OKR Check-in</span><span class="se-cadence">Mid-quarter — week 6</span><p>After Sprint 3: how confident is the team that the remaining three Sprint Goals will reach the KR? If not confident: what needs to change — the plan, the KR, or a structural Boundary? Leadership present. Honest answer required.</p></div>
+              <div class="se-item"><span class="se-name">OKR Retro</span><span class="se-cadence">Quarterly — end of cycle</span><p>After Sprint 6: Boundary review (what blocked us this quarter?) + Compass review (what moved us forward?). Leadership present. The question is not whether the KR was reached — it is what the organisation learned, and what needs to change structurally for next quarter.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sol-events lc-de">
+          <div class="sol-event sol-event-scrum">
+            <span class="se-tag">Scrum</span>
+            <div class="se-events">
+              <div class="se-item"><span class="se-name">Sprint Planning</span><span class="se-cadence">Alle 2 Wochen</span><p>Team definiert Sprint Goal — einen kleinen Outcome, der auf den Produkt-KR einzahlt. Keine Ticket-Liste. Eine Hypothese: Wenn wir <em>dieses</em> User-Problem lösen, bewegen wir uns auf den KR zu.</p></div>
+              <div class="se-item"><span class="se-name">Daily</span><span class="se-cadence">Täglich</span><p>Standard Scrum Daily — unverändert. Koordination auf das Sprint Goal hin.</p></div>
+              <div class="se-item"><span class="se-name">Sprint Review</span><span class="se-cadence">Alle 2 Wochen</span><p>Zeigen, was gebaut wurde – und entscheidend: ob das Sprint-Goal-Outcome tatsächlich erreicht wurde. Hat sich Nutzerverhalten geändert? Hat sich der KR bewegt? Stakeholder und Führung anwesend. Compass-Signal: Connection.</p></div>
+              <div class="se-item"><span class="se-name">Retrospektive</span><span class="se-cadence">Alle 2 Wochen</span><p>Team-intern. Compass ersetzt „Was lief gut": Trust, Knowledge, Assumption Testing, Connection. Keine Boundaries hier — die gehören ins Weekly.</p></div>
+            </div>
+          </div>
+          <div class="sol-event sol-event-okr">
+            <span class="se-tag se-tag-okr">OKR + Capability Spaces</span>
+            <div class="se-events">
+              <div class="se-item se-item-key"><span class="se-name">OKR Weekly = CS Weekly</span><span class="se-cadence">Wöchentlich — 15–20 Min.</span><p><strong>Das ist der Integrationspunkt.</strong> Das OKR Weekly ist das Capability Spaces Weekly. Jedes Team nennt seine wichtigste aktuelle Opportunity. Ampel-Status (Grün / Gelb / Rot). Bei Gelb oder Rot: Boundary benennen. Führung ist anwesend – nicht als Beobachter, sondern als Boundary Owner. Sie handeln oder eskalieren. Das Meeting endet, wenn alle Opportunities genannt wurden.</p></div>
+              <div class="se-item"><span class="se-name">OKR Planning</span><span class="se-cadence">Quartalsweise — Zyklusstart</span><p>Business-Probleme → Business-OKRs → Produkt-Probleme → Produkt-OKRs = Die Map. Das Team leitet seine sechs Sprint-Goal-Hypothesen aus dem Produkt-KR ab. Das sind keine Commitments – sondern ein gemeinsames Verständnis davon, wie Erfolg aussehen könnte.</p></div>
+              <div class="se-item"><span class="se-name">OKR Check-in</span><span class="se-cadence">Mitte des Quartals — Woche 6</span><p>Nach Sprint 3: Wie zuversichtlich ist das Team, dass die verbleibenden drei Sprint Goals den KR erreichen werden? Wenn nicht zuversichtlich: Was muss sich ändern — der Plan, der KR oder eine strukturelle Boundary? Führung anwesend. Ehrliche Antwort erforderlich.</p></div>
+              <div class="se-item"><span class="se-name">OKR Retro</span><span class="se-cadence">Quartalsweise — Zyklusende</span><p>Nach Sprint 6: Boundary-Review (was hat uns dieses Quartal blockiert?) + Compass-Review (was hat uns vorangebracht?). Führung anwesend. Die Frage ist nicht, ob der KR erreicht wurde – sondern was die Organisation gelernt hat und was sich strukturell für das nächste Quartal ändern muss.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEARNING AS DESIGN PRINCIPLE -->
+      <div class="sol-learning reveal reveal-d2">
+        <span class="sol-learning-label lc-en">The honest truth about learning</span>
+        <span class="sol-learning-label lc-de">Die ehrliche Wahrheit über Lernen</span>
+        <div class="sol-learning-grid lc-en">
+          <div class="sol-learn-card sol-learn-honest">
+            <span class="slc-title">We will not be good at this at first</span>
+            <p>Mapping Sprint Goals to a KR is hard. The first quarter, the connection will feel loose. The second quarter, it will be clearer. By the third quarter, teams understand what "a Sprint Goal that moves a KR" actually means — because they have experienced the difference between one that does and one that doesn't.</p>
+          </div>
+          <div class="sol-learn-card sol-learn-boundary">
+            <span class="slc-title">Natural Boundaries are not failure</span>
+            <p>Some KRs cannot be reached in one quarter — not because the team failed, but because the outcome requires time, or depends on user behaviour that cannot be forced. Capability Spaces names this as a Natural Boundary: the outcome is on its way, but not yet measurable. This protects teams from being blamed for the right work done at the wrong speed.</p>
+          </div>
+          <div class="sol-learn-card sol-learn-users">
+            <span class="slc-title">User contact is not optional</span>
+            <p>Sprint Goals that are not tested with real users are guesses. The Compass tracks this explicitly — Assumption Testing and Connection are only visible if the team has actually spoken with users. If they haven't, the retro surfaces it. Not as a criticism, but as a design signal: what structure would make user contact easier?</p>
+          </div>
+          <div class="sol-learn-card sol-learn-org">
+            <span class="slc-title">The organisation learns outcome-thinking</span>
+            <p>This is the long-term effect of combining Scrum + OKR + Capability Spaces. Over time, leadership stops thinking in deliverables and starts thinking in outcomes. Teams stop asking "what do we build?" and start asking "what should change for the user?" <strong>Capability Spaces enforces this — not through training, but through structural honesty in every meeting.</strong></p>
+          </div>
+        </div>
+        <div class="sol-learning-grid lc-de">
+          <div class="sol-learn-card sol-learn-honest">
+            <span class="slc-title">Am Anfang werden wir darin nicht gut sein</span>
+            <p>Sprint Goals auf einen KR zu mappen ist schwer. Im ersten Quartal wird die Verbindung lose wirken. Im zweiten Quartal wird sie klarer. Im dritten Quartal verstehen Teams, was ein „Sprint Goal, das einen KR bewegt" tatsächlich bedeutet – weil sie den Unterschied zwischen einem, das das tut, und einem, das es nicht tut, erlebt haben.</p>
+          </div>
+          <div class="sol-learn-card sol-learn-boundary">
+            <span class="slc-title">Natürliche Boundaries sind kein Versagen</span>
+            <p>Manche KRs können in einem Quartal nicht erreicht werden – nicht weil das Team versagt hat, sondern weil der Outcome Zeit braucht oder von Nutzerverhalten abhängt, das nicht erzwungen werden kann. Capability Spaces benennt das als natürliche Boundary: Der Outcome ist unterwegs, aber noch nicht messbar. Das schützt Teams davor, für die richtige Arbeit im falschen Tempo verantwortlich gemacht zu werden.</p>
+          </div>
+          <div class="sol-learn-card sol-learn-users">
+            <span class="slc-title">Nutzerkontakt ist keine Option</span>
+            <p>Sprint Goals, die nicht mit echten Nutzern getestet werden, sind Vermutungen. Der Compass trackt das explizit – Assumption Testing und Connection sind nur sichtbar, wenn das Team tatsächlich mit Nutzern gesprochen hat. Wenn nicht, kommt es in der Retro auf den Tisch. Nicht als Kritik, sondern als Design-Signal: Welche Struktur würde Nutzerkontakt einfacher machen?</p>
+          </div>
+          <div class="sol-learn-card sol-learn-org">
+            <span class="slc-title">Die Organisation lernt Outcome-Denken</span>
+            <p>Das ist die Langzeitwirkung der Kombination Scrum + OKR + Capability Spaces. Mit der Zeit hört die Führung auf, in Deliverables zu denken, und beginnt in Outcomes zu denken. Teams hören auf zu fragen „Was bauen wir?" und beginnen zu fragen „Was soll sich für den Nutzer ändern?" <strong>Capability Spaces erzwingt das – nicht durch Training, sondern durch strukturelle Ehrlichkeit in jedem Meeting.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCRETE EXAMPLE -->
+      <div class="sol-example reveal reveal-d2">
+
+        <span class="sol-example-eyebrow lc-en">Worked example — a food delivery app</span>
+        <span class="sol-example-eyebrow lc-de">Konkretes Beispiel — eine Food-Delivery-App</span>
+
+        <h3 class="sol-example-title lc-en">One quarter. One KR. Six Sprint Goals.</h3>
+        <h3 class="sol-example-title lc-de">Ein Quartal. Ein KR. Sechs Sprint Goals.</h3>
+
+        <p class="sol-example-intro lc-en">A product team at a food delivery app. The business has a retention problem: users order once and don't come back. Here is how one quarter plays out — from OKR Planning to Sprint 6 — with Capability Spaces running throughout.</p>
+        <p class="sol-example-intro lc-de">Ein Produktteam einer Food-Delivery-App. Das Unternehmen hat ein Retention-Problem: Nutzer bestellen einmal und kommen nicht wieder. So läuft ein Quartal ab – vom OKR Planning bis Sprint 6 – mit Capability Spaces als durchgängigem Rahmen.</p>
+
+        <!-- OKR CHAIN -->
+        <div class="soe-chain lc-en">
+          <div class="soe-level soe-level-biz">
+            <span class="soe-level-tag">Business — Objective</span>
+            <p class="soe-level-text">Reduce first-30-day churn to turn one-time buyers into repeat customers.</p>
+          </div>
+          <div class="soe-arrow">↓</div>
+          <div class="soe-level soe-level-kr">
+            <span class="soe-level-tag">Business — Key Result</span>
+            <p class="soe-level-text">Increase 30-day repeat order rate from 18% to 32% by end of quarter.</p>
+          </div>
+          <div class="soe-arrow">↓ derived by product team</div>
+          <div class="soe-level soe-level-prod">
+            <span class="soe-level-tag">Product — Objective</span>
+            <p class="soe-level-text">Make the experience after a first order good enough that users want to return on their own — without a coupon.</p>
+          </div>
+          <div class="soe-arrow">↓</div>
+          <div class="soe-level soe-level-pkr">
+            <span class="soe-level-tag">Product — Key Result</span>
+            <p class="soe-level-text">60% of first-time users open the app again within 7 days of their first order (currently 31%).</p>
+          </div>
+        </div>
+
+        <div class="soe-chain lc-de">
+          <div class="soe-level soe-level-biz">
+            <span class="soe-level-tag">Business — Objective</span>
+            <p class="soe-level-text">Churn in den ersten 30 Tagen senken, um aus Erstkäufern Stammkunden zu machen.</p>
+          </div>
+          <div class="soe-arrow">↓</div>
+          <div class="soe-level soe-level-kr">
+            <span class="soe-level-tag">Business — Key Result</span>
+            <p class="soe-level-text">30-Tage-Wiederbestellrate bis Quartalsende von 18% auf 32% steigern.</p>
+          </div>
+          <div class="soe-arrow">↓ abgeleitet vom Produktteam</div>
+          <div class="soe-level soe-level-prod">
+            <span class="soe-level-tag">Product — Objective</span>
+            <p class="soe-level-text">Die Erfahrung nach der ersten Bestellung so gut machen, dass Nutzer von sich aus zurückkommen – ohne Gutschein.</p>
+          </div>
+          <div class="soe-arrow">↓</div>
+          <div class="soe-level soe-level-pkr">
+            <span class="soe-level-tag">Product — Key Result</span>
+            <p class="soe-level-text">60% der Erstnutzer öffnen die App innerhalb von 7 Tagen nach ihrer ersten Bestellung erneut (aktuell: 31%).</p>
+          </div>
+        </div>
+
+        <!-- SPRINT GOALS TIMELINE -->
+        <div class="soe-sprints-label lc-en">The six Sprint Goals — hypotheses toward the KR</div>
+        <div class="soe-sprints-label lc-de">Die sechs Sprint Goals — Hypothesen auf dem Weg zum KR</div>
+
+        <div class="soe-sprints lc-en">
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 1</span>
+            <span class="soe-sp-goal">Users understand what happened after their order</span>
+            <p>Hypothesis: if users get a clear, warm post-order confirmation (not just a receipt), they feel good about the experience and are more likely to return.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Learned:</span> Open rate on the redesigned confirmation was high — but 5 user interviews showed the real drop-off happens the next day, not right after the order. Direction shifts.</div>
+          </div>
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 2</span>
+            <span class="soe-sp-goal">Users remember the app the next morning</span>
+            <p>Hypothesis: a single, relevant push notification 18 hours after the first order ("Your favourite dish is back — 3 restaurants near you") increases day-2 app opens.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Learned:</span> Day-2 opens up 11 points. But users who opened the notification didn't reorder — they browsed and left. The problem is now clearer: the app feels unfamiliar on return.</div>
+          </div>
+          <div class="soe-sprint soe-sprint-boundary">
+            <span class="soe-sp-num">Sprint 3</span>
+            <span class="soe-sp-goal">Returning users find their "world" immediately</span>
+            <p>Hypothesis: showing a personalised home screen on second open (recent restaurants, reorder shortcut) reduces friction and increases the reorder rate.</p>
+            <div class="soe-sp-boundary"><span class="soe-sp-boundary-icon">⚠</span><strong>Boundary — Amber:</strong> The personalisation logic requires a data model owned by the data team. We can't access it without a formal request. <em>OKR Weekly: raised to leadership. Decision within 3 days: temporary read access granted.</em></div>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Learned:</span> Reorder rate up 6 points among users who saw personalised home screen. KR is now at 39% — still 21 points short at mid-quarter. Check-in: team is cautiously confident. Plan holds.</div>
+          </div>
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 4</span>
+            <span class="soe-sp-goal">Users who browsed but didn't reorder get one honest nudge</span>
+            <p>Hypothesis: a single re-engagement message to users who opened but didn't order in day 3–5 — focused on their specific browsing history, not a generic coupon — converts at least some back.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Learned:</span> Conversion rate on the nudge: 14%. Coupon-free. The assumption that users needed a discount was wrong — they needed relevance. KR now at 46%.</div>
+          </div>
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 5</span>
+            <span class="soe-sp-goal">Users build a habit — their second order feels effortless</span>
+            <p>Hypothesis: a "reorder in 2 taps" shortcut on the confirmation screen and home screen, visible only after first order, removes enough friction to tip borderline users into reordering.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Learned:</span> 2-tap reorder used by 28% of returning users. Reorder rate among that cohort: 61%. KR now at 53%.</div>
+          </div>
+          <div class="soe-sprint soe-sprint-final">
+            <span class="soe-sp-num">Sprint 6</span>
+            <span class="soe-sp-goal">Consolidate and measure — does it hold?</span>
+            <p>No new features. Focus on stability, edge cases, and measuring whether the KR moved consistently — not just in test cohorts.</p>
+            <div class="soe-sp-learn soe-sp-result"><span class="soe-sp-learn-label">Quarter end — KR result:</span> 7-day re-open rate: <strong>57%</strong>. Target was 60%. 3 points short — but the direction is clear, and the learning is real. OKR Retro: one Boundary (data access) slowed Sprint 3 by 4 days. Next quarter: data access formalised upfront. Natural Boundary identified: the remaining 3 points likely require a full second-order experience redesign — a separate KR.</div>
+          </div>
+        </div>
+
+        <div class="soe-sprints lc-de">
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 1</span>
+            <span class="soe-sp-goal">Nutzer verstehen, was nach ihrer Bestellung passiert ist</span>
+            <p>Hypothese: Wenn Nutzer eine klare, persönliche Bestätigungsseite nach der Bestellung erhalten (nicht nur eine Quittung), fühlen sie sich gut und kommen eher zurück.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Gelernt:</span> Öffnungsrate der überarbeiteten Bestätigung war hoch – aber 5 User-Interviews zeigten: Der eigentliche Drop-off passiert am nächsten Tag, nicht direkt nach der Bestellung. Richtung wird angepasst.</div>
+          </div>
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 2</span>
+            <span class="soe-sp-goal">Nutzer erinnern sich am nächsten Morgen an die App</span>
+            <p>Hypothese: Eine einzige, relevante Push-Benachrichtigung 18 Stunden nach der ersten Bestellung erhöht die App-Öffnungen an Tag 2.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Gelernt:</span> Tag-2-Öffnungen +11 Prozentpunkte. Aber Nutzer, die die Benachrichtigung öffneten, haben nicht bestellt – sie haben gescrollt und die App verlassen. Das Problem wird klarer: Die App fühlt sich beim Zurückkommen fremd an.</div>
+          </div>
+          <div class="soe-sprint soe-sprint-boundary">
+            <span class="soe-sp-num">Sprint 3</span>
+            <span class="soe-sp-goal">Zurückkehrende Nutzer finden sofort „ihre Welt"</span>
+            <p>Hypothese: Ein personalisierter Home-Screen beim zweiten Öffnen (zuletzt bestellte Restaurants, Schnell-Nachbestellung) reduziert Reibung und erhöht die Wiederbestellrate.</p>
+            <div class="soe-sp-boundary"><span class="soe-sp-boundary-icon">⚠</span><strong>Boundary — Gelb:</strong> Die Personalisierungslogik erfordert ein Datenmodell, das dem Data-Team gehört. Wir kommen nicht ran ohne formalen Request. <em>OKR Weekly: an Führung eskaliert. Entscheidung innerhalb von 3 Tagen: temporärer Lesezugriff gewährt.</em></div>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Gelernt:</span> Wiederbestellrate +6 Punkte bei Nutzern mit personalisiertem Home-Screen. KR jetzt bei 39% – noch 21 Punkte entfernt. Check-in: Team vorsichtig zuversichtlich. Plan bleibt.</div>
+          </div>
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 4</span>
+            <span class="soe-sp-goal">Nutzer, die gescrollt aber nicht bestellt haben, bekommen einen ehrlichen Anstoß</span>
+            <p>Hypothese: Eine einzelne Re-Engagement-Nachricht an Nutzer, die an Tag 3–5 geöffnet aber nicht bestellt haben – basierend auf ihrem Surfverhalten, kein generischer Gutschein – konvertiert einen Teil zurück.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Gelernt:</span> Conversion-Rate des Anstoßes: 14%. Ohne Gutschein. Die Annahme, Nutzer bräuchten einen Rabatt, war falsch – sie brauchten Relevanz. KR jetzt bei 46%.</div>
+          </div>
+          <div class="soe-sprint">
+            <span class="soe-sp-num">Sprint 5</span>
+            <span class="soe-sp-goal">Nutzer bauen eine Gewohnheit auf – die zweite Bestellung fühlt sich mühelos an</span>
+            <p>Hypothese: Eine „Nachbestellen in 2 Taps"-Funktion auf der Bestätigungsseite und dem Home-Screen, nur nach der ersten Bestellung sichtbar, senkt die Hemmschwelle für einen zweiten Kauf.</p>
+            <div class="soe-sp-learn"><span class="soe-sp-learn-label">Gelernt:</span> 2-Tap-Nachbestellung von 28% der zurückkehrenden Nutzer genutzt. Wiederbestellrate in dieser Kohorte: 61%. KR jetzt bei 53%.</div>
+          </div>
+          <div class="soe-sprint soe-sprint-final">
+            <span class="soe-sp-num">Sprint 6</span>
+            <span class="soe-sp-goal">Konsolidieren und messen – hält es sich?</span>
+            <p>Keine neuen Features. Fokus auf Stabilität, Randfälle und Messung, ob der KR sich konsistent bewegt hat – nicht nur in Testkohorten.</p>
+            <div class="soe-sp-learn soe-sp-result"><span class="soe-sp-learn-label">Quartalsende — KR-Ergebnis:</span> 7-Tage-Wiedereröffnungsrate: <strong>57%</strong>. Ziel war 60%. 3 Punkte verfehlt – aber die Richtung ist klar und das Lernen ist real. OKR Retro: eine Boundary (Datenzugriff) hat Sprint 3 um 4 Tage verlangsamt. Nächstes Quartal: Datenzugriff wird vorab formal geregelt. Natürliche Boundary identifiziert: Die verbleibenden 3 Punkte erfordern wahrscheinlich ein komplettes Redesign der Zweite-Bestellung-Erfahrung – ein eigener KR.</div>
+          </div>
+        </div>
+
+        <div class="soe-punchline lc-en">
+          <span class="soe-punchline-label">What Capability Spaces added</span>
+          <p>The Boundary in Sprint 3 was resolved in 3 days instead of 3 weeks — because leadership was already in the room. The learning from Sprint 1 (the problem is day-2, not post-order) redirected the entire quarter without a planning crisis — because the Sprint Goal was a hypothesis, not a commitment. And the honest "57%, not 60%" at the end is not a failure — it is an organisation that can see clearly. That is what Capability Spaces builds.</p>
+        </div>
+        <div class="soe-punchline lc-de">
+          <span class="soe-punchline-label">Was Capability Spaces beigetragen hat</span>
+          <p>Die Boundary in Sprint 3 wurde in 3 Tagen gelöst statt in 3 Wochen – weil die Führung bereits im Raum war. Das Lernen aus Sprint 1 (das Problem liegt an Tag 2, nicht nach der Bestellung) hat das gesamte Quartal neu ausgerichtet, ohne Planungskrise – weil das Sprint Goal eine Hypothese war, kein Commitment. Und das ehrliche „57%, nicht 60%" am Ende ist kein Versagen – sondern eine Organisation, die klar sehen kann. Genau das baut Capability Spaces auf.</p>
+        </div>
+
+        <!-- JIRA GUIDE -->
+        <div class="soe-jira lc-en">
+          <span class="soe-jira-label">How this quarter looks in Jira</span>
+          <p class="soe-jira-intro">The same outcome chain — translated directly into Jira's hierarchy. One Epic. Six Sprints. Every ticket describes a user problem, not a solution. The Sprint Goal is the outcome the team is testing, not the list of what gets shipped.</p>
+
+          <div class="soe-jira-grid">
+            <div class="soe-jira-card" style="border-top-color:#7B5EA7;">
+              <span class="sjc-type" style="color:#7B5EA7;">Epic</span>
+              <span class="sjc-title">Users return within 7 days without a discount</span>
+              <p>Maps directly to the Product KR: 7-day re-open rate from 31% → 60%. The Epic does not describe a feature — it describes the change we want to see in user behaviour.</p>
+            </div>
+            <div class="soe-jira-card" style="border-top-color:#C9A227;">
+              <span class="sjc-type" style="color:#C9A227;">Sprint Goal (Sprint 2)</span>
+              <span class="sjc-title">Users who ordered yesterday open the app again tomorrow</span>
+              <p>Not "implement push notification". The Sprint Goal is the outcome hypothesis. The implementation is inside the tickets — not the Goal itself.</p>
+            </div>
+            <div class="soe-jira-card" style="border-top-color:#1B3A5C;">
+              <span class="sjc-type" style="color:#1B3A5C;">Story / Ticket</span>
+              <span class="sjc-title">Users don't know a relevant restaurant is nearby the next morning</span>
+              <p><em>"As a first-time user, I want to be reminded of a relevant option near me — so that I open the app before deciding to order elsewhere."</em> The "so that" names the outcome. The implementation is one or more subtasks.</p>
+            </div>
+            <div class="soe-jira-card" style="border-top-color:#4A9CC9;">
+              <span class="sjc-type" style="color:#4A9CC9;">Subtask (optional)</span>
+              <span class="sjc-title">Send push notification 18h after first order — cuisine match only</span>
+              <p>The implementation decision. Optional as a subtask — developers can track this internally. What matters for leadership and stakeholders is the Story, not the Subtask.</p>
+            </div>
+          </div>
+
+          <div class="soe-jira-note">
+            <strong>On transparency:</strong> When the Boundary surfaced in Sprint 3 (data access), it was not a ticket. It was a named Boundary in the OKR Weekly — visible to leadership immediately. Jira tracks what the team is building. Capability Spaces tracks what is stopping the team from building the right thing. Both are needed. Neither replaces the other.
+          </div>
+        </div>
+
+        <div class="soe-jira lc-de">
+          <span class="soe-jira-label">So sieht dieses Quartal in Jira aus</span>
+          <p class="soe-jira-intro">Dieselbe Outcome-Kette – direkt in Jiras Hierarchie übersetzt. Ein Epic. Sechs Sprints. Jedes Ticket beschreibt ein Nutzerproblem, keine Lösung. Das Sprint Goal ist der Outcome, den das Team testet – keine Liste von Deliverables.</p>
+
+          <div class="soe-jira-grid">
+            <div class="soe-jira-card" style="border-top-color:#7B5EA7;">
+              <span class="sjc-type" style="color:#7B5EA7;">Epic</span>
+              <span class="sjc-title">Nutzer kommen innerhalb von 7 Tagen ohne Gutschein zurück</span>
+              <p>Entspricht direkt dem Product-KR: 7-Tage-Wiedereröffnungsrate von 31% → 60%. Das Epic beschreibt kein Feature – sondern die Verhaltensänderung, die wir bei Nutzern sehen wollen.</p>
+            </div>
+            <div class="soe-jira-card" style="border-top-color:#C9A227;">
+              <span class="sjc-type" style="color:#C9A227;">Sprint Goal (Sprint 2)</span>
+              <span class="sjc-title">Nutzer, die gestern bestellt haben, öffnen die App morgen wieder</span>
+              <p>Nicht „Push-Notification implementieren". Das Sprint Goal ist die Outcome-Hypothese. Die Implementierung steckt in den Tickets – nicht im Sprint Goal selbst.</p>
+            </div>
+            <div class="soe-jira-card" style="border-top-color:#1B3A5C;">
+              <span class="sjc-type" style="color:#1B3A5C;">Story / Ticket</span>
+              <span class="sjc-title">Nutzer wissen am nächsten Morgen nicht, dass ein passendes Restaurant in der Nähe ist</span>
+              <p><em>„Als Erstnutzer möchte ich morgens an eine relevante Option in meiner Nähe erinnert werden – damit ich die App öffne, bevor ich mich woanders entscheide."</em> Das „damit" benennt den Outcome. Die Implementierung ist ein oder mehrere Subtasks.</p>
+            </div>
+            <div class="soe-jira-card" style="border-top-color:#4A9CC9;">
+              <span class="sjc-type" style="color:#4A9CC9;">Subtask (optional)</span>
+              <span class="sjc-title">Push-Benachrichtigung 18h nach erster Bestellung senden – nur bei Cuisine-Match</span>
+              <p>Die Implementierungsentscheidung. Optional als Subtask – Entwickler können das intern tracken. Was für Führung und Stakeholder zählt, ist die Story, nicht der Subtask.</p>
+            </div>
+          </div>
+
+          <div class="soe-jira-note">
+            <strong>Zur Transparenz:</strong> Als die Boundary in Sprint 3 auftauchte (Datenzugriff), war das kein Ticket. Es war eine benannte Boundary im OKR Weekly – sofort sichtbar für die Führung. Jira trackt, was das Team baut. Capability Spaces trackt, was das Team daran hindert, das Richtige zu bauen. Beides wird gebraucht. Keines ersetzt das andere.
+          </div>
+        </div>
+
+        <style>
+        .soe-jira {
+          margin-top: 40px;
+          padding-top: 36px;
+          border-top: 1px solid #E4E2DC;
+          max-width: 860px;
+        }
+        .soe-jira-label {
+          font-family: 'DM Mono', monospace;
+          font-size: 9px;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: #C9A227;
+          display: block;
+          margin-bottom: 10px;
+        }
+        .soe-jira-intro {
+          font-size: 15px;
+          line-height: 1.7;
+          color: #5A5A5A;
+          margin-bottom: 24px;
+          max-width: 720px;
+        }
+        .soe-jira-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
+          margin-bottom: 20px;
+        }
+        .soe-jira-card {
+          background: #F7F5F0;
+          border: 1px solid #E4E2DC;
+          border-top: 3px solid #C9A227;
+          padding: 18px 18px;
+        }
+        .sjc-type {
+          font-family: 'DM Mono', monospace;
+          font-size: 9px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 6px;
+        }
+        .sjc-title {
+          font-family: 'Syne', sans-serif;
+          font-size: 13px;
+          font-weight: 700;
+          color: #1B3A5C;
+          display: block;
+          margin-bottom: 8px;
+          line-height: 1.35;
+        }
+        .soe-jira-card p {
+          font-size: 13px;
+          line-height: 1.6;
+          color: #5A5A5A;
+          margin: 0;
+        }
+        .soe-jira-note {
+          background: #F0F4F8;
+          border-left: 3px solid #4A9CC9;
+          padding: 16px 20px;
+          font-size: 14px;
+          line-height: 1.65;
+          color: #2C2C2C;
+        }
+        @media (max-width: 640px) {
+          .soe-jira-grid { grid-template-columns: 1fr; }
+        }
+        </style>
+
+      </div><!-- /sol-example -->
+
+      <style>
+      /* ─── EXAMPLE STYLES ──────────────────────────────────────────── */
+      .sol-example {
+        max-width: 960px;
+        margin: 56px 0 0;
+        padding-top: 48px;
+        border-top: 1px solid #E4E2DC;
+      }
+      .sol-example-eyebrow {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #2E7D52;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .sol-example-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #1B3A5C;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+      .sol-example-intro {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #5A5A5A;
+        max-width: 720px;
+        margin-bottom: 32px;
+      }
+      /* OKR chain */
+      .soe-chain {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 600px;
+        margin-bottom: 40px;
+      }
+      .soe-level {
+        padding: 18px 22px;
+      }
+      .soe-level-biz  { background: #1B3A5C; border-left: 3px solid #C9A227; }
+      .soe-level-kr   { background: #1B3A5C; border-left: 3px solid #E8C96A; opacity: 0.9; }
+      .soe-level-prod { background: #1A3D2E; border-left: 3px solid #2E7D52; }
+      .soe-level-pkr  { background: #1A3D2E; border-left: 3px solid #5EC98A; opacity: 0.9; }
+      .soe-level-tag {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.45);
+        display: block;
+        margin-bottom: 6px;
+      }
+      .soe-level-text {
+        font-size: 15px;
+        line-height: 1.55;
+        color: rgba(220,230,245,0.88);
+        margin: 0;
+      }
+      .soe-arrow {
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        color: rgba(201,162,39,0.45);
+        padding: 6px 0 6px 22px;
+        display: block;
+      }
+      /* Sprint Goals */
+      .soe-sprints-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #C9A227;
+        display: block;
+        margin-bottom: 16px;
+      }
+      .soe-sprints {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 860px;
+        margin-bottom: 32px;
+      }
+      .soe-sprint {
+        padding: 22px 24px;
+        border: 1px solid #E4E2DC;
+        border-top: none;
+        background: #FFFFFF;
+        position: relative;
+      }
+      .soe-sprint:first-child {
+        border-top: 3px solid #2E7D52;
+      }
+      .soe-sprint + .soe-sprint {
+        border-top: 1px solid #E4E2DC;
+      }
+      .soe-sprint-boundary {
+        background: #FFFDF5;
+      }
+      .soe-sprint-final {
+        border-bottom: 3px solid #C9A227;
+      }
+      .soe-sp-num {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #8A8A8A;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .soe-sp-goal {
+        font-family: 'Syne', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: #1B3A5C;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .soe-sprint p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #5A5A5A;
+        margin-bottom: 12px;
+        max-width: 720px;
+      }
+      .soe-sp-learn {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #2E7D52;
+        padding: 10px 14px;
+        background: rgba(46,125,82,0.05);
+        border-left: 2px solid #2E7D52;
+      }
+      .soe-sp-learn-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-right: 6px;
+        color: rgba(46,125,82,0.7);
+      }
+      .soe-sp-result {
+        background: rgba(201,162,39,0.06);
+        border-left-color: #C9A227;
+        color: #2C2C2C;
+      }
+      .soe-sp-result .soe-sp-learn-label { color: rgba(201,162,39,0.8); }
+      .soe-sp-boundary {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #B8860B;
+        padding: 10px 14px;
+        background: rgba(184,134,11,0.06);
+        border-left: 2px solid #B8860B;
+        margin-bottom: 10px;
+      }
+      .soe-sp-boundary-icon { margin-right: 6px; }
+      /* Punchline */
+      .soe-punchline {
+        padding: 28px 32px;
+        border-left: 3px solid #2E7D52;
+        background: #FFFFFF;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+        max-width: 860px;
+      }
+      .soe-punchline-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #2E7D52;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .soe-punchline p { font-size: 16px; line-height: 1.7; color: #2C2C2C; }
+
+      /* ── Framework Worked Example blocks (fwe-*) ── */
+      .fw-example { max-width: 860px; }
+      .fwe-block { margin-top: 40px; }
+      .fwe-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 16px;
+      }
+      /* Map: three-step row */
+      .fwe-map-row {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        align-items: center;
+        gap: 0;
+        background: #F7F5F0;
+        border: 1px solid #E4E2DC;
+        border-top: 3px solid #C9A227;
+        padding: 24px 20px;
+      }
+      .fwe-map-step { padding: 0 8px; }
+      .fwe-step-tag {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #8A8A8A;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .fwe-map-step p { font-size: 13px; line-height: 1.6; color: #2C2C2C; margin: 0; }
+      .fwe-arrow {
+        font-size: 20px;
+        color: #C9A227;
+        padding: 0 8px;
+        opacity: 0.5;
+      }
+      /* Ampel rows */
+      .fwe-ampel-row { margin-top: 0; }
+      .fwe-ampel {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: #F7F5F0;
+        border: 1px solid #E4E2DC;
+        padding: 20px;
+      }
+      .fwe-amber { border-left: 3px solid #B8860B; }
+      .fwe-red   { border-left: 3px solid #B03030; }
+      .fwe-green { border-left: 3px solid #2E7D52; }
+      .fwe-ampel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #B8860B;
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+      .fwe-ampel-status {
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #B8860B;
+        display: block;
+        margin-bottom: 6px;
+      }
+      .fwe-ampel p { font-size: 14px; line-height: 1.6; color: #2C2C2C; margin: 0 0 8px; }
+      .fwe-ampel-action { font-size: 13px; color: #2E7D52; font-style: italic; }
+      /* Compass grid */
+      .fwe-compass-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .fwe-compass-item {
+        padding: 18px 20px;
+        border: 1px solid #E4E2DC;
+        background: #F7F5F0;
+      }
+      .fwe-compass-yes { border-top: 3px solid #2E7D52; }
+      .fwe-compass-no  { border-top: 3px solid #E4E2DC; }
+      .fwe-compass-force {
+        font-family: 'DM Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        color: #2E7D52;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .fwe-compass-no .fwe-compass-force { color: #8A8A8A; }
+      .fwe-compass-item p { font-size: 13px; line-height: 1.6; color: #2C2C2C; margin: 0; }
+      /* Punchline */
+      .fwe-punchline {
+        margin-top: 24px;
+        padding: 24px 28px;
+        border-left: 3px solid #2E7D52;
+        background: #FFFFFF;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+      }
+      .fwe-punchline-label {
+        font-family: 'DM Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #2E7D52;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .fwe-punchline p { font-size: 15px; line-height: 1.7; color: #2C2C2C; margin: 0; }
+      /* Note box */
+      .fwe-note {
+        font-size: 13px;
+        line-height: 1.65;
+        color: #5A5A5A;
+        padding: 14px 18px;
+        background: #F0F4F8;
+        border-left: 3px solid #4A9CC9;
+        margin-top: 0;
+      }
+      @media (max-width: 640px) {
+        .fwe-map-row { grid-template-columns: 1fr; }
+        .fwe-arrow { display: none; }
+        .fwe-compass-grid { grid-template-columns: 1fr; }
+      }
+      </style>
+
+    </div><!-- /fw-content-scrum-okr -->
 
   </div>
 </section>
 
+<!-- ══ WORKING WITH JIRA ══ -->
+<div class="divider lc-en"></div>
+<div class="section lc-en">
+  <div class="reveal">
+    <span class="section-label">Working with Jira</span>
+    <h2 class="section-title">The Map in Jira — <em>problems, not solutions.</em></h2>
+    <p class="lead">Most Jira backlogs describe what the team plans to build. The Map asks a different question: what is the user problem, and what should change for them? The hierarchy stays the same — Epic, Story, Subtask. Only the thinking changes.</p>
+    <p class="body">Ron Jeffries invented User Stories in 1998 as a placeholder for a conversation about user need. Mike Cohn later codified the format as <em>"As a [user], I want [X] so that [Y]"</em> — the "so that Y" is the outcome. In practice, that last part is almost always omitted. Jeff Patton's <em>User Story Mapping</em> (2014) goes further: stories should describe the activity the user is trying to complete, not the feature the team plans to build. The problem was understood from the start. Jira just made it easier to ignore.</p>
+  </div>
+
+  <!-- Hierarchy cards -->
+  <div class="reveal" style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:860px;">
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">A large outcome — something meaningful that changes for users or the business. If you use OKRs, an Epic maps directly to a Key Result.</p>
+    </div>
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #1B3A5C;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A5C;display:block;margin-bottom:10px;">Story / Ticket</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">The user problem and the desired outcome. Not the solution. Not the feature. The ticket answers: who cannot do what, and what should be different afterwards?</p>
+    </div>
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">Subtask</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Solution ideas and implementation steps — experiments toward the outcome. Optional: if developers prefer not to track subtasks, that is fine. Transparency comes from outcomes, not task lists.</p>
+    </div>
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">Sprint Goal</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">An outcome, not a delivery list. The Sprint Goal describes what will be different for users at the end of the sprint — not what the team plans to ship.</p>
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div class="reveal" style="margin-top:48px;max-width:860px;">
+    <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:12px;">Worked example — food delivery app, Sprint 2</span>
+    <div class="soe-jira-grid">
+      <div class="soe-jira-card" style="border-top-color:#7B5EA7;">
+        <span class="sjc-type" style="color:#7B5EA7;">Epic</span>
+        <span class="sjc-title">Users return within 7 days without a discount</span>
+        <p>The outcome the team is working toward. Not a feature area — a change in user behaviour. Every story in this epic is an experiment toward this outcome.</p>
+      </div>
+      <div class="soe-jira-card" style="border-top-color:#C9A227;">
+        <span class="sjc-type" style="color:#C9A227;">Sprint Goal</span>
+        <span class="sjc-title">Users who ordered yesterday open the app again tomorrow</span>
+        <p>An outcome hypothesis, not a shipping list. At the Sprint Review: did it happen? If not — what did we learn?</p>
+      </div>
+      <div class="soe-jira-card" style="border-top-color:#1B3A5C;">
+        <span class="sjc-type" style="color:#1B3A5C;">Story</span>
+        <span class="sjc-title">Users who ordered yesterday don't remember the app exists the next morning</span>
+        <p><em>"As a first-time buyer, I want a timely, relevant reminder — so that I think of the app before deciding to order elsewhere."</em> The "so that" names the outcome. The implementation lives in subtasks.</p>
+      </div>
+      <div class="soe-jira-card" style="border-top-color:#4A9CC9;">
+        <span class="sjc-type" style="color:#4A9CC9;">Subtask (optional)</span>
+        <span class="sjc-title">Push notification 18h after first order — cuisine match only</span>
+        <p>The implementation decision. Tracked internally by the team if useful. Leadership and stakeholders see the Story and the Sprint Goal — not the Subtask.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout reveal" style="margin-top:32px;max-width:860px;">
+    <span class="cl-label">On transparency</span>
+    <p>The concern is sometimes raised that without detailed subtasks, nobody knows what developers are working on. This confuses activity transparency with outcome transparency. A team with clear user problems and defined desired outcomes is far more transparent than one with 400 linked tickets and no shared understanding of what change they are working toward. What the team does is their business. What changes for users is everyone's.</p>
+  </div>
+</div>
+
+<div class="divider lc-de"></div>
+<div class="section lc-de">
+  <div class="reveal">
+    <span class="section-label">Mit Jira arbeiten</span>
+    <h2 class="section-title">Die Map in Jira — <em>Probleme, keine Lösungen.</em></h2>
+    <p class="lead">Die meisten Jira-Backlogs beschreiben, was das Team zu bauen plant. Die Map stellt eine andere Frage: Was ist das Nutzerproblem, und was soll sich für sie verändern? Die Hierarchie bleibt gleich — Epic, Story, Subtask. Nur das Denken ändert sich.</p>
+    <p class="body">Ron Jeffries erfand User Stories 1998 als Platzhalter für ein Gespräch über Nutzerbedürfnisse. Mike Cohn kodifizierte das Format als <em>„Als [Nutzer] möchte ich [X], damit [Y]"</em> — das „damit Y" ist der Outcome. In der Praxis fällt dieser Teil fast immer weg. Jeff Pattons <em>User Story Mapping</em> (2014) geht weiter: Stories sollten die Aktivität beschreiben, die der Nutzer abschließen möchte — nicht das Feature, das das Team zu bauen plant. Das Problem war von Anfang an bekannt. Jira hat es nur leichter gemacht, es zu ignorieren.</p>
+  </div>
+
+  <div class="reveal" style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:860px;">
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #7B5EA7;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:10px;">Epic</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein großer Outcome — etwas Bedeutsames, das sich für Nutzer oder das Unternehmen verändert. Wenn OKRs genutzt werden, entspricht ein Epic direkt einem Key Result.</p>
+    </div>
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #1B3A5C;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A5C;display:block;margin-bottom:10px;">Story / Ticket</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Das Nutzerproblem und der gewünschte Outcome. Nicht die Lösung. Nicht das Feature. Das Ticket beantwortet: Wer kann was nicht tun, und was soll danach anders sein?</p>
+    </div>
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">Subtask</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Lösungsideen und Implementierungsschritte — Experimente auf dem Weg zum Outcome. Optional: Wenn Entwickler keine Subtasks erfassen möchten, ist das kein Problem. Transparenz entsteht durch Outcomes, nicht durch Aufgabenlisten.</p>
+    </div>
+    <div style="background:#F7F5F0;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:20px 18px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">Sprint Goal</span>
+      <p style="font-size:14px;line-height:1.6;color:#2C2C2C;margin:0;">Ein Outcome, keine Lieferliste. Das Sprint Goal beschreibt, was sich am Ende des Sprints für Nutzer verändert hat — nicht was das Team plant auszuliefern.</p>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top:48px;max-width:860px;">
+    <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:12px;">Konkretes Beispiel — Food-Delivery-App, Sprint 2</span>
+    <div class="soe-jira-grid">
+      <div class="soe-jira-card" style="border-top-color:#7B5EA7;">
+        <span class="sjc-type" style="color:#7B5EA7;">Epic</span>
+        <span class="sjc-title">Nutzer kommen innerhalb von 7 Tagen ohne Gutschein zurück</span>
+        <p>Der Outcome, auf den das Team hinarbeitet. Kein Feature-Bereich — eine Verhaltensänderung bei Nutzern. Jede Story in diesem Epic ist ein Experiment auf dem Weg dorthin.</p>
+      </div>
+      <div class="soe-jira-card" style="border-top-color:#C9A227;">
+        <span class="sjc-type" style="color:#C9A227;">Sprint Goal</span>
+        <span class="sjc-title">Nutzer, die gestern bestellt haben, öffnen die App morgen wieder</span>
+        <p>Eine Outcome-Hypothese, keine Lieferliste. Im Sprint Review: Ist es eingetreten? Wenn nicht — was haben wir gelernt?</p>
+      </div>
+      <div class="soe-jira-card" style="border-top-color:#1B3A5C;">
+        <span class="sjc-type" style="color:#1B3A5C;">Story</span>
+        <span class="sjc-title">Nutzer, die gestern bestellt haben, denken am nächsten Morgen nicht mehr an die App</span>
+        <p><em>„Als Erstkäufer möchte ich eine zeitlich passende, relevante Erinnerung — damit ich an die App denke, bevor ich mich woanders entscheide."</em> Das „damit" benennt den Outcome. Die Implementierung steckt in Subtasks.</p>
+      </div>
+      <div class="soe-jira-card" style="border-top-color:#4A9CC9;">
+        <span class="sjc-type" style="color:#4A9CC9;">Subtask (optional)</span>
+        <span class="sjc-title">Push-Benachrichtigung 18h nach erster Bestellung — nur bei Cuisine-Match</span>
+        <p>Die Implementierungsentscheidung. Intern vom Team erfasst, wenn sinnvoll. Führung und Stakeholder sehen die Story und das Sprint Goal — nicht den Subtask.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout reveal" style="margin-top:32px;max-width:860px;">
+    <span class="cl-label">Zur Transparenz</span>
+    <p>Manchmal wird eingewandt, dass ohne detaillierte Subtasks niemand weiß, woran Entwickler arbeiten. Das verwechselt Aktivitätstransparenz mit Outcome-Transparenz. Ein Team mit klaren Nutzerproblemen und definierten gewünschten Outcomes ist deutlich transparenter als eines mit 400 verlinkten Tickets und keinem gemeinsamen Verständnis davon, welche Veränderung angestrebt wird. Was das Team tut, ist seine Sache. Was sich für Nutzer verändert, geht alle an.</p>
+  </div>
+</div>
+
+<style>
+/* ─── SCRUM + OKR STYLES ─────────────────────────────────────────── */
+.scrum-okr-logic {
+  max-width: 960px;
+  margin: 40px 0;
+}
+.sol-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2E7D52;
+  margin-bottom: 28px;
+  display: block;
+}
+.sol-chain-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 560px;
+}
+.sol-okr-box {
+  padding: 22px 24px;
+  background: #1B3A5C;
+  border-left: 3px solid #C9A227;
+}
+.sol-okr-box.sol-okr-product {
+  background: #1A3D2E;
+  border-left-color: #2E7D52;
+}
+.sol-level {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  display: block;
+  margin-bottom: 6px;
+}
+.sol-okr-box .sol-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #E8C96A;
+  display: block;
+  margin-bottom: 8px;
+}
+.sol-okr-box.sol-okr-product .sol-title { color: #5EC98A; }
+.sol-okr-box p { font-size: 14px; line-height: 1.6; color: rgba(220,230,245,0.75); }
+.sol-chain-down {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(201,162,39,0.55);
+  padding: 10px 0 10px 24px;
+  display: block;
+}
+.sol-sprints {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: start;
+  margin: 8px 0 28px;
+}
+.sol-sprint {
+  padding: 18px 16px;
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-top: 3px solid #2E7D52;
+}
+.sol-sprint-last { border-top-color: #C9A227; }
+.sol-sprint-dots { border-top-color: #8A8A8A; opacity: 0.7; }
+.ss-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #2E7D52;
+  display: block;
+  margin-bottom: 4px;
+}
+.sol-sprint-last .ss-num { color: #C9A227; }
+.ss-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1B3A5C;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: block;
+  margin-bottom: 8px;
+}
+.sol-sprint p { font-size: 13px; line-height: 1.55; color: #5A5A5A; }
+.sol-sprint-arrow {
+  font-size: 18px;
+  color: rgba(201,162,39,0.35);
+  text-align: center;
+  padding-top: 18px;
+  align-self: flex-start;
+}
+.sol-insight {
+  padding: 24px 28px;
+  border-left: 3px solid #C9A227;
+  background: #FFFFFF;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+  max-width: 860px;
+  margin-top: 4px;
+}
+.sol-insight-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin-bottom: 10px;
+  display: block;
+}
+.sol-insight p { font-size: 16px; line-height: 1.65; color: #2C2C2C; }
+/* EVENTS TABLE */
+.sol-events-block { margin: 48px 0; }
+.sol-events {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 960px;
+  margin-top: 20px;
+}
+.sol-event {
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+}
+.se-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  display: block;
+  background: #1B3A5C;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.se-tag-okr { background: #1A3D2E; color: rgba(255,255,255,0.7); }
+.se-events { padding: 4px 0; }
+.se-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid #F0EDE8;
+}
+.se-item:last-child { border-bottom: none; }
+.se-item-key { background: rgba(46,125,82,0.04); border-left: 3px solid #2E7D52; padding-left: 17px; }
+.se-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B3A5C;
+  display: block;
+  margin-bottom: 2px;
+}
+.se-cadence {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #8A8A8A;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.se-item p { font-size: 14px; line-height: 1.6; color: #5A5A5A; }
+/* LEARNING CARDS */
+.sol-learning { max-width: 960px; margin: 48px 0 0; }
+.sol-learning-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C9A227;
+  margin-bottom: 24px;
+  display: block;
+}
+.sol-learning-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.sol-learn-card {
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #E4E2DC;
+  border-top: 3px solid #2E7D52;
+}
+.sol-learn-boundary { border-top-color: #4A9CC9; }
+.sol-learn-users    { border-top-color: #7B5EA7; }
+.sol-learn-org      { border-top-color: #C9A227; }
+.slc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B3A5C;
+  display: block;
+  margin-bottom: 10px;
+}
+.sol-learn-card p { font-size: 14px; line-height: 1.65; color: #5A5A5A; }
+@media (max-width: 840px) {
+  .sol-sprints { grid-template-columns: 1fr; }
+  .sol-sprint-arrow { display: none; }
+  .sol-events { grid-template-columns: 1fr; }
+  .sol-learning-grid { grid-template-columns: 1fr; }
+}
+</style>
+
 <script>
-(function() {
-  var scrumContent = document.querySelector('.fw-content-scrum');
-  var okrContent   = document.querySelector('.fw-content-okr');
+// ── Framework switcher — global so sticky bar can call it ──────────
+function switchFw(fw) {
+  var scrumContent    = document.querySelector('.fw-content-scrum');
+  var okrContent      = document.querySelector('.fw-content-okr');
+  var scrumOkrContent = document.querySelector('.fw-content-scrum-okr');
 
-  function switchFw(fw) {
-    // Sync active state across all buttons (EN + DE duplicates)
-    document.querySelectorAll('.pfw-btn').forEach(function(b) {
-      b.classList.toggle('active', b.getAttribute('data-fw') === fw);
-    });
-    if (fw === 'scrum') {
-      if (scrumContent) scrumContent.style.display = 'block';
-      if (okrContent)   okrContent.style.display   = 'none';
-    } else if (fw === 'okr') {
-      if (scrumContent) scrumContent.style.display = 'none';
-      if (okrContent)   okrContent.style.display   = 'block';
-    }
-  }
+  document.querySelectorAll('.pfw-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-fw') === fw);
+  });
 
+  if (scrumContent)    scrumContent.style.display    = fw === 'scrum'     ? 'block' : 'none';
+  if (okrContent)      okrContent.style.display      = fw === 'okr'       ? 'block' : 'none';
+  if (scrumOkrContent) scrumOkrContent.style.display = fw === 'scrum-okr' ? 'block' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Attach click handlers to all pfw-btn buttons
   document.querySelectorAll('.pfw-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var fw = this.getAttribute('data-fw');
@@ -4733,7 +6090,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       if (panel) panel.classList.add('active');
     });
   });
-})();
+});
 </script>
 
 <div class="divider"></div>
@@ -4908,6 +6265,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll(); // initialise on load
+})();
+</script>
+<!-- ═══════════════ STICKY FRAMEWORK SWITCHER BAR ════════════════ -->
+<div id="sticky-fw-bar">
+  <button class="pfw-btn active" data-fw="scrum">Scrum</button>
+  <button class="pfw-btn" data-fw="okr">OKR</button>
+  <button class="pfw-btn" data-fw="scrum-okr">Scrum + OKR</button>
+</div>
+
+<script>
+(function() {
+  var bar = document.getElementById('sticky-fw-bar');
+  if (!bar) return;
+
+  var practiceSection = document.getElementById('in-practice');
+
+  function updateBarVisibility() {
+    if (!practiceSection) return;
+    var rect = practiceSection.getBoundingClientRect();
+    var inSection = rect.top < window.innerHeight * 0.8 && rect.bottom > 80;
+    if (inSection) {
+      bar.style.display = 'flex';
+      requestAnimationFrame(function() { bar.classList.add('visible'); });
+    } else {
+      bar.classList.remove('visible');
+      setTimeout(function() {
+        if (!bar.classList.contains('visible')) bar.style.display = 'none';
+      }, 320);
+    }
+  }
+
+  window.addEventListener('scroll', updateBarVisibility, { passive: true });
+  window.addEventListener('resize', updateBarVisibility, { passive: true });
+  updateBarVisibility();
 })();
 </script>
 </body>
