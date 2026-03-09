@@ -26,13 +26,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
 font-family: ‘Cormorant Garamond’, Georgia, serif;
 background: #F8F7F4;
 color: #2C2C2C;
-overflow-x: hidden;
+overflow-x: clip;
 }
 
 /* ─── LANG SWITCHER ──────────────────────────────────────────────── */
@@ -1378,31 +1378,34 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.2);
+  background: rgba(27,58,92,0.35);
+  border: 1px solid rgba(27,58,92,0.25);
   flex-shrink: 0;
   transition: all 0.25s ease;
   position: relative;
 }
 .cs-sidenav-item.active .cs-sidenav-dot {
   background: #C9A227;
+  border-color: #C9A227;
   box-shadow: 0 0 0 3px rgba(201,162,39,0.2);
 }
 .cs-sidenav-item:hover .cs-sidenav-dot {
-  background: rgba(255,255,255,0.6);
+  background: rgba(27,58,92,0.6);
+  border-color: rgba(27,58,92,0.4);
 }
 .cs-sidenav-label {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.0);
+  color: rgba(27,58,92,0.0);
   white-space: nowrap;
   transition: color 0.2s, opacity 0.2s;
   pointer-events: none;
 }
 .cs-sidenav-item:hover .cs-sidenav-label,
 .cs-sidenav-item.active .cs-sidenav-label {
-  color: rgba(255,255,255,0.7);
+  color: rgba(27,58,92,0.75);
 }
 .cs-sidenav-item.active .cs-sidenav-label {
   color: #C9A227;
@@ -1950,7 +1953,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 
 <div class="viz-scroll-wrap">
   <div class="viz-sticky-col">
-    <svg id="cs-canvas" viewBox="-20 0 720 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:580px;height:auto;">
+    <svg id="cs-canvas" viewBox="0 0 680 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:580px;height:auto;">
       <defs>
         <radialGradient id="planetGrad" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#1E3A5C"/><stop offset="100%" stop-color="#0C1A2E"/>
