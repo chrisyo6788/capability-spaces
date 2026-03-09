@@ -1162,6 +1162,9 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   margin: 48px 0 56px;
   max-width: 900px;
 }
+.evidence-grid .ev-stat--wide {
+  grid-column: span 2;
+}
 .ev-stat {
   border-left: 3px solid #C9A227;
   padding: 20px 24px;
@@ -1214,6 +1217,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 @media (max-width: 840px) {
   .evidence-section { padding: 64px 28px; }
   .evidence-grid { grid-template-columns: 1fr; gap: 16px; }
+  .evidence-grid .ev-stat--wide { grid-column: span 1; }
 }
 
 /* ─── FOOTNOTES ──────────────────────────────────────────────────── */
@@ -1629,8 +1633,10 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     </p>
 
     <div class="hero-story">
-      <p class="lc-en">Most teams follow the process correctly. The ceremonies run. The tickets move. But the space to act on what actually matters — that is defined from above. <strong>Capability Spaces shows you where that space is blocked, and what only you can change.</strong></p>
-      <p class="lc-de">Die meisten Teams folgen dem Prozess korrekt. Die Zeremonien laufen. Die Tickets bewegen sich. Aber der Raum, um das zu tun, was wirklich zählt — der wird von oben definiert. <strong>Capability Spaces zeigt Ihnen, wo dieser Raum blockiert ist, und was nur Sie verändern können.</strong></p>
+      <p class="lc-en">Most teams follow the process correctly. The ceremonies run. The tickets move. But the space to act on what actually matters — that is defined from above.</p>
+      <p class="lc-en" style="margin-top:14px;font-size:18px;line-height:1.55;"><strong>Capability Spaces shows you where that space is blocked, and what only you can change.</strong></p>
+      <p class="lc-de">Die meisten Teams folgen dem Prozess korrekt. Die Zeremonien laufen. Die Tickets bewegen sich. Aber der Raum, um das zu tun, was wirklich zählt — der wird von oben definiert.</p>
+      <p class="lc-de" style="margin-top:14px;font-size:18px;line-height:1.55;"><strong>Capability Spaces zeigt Ihnen, wo dieser Raum blockiert ist, und was nur Sie verändern können.</strong></p>
     </div>
   </div>
 
@@ -1661,23 +1667,23 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <span class="lc-de">Das ist kein Versagen Ihrer Organisation.<br><em style="color:#E8C96A;">Es ist ein strukturelles Muster – jahrzehntealt.</em></span>
       </h2>
       <p style="font-size:19px;font-weight:300;color:rgba(220,230,245,0.75);max-width:640px;line-height:1.7;font-style:italic;margin-bottom:0;">
-        <span class="lc-en">Scrum was designed to empower teams – to put developers at the centre and give them autonomy. The Scrum Guide still says so. What happened instead is well documented.</span>
-        <span class="lc-de">Scrum wurde entwickelt, um Teams zu empowern – Entwickler in den Mittelpunkt zu stellen und ihnen Autonomie zu geben. Der Scrum Guide sagt das bis heute. Was stattdessen passiert ist, ist gut belegt.</span>
+        <span class="lc-en">Agile frameworks – Scrum, Kanban, SAFe, OKR – were all designed to move decision-making closer to the work: to give teams the autonomy to solve real problems. Their manifestos and guides still say so. What happened instead is well documented.</span>
+        <span class="lc-de">Agile Frameworks – Scrum, Kanban, SAFe, OKR – wurden alle entwickelt, um Entscheidungen näher an die Arbeit zu bringen: Teams die Autonomie zu geben, echte Probleme zu lösen. Ihre Manifeste und Guides sagen das bis heute. Was stattdessen passiert ist, ist gut belegt.</span>
       </p>
     </div>
 
     <div class="evidence-grid reveal reveal-d1">
       <div class="ev-stat">
-        <span class="ev-num">47%</span>
-        <span class="ev-label lc-en">of all agile transformations fail – estimated by Jeff Sutherland, co-creator of Scrum himself.</span>
-        <span class="ev-label lc-de">aller agilen Transformationen scheitern – so schätzt es Jeff Sutherland, Mitbegründer von Scrum, selbst.</span>
-        <span class="ev-source"><a href="https://www.scruminc.com/why-47-of-agile-transformations-fail/" target="_blank" rel="noopener">Scrum Inc.</a></span>
+        <span class="ev-num">65%</span>
+        <span class="ev-label lc-en">of software projects using Agile fail to be delivered on time, within budget, and to a high standard of quality.</span>
+        <span class="ev-label lc-de">aller Softwareprojekte mit Agile werden nicht rechtzeitig, im Budget und in ausreichender Qualität abgeschlossen.</span>
+        <span class="ev-source"><a href="https://www.engprax.com/post/268-higher-failure-rates-for-agile-software-projects-study-finds/" target="_blank" rel="noopener">Engprax / J.L. Partners, 2024 · n=600</a></span>
       </div>
       <div class="ev-stat">
-        <span class="ev-num">62%</span>
-        <span class="ev-label lc-en">of top management believe agile has no implications for them. Only 13% fully support the transformation.</span>
-        <span class="ev-label lc-de">des Top-Managements glaubt, Agilität habe keine Konsequenzen für sie. Nur 13 % unterstützen die Transformation vollständig.</span>
-        <span class="ev-source"><a href="https://www.parabol.co/resources/agile-statistics/" target="_blank" rel="noopener">KPMG Survey via Parabol</a></span>
+        <span class="ev-num">46%</span>
+        <span class="ev-label lc-en">of organisations cite insufficient leadership participation as a top obstacle to agile adoption — the #2 barrier, for the second consecutive year.</span>
+        <span class="ev-label lc-de">der Organisationen nennen unzureichende Führungsbeteiligung als größtes Hindernis – Platz 2, zum zweiten Mal in Folge.</span>
+        <span class="ev-source"><a href="https://www.knowledgehut.com/blog/agile/state-of-agile" target="_blank" rel="noopener">18th State of Agile Report, 2025</a></span>
       </div>
       <div class="ev-stat">
         <span class="ev-num">84%</span>
@@ -1685,11 +1691,23 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <span class="ev-label lc-de">Failure Rate bei digitalen Transformationen – ohne erkennbare Verbesserungstendenz, laut IDC Research.</span>
         <span class="ev-source"><a href="https://www.scrum.org/resources/blog/real-question-we-should-be-asking-about-agile-transformation" target="_blank" rel="noopener">IDC Research via Scrum.org</a></span>
       </div>
+      <div class="ev-stat">
+        <span class="ev-num">31%</span>
+        <span class="ev-label lc-en">of organisations report that Agile adoption is limited to individual technical teams only — with no active leadership participation in the transformation.</span>
+        <span class="ev-label lc-de">der Organisationen geben an, dass Agile auf einzelne Tech-Teams beschränkt ist – ohne aktive Führungsbeteiligung an der Transformation.</span>
+        <span class="ev-source"><a href="https://pmwares.com/summary-of-the-17th-annual-state-of-agile-report-summary-key-findings/" target="_blank" rel="noopener">17th State of Agile Report, 2024</a></span>
+      </div>
+      <div class="ev-stat ev-stat--wide">
+        <span class="ev-num">97% <span style="font-size:22px;font-weight:400;letter-spacing:-0.5px;opacity:0.55;">vs.</span> 2%</span>
+        <span class="ev-label lc-en">of C-suite leaders believe they role-model agile behaviours. Only 2% of delivery team members agree. The perception gap is not a communication problem — it is a structural one.</span>
+        <span class="ev-label lc-de">der C-Suite-Mitglieder glauben, agile Verhaltensweisen vorzuleben. Nur 2 % der Teams sehen das so. Diese Wahrnehmungslücke ist kein Kommunikationsproblem – sie ist ein strukturelles.</span>
+        <span class="ev-source"><a href="https://www.agilebusiness.org/resource-report/state-of-agile-culture-report-2023.html" target="_blank" rel="noopener">Agile Business Consortium, State of Agile Culture Report 2023</a></span>
+      </div>
     </div>
 
     <div class="ev-context reveal reveal-d2">
-      <p class="lc-en">The most common diagnosis when agile fails: the team did something wrong. The data tells a more nuanced story. <strong>Most impediments are at management level</strong> – organisational structure, functional silos, approval processes. Teams that are not empowered to set their own goals cannot meaningfully be held accountable when those externally defined goals aren't met. Only when teams miss goals they set themselves do Scrum Masters and coaches become genuinely effective – helping teams understand how to reach their own commitments. <strong>Capability Spaces gives you a diagnostic to see exactly where – and a format to act on it.</strong></p>
-      <p class="lc-de">Die häufigste Diagnose, wenn Agilität scheitert: das Team hat etwas falsch gemacht. Die Daten erzählen eine differenziertere Geschichte. <strong>Die meisten Impediments liegen auf Management-Ebene</strong> – Organisationsstruktur, funktionale Silos, Freigabeprozesse. Teams, die nicht in die Lage versetzt werden, eigene Ziele zu setzen, können für das Verfehlen extern definierter Ziele kaum verantwortlich gemacht werden. Erst wenn Teams selbstgesetzte Ziele verfehlen, werden Scrum Master und Coaches wirklich wirksam – indem sie Teams helfen zu verstehen, wie sie ihre eigenen Commitments erreichen. <strong>Capability Spaces gibt Ihnen eine Diagnose, um genau das zu sehen – und ein Format, um darauf zu reagieren.</strong></p>
+      <p class="lc-en">The data points in the same direction, year after year: <strong>the gap between how leadership perceives its own involvement and how teams experience it is the single most consistent predictor of agile failure.</strong> Frameworks don't fail because of the method. They fail because the structural preconditions for agile work — empowered teams, problem-oriented work, real leadership presence — are absent. Capability Spaces makes exactly those preconditions visible and diagnosable.</p>
+      <p class="lc-de">Die Daten zeigen seit Jahren in dieselbe Richtung: <strong>Die Lücke zwischen der Selbstwahrnehmung von Führungskräften und der Erfahrung der Teams ist der konstanteste Prädiktor für das Scheitern agiler Transformationen.</strong> Frameworks scheitern nicht an der Methode. Sie scheitern, weil die strukturellen Voraussetzungen für agiles Arbeiten fehlen – befähigte Teams, problemorientiertes Arbeiten, echte Führungspräsenz. Capability Spaces macht genau diese Voraussetzungen sichtbar und diagnosierbar.</p>
     </div>
 
     <div class="callout blue reveal reveal-d3" style="background:rgba(74,156,201,0.06);border-left-color:#4A9CC9;max-width:860px;margin-top:32px;">
@@ -1859,21 +1877,60 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       </div>
     </header>
 
-<div class="viz-progress-row" style="padding-top:24px;">
-  <div class="viz-prog-dot active" onclick="setStage(1)"></div>
-  <div class="viz-prog-dot" onclick="setStage(2)"></div>
-  <div class="viz-prog-dot" onclick="setStage(3)"></div>
-</div>
+<style>
+/* ── Scroll-driven model layout ── */
+.viz-scroll-wrap {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+}
+.viz-sticky-col {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px 20px 24px;
+}
+.viz-panels-col {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255,255,255,0.07);
+}
+.viz-panel {
+  min-height: 100vh;
+  padding: 60px 28px 60px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.4s;
+}
+.viz-panel:last-child { border-bottom: none; }
+.viz-panel.s1 { border-left: 2px solid rgba(74,156,201,0.0); }
+.viz-panel.s2 { border-left: 2px solid rgba(224,96,64,0.0); }
+.viz-panel.s3 { border-left: 2px solid rgba(46,155,111,0.0); }
+.viz-panel.panel-active.s1 { background: rgba(74,156,201,0.03); border-left-color: rgba(74,156,201,0.4); }
+.viz-panel.panel-active.s2 { background: rgba(224,96,64,0.03); border-left-color: rgba(224,96,64,0.4); }
+.viz-panel.panel-active.s3 { background: rgba(46,155,111,0.03); border-left-color: rgba(46,155,111,0.4); }
 
-<div class="viz-stage-nav">
-  <button class="viz-stage-btn s1 active" onclick="setStage(1)">01 · The Map</button>
-  <button class="viz-stage-btn s2" onclick="setStage(2)">02 · The Boundaries</button>
-  <button class="viz-stage-btn s3" onclick="setStage(3)">03 · The Compass</button>
-</div>
+/* Mobile: stack everything */
+@media (max-width: 840px) {
+  .viz-scroll-wrap { grid-template-columns: 1fr; }
+  .viz-sticky-col {
+    position: relative;
+    height: auto;
+    padding: 20px 12px;
+  }
+  .viz-panels-col { border-left: none; border-top: 1px solid rgba(255,255,255,0.07); }
+  .viz-panel { min-height: auto; padding: 36px 20px; }
+}
+</style>
 
-<div class="viz-main">
-  <div class="viz-canvas-wrap">
-    <svg id="cs-canvas" viewBox="0 0 680 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+<div class="viz-scroll-wrap">
+  <div class="viz-sticky-col">
+    <svg id="cs-canvas" viewBox="0 0 680 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:580px;height:auto;">
       <defs>
         <radialGradient id="planetGrad" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#1E3A5C"/><stop offset="100%" stop-color="#0C1A2E"/>
@@ -2000,51 +2057,28 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       </g>
       <text x="340" y="465" fill="rgba(74,156,201,0.3)" font-family="'DM Mono'" font-size="9" text-anchor="middle" letter-spacing="2">THE TEAM'S ACTION SPACE</text>
     </svg>
-  </div>
+  </div><!-- /viz-sticky-col -->
 
-  <div class="viz-sidebar">
-    <!-- Stage 1 -->
-    <div class="viz-stage-info s1 active">
-      <span class="viz-stage-tag">01 · Core Concept</span>
+  <div class="viz-panels-col">
+
+    <!-- Panel 1: The Map -->
+    <div class="viz-panel s1 panel-active" id="viz-panel-1">
+      <span class="viz-stage-tag" style="border-left:2px solid #4A9CC9;padding-left:10px;color:#4A9CC9;">01 · Core Concept</span>
       <div class="viz-stage-num">01</div>
       <h2 class="viz-stage-title">The Map</h2>
       <p class="viz-stage-body lc-en">The Map shows where a team can move – defined by the product outcomes it can independently pursue. Every business has one goal: growth. How to get there is answered by product outcomes: measurable changes in user behaviour that drive business results. Outputs – features, tickets, deliverables – are the team's hypotheses for how to reach those outcomes.</p>
       <p class="viz-stage-body lc-de">Die Map zeigt, wo sich ein Team bewegen kann – definiert durch die Product Outcomes, die es eigenständig ansteuern kann. Jedes Business hat ein Ziel: Wachstum. Wie man dorthin kommt, beschreiben Product Outcomes: messbare Verhaltensänderungen bei Nutzern, die Business-Ergebnisse erzeugen. Outputs – Features, Tickets, Lieferungen – sind die Hypothesen des Teams, wie es diese Outcomes erreichen könnte.</p>
       <div class="viz-stage-items">
-        <div class="viz-stage-item highlight s1-h">
-          <span class="viz-item-icon">🗺️</span>
-          <div>
-            <div class="viz-item-name lc-en">The Map = Product Outcome Space</div>
-            <div class="viz-item-name lc-de">Die Map = Product Outcome Space</div>
-            <div class="viz-item-desc lc-en">The area in which the team can independently identify product outcomes and test hypotheses for reaching them.</div>
-            <div class="viz-item-desc lc-de">Der Bereich, in dem das Team eigenständig Product Outcomes erkennen und Hypothesen dazu testen kann.</div>
-          </div>
-        </div>
-        <div class="viz-stage-item">
-          <span class="viz-item-icon">⚡</span>
-          <div>
-            <div class="viz-item-name lc-en">Outputs are hypotheses – not goals</div>
-            <div class="viz-item-name lc-de">Outputs sind Hypothesen – keine Ziele</div>
-            <div class="viz-item-desc lc-en">Features and tickets are how the team thinks it can create an outcome. Only the product team can generate these hypotheses – because only they can validate them.</div>
-            <div class="viz-item-desc lc-de">Features und Tickets sind die Annahmen des Teams, wie es einen Outcome erzeugen kann. Nur das Produktteam kann diese Hypothesen aufstellen – weil nur es sie validieren kann.</div>
-          </div>
-        </div>
-        <div class="viz-stage-item">
-          <span class="viz-item-icon">⏳</span>
-          <div>
-            <div class="viz-item-name lc-en">Time is a natural boundary</div>
-            <div class="viz-item-name lc-de">Zeit ist natürliche Boundary</div>
-            <div class="viz-item-desc lc-en">Growth takes time – that's normal. Unnatural boundaries are the problem.</div>
-            <div class="viz-item-desc lc-de">Wachstum braucht Zeit – das ist normal. Unnatürliche Boundaries sind das Problem.</div>
-          </div>
-        </div>
+        <div class="viz-stage-item"><span class="viz-item-icon">🗺️</span><div><div class="viz-item-name lc-en" style="color:#4A9CC9;">The Map = Product Outcome Space</div><div class="viz-item-name lc-de" style="color:#4A9CC9;">Die Map = Product Outcome Space</div><div class="viz-item-desc lc-en">The area in which the team can independently identify product outcomes and test hypotheses for reaching them.</div><div class="viz-item-desc lc-de">Der Bereich, in dem das Team eigenständig Product Outcomes erkennen und Hypothesen dazu testen kann.</div></div></div>
+        <div class="viz-stage-item"><span class="viz-item-icon">⚡</span><div><div class="viz-item-name lc-en" style="color:#4A9CC9;">Outputs are hypotheses – not goals</div><div class="viz-item-name lc-de" style="color:#4A9CC9;">Outputs sind Hypothesen – keine Ziele</div><div class="viz-item-desc lc-en">Features and tickets are how the team thinks it can create an outcome. Only the product team can generate these hypotheses – because only they can validate them.</div><div class="viz-item-desc lc-de">Features und Tickets sind die Annahmen des Teams, wie es einen Outcome erzeugen kann. Nur das Produktteam kann diese Hypothesen aufstellen – weil nur es sie validieren kann.</div></div></div>
+        <div class="viz-stage-item"><span class="viz-item-icon">⏳</span><div><div class="viz-item-name lc-en" style="color:#4A9CC9;">Time is a natural boundary</div><div class="viz-item-name lc-de" style="color:#4A9CC9;">Zeit ist natürliche Boundary</div><div class="viz-item-desc lc-en">Growth takes time – that's normal. Unnatural boundaries are the problem.</div><div class="viz-item-desc lc-de">Wachstum braucht Zeit – das ist normal. Unnatürliche Boundaries sind das Problem.</div></div></div>
       </div>
     </div>
 
-    <!-- Stage 2 -->
-    <div class="viz-stage-info s2">
-      <span class="viz-stage-tag">02 · The Problem</span>
-      <div class="viz-stage-num">02</div>
+    <!-- Panel 2: The Boundaries -->
+    <div class="viz-panel s2" id="viz-panel-2">
+      <span class="viz-stage-tag" style="border-left:2px solid #E06040;padding-left:10px;color:#E06040;">02 · The Problem</span>
+      <div class="viz-stage-num" style="color:rgba(224,96,64,0.2);">02</div>
       <h2 class="viz-stage-title">The Boundaries</h2>
       <p class="viz-stage-body lc-en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. They are diagnostic signals, not team failures.</p>
       <p class="viz-stage-body lc-de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Sie sind Diagnosezeichen, keine Teamfehler.</p>
@@ -2056,10 +2090,10 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       </div>
     </div>
 
-    <!-- Stage 3 -->
-    <div class="viz-stage-info s3">
-      <span class="viz-stage-tag">03 · The Counterweight</span>
-      <div class="viz-stage-num">03</div>
+    <!-- Panel 3: The Compass -->
+    <div class="viz-panel s3" id="viz-panel-3">
+      <span class="viz-stage-tag" style="border-left:2px solid #2E9B6F;padding-left:10px;color:#2E9B6F;">03 · The Counterweight</span>
+      <div class="viz-stage-num" style="color:rgba(46,155,111,0.2);">03</div>
       <h2 class="viz-stage-title">The Compass</h2>
       <p class="viz-stage-body lc-en">The Compass describes four forces that actively strengthen the action space from the outside – giving the team the energy to keep going even when boundaries exist.</p>
       <p class="viz-stage-body lc-de">The Compass beschreibt vier Kräfte, die den Handlungsraum von außen aktiv stärken – und dem Team Energie geben, weiterzumachen, auch wenn Boundaries bestehen.</p>
@@ -2070,26 +2104,66 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <div class="viz-stage-item highlight s3-h"><span class="viz-item-icon">🔗</span><div><div class="viz-item-name">Connection</div><div class="viz-item-desc lc-en">Good work opens new doors. Stakeholders bring new problems that fit the space.</div><div class="viz-item-desc lc-de">Gute Arbeit öffnet neue Türen. Stakeholder bringen neue Probleme, die in den Space passen.</div></div></div>
       </div>
     </div>
-  </div>
-</div>
-```
+
+  </div><!-- /viz-panels-col -->
+</div><!-- /viz-scroll-wrap -->
 
   </div>
 </div>
 
 <script>
-let currentStage = 1;
-function setStage(n) {
-  currentStage = n;
-  document.querySelectorAll('.viz-stage-btn').forEach((b,i) => b.classList.toggle('active', i+1===n));
-  document.querySelectorAll('.viz-prog-dot').forEach((d,i) => d.classList.toggle('active', i+1===n));
-  document.querySelectorAll('.viz-stage-info').forEach((s,i) => s.classList.toggle('active', i+1===n));
-  const fog=document.getElementById('fog-full'), mapS2=document.getElementById('map-s2'), mapS2g=document.getElementById('map-s2-grid'), mapS2b=document.getElementById('map-s2-border'), mapS3=document.getElementById('map-s3'), mapS3g=document.getElementById('map-s3-grid'), mapS3b=document.getElementById('map-s3-border'), boundary=document.getElementById('boundaryGroup'), compassEl=document.getElementById('compassGroup');
-  if(n===1){fog.setAttribute('opacity','0.85');[mapS2,mapS2g,mapS2b,mapS3,mapS3g,mapS3b].forEach(e=>e.setAttribute('opacity','0'));boundary.style.cssText='transition:opacity 0.5s;opacity:0';compassEl.style.cssText='transition:opacity 0.5s;opacity:0';}
-  else if(n===2){fog.setAttribute('opacity','0.6');mapS2.setAttribute('opacity','0.85');mapS2g.setAttribute('opacity','0.7');mapS2b.setAttribute('opacity','1');[mapS3,mapS3g,mapS3b].forEach(e=>e.setAttribute('opacity','0'));boundary.style.cssText='transition:opacity 0.6s;opacity:1';compassEl.style.cssText='transition:opacity 0.3s;opacity:0';}
-  else{fog.setAttribute('opacity','0.25');mapS2.setAttribute('opacity','0.7');mapS2g.setAttribute('opacity','0.6');mapS2b.setAttribute('opacity','0.8');mapS3.setAttribute('opacity','0.5');mapS3g.setAttribute('opacity','0.5');mapS3b.setAttribute('opacity','0.8');boundary.style.cssText='transition:opacity 0.5s;opacity:0.25';compassEl.style.cssText='transition:opacity 0.6s 0.3s;opacity:1';}
-}
-document.addEventListener('DOMContentLoaded',()=>setStage(1));
+// Scroll-driven SVG animation: watch which panel is most visible
+(function() {
+  function setStage(n) {
+    var fog=document.getElementById('fog-full'),
+        mapS2=document.getElementById('map-s2'), mapS2g=document.getElementById('map-s2-grid'), mapS2b=document.getElementById('map-s2-border'),
+        mapS3=document.getElementById('map-s3'), mapS3g=document.getElementById('map-s3-grid'), mapS3b=document.getElementById('map-s3-border'),
+        boundary=document.getElementById('boundaryGroup'), compassEl=document.getElementById('compassGroup');
+    if(!fog) return;
+    // Update panel active state
+    [1,2,3].forEach(function(i) {
+      var p = document.getElementById('viz-panel-'+i);
+      if(p) p.classList.toggle('panel-active', i===n);
+    });
+    if(n===1){
+      fog.setAttribute('opacity','0.85');
+      [mapS2,mapS2g,mapS2b,mapS3,mapS3g,mapS3b].forEach(function(e){if(e)e.setAttribute('opacity','0');});
+      boundary.style.cssText='transition:opacity 0.5s;opacity:0';
+      compassEl.style.cssText='transition:opacity 0.5s;opacity:0';
+    } else if(n===2){
+      fog.setAttribute('opacity','0.6');
+      mapS2.setAttribute('opacity','0.85'); mapS2g.setAttribute('opacity','0.7'); mapS2b.setAttribute('opacity','1');
+      [mapS3,mapS3g,mapS3b].forEach(function(e){if(e)e.setAttribute('opacity','0');});
+      boundary.style.cssText='transition:opacity 0.6s;opacity:1';
+      compassEl.style.cssText='transition:opacity 0.3s;opacity:0';
+    } else {
+      fog.setAttribute('opacity','0.25');
+      mapS2.setAttribute('opacity','0.7'); mapS2g.setAttribute('opacity','0.6'); mapS2b.setAttribute('opacity','0.8');
+      mapS3.setAttribute('opacity','0.5'); mapS3g.setAttribute('opacity','0.5'); mapS3b.setAttribute('opacity','0.8');
+      boundary.style.cssText='transition:opacity 0.5s;opacity:0.25';
+      compassEl.style.cssText='transition:opacity 0.6s 0.3s;opacity:1';
+    }
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    var best = null, bestRatio = 0;
+    entries.forEach(function(e) {
+      if(e.intersectionRatio > bestRatio) { bestRatio = e.intersectionRatio; best = e.target; }
+    });
+    if(best) {
+      var id = best.id; // 'viz-panel-1', 'viz-panel-2', 'viz-panel-3'
+      setStage(parseInt(id.slice(-1)));
+    }
+  }, { threshold: [0.2, 0.5, 0.8] });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    [1,2,3].forEach(function(i) {
+      var p = document.getElementById('viz-panel-'+i);
+      if(p) observer.observe(p);
+    });
+    setStage(1);
+  });
+})();
 </script>
 
 <div class="divider"></div>
@@ -2311,7 +2385,60 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
     <p class="lead lc-de">Innovation ist kein Prozess, kein Workshop und kein Roadmap-Eintrag. Sie ist ein konkreter Outcome: eine Veränderung im Verhalten von Nutzern, die Business-Ergebnisse erzeugt. Nur eine Gruppe in Ihrer Organisation kann das leisten – die Teams, die mit Nutzern interagieren, Hypothesen testen und aus dem lernen, was wirklich passiert.</p>
   </div>
 
-  <div class="scale-2col reveal reveal-d1" style="margin-top:40px;">
+  <div class="reveal reveal-d1" style="margin-top:48px;max-width:860px;">
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 20px;">
+      <span class="lc-en">Why startups innovate – and why that stops.</span>
+      <span class="lc-de">Warum Startups innovieren – und warum das aufhört.</span>
+    </h3>
+    <p class="body lc-en">The energy in early-stage startups is not a mystery. Product teams work directly with customers. Developers move freely in the user's problem space – they talk to users, see the friction firsthand, decide what to try next, and learn whether it worked. No Map is handed down from above. The Map emerges from proximity to the problem. No Compass needs to be installed. Trust, shared knowledge, and constant assumption testing are simply how the work gets done.</p>
+    <p class="body lc-de">Die Energie in frühen Startups ist kein Zufall. Produktteams arbeiten direkt mit Kunden. Entwickler bewegen sich frei im Problemraum des Nutzers – sie sprechen mit Nutzern, sehen die Reibung aus erster Hand, entscheiden selbst, was sie als nächstes versuchen, und lernen, ob es funktioniert hat. Keine Map wird von oben vorgegeben. Die Map entsteht aus der Nähe zum Problem. Kein Compass muss erst installiert werden. Vertrauen, gemeinsames Wissen und ständiges Testen von Annahmen sind einfach die Art, wie die Arbeit läuft.</p>
+
+    <p class="body lc-en" style="margin-top:16px;">Then the startup gets acquired. Or it scales. Or it fails and the team disperses into larger organisations. What changes is not the people – it is the structure around them.</p>
+    <p class="body lc-de" style="margin-top:16px;">Dann wird das Startup aufgekauft. Oder es skaliert. Oder es scheitert und das Team verteilt sich in größere Organisationen. Was sich verändert, sind nicht die Menschen – es ist die Struktur um sie herum.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:28px;">
+      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #B03030;padding:22px 24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:10px;">
+          <span class="lc-en">Boundaries appear</span>
+          <span class="lc-de">Boundaries entstehen</span>
+        </span>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">Suddenly there are roles that weren't there before. Requirements that arrive pre-defined. Processes that need sign-off. Rules no one wrote down but everyone follows. The freedom to move in the problem space contracts.</p>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Plötzlich gibt es Rollen, die vorher nicht da waren. Anforderungen, die vordefiniert ankommen. Prozesse, die Freigaben brauchen. Regeln, die niemand aufgeschrieben hat, aber alle befolgen. Die Freiheit, sich im Problemraum zu bewegen, schrumpft.</p>
+      </div>
+      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:22px 24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">
+          <span class="lc-en">The Map disappears</span>
+          <span class="lc-de">Die Map verschwindet</span>
+        </span>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">The team no longer identifies user problems and opportunities. A backlog of tickets replaces proximity to users. Work becomes execution of someone else's hypothesis – and whether that hypothesis was right is rarely checked.</p>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Das Team identifiziert keine Nutzerprobleme und Opportunities mehr selbst. Ein Ticket-Backlog ersetzt die Nähe zu Nutzern. Arbeit wird zur Ausführung von jemand elses Hypothese – und ob diese Hypothese richtig war, wird selten überprüft.</p>
+      </div>
+      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:22px 24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">
+          <span class="lc-en">The Compass is gone</span>
+          <span class="lc-de">Der Compass ist weg</span>
+        </span>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">The trust that enabled fast decisions is replaced by approval chains. Shared knowledge fragments across silos. Assumption testing gives way to roadmap delivery. The team still shows up – but the conditions that made them innovative no longer exist.</p>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Das Vertrauen, das schnelle Entscheidungen ermöglichte, wird durch Freigabeketten ersetzt. Gemeinsames Wissen fragmentiert über Silos. Assumption Testing weicht der Roadmap-Lieferung. Das Team ist noch da – aber die Bedingungen, die sie innovativ gemacht haben, existieren nicht mehr.</p>
+      </div>
+    </div>
+
+    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #5A5A5A;padding:20px 28px;margin-top:16px;max-width:860px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#5A5A5A;display:block;margin-bottom:10px;">
+        <span class="lc-en">Research support</span>
+        <span class="lc-de">Forschungsbelege</span>
+      </span>
+      <p style="font-size:14px;line-height:1.7;color:#3C3C3C;margin:0;" class="lc-en">This is not an anecdote. M&amp;A research consistently finds that innovation rates decline after acquisition – and that the primary driver is the structural loss of autonomy for the acquired team. Paruchuri, Nerkar &amp; Hambrick <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Organization Science, 2006)</span> showed that integrated acquisitions produce measurably fewer innovations than non-integrated ones. Puranam et al. <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Strategic Management Journal, 2006)</span> named the core tension: acquirers must integrate to exploit capabilities – but integration destroys the autonomy that made those capabilities possible in the first place. The mechanism is structural, not motivational.</p>
+      <p style="font-size:14px;line-height:1.7;color:#3C3C3C;margin:0;" class="lc-de">Das ist kein Anekdotenwissen. M&amp;A-Forschung zeigt konsistent, dass Innovationsraten nach Akquisitionen sinken – und dass die Hauptursache der strukturelle Verlust von Autonomie im akquirierten Team ist. Paruchuri, Nerkar &amp; Hambrick <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Organization Science, 2006)</span> zeigten, dass integrierte Akquisitionen messbar weniger Innovationen produzieren als nicht-integrierte. Puranam et al. <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Strategic Management Journal, 2006)</span> benannten die Kernspannung: Käufer müssen integrieren, um Fähigkeiten zu nutzen – aber Integration zerstört genau die Autonomie, die diese Fähigkeiten erst möglich gemacht hat. Der Mechanismus ist strukturell, nicht motivational.</p>
+    </div>
+
+    <div style="background:#1B3A5C;padding:24px 32px;margin-top:4px;max-width:860px;">
+      <p style="font-size:15px;line-height:1.7;color:rgba(220,230,245,0.85);margin:0;" class="lc-en">The people didn't change. The Capability Space did. <strong style="color:#E8C96A;">That is what Capability Spaces makes visible – before the team stops delivering, before the retrospectives become frustrating, before leadership concludes the team simply isn't good enough.</strong></p>
+      <p style="font-size:15px;line-height:1.7;color:rgba(220,230,245,0.85);margin:0;" class="lc-de">Die Menschen haben sich nicht verändert. Der Capability Space hat es. <strong style="color:#E8C96A;">Genau das macht Capability Spaces sichtbar – bevor das Team aufhört zu liefern, bevor die Retrospektiven frustrierend werden, bevor die Führung zum Schluss kommt, das Team sei einfach nicht gut genug.</strong></p>
+    </div>
+  </div>
+
+  <div class="scale-2col reveal reveal-d1" style="margin-top:48px;">
     <div class="scale-card">
       <span class="sc-title lc-en">What looks like innovation</span>
       <span class="sc-title lc-de">Was wie Innovation aussieht</span>
@@ -2338,6 +2465,73 @@ document.addEventListener('DOMContentLoaded',()=>setStage(1));
     <p class="lc-en">This idea is not new. The Agile Manifesto already stated it in 2001: <em>"Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> The intended measure of progress was always real impact on users – not process compliance, not delivery velocity. Eighteen years later, Josh Seiden felt compelled to repeat it in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span>: "Customer behavior is the key metric for business success." Two years after that, Teresa Torres sharpened it once more in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: "An outcome is a change in human behavior that drives business results." Three authors. Twenty years. The same sentence. The industry still hasn't heard it. Capability Spaces diagnoses why – and where the structural lever is.</p>
     <p class="lc-de">Diese Idee ist nicht neu. Das Agile Manifesto hat sie bereits 2001 formuliert: <em>„Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> Das beabsichtigte Maß für Fortschritt war immer echte Wirkung auf Nutzer – nicht Prozesskonfirmität, nicht Liefergeschwindigkeit. Achtzehn Jahre später sah sich Josh Seiden genötigt, es in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span> zu wiederholen: „Kundenverhalten ist die entscheidende Kennzahl für unternehmerischen Erfolg." Zwei Jahre danach schärfte Teresa Torres es erneut in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: „Ein Outcome ist eine Veränderung im menschlichen Verhalten, die Business-Ergebnisse erzeugt." Drei Autoren. Zwanzig Jahre. Derselbe Satz. Die Industrie hat ihn noch immer nicht gehört. Capability Spaces diagnostiziert, warum – und wo der strukturelle Hebel liegt.</p>
   </div>
+
+  <!-- ── In-Practice Example: UX team + Review anti-pattern ── -->
+  <div class="reveal reveal-d3" style="margin-top:48px;">
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 20px;">
+      <span class="lc-en">What this looks like in practice.</span>
+      <span class="lc-de">Wie das in der Praxis aussieht.</span>
+    </h3>
+
+    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #B03030;padding:28px 32px;max-width:860px;margin-bottom:20px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:12px;">
+        <span class="lc-en">The Pattern</span>
+        <span class="lc-de">Das Muster</span>
+      </span>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:12px;" class="lc-en">A dedicated UX/UI team works with the Lean UX Canvas, builds proto-personas, and frames every conversation around user needs. The intent is genuinely user-centred. But the product team around them consistently reverts to anti-patterns: the sprint review becomes a status report — <em>"here's what we built"</em> — users are invited but can't actually test anything, and the Jira backlog is filled with pre-defined solutions rather than problems to explore.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:12px;" class="lc-de">Ein dediziertes UX/UI-Team arbeitet mit dem Lean UX Canvas, baut Proto-Personas und formuliert jedes Gespräch in Nutzerbedürfnissen. Der Anspruch ist genuinely nutzerzentriert. Aber das umgebende Produktteam verfällt kontinuierlich in Anti-Pattern: Das Sprint Review wird zur Statusmeldung — <em>„Das haben wir gebaut"</em> — Nutzer*innen sind eingeladen, können die Anwendung aber nicht ausprobieren, und der Jira-Backlog ist voll mit vordefinierten Lösungen statt zu erkundender Probleme.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-en">The audience in the review room makes this worse. Most participants have no relationship to the product and no ability to evaluate whether the work produced real value. For them, software development is a black box. They nod. They approve. Nobody learns anything — because learning was never the purpose of the room.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-de">Das Publikum im Review-Raum verstärkt das. Die meisten Teilnehmenden haben keinen Bezug zum Produkt und können nicht beurteilen, ob die Arbeit echten Wert erzeugt hat. Für sie ist Softwareentwicklung eine Blackbox. Sie nicken. Sie genehmigen. Niemand lernt etwas — weil Lernen nie der Zweck des Raums war.</p>
+    </div>
+
+    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #C9A227;padding:28px 32px;max-width:860px;margin-bottom:20px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:12px;">
+        <span class="lc-en">The Diagnosis</span>
+        <span class="lc-de">Die Diagnose</span>
+      </span>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-en">This is a <strong>Requirements boundary</strong>: work arrives as pre-defined features, not as problems worth solving. As long as the backlog is filled from above, no Lean UX Canvas creates the space for genuine discovery. The Compass force of <strong>Assumption Testing</strong> is structurally blocked — not from lack of skill or will, but because the team is never handed a real user problem to test against. The review format is a symptom of exactly this: as long as learning doesn't come first, the framing will always drift toward output.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-de">Das ist eine <strong>Requirements-Boundary</strong>: Arbeit kommt als vordefiniertes Feature an, nicht als Problem, das es zu lösen gilt. Solange der Backlog von oben befüllt wird, schafft kein Lean UX Canvas den Raum für echte Discovery. Die Compass-Kraft <strong>Assumption Testing</strong> ist strukturell blockiert — nicht aus Mangel an Kompetenz oder Willen, sondern weil dem Team nie ein echtes Nutzerproblem zum Testen gegeben wird. Das Review-Format ist genau dafür ein Symptom: Solange Lernen nicht an erster Stelle steht, driftet das Framing immer in Richtung Output.</p>
+    </div>
+
+    <div style="background:#F0F7F4;border:1px solid rgba(46,125,82,0.2);border-left:4px solid #2E7D52;padding:28px 32px;max-width:860px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E7D52;display:block;margin-bottom:12px;">
+        <span class="lc-en">What Capability Spaces changes</span>
+        <span class="lc-de">Was Capability Spaces verändert</span>
+      </span>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:14px;" class="lc-en">The review question changes from <em>"What did we build?"</em> to <em>"What did we learn — and what outcomes did we observe?"</em> This doesn't mean every sprint must show a measurable change in user behaviour. That is an unrealistic expectation for a two- or four-week cycle. But if the team's culture is oriented around learning and user feedback, every review can answer at least one question: <strong>what did we learn?</strong> A negative finding — a hypothesis that failed, a user who couldn't complete a flow — is a legitimate result. It is evidence. It moves the work forward.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:14px;" class="lc-de">Die Review-Frage verändert sich von <em>„Was haben wir gebaut?"</em> zu <em>„Was haben wir gelernt — und welche Outcomes haben wir beobachtet?"</em> Das bedeutet nicht, dass jeder Sprint eine messbare Veränderung im Nutzerverhalten zeigen muss. Das wäre eine unrealistische Erwartung für einen zwei- oder vierwöchigen Zyklus. Aber wenn die Kultur des Teams wirklich auf Lernen und Nutzerfeedback ausgerichtet ist, kann jedes Review mindestens eine Frage beantworten: <strong>Was haben wir gelernt?</strong> Ein negatives Ergebnis — eine Hypothese, die nicht bestätigt wurde, ein Nutzer, der einen Flow nicht abschließen konnte — ist ein legitimes Ergebnis. Es ist Evidenz. Es bringt die Arbeit voran.</p>
+      <div style="border-top:1px solid rgba(46,125,82,0.2);padding-top:14px;margin-top:4px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E7D52;display:block;margin-bottom:8px;">
+          <span class="lc-en">The leadership question</span>
+          <span class="lc-de">Die Führungsfrage</span>
+        </span>
+        <p style="font-size:15px;line-height:1.65;color:#5A5A5A;margin-bottom:16px;" class="lc-en">Leaders are not needed in the review as approvers — they are needed as diagnostic partners. The question after each review is: <em>"Are there boundaries in what we just heard — and which category are they?"</em> Naming the category is what makes the boundary actionable.</p>
+        <p style="font-size:15px;line-height:1.65;color:#5A5A5A;margin-bottom:16px;" class="lc-de">Führungskräfte werden im Review nicht als Genehmigende gebraucht — sondern als diagnostische Partner. Die Frage nach jedem Review lautet: <em>„Sind da Boundaries dabei, was wir gerade gehört haben — und welche Kategorie sind sie?"</em> Erst die Kategorie macht eine Boundary bearbeitbar.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px;">
+          <!-- Roles -->
+          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #4A9CC9;padding:16px 18px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;">Roles</span>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">Is the Product Owner actually empowered to talk to users — or does their role definition stop at backlog management? If user research sits exclusively with a separate UX team and the PO has no mandate to conduct conversations themselves, discovery stays structurally siloed.</p>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">Ist der Product Owner so ausgestattet, dass er selbst Gespräche mit Nutzer*innen führen kann — oder endet seine Rollendefinition beim Backlog-Management? Wenn User Research ausschließlich bei einem separaten UX-Team liegt und der PO kein Mandat für eigene Gespräche hat, bleibt Discovery strukturell isoliert.</p>
+          </div>
+          <!-- Processes -->
+          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #7B5EA7;padding:16px 18px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:8px;">Processes</span>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">User interviews require a legal sign-off that takes three weeks. · Recruiting users for a test needs a procurement process — by the time approval arrives, the sprint is over. · Every prototype must pass a brand review before it can be shown to anyone outside.</p>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">Nutzerinterviews benötigen ein rechtliches Freigabeverfahren, das drei Wochen dauert. · Nutzer*innen für einen Test zu rekrutieren erfordert einen Einkaufsprozess — bis zur Genehmigung ist der Sprint vorbei. · Jeder Prototyp muss ein Brand-Review durchlaufen, bevor er irgendjemandem außerhalb gezeigt werden darf.</p>
+          </div>
+          <!-- Rules -->
+          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #C9A227;padding:16px 18px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:8px;">Rules</span>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">"We don't show unfinished things to customers." · "The sprint review is an internal meeting — users aren't part of that." · "Feedback comes through the account manager, not directly from users."</p>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">„Wir zeigen Kunden keine unfertigen Dinge." · „Das Sprint Review ist ein internes Meeting — Nutzer*innen gehören da nicht dazu." · „Feedback kommt über den Account Manager, nicht direkt von Nutzer*innen."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="divider"></div>
