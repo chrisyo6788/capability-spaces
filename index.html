@@ -1081,7 +1081,7 @@ transition: background 0.2s, border-color 0.2s;
 .viz-stage-item.highlight.s2-h { background: rgba(224,96,64,0.08); border-color: rgba(224,96,64,0.25); }
 .viz-stage-item.highlight.s3-h { background: rgba(46,155,111,0.08); border-color: rgba(46,155,111,0.25); }
 
-.viz-item-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.viz-item-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; font-family: "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif !important; }
 
 .viz-item-name {
 font-family: ‘Syne’, sans-serif;
@@ -1836,15 +1836,15 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <span class="lc-de">Die Grundfrage</span>
       </span>
       <h2 class="section-title">
-        <span class="lc-en">It depends on <em>who sets the goals.</em></span>
-        <span class="lc-de">Es kommt darauf an, <em>wer die Ziele setzt.</em></span>
+        <span class="lc-en">Something isn't working.<br><em>But what, exactly?</em></span>
+        <span class="lc-de">Irgendetwas funktioniert nicht.<br><em>Aber was genau?</em></span>
       </h2>
-      <p class="lead lc-en">When a team doesn't reach its goals, the most common diagnosis is: the team did something wrong. But that question only makes sense if the team was actually in a position to set goals it believed were realistic.</p>
-      <p class="lead lc-de">Wenn ein Team seine Ziele nicht erreicht, ist die häufigste Diagnose: das Team hat es falsch gemacht. Aber diese Frage macht nur Sinn, wenn das Team überhaupt in der Lage war, Ziele zu setzen, die es selbst für realistisch hält.</p>
-      <p class="body lc-en">Teams that are no longer enabled to define their own goals can hardly be held accountable when externally imposed goals aren't met. Only when a team misses goals it set itself does real coaching work begin – and that is where Scrum Masters and coaches are most effective: helping teams reach <em>their own</em> goals.</p>
-      <p class="body lc-de">Teams, die nicht mehr in die Lage versetzt werden, eigene Ziele zu setzen, können schwerlich dafür verantwortlich gemacht werden, wenn externe Ziele verfehlt werden. Erst wenn ein Team seine selbstgesetzten Ziele nicht erreicht, beginnt echte Coaching-Arbeit – und genau da sind Scrum Master und Coaches am wirksamsten: dabei zu helfen, die <em>eigenen</em> Ziele zu erreichen.</p>
-      <p class="body lc-en">Capability Spaces makes that distinction visible – and gives teams and leaders a shared language for it.</p>
-      <p class="body lc-de">Capability Spaces macht diesen Unterschied sichtbar – und gibt Teams und Führungskräften eine gemeinsame Sprache dafür.</p>
+      <p class="lead lc-en">Agile isn't delivering. Teams aren't motivated. The framework feels like overhead. Leadership wonders whether the whole thing was a mistake. These are the symptoms – but none of them is a diagnosis. And without a diagnosis, the only available move is to try a different framework, hire a coach, or quietly give up.</p>
+      <p class="lead lc-de">Agilität liefert nicht. Teams sind unmotiviert. Das Framework fühlt sich wie Overhead an. Die Führung fragt sich, ob das Ganze ein Fehler war. Das sind Symptome – aber keine Diagnose. Und ohne Diagnose bleibt nur: ein anderes Framework ausprobieren, einen Coach holen oder still aufgeben.</p>
+      <p class="body lc-en">The question Capability Spaces asks is different: <strong>what does the team actually need in order to work the way agile assumes it can?</strong> That answer doesn't come from consultants or frameworks. It comes from the teams closest to the work – from what they can and cannot do, what they know and don't know, what they're allowed to decide and what gets decided for them.</p>
+      <p class="body lc-de">Die Frage, die Capability Spaces stellt, ist eine andere: <strong>Was braucht das Team tatsächlich, um so zu arbeiten, wie Agilität es voraussetzt?</strong> Diese Antwort kommt nicht von Beratern oder Frameworks. Sie kommt von den Teams, die nah an der Arbeit sind – davon, was sie können und nicht können, was sie wissen und nicht wissen, was sie entscheiden dürfen und was für sie entschieden wird.</p>
+      <p class="body lc-en">Capability Spaces gives that answer a structure. It describes the space in which a team can actually work – and what expands or shrinks it. Three components. One diagnostic lens.</p>
+      <p class="body lc-de">Capability Spaces gibt dieser Antwort eine Struktur. Es beschreibt den Raum, in dem ein Team tatsächlich arbeiten kann – und was ihn vergrößert oder verkleinert. Drei Komponenten. Eine diagnostische Linse.</p>
     </div>
   </div>
 </div>
@@ -1852,7 +1852,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 
 <!-- ═══════════════════════ MODEL VISUAL ══════════════════════════ -->
 
-<div style="background:#0C1A2E;padding:0;overflow:hidden;" id="section-model">
+<div style="background:#0C1A2E;padding:0;" id="section-model">
   <div style="max-width:1100px;margin:0 auto;padding:48px 64px 24px;">
     <div class="reveal" style="margin-bottom:32px;">
       <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A227;">
@@ -1941,6 +1941,19 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#2E9B6F" stop-opacity="0.25"/><stop offset="100%" stop-color="#2E9B6F" stop-opacity="0"/>
         </radialGradient>
+        <!-- Red inward pressure halo for boundaries -->
+        <radialGradient id="boundaryHaloGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="70%" stop-color="#E06040" stop-opacity="0"/>
+          <stop offset="88%" stop-color="#E06040" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#E06040" stop-opacity="0.35"/>
+        </radialGradient>
+        <!-- Green outward expansion glow for compass -->
+        <radialGradient id="compassGlowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#2E9B6F" stop-opacity="0"/>
+          <stop offset="72%" stop-color="#2E9B6F" stop-opacity="0"/>
+          <stop offset="88%" stop-color="#2E9B6F" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#2E9B6F" stop-opacity="0.08"/>
+        </radialGradient>
         <pattern id="gridPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
           <line x1="40" y1="0" x2="0" y2="0" stroke="rgba(74,156,201,0.08)" stroke-width="0.5"/>
           <line x1="0" y1="0" x2="0" y2="40" stroke="rgba(74,156,201,0.08)" stroke-width="0.5"/>
@@ -1978,6 +1991,11 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <circle id="map-s3-border" cx="340" cy="295" r="210" fill="none" stroke="rgba(74,156,201,0.2)" stroke-width="1" opacity="0"/>
       </g>
 
+      <!-- Boundary pressure halo: red glow pressing inward on map border -->
+      <circle id="boundaryHalo" cx="340" cy="310" r="155" fill="url(#boundaryHaloGrad)" opacity="0" style="transition:opacity 0.6s;pointer-events:none;"/>
+      <!-- Compass expansion glow: green glow radiating outward -->
+      <circle id="compassGlowRing" cx="340" cy="295" r="255" fill="url(#compassGlowGrad)" opacity="0" style="transition:opacity 0.6s;pointer-events:none;"/>
+
       <g id="mapDetails" opacity="0.5">
         <circle cx="310" cy="330" r="3" fill="rgba(74,156,201,0.6)"/>
         <circle cx="365" cy="310" r="2" fill="rgba(74,156,201,0.4)"/>
@@ -2004,49 +2022,65 @@ transition: opacity 0.7s ease, transform 0.7s ease;
           <animateTransform attributeName="transform" type="rotate" from="360 340 310" to="0 340 310" dur="60s" repeatCount="indefinite"/>
         </circle>
         <g opacity="0.85">
-          <path d="M340,310 L420,240 L450,270 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-          <circle cx="435" cy="252" r="5" fill="#E06040"/>
-          <text x="460" y="248" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">ROLES</text>
-          <path d="M340,310 L240,235 L215,265 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-          <circle cx="226" cy="248" r="5" fill="#E06040"/>
-          <text x="100" y="244" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">REQUIRE-</text>
-          <text x="100" y="256" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">MENTS</text>
-          <path d="M340,310 L360,175 L395,185 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-          <circle cx="378" cy="178" r="5" fill="#E06040"/>
-          <text x="400" y="174" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">PROCESSES</text>
-          <path d="M340,310 L300,175 L265,188 Z" fill="rgba(224,96,64,0.12)" stroke="#E06040" stroke-width="1.5"/>
-          <circle cx="280" cy="179" r="5" fill="#E06040"/>
-          <text x="155" y="174" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1">RULES</text>
+          <!-- RULES: top-left at -135° r=155 -->
+          <line x1="246" y1="201" x2="340" y2="295" stroke="#E06040" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="230" cy="185" r="20" fill="rgba(224,96,64,0.15)" stroke="#E06040" stroke-width="1"/>
+          <text x="230" y="185" fill="rgba(224,96,64,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">📏</text>
+          <text x="230" y="158" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">RULES</text>
+
+          <!-- PROCESSES: top-right at -45° r=155 -->
+          <line x1="434" y1="201" x2="340" y2="295" stroke="#E06040" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="450" cy="185" r="20" fill="rgba(224,96,64,0.15)" stroke="#E06040" stroke-width="1"/>
+          <text x="450" y="185" fill="rgba(224,96,64,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">⚙️</text>
+          <text x="450" y="158" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">PROCESSES</text>
+
+          <!-- ROLES: right at -15° r=155 -->
+          <line x1="468" y1="261" x2="340" y2="295" stroke="#E06040" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="490" cy="255" r="20" fill="rgba(224,96,64,0.15)" stroke="#E06040" stroke-width="1"/>
+          <text x="490" y="255" fill="rgba(224,96,64,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">👥</text>
+          <text x="518" y="255" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="start" dominant-baseline="middle">ROLES</text>
+
+          <!-- REQUIREMENTS: left at -165° r=155 -->
+          <line x1="212" y1="261" x2="340" y2="295" stroke="#E06040" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="190" cy="255" r="20" fill="rgba(224,96,64,0.15)" stroke="#E06040" stroke-width="1"/>
+          <text x="190" y="255" fill="rgba(224,96,64,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">📋</text>
+          <text x="162" y="249" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="end" dominant-baseline="middle">REQUIRE-</text>
+          <text x="162" y="261" fill="#E06040" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="end" dominant-baseline="middle">MENTS</text>
+
           <path d="M 160,390 A 185,60 0 0 1 520,390" fill="none" stroke="#E06040" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
-          <text x="300" y="418" fill="rgba(224,96,64,0.6)" font-family="'DM Mono'" font-size="8" letter-spacing="1.5" text-anchor="middle">NATURAL BOUNDARY: TIME</text>
+          <text x="340" y="418" fill="rgba(224,96,64,0.6)" font-family="'DM Mono'" font-size="8" letter-spacing="1.5" text-anchor="middle">NATURAL BOUNDARY: TIME</text>
         </g>
       </g>
 
       <g id="compassGroup" opacity="0">
+        <!-- ASSUMPTION TESTING: top-left at -135° r=185 -->
         <g>
-          <line x1="340" y1="295" x2="200" y2="130" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-          <circle cx="200" cy="130" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-          <text x="200" y="107" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">ASSUMPTION</text>
-          <text x="200" y="118" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">TESTING</text>
-          <text x="200" y="133" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">🔍</text>
+          <line x1="225" y1="180" x2="340" y2="295" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="209" cy="164" r="20" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="209" y="164" fill="rgba(46,155,111,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">🔍</text>
+          <text x="209" y="128" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">ASSUMPTION</text>
+          <text x="209" y="139" fill="#2E9B6F" font-family="'DM Mono'" font-size="8" letter-spacing="1" text-anchor="middle">TESTING</text>
         </g>
+        <!-- TRUST: top-right at -45° r=185 -->
         <g>
-          <line x1="340" y1="295" x2="500" y2="120" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-          <circle cx="500" cy="120" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-          <text x="500" y="97" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">TRUST</text>
-          <text x="500" y="115" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">⭐</text>
+          <line x1="455" y1="180" x2="340" y2="295" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="471" cy="164" r="20" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="471" y="164" fill="rgba(46,155,111,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">⭐</text>
+          <text x="471" y="136" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">TRUST</text>
         </g>
+        <!-- KNOWLEDGE: left at -165° r=185 -->
         <g>
-          <line x1="340" y1="295" x2="130" y2="210" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-          <circle cx="130" cy="210" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-          <text x="130" y="188" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">KNOWLEDGE</text>
-          <text x="130" y="213" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">📚</text>
+          <line x1="183" y1="253" x2="340" y2="295" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="161" cy="247" r="20" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="161" y="247" fill="rgba(46,155,111,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">📚</text>
+          <text x="133" y="247" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="end" dominant-baseline="middle">KNOWLEDGE</text>
         </g>
+        <!-- CONNECTION: right at -15° r=185 -->
         <g>
-          <line x1="340" y1="295" x2="560" y2="215" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
-          <circle cx="560" cy="215" r="18" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
-          <text x="560" y="193" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="middle">CONNECTION</text>
-          <text x="560" y="218" fill="rgba(46,155,111,0.7)" font-size="16" text-anchor="middle">🔗</text>
+          <line x1="497" y1="253" x2="340" y2="295" stroke="#2E9B6F" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+          <circle cx="519" cy="247" r="20" fill="rgba(46,155,111,0.15)" stroke="#2E9B6F" stroke-width="1"/>
+          <text x="519" y="247" fill="rgba(46,155,111,0.9)" font-size="16" font-family="Apple Color Emoji,Segoe UI Emoji,Noto Color Emoji,sans-serif" text-anchor="middle" dominant-baseline="middle">🔗</text>
+          <text x="547" y="247" fill="#2E9B6F" font-family="'DM Mono'" font-size="9" letter-spacing="1" text-anchor="start" dominant-baseline="middle">CONNECTION</text>
         </g>
         <circle cx="340" cy="295" r="60" fill="url(#greenGlow)" opacity="0.8"/>
       </g>
@@ -2083,10 +2117,10 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <p class="viz-stage-body lc-en">Besides the natural boundary (time), there are unnatural boundaries – they artificially slow the growth of the action space. They are diagnostic signals, not team failures.</p>
       <p class="viz-stage-body lc-de">Neben der natürlichen Boundary (Zeit) gibt es unnatürliche Boundaries – sie bremsen das Wachstum des Handlungsraums künstlich. Sie sind Diagnosezeichen, keine Teamfehler.</p>
       <div class="viz-stage-items">
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">👥</span><div><div class="viz-item-name lc-en">Roles</div><div class="viz-item-name lc-de">Rollen</div><div class="viz-item-desc lc-en">Responsibilities prevent people from working on the problems they're most suited to solve.</div><div class="viz-item-desc lc-de">Zuständigkeiten hindern Menschen daran, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div></div></div>
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📋</span><div><div class="viz-item-name">Requirements</div><div class="viz-item-desc lc-en">Tasks arrive as finished solutions, not as problems. No room to understand why.</div><div class="viz-item-desc lc-de">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div></div></div>
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">⚙️</span><div><div class="viz-item-name lc-en">Processes</div><div class="viz-item-name lc-de">Prozesse</div><div class="viz-item-desc lc-en">Workflows that prevent independent decisions or experiments.</div><div class="viz-item-desc lc-de">Abläufe, die eigenständige Entscheidungen oder Experimente verhindern.</div></div></div>
-        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon">📏</span><div><div class="viz-item-name lc-en">Rules</div><div class="viz-item-name lc-de">Regeln</div><div class="viz-item-desc lc-en">Implicit norms that constrain the space – without anyone having consciously decided so.</div><div class="viz-item-desc lc-de">Implizite Spielregeln, die den Raum einschränken – ohne dass jemand das bewusst entschieden hat.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon" style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;">👥</span><div><div class="viz-item-name lc-en">Roles</div><div class="viz-item-name lc-de">Rollen</div><div class="viz-item-desc lc-en">Responsibilities prevent people from working on the problems they're most suited to solve.</div><div class="viz-item-desc lc-de">Zuständigkeiten hindern Menschen daran, an den Problemen zu arbeiten, für die sie die richtigen Fähigkeiten hätten.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon" style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;">📋</span><div><div class="viz-item-name">Requirements</div><div class="viz-item-desc lc-en">Tasks arrive as finished solutions, not as problems. No room to understand why.</div><div class="viz-item-desc lc-de">Aufgaben kommen als fertige Lösungen an, nicht als Probleme. Kein Spielraum, kein Verstehen.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon" style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;">⚙️</span><div><div class="viz-item-name lc-en">Processes</div><div class="viz-item-name lc-de">Prozesse</div><div class="viz-item-desc lc-en">Workflows that prevent independent decisions or experiments.</div><div class="viz-item-desc lc-de">Abläufe, die eigenständige Entscheidungen oder Experimente verhindern.</div></div></div>
+        <div class="viz-stage-item highlight s2-h"><span class="viz-item-icon" style="font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;">📏</span><div><div class="viz-item-name lc-en">Rules</div><div class="viz-item-name lc-de">Regeln</div><div class="viz-item-desc lc-en">Implicit norms that constrain the space – without anyone having consciously decided so.</div><div class="viz-item-desc lc-de">Implizite Spielregeln, die den Raum einschränken – ohne dass jemand das bewusst entschieden hat.</div></div></div>
       </div>
     </div>
 
@@ -2118,7 +2152,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     var fog=document.getElementById('fog-full'),
         mapS2=document.getElementById('map-s2'), mapS2g=document.getElementById('map-s2-grid'), mapS2b=document.getElementById('map-s2-border'),
         mapS3=document.getElementById('map-s3'), mapS3g=document.getElementById('map-s3-grid'), mapS3b=document.getElementById('map-s3-border'),
-        boundary=document.getElementById('boundaryGroup'), compassEl=document.getElementById('compassGroup');
+        boundary=document.getElementById('boundaryGroup'), compassEl=document.getElementById('compassGroup'),
+        bHalo=document.getElementById('boundaryHalo'), cGlow=document.getElementById('compassGlowRing');
     if(!fog) return;
     // Update panel active state
     [1,2,3].forEach(function(i) {
@@ -2130,38 +2165,56 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       [mapS2,mapS2g,mapS2b,mapS3,mapS3g,mapS3b].forEach(function(e){if(e)e.setAttribute('opacity','0');});
       boundary.style.cssText='transition:opacity 0.5s;opacity:0';
       compassEl.style.cssText='transition:opacity 0.5s;opacity:0';
+      if(bHalo) bHalo.style.opacity='0';
+      if(cGlow) cGlow.style.opacity='0';
     } else if(n===2){
       fog.setAttribute('opacity','0.6');
       mapS2.setAttribute('opacity','0.85'); mapS2g.setAttribute('opacity','0.7'); mapS2b.setAttribute('opacity','1');
       [mapS3,mapS3g,mapS3b].forEach(function(e){if(e)e.setAttribute('opacity','0');});
       boundary.style.cssText='transition:opacity 0.6s;opacity:1';
       compassEl.style.cssText='transition:opacity 0.3s;opacity:0';
+      if(bHalo) bHalo.style.opacity='1';
+      if(cGlow) cGlow.style.opacity='0';
     } else {
       fog.setAttribute('opacity','0.25');
       mapS2.setAttribute('opacity','0.7'); mapS2g.setAttribute('opacity','0.6'); mapS2b.setAttribute('opacity','0.8');
       mapS3.setAttribute('opacity','0.5'); mapS3g.setAttribute('opacity','0.5'); mapS3b.setAttribute('opacity','0.8');
       boundary.style.cssText='transition:opacity 0.5s;opacity:0.25';
       compassEl.style.cssText='transition:opacity 0.6s 0.3s;opacity:1';
+      if(bHalo) bHalo.style.opacity='0';
+      if(cGlow) cGlow.style.opacity='1';
     }
   }
 
-  var observer = new IntersectionObserver(function(entries) {
-    var best = null, bestRatio = 0;
-    entries.forEach(function(e) {
-      if(e.intersectionRatio > bestRatio) { bestRatio = e.intersectionRatio; best = e.target; }
-    });
-    if(best) {
-      var id = best.id; // 'viz-panel-1', 'viz-panel-2', 'viz-panel-3'
-      setStage(parseInt(id.slice(-1)));
-    }
-  }, { threshold: [0.2, 0.5, 0.8] });
-
-  document.addEventListener('DOMContentLoaded', function() {
+  // Scroll fallback: find which panel occupies the most viewport center
+  function getActivePanel() {
+    var mid = window.innerHeight / 2;
+    var best = 1, bestDist = Infinity;
     [1,2,3].forEach(function(i) {
       var p = document.getElementById('viz-panel-'+i);
-      if(p) observer.observe(p);
+      if(!p) return;
+      var r = p.getBoundingClientRect();
+      var pMid = r.top + r.height / 2;
+      var dist = Math.abs(pMid - mid);
+      if(dist < bestDist) { bestDist = dist; best = i; }
     });
+    return best;
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if(!ticking) {
+      requestAnimationFrame(function() {
+        setStage(getActivePanel());
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
     setStage(1);
+    window.addEventListener('scroll', onScroll, { passive: true });
   });
 })();
 </script>
