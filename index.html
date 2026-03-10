@@ -226,6 +226,47 @@ font-style: normal;
 font-weight: 600;
 }
 
+/* ─── TL;DR ─────────────────────────────────────────────────────── */
+.hero-tldr {
+max-width: 600px;
+margin: 0 auto 36px;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.10);
+border-top: 2px solid rgba(201,162,39,0.45);
+padding: 18px 28px;
+text-align: left;
+opacity: 0;
+animation: fadeUp 0.8s ease 0.85s forwards;
+}
+
+.hero-tldr-label {
+font-family: 'DM Mono', monospace;
+font-size: 9px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: rgba(201,162,39,0.65);
+display: block;
+margin-bottom: 10px;
+}
+
+.hero-tldr p {
+font-size: 15px;
+font-weight: 300;
+color: rgba(220,230,245,0.72);
+line-height: 1.65;
+}
+
+.hero-tldr strong {
+color: #E8C96A;
+font-style: normal;
+font-weight: 600;
+}
+
+.hero-tldr em {
+font-style: italic;
+color: rgba(220,230,245,0.88);
+}
+
 /* ─── PATH SELECTOR ─────────────────────────────────────────────── */
 .path-selector {
 display: grid;
@@ -1643,6 +1684,28 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <p class="lc-de">Die meisten Teams folgen dem Prozess korrekt. Die Zeremonien laufen. Die Tickets bewegen sich. Aber der Raum, um das zu tun, was wirklich zählt — der wird von oben definiert.</p>
       <p class="lc-de" style="margin-top:14px;font-size:18px;line-height:1.55;"><strong>Capability Spaces zeigt dir, wo dieser Raum blockiert ist, und was nur du verändern kannst.</strong></p>
     </div>
+  </div>
+
+  <!-- ── TL;DR ──────────────────────────────────────────────────────── -->
+  <div class="hero-tldr lc-en">
+    <span class="hero-tldr-label">In brief</span>
+    <p>Agile frameworks fail for structural reasons — not because of people.
+    <strong>Capability Spaces</strong> is a diagnostic model that shows <em>why</em> a team gets stuck —
+    before the transformation collapses. It maps three forces:
+    <strong>Map</strong> (is the team solving real user problems — or just executing briefs?),
+    <strong>Boundaries</strong> (what structural constraints of the organisation are blocking the team?),
+    and <strong>Compass</strong> (why agile ways of working pay off — even inside those constraints).
+    Use it as a coach — or as a leader building conditions for real agility.</p>
+  </div>
+  <div class="hero-tldr lc-de">
+    <span class="hero-tldr-label">Kurz gefasst</span>
+    <p>Agile Frameworks scheitern aus strukturellen Gründen — nicht an Menschen.
+    <strong>Capability Spaces</strong> ist ein Diagnosemodell, das zeigt, <em>warum</em> ein Team feststeckt —
+    bevor die Transformation zusammenbricht. Es bildet drei Kräfte ab:
+    <strong>Map</strong> (löst das Team echte Nutzerprobleme — oder führt es nur Aufträge aus?),
+    <strong>Boundaries</strong> (welche strukturellen Zwänge der Organisation blockieren das Team?)
+    und <strong>Compass</strong> (warum agiles Arbeiten sich lohnt — auch trotz dieser Blocker).
+    Nutzbar als Coach — oder als Führungskraft, die echte Agilität möglich macht.</p>
   </div>
 
   <div class="hero-bottom">
