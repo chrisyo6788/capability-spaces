@@ -7123,6 +7123,14 @@ function setLang(lang) {
 
 // ── On page load ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
+  // Prevent browser from restoring scroll position on reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+
   var saved = 'en';
   try { saved = localStorage.getItem('cs-lang') || 'en'; } catch(e) {}
   applyLang(saved);
@@ -7227,6 +7235,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll(); // initialise on load
+  // Safety: re-check after layout settles
+  setTimeout(onScroll, 200);
 })();
 </script>
 <!-- ═══════════════ STICKY FRAMEWORK SWITCHER BAR ════════════════ -->
