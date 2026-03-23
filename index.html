@@ -688,7 +688,7 @@ color: #5A5A5A;
 /* ─── OWNERSHIP GRID ────────────────────────────────────────────── */
 .ownership-grid {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(2, 1fr);
 gap: 12px;
 margin: 28px 0 36px;
 max-width: 800px;
@@ -1547,15 +1547,30 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <span class="cs-sidenav-label lc-en">The Pattern</span>
     <span class="cs-sidenav-label lc-de">Das Muster</span>
   </a>
+  <a class="cs-sidenav-item" href="#section-why">
+    <span class="cs-sidenav-dot"></span>
+    <span class="cs-sidenav-label lc-en">The Core Question</span>
+    <span class="cs-sidenav-label lc-de">Die Grundfrage</span>
+  </a>
   <a class="cs-sidenav-item" href="#section-model">
     <span class="cs-sidenav-dot"></span>
     <span class="cs-sidenav-label lc-en">The Model</span>
     <span class="cs-sidenav-label lc-de">Das Modell</span>
   </a>
+  <a class="cs-sidenav-item" href="#section-innovation">
+    <span class="cs-sidenav-dot"></span>
+    <span class="cs-sidenav-label lc-en">Innovation</span>
+    <span class="cs-sidenav-label lc-de">Innovation</span>
+  </a>
   <a class="cs-sidenav-item" href="#section-prediction">
     <span class="cs-sidenav-dot"></span>
     <span class="cs-sidenav-label lc-en">Structural Diagnosis</span>
     <span class="cs-sidenav-label lc-de">Strukturelle Diagnose</span>
+  </a>
+  <a class="cs-sidenav-item" href="#section-structural-comfort">
+    <span class="cs-sidenav-dot"></span>
+    <span class="cs-sidenav-label lc-en">Structural Comfort</span>
+    <span class="cs-sidenav-label lc-de">Structural Comfort</span>
   </a>
   <a class="cs-sidenav-item" href="#section-every-team">
     <span class="cs-sidenav-dot"></span>
@@ -1593,26 +1608,35 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <a class="cs-topnav-item" href="#section-pattern">
     <span class="lc-en">The Pattern</span><span class="lc-de">Das Muster</span>
   </a>
+  <a class="cs-topnav-item" href="#section-why">
+    <span class="lc-en">Core Question</span><span class="lc-de">Grundfrage</span>
+  </a>
   <a class="cs-topnav-item" href="#section-model">
     <span class="lc-en">The Model</span><span class="lc-de">Das Modell</span>
   </a>
+  <a class="cs-topnav-item" href="#section-innovation">
+    <span class="lc-en">Innovation</span><span class="lc-de">Innovation</span>
+  </a>
   <a class="cs-topnav-item" href="#section-prediction">
-    <span class="lc-en">Structural Diagnosis</span><span class="lc-de">Strukturelle Diagnose</span>
+    <span class="lc-en">Diagnosis</span><span class="lc-de">Diagnose</span>
+  </a>
+  <a class="cs-topnav-item" href="#section-structural-comfort">
+    <span class="lc-en">Comfort</span><span class="lc-de">Comfort</span>
   </a>
   <a class="cs-topnav-item" href="#section-every-team">
-    <span class="lc-en">Beyond Product</span><span class="lc-de">Über Produktteams hinaus</span>
+    <span class="lc-en">Beyond Product</span><span class="lc-de">Jedes Team</span>
   </a>
   <a class="cs-topnav-item" href="#section-landscape">
     <span class="lc-en">Frameworks</span><span class="lc-de">Frameworks</span>
   </a>
   <a class="cs-topnav-item" href="#section-org-development">
-    <span class="lc-en">Org Development</span><span class="lc-de">Org-Entwicklung</span>
+    <span class="lc-en">Org Dev</span><span class="lc-de">Org-Entw.</span>
   </a>
   <a class="cs-topnav-item" href="#section-leaders">
     <span class="lc-en">Your Lever</span><span class="lc-de">Dein Hebel</span>
   </a>
   <a class="cs-topnav-item" href="#in-practice">
-    <span class="lc-en">In Practice</span><span class="lc-de">In der Praxis</span>
+    <span class="lc-en">In Practice</span><span class="lc-de">Praxis</span>
   </a>
   <div class="cs-topnav-lang">
     <button class="cs-lang-btn" id="cs-btn-en" onclick="setLang('en')">EN</button>
@@ -1716,7 +1740,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         </span>
         <p style="font-size:15px;font-weight:300;color:rgba(220,230,245,0.72);line-height:1.65;margin:0;">
           <span class="lc-en"><strong style="color:#E8C96A;">Capability Spaces</strong> identifies a critical gap between how leadership perceives its own involvement and the actual capacity of teams to act — teams that are often trapped inside rigid hierarchies. Its three core components — <strong style="color:#E8C96A;">Map</strong>, <strong style="color:#E8C96A;">Boundaries</strong>, and <strong style="color:#E8C96A;">Compass</strong> — make visible whether teams are allowed to solve real problems or merely execute predefined tasks. Boundaries describes artificial barriers like fixed roles and processes; the Compass strengthens psychological forces like trust and knowledge. The model integrates seamlessly into existing frameworks like Scrum or OKR by shifting the focus from pure output to measurable changes in user behaviour. Ultimately, it calls on leaders to take active responsibility for removing organisational obstacles.</span>
-          <span class="lc-de">Das Modell <strong style="color:#E8C96A;">Capability Spaces</strong> macht sichtbar, warum agile Transformationen scheitern — und zwar an den strukturellen Rahmenbedingungen, nicht an der Methode. Es zeigt eine kritische Lücke: zwischen dem, was Führungskräfte über ihr eigenes Engagement glauben, und dem, was Teams tatsächlich erleben — Teams, die oft in starren Hierarchien feststecken. Die drei Kernkomponenten <strong style="color:#E8C96A;">Map</strong>, <strong style="color:#E8C96A;">Boundaries</strong> und <strong style="color:#E8C96A;">Compass</strong> zeigen, ob Teams echte Probleme lösen dürfen oder nur vorgegebene Aufgaben abarbeiten. Boundaries beschreiben künstliche Barrieren wie starre Rollen oder Prozesse; der Compass stärkt psychologische Kräfte wie Vertrauen und Wissen. Das Modell lässt sich nahtlos in bestehende Frameworks wie Scrum oder OKR integrieren, indem es den Fokus von reinem Output auf messbare Verhaltensänderungen bei Nutzern verschiebt. Letztlich fordert es Führungskräfte auf, aktiv Verantwortung für die Beseitigung organisatorischer Hindernisse zu übernehmen.</span>
+          <span class="lc-de">Das Modell <strong style="color:#E8C96A;">Capability Spaces</strong> macht sichtbar, warum agile Transformationen scheitern — und zwar an den strukturellen Rahmenbedingungen, nicht an der Methode. Es zeigt eine kritische Lücke zwischen dem, was Führungskräfte über ihr eigenes Engagement glauben, und dem, was Teams tatsächlich erleben. Teams, die oft in starren Hierarchien feststecken. Die drei Kernkomponenten <strong style="color:#E8C96A;">Map</strong>, <strong style="color:#E8C96A;">Boundaries</strong> und <strong style="color:#E8C96A;">Compass</strong> zeigen, ob Teams echte Probleme lösen dürfen oder nur vorgegebene Aufgaben abarbeiten. Boundaries beschreiben künstliche Barrieren wie starre Rollen oder Prozesse; der Compass stärkt psychologische Kräfte wie Vertrauen und Wissen. Das Modell lässt sich nahtlos in bestehende Frameworks wie Scrum oder OKR integrieren, indem es den Fokus von reinem Output auf messbare Verhaltensänderungen bei Nutzern verschiebt. Letztlich fordert es Führungskräfte auf, organisatorische Hindernisse aktiv aus dem Weg zu räumen.</span>
         </p>
       </div>
     </div>
@@ -1725,19 +1749,19 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <div class="ev-stat">
         <span class="ev-num">65%</span>
         <span class="ev-label lc-en">of software projects using Agile fail to be delivered on time, within budget, and to a high standard of quality.</span>
-        <span class="ev-label lc-de">aller Softwareprojekte mit Agile werden nicht rechtzeitig, im Budget und in ausreichender Qualität abgeschlossen.</span>
+        <span class="ev-label lc-de">aller Softwareprojekte mit Agile werden weder rechtzeitig noch im Budgetrahmen noch in ausreichender Qualität abgeschlossen.</span>
         <span class="ev-source"><a href="https://www.engprax.com/post/268-higher-failure-rates-for-agile-software-projects-study-finds/" target="_blank" rel="noopener">Engprax / J.L. Partners, 2024 · n=600</a></span>
       </div>
       <div class="ev-stat">
         <span class="ev-num">46%</span>
         <span class="ev-label lc-en">of organisations cite insufficient leadership participation as a top obstacle to agile adoption — the #2 barrier, for the second consecutive year.</span>
-        <span class="ev-label lc-de">der Organisationen nennen unzureichende Führungsbeteiligung als größtes Hindernis – Platz 2, zum zweiten Mal in Folge.</span>
+        <span class="ev-label lc-de">der Organisationen nennen unzureichende Führungsbeteiligung als eines der größten Hindernisse – Platz 2, zum zweiten Mal in Folge.</span>
         <span class="ev-source"><a href="https://www.knowledgehut.com/blog/agile/state-of-agile" target="_blank" rel="noopener">18th State of Agile Report, 2025</a></span>
       </div>
       <div class="ev-stat">
         <span class="ev-num">84%</span>
         <span class="ev-label lc-en">failure rate for digital transformations – with no signs of improvement, according to IDC Research.</span>
-        <span class="ev-label lc-de">Failure Rate bei digitalen Transformationen – ohne Besserung in Sicht, laut IDC Research.</span>
+        <span class="ev-label lc-de">Misserfolgsquote bei digitalen Transformationen – ohne erkennbare Besserung, laut IDC Research.</span>
         <span class="ev-source"><a href="https://www.scrum.org/resources/blog/real-question-we-should-be-asking-about-agile-transformation" target="_blank" rel="noopener">IDC Research via Scrum.org</a></span>
       </div>
       <div class="ev-stat">
@@ -1749,14 +1773,14 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <div class="ev-stat ev-stat--wide">
         <span class="ev-num">97% <span style="font-size:22px;font-weight:400;letter-spacing:-0.5px;opacity:0.55;">vs.</span> 2%</span>
         <span class="ev-label lc-en">of C-suite leaders believe they role-model agile behaviours. Only 2% of delivery team members agree. The perception gap is not a communication problem — it is a structural one.</span>
-        <span class="ev-label lc-de">der C-Suite-Mitglieder glauben, agile Verhaltensweisen vorzuleben. Nur 2 % der Teams sehen das so. Diese Wahrnehmungslücke ist kein Kommunikationsproblem – sie ist ein strukturelles.</span>
+        <span class="ev-label lc-de">der Top-Führungskräfte glauben, agile Verhaltensweisen vorzuleben. Nur 2 % der Teams sehen das genauso. Diese Wahrnehmungslücke ist kein Kommunikationsproblem – sie ist ein strukturelles.</span>
         <span class="ev-source"><a href="https://www.agilebusiness.org/resource-report/state-of-agile-culture-report-2023.html" target="_blank" rel="noopener">Agile Business Consortium, State of Agile Culture Report 2023</a></span>
       </div>
     </div>
 
     <div class="ev-context reveal reveal-d2">
       <p class="lc-en">The data points in the same direction, year after year: <strong>the gap between how leadership perceives its own involvement and how teams experience it is the single most consistent predictor of agile failure.</strong> Frameworks don't fail because of the method. They fail because the structural preconditions for agile work — empowered teams, problem-oriented work, real leadership presence — are absent. Capability Spaces makes exactly those preconditions visible and diagnosable.</p>
-      <p class="lc-de">Die Daten zeigen seit Jahren in dieselbe Richtung: <strong>Die Lücke zwischen der Selbstwahrnehmung von Führungskräften und der Erfahrung der Teams ist der konstanteste Prädiktor für das Scheitern agiler Transformationen.</strong> Frameworks scheitern nicht an der Methode. Sie scheitern, weil die strukturellen Voraussetzungen für agiles Arbeiten fehlen – befähigte Teams, problemorientiertes Arbeiten, echte Führungspräsenz. Capability Spaces macht genau diese Voraussetzungen sichtbar und diagnostizierbar.</p>
+      <p class="lc-de">Die Daten zeigen seit Jahren in dieselbe Richtung: <strong>Die Lücke zwischen der Selbstwahrnehmung von Führungskräften und der Erfahrung der Teams ist der zuverlässigste Frühindikator für das Scheitern agiler Transformationen.</strong> Frameworks scheitern nicht an der Methode. Sie scheitern, weil die strukturellen Voraussetzungen für agiles Arbeiten fehlen – befähigte Teams, problemorientiertes Arbeiten, echte Führungspräsenz. Capability Spaces macht genau diese Voraussetzungen sichtbar und diagnostizierbar.</p>
     </div>
 
     <div class="callout blue reveal reveal-d3" style="background:rgba(74,156,201,0.06);border-left-color:#4A9CC9;max-width:860px;margin-top:32px;">
@@ -1877,7 +1901,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 
 <!-- ═══════════════════════ WHY ════════════════════════════════════ -->
 
-<div class="why-section">
+<div class="why-section" id="section-why">
   <div style="max-width:1100px;margin:0 auto;padding:80px 64px 48px;">
     <div class="reveal">
       <span class="section-label">
@@ -1899,173 +1923,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 </div>
 
 
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════ INNOVATION ══════════════════════════════ -->
-
-<div class="section">
-  <div class="reveal">
-    <span class="section-label">
-      <span class="lc-en">What's actually at stake</span>
-      <span class="lc-de">Was wirklich auf dem Spiel steht</span>
-    </span>
-    <h2 class="section-title">
-      <span class="lc-en">Innovation doesn't come from strategy.<br><em>It comes from teams.</em></span>
-      <span class="lc-de">Innovation kommt nicht aus der Strategie.<br><em>Sie kommt von Teams.</em></span>
-    </h2>
-    <p class="lead lc-en">Innovation is not a process, a workshop, or a roadmap item. It is a specific outcome: a change in user behaviour that drives business results. Only one group in your organisation can produce that – the teams who interact with users, test hypotheses, and learn from what actually happens.</p>
-    <p class="lead lc-de">Innovation ist kein Prozess, kein Workshop und kein Roadmap-Eintrag. Sie ist ein konkretes Ergebnis: eine Veränderung im Verhalten von Nutzern, die Business-Ergebnisse erzeugt. Nur eine Gruppe in deiner Organisation kann das leisten – die Teams, die mit Nutzern interagieren, Hypothesen testen und aus dem lernen, was wirklich passiert.</p>
-  </div>
-
-  <div class="reveal reveal-d1" style="margin-top:48px;max-width:860px;">
-    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 20px;">
-      <span class="lc-en">Why startups innovate – and why that stops.</span>
-      <span class="lc-de">Warum Startups innovieren – und warum das aufhört.</span>
-    </h3>
-    <p class="body lc-en">The energy in early-stage startups is not a mystery. Product teams work directly with customers. Developers move freely in the user's problem space – they talk to users, see the friction firsthand, decide what to try next, and learn whether it worked. No Map is handed down from above. The Map emerges from proximity to the problem. No Compass needs to be installed. Trust, shared knowledge, and constant assumption testing are simply how the work gets done.</p>
-    <p class="body lc-de">Warum frühe Startups so viel Energie haben, ist leicht zu erklären. Produktteams arbeiten direkt mit Kunden. Entwickler bewegen sich frei im Problemraum des Nutzers – sie sprechen mit Nutzern, erleben die Reibung selbst, entscheiden, was sie als Nächstes ausprobieren, und lernen, ob es funktioniert hat. Keine Map wird von oben vorgegeben. Die Map entsteht aus der Nähe zum Problem. Kein Compass muss erst installiert werden. Vertrauen, gemeinsames Wissen und ständiges Testen von Annahmen sind einfach die Art, wie die Arbeit läuft.</p>
-
-    <p class="body lc-en" style="margin-top:16px;">Then the startup gets acquired. Or it scales. Or it fails and the team disperses into larger organisations. What changes is not the people – it is the structure around them.</p>
-    <p class="body lc-de" style="margin-top:16px;">Dann wird das Startup aufgekauft, oder es skaliert, oder es scheitert und das Team verteilt sich in größere Organisationen. Was sich verändert, sind nicht die Menschen — es ist die Struktur um sie herum.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:28px;">
-      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #B03030;padding:22px 24px;">
-        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:10px;">
-          <span class="lc-en">Boundaries appear</span>
-          <span class="lc-de">Boundaries entstehen</span>
-        </span>
-        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">Suddenly there are roles that weren't there before. Requirements that arrive pre-defined. Processes that need sign-off. Rules no one wrote down but everyone follows. The freedom to move in the problem space contracts.</p>
-        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Plötzlich gibt es Rollen, die vorher nicht da waren. Anforderungen, die vordefiniert ankommen. Prozesse, die Freigaben brauchen. Regeln, die niemand aufgeschrieben hat, aber alle befolgen. Die Freiheit, sich im Problemraum zu bewegen, schrumpft.</p>
-      </div>
-      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:22px 24px;">
-        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">
-          <span class="lc-en">The Map disappears</span>
-          <span class="lc-de">Die Map verschwindet</span>
-        </span>
-        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">The team no longer identifies user problems and opportunities. A backlog of tickets replaces proximity to users. Work becomes execution of someone else's hypothesis – and whether that hypothesis was right is rarely checked.</p>
-        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Das Team identifiziert keine Nutzerprobleme und Opportunities mehr selbst. Ein Ticket-Backlog ersetzt die Nähe zu Nutzern. Arbeit wird zur Ausführung einer fremden Hypothese – und ob diese Hypothese richtig war, wird selten überprüft.</p>
-      </div>
-      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:22px 24px;">
-        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">
-          <span class="lc-en">The Compass is gone</span>
-          <span class="lc-de">Der Compass ist weg</span>
-        </span>
-        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">The trust that enabled fast decisions is replaced by approval chains. Shared knowledge fragments across silos. Assumption testing gives way to roadmap delivery. The team still shows up – but the conditions that made them innovative no longer exist.</p>
-        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Das Vertrauen, das schnelle Entscheidungen ermöglichte, wird durch Freigabeketten ersetzt. Gemeinsames Wissen fragmentiert über Silos. Assumption Testing weicht der Roadmap-Lieferung. Das Team ist noch da – aber die Bedingungen, die sie innovativ gemacht haben, existieren nicht mehr.</p>
-      </div>
-    </div>
-
-    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #5A5A5A;padding:20px 28px;margin-top:16px;max-width:860px;">
-      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#5A5A5A;display:block;margin-bottom:10px;">
-        <span class="lc-en">Research support</span>
-        <span class="lc-de">Forschungsbelege</span>
-      </span>
-      <p style="font-size:14px;line-height:1.7;color:#3C3C3C;margin:0;" class="lc-en">This is not an anecdote. M&amp;A research consistently finds that innovation rates decline after acquisition – and that the primary driver is the structural loss of autonomy for the acquired team. Paruchuri, Nerkar &amp; Hambrick <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Organization Science, 2006)</span> showed that integrated acquisitions produce measurably fewer innovations than non-integrated ones. Puranam et al. <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Strategic Management Journal, 2006)</span> named the core tension: acquirers must integrate to exploit capabilities – but integration destroys the autonomy that made those capabilities possible in the first place. The mechanism is structural, not motivational.</p>
-      <p style="font-size:14px;line-height:1.7;color:#3C3C3C;margin:0;" class="lc-de">Das ist keine Anekdote. M&amp;A-Forschung zeigt konsistent, dass Innovationsraten nach Akquisitionen sinken – und dass die Hauptursache der strukturelle Verlust von Autonomie im akquirierten Team ist. Paruchuri, Nerkar &amp; Hambrick <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Organization Science, 2006)</span> zeigten, dass integrierte Akquisitionen messbar weniger Innovationen produzieren als nicht-integrierte. Puranam et al. <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Strategic Management Journal, 2006)</span> benannten die Kernspannung: Käufer müssen integrieren, um Fähigkeiten zu nutzen – aber Integration zerstört genau die Autonomie, die diese Fähigkeiten erst möglich gemacht hat. Der Mechanismus ist strukturell, nicht motivationsbedingt.</p>
-    </div>
-
-    <div style="background:#1B3A5C;padding:24px 32px;margin-top:4px;max-width:860px;">
-      <p style="font-size:15px;line-height:1.7;color:rgba(220,230,245,0.85);margin:0;" class="lc-en">The people didn't change. The Capability Space did. <strong style="color:#E8C96A;">That is what Capability Spaces makes visible – before the team stops delivering, before the retrospectives become frustrating, before leadership concludes the team simply isn't good enough.</strong></p>
-      <p style="font-size:15px;line-height:1.7;color:rgba(220,230,245,0.85);margin:0;" class="lc-de">Die Menschen haben sich nicht verändert — ihr Capability Space schon. <strong style="color:#E8C96A;">Genau das macht Capability Spaces sichtbar – bevor das Team aufhört zu liefern, bevor die Retrospektiven frustrierend werden, bevor die Führung zum Schluss kommt, das Team sei einfach nicht gut genug.</strong></p>
-    </div>
-  </div>
-
-  <div class="scale-2col reveal reveal-d1" style="margin-top:48px;">
-    <div class="scale-card">
-      <span class="sc-title lc-en">What looks like innovation</span>
-      <span class="sc-title lc-de">Was wie Innovation aussieht</span>
-      <p class="lc-en">New features shipped. Roadmaps delivered. Sprints completed on time. Quarterly objectives checked off.</p>
-      <p class="lc-de">Neue Features geliefert. Roadmaps abgearbeitet. Sprints pünktlich abgeschlossen. Quartalsziele abgehakt.</p>
-    </div>
-    <div class="scale-card">
-      <span class="sc-title lc-en">What innovation actually is</span>
-      <span class="sc-title lc-de">Was Innovation wirklich ist</span>
-      <p class="lc-en">A measurable change in how users behave – engagement, retention, decisions made differently. Everything else is output.</p>
-      <p class="lc-de">Eine messbare Veränderung darin, wie Nutzer sich verhalten – Engagement, Retention, anders getroffene Entscheidungen. Alles andere ist Output.</p>
-    </div>
-  </div>
-
-  <div class="callout reveal reveal-d2" style="margin-top:40px;">
-    <span class="cl-label lc-en">The structural consequence</span>
-    <span class="cl-label lc-de">Die strukturelle Konsequenz</span>
-    <p class="lc-en">When teams receive tickets instead of problems, they ship outputs without ever learning whether user behaviour changed. When Boundaries block them from choosing what to work on, hypothesis testing stops entirely. The team cannot innovate – not because of lack of skill or motivation, but because the conditions for innovation are structurally absent. <strong>A Capability Space that is too small doesn't just slow delivery. It makes real innovation impossible.</strong></p>
-    <p class="lc-de">Wenn Teams Tickets statt Probleme erhalten, liefern sie Outputs, ohne je zu erfahren, ob sich das Nutzerverhalten verändert hat. Wenn Boundaries sie davon abhalten, selbst zu wählen, woran sie arbeiten, endet jedes Testen von Hypothesen. Das Team kann nicht innovieren – nicht wegen mangelnder Kompetenz oder Motivation, sondern weil die Bedingungen für Innovation strukturell fehlen. <strong>Ein zu kleiner Capability Space verlangsamt nicht nur die Lieferung. Er macht echte Innovation unmöglich.</strong></p>
-  </div>
-
-  <div class="callout green reveal reveal-d3" style="margin-top:24px;">
-    <span class="cl-label">Related thinking · Agile Manifesto → Seiden → Torres</span>
-    <p class="lc-en">This idea is not new. The Agile Manifesto already stated it in 2001: <em>"Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> The intended measure of progress was always real impact on users – not process compliance, not delivery velocity. Eighteen years later, Josh Seiden felt compelled to repeat it in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span>: "Customer behavior is the key metric for business success." Two years after that, Teresa Torres sharpened it once more in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: "An outcome is a change in human behavior that drives business results." Three authors. Twenty years. The same sentence. The industry still hasn't heard it. Capability Spaces diagnoses why – and where the structural lever is.</p>
-    <p class="lc-de">Diese Idee ist nicht neu. Das Agile Manifesto hat sie bereits 2001 formuliert: <em>„Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> Das beabsichtigte Maß für Fortschritt war immer echte Wirkung auf Nutzer – nicht Prozesstreue, nicht Liefergeschwindigkeit. Achtzehn Jahre später wiederholte Josh Seiden es in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span> zu wiederholen: „Kundenverhalten ist die entscheidende Kennzahl für unternehmerischen Erfolg." Zwei Jahre danach schärfte Teresa Torres es erneut in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: „Ein Outcome ist eine Veränderung im menschlichen Verhalten, die Business-Ergebnisse erzeugt." Drei Autoren. Zwanzig Jahre. Derselbe Satz. Die Industrie hat ihn noch immer nicht gehört. Capability Spaces diagnostiziert, warum – und wo der strukturelle Hebel liegt.</p>
-  </div>
-
-  <!-- ── In-Practice Example: UX team + Review anti-pattern ── -->
-  <div class="reveal reveal-d3" style="margin-top:48px;">
-    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 20px;">
-      <span class="lc-en">What this looks like in practice.</span>
-      <span class="lc-de">Wie das in der Praxis aussieht.</span>
-    </h3>
-
-    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #B03030;padding:28px 32px;max-width:860px;margin-bottom:20px;">
-      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:12px;">
-        <span class="lc-en">The Pattern</span>
-        <span class="lc-de">Das Muster</span>
-      </span>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:12px;" class="lc-en">A dedicated UX/UI team works with the Lean UX Canvas, builds proto-personas, and frames every conversation around user needs. The intent is genuinely user-centred. But the product team around them consistently reverts to anti-patterns: the sprint review becomes a status report — <em>"here's what we built"</em> — users are invited but can't actually test anything, and the Jira backlog is filled with pre-defined solutions rather than problems to explore.</p>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:12px;" class="lc-de">Ein dediziertes UX/UI-Team arbeitet mit dem Lean UX Canvas, baut Proto-Personas und formuliert jedes Gespräch in Nutzerbedürfnissen. Der Anspruch ist aufrichtig nutzerzentriert. Aber das umgebende Produktteam verfällt kontinuierlich in Anti-Pattern: Das Sprint Review wird zur Statusmeldung — <em>„Das haben wir gebaut"</em> — Nutzer*innen sind eingeladen, können die Anwendung aber nicht ausprobieren, und der Jira-Backlog ist voll mit vordefinierten Lösungen statt zu erkundender Probleme.</p>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-en">The audience in the review room makes this worse. Most participants have no relationship to the product and no ability to evaluate whether the work produced real value. For them, software development is a black box. They nod. They approve. Nobody learns anything — because learning was never the purpose of the room.</p>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-de">Das Publikum im Review-Raum verstärkt das. Die meisten Teilnehmenden haben keinen Bezug zum Produkt und können nicht beurteilen, ob die Arbeit echten Wert erzeugt hat. Für sie ist Softwareentwicklung eine Blackbox. Also nicken sie und genehmigen. Niemand lernt etwas — weil Lernen nie der Zweck des Raums war.</p>
-    </div>
-
-    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #C9A227;padding:28px 32px;max-width:860px;margin-bottom:20px;">
-      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:12px;">
-        <span class="lc-en">The Diagnosis</span>
-        <span class="lc-de">Die Diagnose</span>
-      </span>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-en">This is a <strong>Requirements boundary</strong>: work arrives as pre-defined features, not as problems worth solving. As long as the backlog is filled from above, no Lean UX Canvas creates the space for genuine discovery. The Compass force of <strong>Assumption Testing</strong> is structurally blocked — not from lack of skill or will, but because the team is never handed a real user problem to test against. The review format is a symptom of exactly this: as long as learning doesn't come first, the framing will always drift toward output.</p>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-de">Das ist eine <strong>Requirements-Boundary</strong>: Arbeit kommt als vordefiniertes Feature an, nicht als Problem, das es zu lösen gilt. Solange der Backlog von oben befüllt wird, schafft kein Lean UX Canvas den Raum für echte Discovery. Die Compass-Kraft <strong>Assumption Testing</strong> ist strukturell blockiert — nicht aus Mangel an Kompetenz oder Willen, sondern weil dem Team nie ein echtes Nutzerproblem zum Testen gegeben wird. Das Review-Format ist genau dafür ein Symptom: Solange Lernen nicht an erster Stelle steht, driftet das Framing immer in Richtung Output.</p>
-    </div>
-
-    <div style="background:#F0F7F4;border:1px solid rgba(46,125,82,0.2);border-left:4px solid #2E7D52;padding:28px 32px;max-width:860px;">
-      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E7D52;display:block;margin-bottom:12px;">
-        <span class="lc-en">What Capability Spaces changes</span>
-        <span class="lc-de">Was Capability Spaces verändert</span>
-      </span>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:14px;" class="lc-en">The review question changes from <em>"What did we build?"</em> to <em>"What did we learn — and what outcomes did we observe?"</em> This doesn't mean every sprint must show a measurable change in user behaviour. That is an unrealistic expectation for a two- or four-week cycle. But if the team's culture is oriented around learning and user feedback, every review can answer at least one question: <strong>what did we learn?</strong> A negative finding — a hypothesis that failed, a user who couldn't complete a flow — is a legitimate result. It is evidence. It moves the work forward.</p>
-      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:14px;" class="lc-de">Die Review-Frage verändert sich von <em>„Was haben wir gebaut?"</em> zu <em>„Was haben wir gelernt — und welche Outcomes haben wir beobachtet?"</em> Das bedeutet nicht, dass jeder Sprint eine messbare Veränderung im Nutzerverhalten zeigen muss. Das wäre eine unrealistische Erwartung für einen zwei- oder vierwöchigen Zyklus. Aber wenn die Kultur des Teams wirklich auf Lernen und Nutzerfeedback ausgerichtet ist, kann jedes Review mindestens eine Frage beantworten: <strong>Was haben wir gelernt?</strong> Ein negatives Ergebnis — eine Hypothese, die nicht bestätigt wurde, ein Nutzer, der einen Flow nicht abschließen konnte — ist ein legitimes Ergebnis. Es ist ein Beleg, und es bringt die Arbeit voran.</p>
-      <div style="border-top:1px solid rgba(46,125,82,0.2);padding-top:14px;margin-top:4px;">
-        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E7D52;display:block;margin-bottom:8px;">
-          <span class="lc-en">The leadership question</span>
-          <span class="lc-de">Die Führungsfrage</span>
-        </span>
-        <p style="font-size:15px;line-height:1.65;color:#5A5A5A;margin-bottom:16px;" class="lc-en">Leaders are not needed in the review as approvers — they are needed as diagnostic partners. The question after each review is: <em>"Are there boundaries in what we just heard — and which category are they?"</em> Naming the category is what makes the boundary actionable.</p>
-        <p style="font-size:15px;line-height:1.65;color:#5A5A5A;margin-bottom:16px;" class="lc-de">Führungskräfte werden im Review nicht als Genehmigende gebraucht — sondern als Diagnosepartner. Die Frage nach jedem Review lautet: <em>„Sind da Boundaries dabei, was wir gerade gehört haben — und welche Kategorie sind sie?"</em> Erst die Kategorie macht eine Boundary bearbeitbar.</p>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px;">
-          <!-- Roles -->
-          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #4A9CC9;padding:16px 18px;">
-            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;">Roles</span>
-            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">Is the Product Owner actually empowered to talk to users — or does their role definition stop at backlog management? If user research sits exclusively with a separate UX team and the PO has no mandate to conduct conversations themselves, discovery stays structurally siloed.</p>
-            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">Ist der Product Owner so ausgestattet, dass er selbst Gespräche mit Nutzer*innen führen kann — oder endet seine Rollendefinition beim Backlog-Management? Wenn User Research ausschließlich bei einem separaten UX-Team liegt und der PO kein Mandat für eigene Gespräche hat, bleibt Discovery strukturell isoliert.</p>
-          </div>
-          <!-- Processes -->
-          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #7B5EA7;padding:16px 18px;">
-            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:8px;">Processes</span>
-            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">User interviews require a legal sign-off that takes three weeks. · Recruiting users for a test needs a procurement process — by the time approval arrives, the sprint is over. · Every prototype must pass a brand review before it can be shown to anyone outside.</p>
-            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">Nutzerinterviews benötigen ein rechtliches Freigabeverfahren, das drei Wochen dauert. · Nutzer*innen für einen Test zu rekrutieren erfordert einen Einkaufsprozess — bis zur Genehmigung ist der Sprint vorbei. · Jeder Prototyp muss ein Brand-Review durchlaufen, bevor er irgendjemandem außerhalb gezeigt werden darf.</p>
-          </div>
-          <!-- Rules -->
-          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #C9A227;padding:16px 18px;">
-            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:8px;">Rules</span>
-            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">"We don't show unfinished things to customers." · "The sprint review is an internal meeting — users aren't part of that." · "Feedback comes through the account manager, not directly from users."</p>
-            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">„Wir zeigen Kunden keine unfertigen Dinge." · „Das Sprint Review ist ein internes Meeting — Nutzer*innen gehören da nicht dazu." · „Feedback kommt über den Account Manager, nicht direkt von Nutzer*innen."</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
 
 
 <div class="divider"></div>
@@ -2706,6 +2563,176 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 </div>
 
 
+<div class="divider"></div>
+
+<!-- ═══════════════════════ INNOVATION ══════════════════════════════ -->
+
+<div class="section" id="section-innovation">
+  <div class="reveal">
+    <span class="section-label">
+      <span class="lc-en">What's actually at stake</span>
+      <span class="lc-de">Was wirklich auf dem Spiel steht</span>
+    </span>
+    <h2 class="section-title">
+      <span class="lc-en">Innovation doesn't come from strategy.<br><em>It comes from teams.</em></span>
+      <span class="lc-de">Innovation kommt nicht aus der Strategie.<br><em>Sie kommt von Teams.</em></span>
+    </h2>
+    <p class="lead lc-en">Innovation is not a process, a workshop, or a roadmap item. It is a specific outcome: a change in user behaviour that drives business results. Only one group in your organisation can produce that – the teams who interact with users, test hypotheses, and learn from what actually happens.</p>
+    <p class="lead lc-de">Innovation ist kein Prozess, kein Workshop und kein Roadmap-Eintrag. Sie ist ein konkretes Ergebnis: eine Veränderung im Verhalten von Nutzern, die Business-Ergebnisse erzeugt. Nur eine Gruppe in deiner Organisation kann das leisten – die Teams, die mit Nutzern interagieren, Hypothesen testen und aus dem lernen, was wirklich passiert.</p>
+  </div>
+
+  <div class="reveal reveal-d1" style="margin-top:48px;max-width:860px;">
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 20px;">
+      <span class="lc-en">Why startups innovate – and why that stops.</span>
+      <span class="lc-de">Warum Startups innovieren – und warum das aufhört.</span>
+    </h3>
+    <p class="body lc-en">The energy in early-stage startups is not a mystery. Product teams work directly with customers. Developers move freely in the user's problem space – they talk to users, see the friction firsthand, decide what to try next, and learn whether it worked. No Map is handed down from above. The Map emerges from proximity to the problem. No Compass needs to be installed. Trust, shared knowledge, and constant assumption testing are simply how the work gets done.</p>
+    <p class="body lc-de">Warum frühe Startups so viel Energie haben, ist leicht zu erklären. Produktteams arbeiten direkt mit Kunden. Entwickler bewegen sich frei im Problemraum des Nutzers – sie sprechen mit Nutzern, erleben die Reibung selbst, entscheiden, was sie als Nächstes ausprobieren, und lernen, ob es funktioniert hat. Keine Map wird von oben vorgegeben. Die Map entsteht aus der Nähe zum Problem. Kein Compass muss erst installiert werden. Vertrauen, gemeinsames Wissen und ständiges Testen von Annahmen sind einfach die Art, wie die Arbeit läuft.</p>
+
+    <p class="body lc-en" style="margin-top:16px;">Then the startup gets acquired. Or it scales. Or it fails and the team disperses into larger organisations. What changes is not the people – it is the structure around them.</p>
+    <p class="body lc-de" style="margin-top:16px;">Dann wird das Startup aufgekauft, oder es skaliert, oder es scheitert und das Team verteilt sich in größere Organisationen. Was sich verändert, sind nicht die Menschen — es ist die Struktur um sie herum.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:28px;">
+      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #B03030;padding:22px 24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:10px;">
+          <span class="lc-en">Boundaries appear</span>
+          <span class="lc-de">Boundaries entstehen</span>
+        </span>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">Suddenly there are roles that weren't there before. Requirements that arrive pre-defined. Processes that need sign-off. Rules no one wrote down but everyone follows. The freedom to move in the problem space contracts.</p>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Plötzlich gibt es Rollen, die vorher nicht da waren. Anforderungen, die vordefiniert ankommen. Prozesse, die Freigaben brauchen. Regeln, die niemand aufgeschrieben hat, aber alle befolgen. Die Freiheit, sich im Problemraum zu bewegen, schrumpft.</p>
+      </div>
+      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #C9A227;padding:22px 24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:10px;">
+          <span class="lc-en">The Map disappears</span>
+          <span class="lc-de">Die Map verschwindet</span>
+        </span>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">The team no longer identifies user problems and opportunities. A backlog of tickets replaces proximity to users. Work becomes execution of someone else's hypothesis – and whether that hypothesis was right is rarely checked.</p>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Das Team identifiziert keine Nutzerprobleme und Opportunities mehr selbst. Ein Ticket-Backlog ersetzt die Nähe zu Nutzern. Arbeit wird zur Ausführung einer fremden Hypothese – und ob diese Hypothese richtig war, wird selten überprüft.</p>
+      </div>
+      <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-top:3px solid #4A9CC9;padding:22px 24px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:10px;">
+          <span class="lc-en">The Compass is gone</span>
+          <span class="lc-de">Der Compass ist weg</span>
+        </span>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-en">The trust that enabled fast decisions is replaced by approval chains. Shared knowledge fragments across silos. Assumption testing gives way to roadmap delivery. The team still shows up – but the conditions that made them innovative no longer exist.</p>
+        <p style="font-size:14px;line-height:1.65;color:#2C2C2C;margin:0;" class="lc-de">Das Vertrauen, das schnelle Entscheidungen ermöglichte, wird durch Freigabeketten ersetzt. Gemeinsames Wissen fragmentiert über Silos. Assumption Testing weicht der Roadmap-Lieferung. Das Team ist noch da – aber die Bedingungen, die sie innovativ gemacht haben, existieren nicht mehr.</p>
+      </div>
+    </div>
+
+    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #5A5A5A;padding:20px 28px;margin-top:16px;max-width:860px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#5A5A5A;display:block;margin-bottom:10px;">
+        <span class="lc-en">Research support</span>
+        <span class="lc-de">Forschungsbelege</span>
+      </span>
+      <p style="font-size:14px;line-height:1.7;color:#3C3C3C;margin:0;" class="lc-en">This is not an anecdote. M&amp;A research consistently finds that innovation rates decline after acquisition – and that the primary driver is the structural loss of autonomy for the acquired team. Paruchuri, Nerkar &amp; Hambrick <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Organization Science, 2006)</span> showed that integrated acquisitions produce measurably fewer innovations than non-integrated ones. Puranam et al. <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Strategic Management Journal, 2006)</span> named the core tension: acquirers must integrate to exploit capabilities – but integration destroys the autonomy that made those capabilities possible in the first place. The mechanism is structural, not motivational.</p>
+      <p style="font-size:14px;line-height:1.7;color:#3C3C3C;margin:0;" class="lc-de">Das ist keine Anekdote. M&amp;A-Forschung zeigt konsistent, dass Innovationsraten nach Akquisitionen sinken – und dass die Hauptursache der strukturelle Verlust von Autonomie im akquirierten Team ist. Paruchuri, Nerkar &amp; Hambrick <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Organization Science, 2006)</span> zeigten, dass integrierte Akquisitionen messbar weniger Innovationen produzieren als nicht-integrierte. Puranam et al. <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Strategic Management Journal, 2006)</span> benannten die Kernspannung: Käufer müssen integrieren, um die erworbenen Kompetenzen zu nutzen – aber Integration zerstört genau die Autonomie, die diese Kompetenzen erst hervorgebracht hat. Der Mechanismus ist strukturell, nicht motivationsbedingt.</p>
+    </div>
+
+    <div style="background:#1B3A5C;padding:24px 32px;margin-top:4px;max-width:860px;">
+      <p style="font-size:15px;line-height:1.7;color:rgba(220,230,245,0.85);margin:0;" class="lc-en">The people didn't change. The Capability Space did. <strong style="color:#E8C96A;">That is what Capability Spaces makes visible – before the team stops delivering, before the retrospectives become frustrating, before leadership concludes the team simply isn't good enough.</strong></p>
+      <p style="font-size:15px;line-height:1.7;color:rgba(220,230,245,0.85);margin:0;" class="lc-de">Die Menschen haben sich nicht verändert — ihr Capability Space schon. <strong style="color:#E8C96A;">Genau das macht Capability Spaces sichtbar – bevor das Team aufhört zu liefern, bevor die Retrospektiven frustrierend werden, bevor die Führung zum Schluss kommt, das Team sei einfach nicht gut genug.</strong></p>
+    </div>
+  </div>
+
+  <div class="scale-2col reveal reveal-d1" style="margin-top:48px;">
+    <div class="scale-card">
+      <span class="sc-title lc-en">What looks like innovation</span>
+      <span class="sc-title lc-de">Was wie Innovation aussieht</span>
+      <p class="lc-en">New features shipped. Roadmaps delivered. Sprints completed on time. Quarterly objectives checked off.</p>
+      <p class="lc-de">Neue Features geliefert. Roadmaps abgearbeitet. Sprints pünktlich abgeschlossen. Quartalsziele abgehakt.</p>
+    </div>
+    <div class="scale-card">
+      <span class="sc-title lc-en">What innovation actually is</span>
+      <span class="sc-title lc-de">Was Innovation wirklich ist</span>
+      <p class="lc-en">A measurable change in how users behave – engagement, retention, decisions made differently. Everything else is output.</p>
+      <p class="lc-de">Eine messbare Veränderung darin, wie Nutzer sich verhalten – Engagement, Retention, anders getroffene Entscheidungen. Alles andere ist Output.</p>
+    </div>
+  </div>
+
+  <div class="callout reveal reveal-d2" style="margin-top:40px;">
+    <span class="cl-label lc-en">The structural consequence</span>
+    <span class="cl-label lc-de">Die strukturelle Konsequenz</span>
+    <p class="lc-en">When teams receive tickets instead of problems, they ship outputs without ever learning whether user behaviour changed. When Boundaries block them from choosing what to work on, hypothesis testing stops entirely. The team cannot innovate – not because of lack of skill or motivation, but because the conditions for innovation are structurally absent. <strong>A Capability Space that is too small doesn't just slow delivery. It makes real innovation impossible.</strong></p>
+    <p class="lc-de">Wenn Teams Tickets statt Probleme erhalten, liefern sie Outputs, ohne je zu erfahren, ob sich das Nutzerverhalten verändert hat. Wenn Boundaries sie davon abhalten, selbst zu wählen, woran sie arbeiten, endet jedes Testen von Hypothesen. Das Team kann nicht innovieren – nicht wegen mangelnder Kompetenz oder Motivation, sondern weil die Bedingungen für Innovation strukturell fehlen. <strong>Ein zu kleiner Capability Space verlangsamt nicht nur die Lieferung. Er macht echte Innovation unmöglich.</strong></p>
+  </div>
+
+  <div class="callout green reveal reveal-d3" style="margin-top:24px;">
+    <span class="cl-label">Related thinking · Agile Manifesto → Seiden → Torres</span>
+    <p class="lc-en">This idea is not new. The Agile Manifesto already stated it in 2001: <em>"Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> The intended measure of progress was always real impact on users – not process compliance, not delivery velocity. Eighteen years later, Josh Seiden felt compelled to repeat it in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span>: "Customer behavior is the key metric for business success." Two years after that, Teresa Torres sharpened it once more in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: "An outcome is a change in human behavior that drives business results." Three authors. Twenty years. The same sentence. The industry still hasn't heard it. Capability Spaces diagnoses why – and where the structural lever is.</p>
+    <p class="lc-de">Diese Idee ist nicht neu. Das Agile Manifesto hat sie bereits 2001 formuliert: <em>„Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> Das beabsichtigte Maß für Fortschritt war immer echte Wirkung auf Nutzer – nicht Prozesstreue, nicht Liefergeschwindigkeit. Achtzehn Jahre später wiederholte Josh Seiden es in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span>: „Kundenverhalten ist die entscheidende Kennzahl für unternehmerischen Erfolg." Zwei Jahre danach schärfte Teresa Torres es erneut in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: „Ein Outcome ist eine Veränderung im menschlichen Verhalten, die Business-Ergebnisse erzeugt." Drei Autoren. Zwanzig Jahre. Derselbe Satz. Die Industrie hat ihn noch immer nicht gehört. Capability Spaces diagnostiziert, warum – und wo der strukturelle Hebel liegt.</p>
+  </div>
+
+  <!-- ── In-Practice Example: UX team + Review anti-pattern ── -->
+  <div class="reveal reveal-d3" style="margin-top:48px;">
+    <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#1B3A5C;margin:0 0 20px;">
+      <span class="lc-en">What this looks like in practice.</span>
+      <span class="lc-de">Wie das in der Praxis aussieht.</span>
+    </h3>
+
+    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #B03030;padding:28px 32px;max-width:860px;margin-bottom:20px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B03030;display:block;margin-bottom:12px;">
+        <span class="lc-en">The Pattern</span>
+        <span class="lc-de">Das Muster</span>
+      </span>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:12px;" class="lc-en">A dedicated UX/UI team works with the Lean UX Canvas, builds proto-personas, and frames every conversation around user needs. The intent is genuinely user-centred. But the product team around them consistently reverts to anti-patterns: the sprint review becomes a status report — <em>"here's what we built"</em> — users are invited but can't actually test anything, and the Jira backlog is filled with pre-defined solutions rather than problems to explore.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:12px;" class="lc-de">Ein dediziertes UX/UI-Team arbeitet mit dem Lean UX Canvas, baut Proto-Personas und richtet jedes Gespräch an Nutzerbedürfnissen aus. Der Anspruch ist aufrichtig nutzerzentriert. Aber das umgebende Produktteam verfällt immer wieder in dieselben Fehlmuster: Das Sprint Review wird zur Statusmeldung — <em>„Das haben wir gebaut"</em> — Nutzer*innen sind eingeladen, können die Anwendung aber nicht ausprobieren, und der Jira-Backlog ist voll mit vordefinierten Lösungen statt zu erkundender Probleme.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-en">The audience in the review room makes this worse. Most participants have no relationship to the product and no ability to evaluate whether the work produced real value. For them, software development is a black box. They nod. They approve. Nobody learns anything — because learning was never the purpose of the room.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-de">Das Publikum im Review-Raum verstärkt das. Die meisten Teilnehmenden haben keinen Bezug zum Produkt und können nicht beurteilen, ob die Arbeit wirklich etwas gebracht hat. Für sie ist Softwareentwicklung eine Blackbox. Also nicken sie und genehmigen. Niemand lernt etwas — weil Lernen nie der Zweck des Raums war.</p>
+    </div>
+
+    <div style="background:#F8F7F4;border:1px solid #E4E2DC;border-left:4px solid #C9A227;padding:28px 32px;max-width:860px;margin-bottom:20px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:12px;">
+        <span class="lc-en">The Diagnosis</span>
+        <span class="lc-de">Die Diagnose</span>
+      </span>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-en">This is a <strong>Requirements boundary</strong>: work arrives as pre-defined features, not as problems worth solving. As long as the backlog is filled from above, no Lean UX Canvas creates the space for genuine discovery. The Compass force of <strong>Assumption Testing</strong> is structurally blocked — not from lack of skill or will, but because the team is never handed a real user problem to test against. The review format is a symptom of exactly this: as long as learning doesn't come first, the framing will always drift toward output.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;" class="lc-de">Das ist eine <strong>Requirements-Boundary</strong>: Arbeit kommt als vordefiniertes Feature an, nicht als Problem, das es zu lösen gilt. Solange der Backlog von oben befüllt wird, schafft kein Lean UX Canvas den Raum für echte Discovery. Die Compass-Kraft <strong>Assumption Testing</strong> ist strukturell blockiert — nicht aus Mangel an Kompetenz oder Willen, sondern weil dem Team nie ein echtes Nutzerproblem zum Testen gegeben wird. Das Review-Format ist genau dafür ein Symptom: Solange Lernen nicht an erster Stelle steht, wird es immer eine Output-Präsentation bleiben.</p>
+    </div>
+
+    <div style="background:#F0F7F4;border:1px solid rgba(46,125,82,0.2);border-left:4px solid #2E7D52;padding:28px 32px;max-width:860px;">
+      <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E7D52;display:block;margin-bottom:12px;">
+        <span class="lc-en">What Capability Spaces changes</span>
+        <span class="lc-de">Was Capability Spaces verändert</span>
+      </span>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:14px;" class="lc-en">The review question changes from <em>"What did we build?"</em> to <em>"What did we learn — and what outcomes did we observe?"</em> This doesn't mean every sprint must show a measurable change in user behaviour. That is an unrealistic expectation for a two- or four-week cycle. But if the team's culture is oriented around learning and user feedback, every review can answer at least one question: <strong>what did we learn?</strong> A negative finding — a hypothesis that failed, a user who couldn't complete a flow — is a legitimate result. It is evidence. It moves the work forward.</p>
+      <p style="font-size:16px;line-height:1.7;color:#2C2C2C;margin-bottom:14px;" class="lc-de">Die Review-Frage verändert sich von <em>„Was haben wir gebaut?"</em> zu <em>„Was haben wir gelernt — und welche Outcomes haben wir beobachtet?"</em> Das bedeutet nicht, dass jeder Sprint eine messbare Veränderung im Nutzerverhalten zeigen muss. Das wäre eine unrealistische Erwartung für einen zwei- oder vierwöchigen Zyklus. Aber wenn die Kultur des Teams wirklich auf Lernen und Nutzerfeedback ausgerichtet ist, kann jedes Review mindestens eine Frage beantworten: <strong>Was haben wir gelernt?</strong> Ein negatives Ergebnis — eine Hypothese, die nicht bestätigt wurde, ein Nutzer, der einen Flow nicht abschließen konnte — ist ein legitimes Ergebnis. Es ist ein Beleg, und es bringt die Arbeit voran.</p>
+      <div style="border-top:1px solid rgba(46,125,82,0.2);padding-top:14px;margin-top:4px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2E7D52;display:block;margin-bottom:8px;">
+          <span class="lc-en">The leadership question</span>
+          <span class="lc-de">Die Führungsfrage</span>
+        </span>
+        <p style="font-size:15px;line-height:1.65;color:#5A5A5A;margin-bottom:16px;" class="lc-en">Leaders are not needed in the review as approvers — they are needed as diagnostic partners. The question after each review is: <em>"Are there boundaries in what we just heard — and which category are they?"</em> Naming the category is what makes the boundary actionable.</p>
+        <p style="font-size:15px;line-height:1.65;color:#5A5A5A;margin-bottom:16px;" class="lc-de">Führungskräfte werden im Review nicht als Genehmigende gebraucht — sondern als Diagnosepartner. Die Frage nach jedem Review lautet: <em>„Stecken in dem, was wir gerade gehört haben, Boundaries — und wenn ja, welcher Kategorie?"</em> Erst die Kategorie macht eine Boundary bearbeitbar.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px;">
+          <!-- Roles -->
+          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #4A9CC9;padding:16px 18px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4A9CC9;display:block;margin-bottom:8px;">Roles</span>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">Is the Product Owner actually empowered to talk to users — or does their role definition stop at backlog management? If user research sits exclusively with a separate UX team and the PO has no mandate to conduct conversations themselves, discovery stays structurally siloed.</p>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">Ist der Product Owner so ausgestattet, dass er selbst Gespräche mit Nutzer*innen führen kann — oder endet seine Rollendefinition beim Backlog-Management? Wenn User Research ausschließlich bei einem separaten UX-Team liegt und der PO kein Mandat für eigene Gespräche hat, bleibt Discovery strukturell isoliert.</p>
+          </div>
+          <!-- Processes -->
+          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #7B5EA7;padding:16px 18px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7B5EA7;display:block;margin-bottom:8px;">Processes</span>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">User interviews require a legal sign-off that takes three weeks. · Recruiting users for a test needs a procurement process — by the time approval arrives, the sprint is over. · Every prototype must pass a brand review before it can be shown to anyone outside.</p>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">Nutzerinterviews benötigen ein rechtliches Freigabeverfahren, das drei Wochen dauert. · Nutzer*innen für einen Test zu rekrutieren erfordert einen Einkaufsprozess — bis zur Genehmigung ist der Sprint vorbei. · Jeder Prototyp muss ein Brand-Review durchlaufen, bevor er irgendjemandem außerhalb gezeigt werden darf.</p>
+          </div>
+          <!-- Rules -->
+          <div style="background:#fff;border:1px solid #E4E2DC;border-top:2px solid #C9A227;padding:16px 18px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:8px;">Rules</span>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-en">"We don't show unfinished things to customers." · "The sprint review is an internal meeting — users aren't part of that." · "Feedback comes through the account manager, not directly from users."</p>
+            <p style="font-size:13px;line-height:1.6;color:#5A5A5A;" class="lc-de">„Wir zeigen Kunden keine unfertigen Dinge." · „Das Sprint Review ist ein internes Meeting — Nutzer*innen gehören da nicht dazu." · „Feedback kommt über den Account Manager, nicht direkt von Nutzer*innen."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="divider"></div>
+
 <!-- ═══════════════════════ PREDICTION SECTION ═════════════════════ -->
 
 <style>
@@ -2855,7 +2882,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <div class="fail-card lc-de">
         <span class="fc-num">Bedingung 02</span>
         <span class="fc-title">Boundaries dauerhaft größer als der Compass</span>
-        <p class="fc-body">Die strukturellen Einschränkungen – Rollendefinitionen, Prozesse, Regeln, Requirements – sind dauerhaft größer als das, was der Compass (Trust, Knowledge, Connection, Assumption Testing) auffangen kann. Das Team kann die organisationale Reibung nicht durch inneren Zusammenhalt kompensieren.</p>
+        <p class="fc-body">Die strukturellen Einschränkungen – Rollendefinitionen, Prozesse, Regeln, Requirements – sind dauerhaft größer als das, was der Compass (Trust, Knowledge, Connection, Assumption Testing) auffangen kann. Das Team kann die Reibung aus der Organisation nicht durch inneren Zusammenhalt kompensieren.</p>
         <div class="fc-signal">Signal: Jeder Sprint dieselben Blocker · Retros verbessern nichts · „Wir kennen das Problem, können es aber nicht lösen"</div>
       </div>
     </div>
@@ -3007,7 +3034,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Warum Structural Comfort bestehen bleibt</span>
     </h3>
     <p class="body lc-en">Structural Comfort creates a feedback loop that protects itself. Results are "good enough", the team doesn't complain, so there is no signal that would trigger action. This is not a leadership failure in the classic sense — it is a structural pattern in which the organisation's own diagnostic ability is constrained. Leadership has its own Capability Space — and in this area, it is small too.</p>
-    <p class="body lc-de">Structural Comfort erzeugt einen Feedback-Loop, der sich selbst schützt. Die Ergebnisse sind „gut genug", das Team beschwert sich nicht, also gibt es kein Signal, das Handlung auslösen würde. Das ist kein Führungsversagen im klassischen Sinne — es ist ein strukturelles Muster, in dem die Diagnosefähigkeit der Organisation selbst eingeschränkt ist. Führung hat ihren eigenen Capability Space — und der ist in diesem Bereich ebenfalls klein.</p>
+    <p class="body lc-de">Structural Comfort erzeugt eine Rückkopplungsschleife, die sich selbst schützt. Die Ergebnisse sind „gut genug", das Team beschwert sich nicht, also gibt es kein Signal, das Handlung auslösen würde. Das ist kein Führungsversagen im klassischen Sinne — es ist ein strukturelles Muster, in dem die Diagnosefähigkeit der Organisation selbst eingeschränkt ist. Führung hat ihren eigenen Capability Space — und der ist in diesem Bereich ebenfalls klein.</p>
     <p class="body lc-en">It can persist for years. It only becomes visible when the environment changes: the buffer person leaves, market conditions shift, or someone changes the system around the team so that the old patterns stop working.</p>
     <p class="body lc-de">Es kann Jahre bestehen bleiben. Sichtbar wird es erst, wenn sich die Umgebung verändert: die Puffer-Person geht, die Marktbedingungen ändern sich, oder jemand verändert das System um das Team herum, sodass die alten Muster nicht mehr funktionieren.</p>
   </div>
@@ -3118,6 +3145,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   line-height: 1.5;
   padding-top: 12px;
   border-top: 1px solid #E4E2DC;
+  display: block;
+  margin-top: 14px;
 }
 .et-card.et-card--broken {
   border-top-color: #B03030;
@@ -3126,6 +3155,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .et-card.et-card--broken .etc-outcome {
   color: #B03030;
   font-style: normal;
+  text-decoration: none;
 }
 .et-insight {
   max-width: 860px;
@@ -3242,7 +3272,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <span class="section-label">Jenseits des Produktteams</span>
         <h2 class="section-title">Jedes Team, das für jemanden Probleme löst,<br>ist <em>ein Produktteam.</em></h2>
         <p class="lead">Es gibt einen weit verbreiteten Irrglauben: dass agiles Arbeiten beim Produktteam aufhört. Dass Platform Teams, Security Teams oder Infrastructure Teams von Natur aus anders arbeiten — oder es zumindest müssen. Das stimmt nicht.</p>
-        <p class="body">Jedes Team hat Stakeholder. Jedes Team soll für diese Stakeholder Probleme lösen. Und jedes gelöste Problem zahlt auf ein Produktziel ein – ob dieses Produkt eine kundenseitige Anwendung ist, eine Developer-Plattform oder eine unternehmensweite Security-Posture. Wer das akzeptiert, stellt die Frage anders: nicht <em>sind wir agil?</em> sondern <em>können wir an dem arbeiten, was für die Menschen, denen wir dienen, wirklich zählt?</em></p>
+        <p class="body">Jedes Team hat Stakeholder. Jedes Team soll für diese Stakeholder Probleme lösen. Und jedes gelöste Problem zahlt auf ein Produktziel ein – ob dieses Produkt eine kundenseitige Anwendung ist, eine Developer-Plattform oder eine unternehmensweite Security-Posture. Wer das akzeptiert, stellt die Frage anders: nicht <em>sind wir agil?</em> sondern <em>arbeiten wir an dem, was für unsere Nutzer wirklich zählt?</em></p>
         <p class="body">Mit diesem Verständnis ist jedes Team, das Teil einer Produktorganisation ist, selbst ein Produktteam. Und das bedeutet: Capability Spaces gilt überall – nicht nur im stream-aligned Team, sondern auch im Platform Team, im Enabling Team, in der Security-Funktion.</p>
       </div>
 
@@ -3592,7 +3622,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Die zugrundeliegende Hypothese</span>
     </span>
     <p class="lc-en">Organisations that enable their people to independently identify and solve the right problems will outperform those that don't. This is not an agile belief. It is an organisational one. Agile frameworks are one attempt to create these conditions – but they are not the only one, and they are not a prerequisite. The prerequisite is a structure that makes empowerment possible, and a diagnostic that makes its absence visible. Capability Spaces provides the diagnostic. What the organisation does with it depends on its context – not on whether it calls itself agile.</p>
-    <p class="lc-de">Organisationen, die es ihren Menschen ermöglichen, eigenständig die richtigen Probleme zu identifizieren und zu lösen, werden diejenigen übertreffen, die das nicht tun. Das ist keine agile Überzeugung — es ist eine organisationale Erkenntnis. Agile Frameworks sind ein Versuch, diese Bedingungen zu schaffen – aber sie sind nicht der einzige, und sie sind keine Voraussetzung. Die Voraussetzung ist eine Struktur, die Befähigung ermöglicht, und eine Diagnostik, die ihr Fehlen sichtbar macht. Capability Spaces liefert die Diagnostik. Was die Organisation damit macht, hängt von ihrem Kontext ab – nicht davon, ob sie sich agil nennt.</p>
+    <p class="lc-de">Organisationen, die es ihren Menschen ermöglichen, eigenständig die richtigen Probleme zu erkennen und zu lösen, werden diejenigen übertreffen, die das nicht tun. Das ist keine agile Überzeugung — es ist eine Erkenntnis über Organisationen an sich. Agile Frameworks sind ein Versuch, diese Bedingungen zu schaffen – aber sie sind nicht der einzige, und sie sind keine Voraussetzung. Die Voraussetzung ist eine Struktur, die Befähigung ermöglicht, und eine Diagnostik, die ihr Fehlen sichtbar macht. Capability Spaces liefert die Diagnostik. Was die Organisation damit macht, hängt von ihrem Kontext ab – nicht davon, ob sie sich agil nennt.</p>
   </div>
 
   <div class="callout green reveal reveal-d3" style="margin-top:16px;">
@@ -3610,7 +3640,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Die Forschung hinter der Hypothese</span>
     </h3>
     <p class="body lc-en">The idea that empowered people produce better outcomes is not new. It has been studied for decades across disciplines, industries, and cultures. What Capability Spaces adds is not the hypothesis itself – it is the diagnostic that makes visible where the structural conditions for empowerment are present and where they are not.</p>
-    <p class="body lc-de">Die Idee, dass befähigte Menschen bessere Ergebnisse erzielen, ist nicht neu. Sie wird seit Jahrzehnten über Disziplinen, Branchen und Kulturen hinweg untersucht. Was Capability Spaces hinzufügt, ist nicht die Hypothese selbst – es ist die Diagnostik, die sichtbar macht, wo die strukturellen Bedingungen für Befähigung gegeben sind und wo nicht.</p>
+    <p class="body lc-de">Die Idee, dass befähigte Menschen bessere Ergebnisse erzielen, ist nicht neu. Sie wird seit Jahrzehnten erforscht – quer durch Disziplinen, Branchen und Kulturen. Was Capability Spaces hinzufügt, ist nicht die Hypothese selbst – es ist die Diagnostik, die sichtbar macht, wo die strukturellen Bedingungen für Befähigung gegeben sind und wo nicht.</p>
   </div>
 
   <div class="callout green reveal reveal-d3" style="margin-top:16px;">
@@ -3619,7 +3649,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Verwandtes Denken · Deci &amp; Ryan</span>
     </span>
     <p class="lc-en"><strong>Self-Determination Theory</strong> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1970s–present)</span> identifies three universal psychological needs: <em>autonomy</em>, <em>competence</em>, and <em>relatedness</em>. When organisations suppress these needs, performance, engagement, and creativity decline – regardless of industry. This is the most rigorously studied scientific foundation for the claim that empowerment drives performance. In Capability Spaces terms: the Map represents the structural scope of autonomy, the Compass (Knowledge) maps onto competence, and the Compass (Connection, Trust) maps onto relatedness. SDT explains <em>why</em> empowerment works. Capability Spaces diagnoses <em>where the structure prevents it</em>.</p>
-    <p class="lc-de"><strong>Self-Determination Theory</strong> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1970er–heute)</span> identifiziert drei universelle psychologische Grundbedürfnisse: <em>Autonomie</em>, <em>Kompetenz</em> und <em>Zugehörigkeit</em>. Wenn Organisationen diese Bedürfnisse unterdrücken, sinken Leistung, Engagement und Kreativität – unabhängig von der Branche. Das ist die wissenschaftlich am besten belegte Grundlage für die These, dass Befähigung Leistung steigert. In Capability-Spaces-Begriffen: Die Map repräsentiert den strukturellen Umfang der Autonomie, der Compass (Knowledge) entspricht Kompetenz, und der Compass (Connection, Trust) entspricht Zugehörigkeit. SDT erklärt, <em>warum</em> Befähigung funktioniert. Capability Spaces diagnostiziert, <em>wo die Struktur sie verhindert</em>.</p>
+    <p class="lc-de"><strong>Self-Determination Theory</strong> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1970er–heute)</span> benennt drei universelle psychologische Grundbedürfnisse: <em>Autonomie</em>, <em>Kompetenz</em> und <em>Zugehörigkeit</em>. Wenn Organisationen diese Bedürfnisse unterdrücken, sinken Leistung, Engagement und Kreativität – unabhängig von der Branche. Das ist die wissenschaftlich am besten belegte Grundlage für die These, dass Befähigung Leistung steigert. In Capability-Spaces-Begriffen: Die Map beschreibt, wie viel Autonomie die Struktur zulässt, der Compass (Knowledge) entspricht Kompetenz, und der Compass (Connection, Trust) entspricht Zugehörigkeit. SDT erklärt, <em>warum</em> Befähigung funktioniert. Capability Spaces diagnostiziert, <em>wo die Struktur sie verhindert</em>.</p>
   </div>
 
   <div class="callout green reveal reveal-d3" style="margin-top:16px;">
@@ -3628,7 +3658,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Verwandtes Denken · Daniel Pink</span>
     </span>
     <p class="lc-en">In <em>Drive</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2009)</span>, Pink synthesises four decades of motivation research into three intrinsic drivers: <strong>Autonomy</strong> (the desire to direct our own lives), <strong>Mastery</strong> (the urge to get better at something that matters), and <strong>Purpose</strong> (the yearning to serve something larger than ourselves). His central finding: for any work that involves cognitive complexity, extrinsic motivators like money and control actively <em>reduce</em> performance. Pink's framework is not industry-specific – it applies to any knowledge work. Capability Spaces translates his motivational insight into a structural diagnostic: Autonomy requires a Map large enough to act within. Mastery requires the Compass force Knowledge. Purpose requires the connection between one's work and a meaningful outcome. When Boundaries prevent these conditions, motivation collapses – not because people lack drive, but because the structure doesn't permit it.</p>
-    <p class="lc-de">In <em>Drive</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2009)</span> synthetisiert Pink vier Jahrzehnte Motivationsforschung in drei intrinsische Antriebe: <strong>Autonomy</strong> (den Wunsch, das eigene Leben zu steuern), <strong>Mastery</strong> (den Drang, in etwas Bedeutsamem besser zu werden) und <strong>Purpose</strong> (die Sehnsucht, etwas Größerem zu dienen als sich selbst). Seine zentrale Erkenntnis: Bei jeder Arbeit, die kognitive Komplexität erfordert, <em>reduzieren</em> extrinsische Motivatoren wie Geld und Kontrolle die Leistung aktiv. Pinks Framework ist nicht branchenspezifisch – es gilt für jede Wissensarbeit. Capability Spaces übersetzt seine motivationale Erkenntnis in eine strukturelle Diagnostik: Autonomy erfordert eine Map, die groß genug ist, um darin zu handeln. Mastery erfordert die Compass-Kraft Knowledge. Purpose erfordert die Verbindung zwischen der eigenen Arbeit und einem bedeutsamen Outcome. Wenn Boundaries diese Bedingungen verhindern, bricht Motivation zusammen – nicht weil den Menschen der Antrieb fehlt, sondern weil die Struktur ihn nicht zulässt.</p>
+    <p class="lc-de">In <em>Drive</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2009)</span> destilliert Pink vier Jahrzehnte Motivationsforschung zu drei intrinsischen Antrieben: <strong>Autonomy</strong> (den Wunsch, das eigene Leben zu steuern), <strong>Mastery</strong> (den Drang, in etwas Bedeutsamem besser zu werden) und <strong>Purpose</strong> (die Sehnsucht, etwas Größerem zu dienen als sich selbst). Seine zentrale Erkenntnis: Bei jeder Arbeit, die kognitive Komplexität erfordert, <em>reduzieren</em> extrinsische Motivatoren wie Geld und Kontrolle die Leistung aktiv. Pinks Framework ist nicht branchenspezifisch – es gilt für jede Wissensarbeit. Capability Spaces übersetzt diese Erkenntnis in eine strukturelle Diagnostik: Autonomy erfordert eine Map, die groß genug ist, um darin zu handeln. Mastery erfordert die Compass-Kraft Knowledge. Purpose erfordert die Verbindung zwischen der eigenen Arbeit und einem bedeutsamen Outcome. Wenn Boundaries diese Bedingungen verhindern, bricht Motivation zusammen – nicht weil den Menschen der Antrieb fehlt, sondern weil die Struktur ihn nicht zulässt.</p>
   </div>
 
   <div class="callout green reveal reveal-d3" style="margin-top:16px;">
@@ -3646,7 +3676,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
       <span class="lc-de">Verwandtes Denken · Kirkman, Rosen &amp; Meta-Analyse</span>
     </span>
     <p class="lc-en">Kirkman &amp; Rosen <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1999)</span> demonstrated across four organisations that team empowerment positively impacts customer service, job satisfaction, and organisational commitment. A meta-analysis by Lee, Willis &amp; Tian <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2018, 105 studies)</span> confirmed this at scale: empowering leadership significantly improves employee creativity and citizenship behaviour, and increases trust in leadership. The effects hold across team types — production teams, project teams, management teams. The larger and more complex the team, the stronger the empowerment effect. This is the empirical evidence that the hypothesis is not aspirational — it is measurable. Capability Spaces does not generate this evidence. It provides the diagnostic lens to understand <em>why</em> empowerment is present or absent in a specific structural context.</p>
-    <p class="lc-de">Kirkman &amp; Rosen <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1999)</span> wiesen in vier Organisationen nach, dass Team-Empowerment positive Auswirkungen auf Kundenzufriedenheit, Arbeitszufriedenheit und organisationales Commitment hat. Eine Meta-Analyse von Lee, Willis &amp; Tian <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2018, 105 Studien)</span> bestätigte dies im großen Maßstab: Empowering Leadership verbessert Kreativität und Citizenship Behaviour signifikant und erhöht das Vertrauen in Führung. Die Effekte gelten über Teamtypen hinweg — Produktionsteams, Projektteams, Managementteams. Je größer und komplexer das Team, desto stärker der Empowerment-Effekt. Das ist die empirische Evidenz, dass die Hypothese kein Wunschdenken ist — sie ist messbar. Capability Spaces erzeugt diese Evidenz nicht. Es liefert das Diagnosewerkzeug, um zu verstehen, <em>warum</em> Empowerment in einem spezifischen strukturellen Kontext vorhanden oder abwesend ist.</p>
+    <p class="lc-de">Kirkman &amp; Rosen <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1999)</span> wiesen in vier Organisationen nach, dass Team-Empowerment positive Auswirkungen auf Kundenzufriedenheit, Arbeitszufriedenheit und organisationale Bindung hat. Eine Meta-Analyse von Lee, Willis &amp; Tian <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2018, 105 Studien)</span> bestätigte dies im großen Maßstab: Empowering Leadership steigert Kreativität und freiwilliges Engagement signifikant und erhöht das Vertrauen in Führung. Die Effekte gelten über Teamtypen hinweg — Produktionsteams, Projektteams, Managementteams. Je größer und komplexer das Team, desto stärker der Empowerment-Effekt. Das ist der empirische Beleg dafür, dass die Hypothese kein Wunschdenken ist — sie ist messbar. Capability Spaces erzeugt diesen Beleg nicht. Es liefert das Diagnosewerkzeug, um zu verstehen, <em>warum</em> Empowerment in einem bestimmten strukturellen Kontext vorhanden oder abwesend ist.</p>
   </div>
 
   <div class="callout reveal reveal-d3" style="margin-top:24px;">
@@ -3664,29 +3694,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 </div>
 
 <div class="divider"></div>
-
-
-<div class="section lc-en">
-  <div class="reveal">
-    <span class="section-label">Capability Spaces vs. Scrum</span>
-    <h2 class="section-title">The structural gap no framework fills.</h2>
-    <p class="lead">Scrum is a delivery framework. It assumes the team is already empowered – but doesn't ask whether the conditions actually allow for that.</p>
-    <p class="body">The real question is not whether a team delivers. It is whether it can work on the right problems – and generate outcomes, not just outputs. Capability Spaces gives coaches the diagnostic to answer exactly this question: where is the organisation structurally preventing outcome-oriented work? And what needs to change for the team to get there?</p>
-    <p class="body">Impediments describe disruptions in process. Boundaries describe why the team <em>cannot</em> work on the right problems at all.</p>
-  </div>
-  <div class="compare-table-wrap">
-  <table class="compare-table reveal reveal-d1">
-    <thead><tr><th>Aspect</th><th>Scrum / Impediment</th><th>Capability Spaces / Boundary</th></tr></thead>
-    <tbody>
-      <tr><td>Focus</td><td>Process improvement within the sprint</td><td>Team empowerment – can it solve the right problems?</td></tr>
-      <tr><td>Who sees obstacles?</td><td>Scrum Master and team; leadership receives reports</td><td>Leadership experiences boundaries live in a shared format</td></tr>
-      <tr><td>What is named?</td><td>What disrupts the process</td><td>What prevents work on the most important opportunity (problem)</td></tr>
-      <tr><td>Response</td><td>Escalation by Scrum Master – leadership reacts to reports</td><td>Leader as active boundary owner, anchored in the format</td></tr>
-      <tr><td>Energy &amp; motivation</td><td>Sprint Review shows delivery progress</td><td>The Compass shows why work makes sense despite boundaries</td></tr>
-    </tbody>
-  </table>
-  </div>
-</div>
 
 <div class="divider lc-en"></div>
 
@@ -3746,28 +3753,6 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 <!-- PATH B – DE -->
 
 
-
-<div class="section lc-de">
-  <div class="reveal">
-    <span class="section-label">Capability Spaces vs. Scrum</span>
-    <h2 class="section-title">Die strukturelle Lücke, die kein Framework füllt.</h2>
-    <p class="lead">Scrum ist ein Lieferframework. Es setzt voraus, dass das Team bereits empowered ist – fragt aber nicht, ob die Rahmenbedingungen das überhaupt erlauben.</p>
-    <p class="body">Die eigentliche Frage ist nicht, ob ein Team liefert. Sondern ob es an den richtigen Problemen arbeiten kann – und Outcomes erzeugt, nicht nur Outputs. Capability Spaces gibt Coaches die Diagnose, um genau diese Frage zu beantworten: Wo verhindert die Organisation strukturell outcome-orientiertes Arbeiten? Und was muss sich verändern, damit das Team dorthin kommt?</p>
-    <p class="body">Impediments stören den Prozess. Boundaries verhindern, dass das Team überhaupt an den richtigen Problemen arbeiten <em>kann</em>.</p>
-  </div>
-  <div class="compare-table-wrap">
-  <table class="compare-table reveal reveal-d1">
-    <thead><tr><th>Aspekt</th><th>Scrum / Impediment</th><th>Capability Spaces / Boundary</th></tr></thead>
-    <tbody>
-      <tr><td>Fokus</td><td>Prozessverbesserung im Sprint</td><td>Empowerment des Teams – kann es die richtigen Probleme lösen?</td></tr>
-      <tr><td>Wer sieht Hindernisse?</td><td>Scrum Master*in und Team; Führung erhält Reports</td><td>Führung erlebt Boundaries live im gemeinsamen Format</td></tr>
-      <tr><td>Was wird benannt?</td><td>Was stört den Prozess</td><td>Was verhindert Arbeit an der wichtigsten Opportunity (Problem)</td></tr>
-      <tr><td>Reaktion</td><td>Eskalation durch Scrum Master*in – Führung reagiert auf Berichte</td><td>Führungskraft als aktive Boundary-Owner*in im Format verankert</td></tr>
-      <tr><td>Energie &amp; Motivation</td><td>Sprint Review zeigt Lieferfortschritt</td><td>The Compass zeigt, warum die Arbeit trotz Boundaries Sinn ergibt</td></tr>
-    </tbody>
-  </table>
-  </div>
-</div>
 
 <div class="divider lc-de"></div>
 
@@ -3850,8 +3835,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
   align-items: start;
 }
 .oe-contrast-label {
@@ -4057,7 +4042,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <li>
           <span class="li-icon">→</span>
           <span class="lc-en">Structural constraints are named precisely: which role definition, which process, which requirement prevents the team from working on the right problem</span>
-          <span class="lc-de">Strukturelle Constraints werden präzise benannt: welche Rollendefinition, welcher Prozess, welche Anforderung verhindert, dass das Team am richtigen Problem arbeitet</span>
+          <span class="lc-de">Strukturelle Einschränkungen werden präzise benannt: welche Rollendefinition, welcher Prozess, welche Anforderung verhindert, dass das Team am richtigen Problem arbeitet</span>
         </li>
         <li>
           <span class="li-icon">→</span>
@@ -5138,20 +5123,20 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   <div class="leader-inner">
     <span class="section-label">Die Antwort</span>
     <h2 class="section-title">Die Ergebnisse fehlen, weil die <em>Voraussetzungen</em> für echte Ziele fehlen.</h2>
-    <p class="lead">Capability Spaces gibt Coaches und Führungskräften eine gemeinsame Diagnose – und zeigt klar, wer wo handeln muss. Es zieht dabei eine klare Linie: zwischen Zielen, die von außen vorgegeben werden, und Zielen, die ein Team sich selbst setzt.</p>
-    <p class="body" style="max-width:680px;margin-bottom:40px;">Beide Spalten unten beschreiben dieselbe Situation — aus zwei verschiedenen Positionen darin. Die Diagnose ist dieselbe. Was sich unterscheidet, ist, was jede Person dagegen tun kann.</p>
+    <p class="lead">Capability Spaces gibt Coaches und Führungskräften eine gemeinsame Diagnose – und zeigt klar, wer wo handeln muss. Das Modell trennt dabei sauber: zwischen Zielen, die von außen vorgegeben werden, und Zielen, die ein Team sich selbst setzt.</p>
+    <p class="body" style="max-width:680px;margin-bottom:40px;">Beide Spalten beschreiben dieselbe Situation — aus zwei verschiedenen Positionen. Die Diagnose ist dieselbe. Was sich unterscheidet, ist der Hebel, den jede Seite in der Hand hat.</p>
     <div class="leader-split">
       <div class="leader-col coach">
         <span class="lc-head lc-de">Warum Coaching nur wirkt, wenn Teams eigene Ziele setzen</span>
         <div class="lc-question">Warum greifen meine Interventionen nicht?</div>
-        <p class="lc-body">Du verbesserst die Teamdynamik, benennst die Impediments, coachst den Prozess. Aber dieselben Blocker kommen jeden Sprint zurück. Das Team wächst nicht. Das ist nicht zwingend ein Coaching-Versagen – es kann bedeuten, dass das Team nie in der Lage war, überhaupt eigene Ziele zu setzen.</p>
+        <p class="lc-body">Du verbesserst die Teamdynamik, benennst die Impediments, coachst den Prozess. Aber dieselben Blocker kommen jeden Sprint zurück. Das Team kommt nicht weiter. Das ist nicht zwingend ein Coaching-Versagen – es kann bedeuten, dass das Team nie in der Lage war, überhaupt eigene Ziele zu setzen.</p>
         <div class="lc-answer">Capability Spaces zeigt dir: Wenn Boundaries dauerhaft größer sind als das, was der Compass auffangen kann, wird keine Coaching-Intervention nachhaltig wirken. Die Einschränkung liegt nicht im Team – sie liegt in der Organisation. Aber die andere Seite: Wenn ein Team <em>eigene</em> Ziele setzt und diese verfehlt, genau dann wird Coaching wirklich wirksam. Die Kernfrage lautet dann: Wie erreicht dieses Team, was es sich selbst vorgenommen hat?</div>
       </div>
       <div class="leader-col exec">
         <span class="lc-head">Für Führungskräfte</span>
         <div class="lc-question">Wir haben in Agilität investiert. Wo sind die Ergebnisse?</div>
-        <p class="lc-body">Du hast die Transformation genehmigt. Du hast Ressourcen bereitgestellt. Du siehst den Aufwand. Aber die Team-Performance bleibt flach – und niemand kann erklären, warum. Die Erklärung ist strukturell.</p>
-        <div class="lc-answer">Deine Teams liefern nicht, weil die Organisation – oft unbeabsichtigt – verhindert, dass sie an den richtigen Problemen arbeiten. Rollendefinitionen, Freigabeprozesse, wie Requirements die Teams erreichen: das sind die Hebel. Und nur du kannst sie bewegen.<br><br>Und die Teams, die unmotiviert wirken? Sie waren es nicht von Anfang an. Wiederholte strukturelle Ohnmacht macht das mit Menschen. Capability Spaces zeigt dir genau, welche Hebel du ansetzen musst – damit deine Teams das tun können, wofür sie hier sind.</div>
+        <p class="lc-body">Du hast die Transformation genehmigt, Ressourcen bereitgestellt und siehst den Aufwand. Trotzdem bleibt die Team-Performance flach – und niemand kann erklären, warum. Die Erklärung ist strukturell.</p>
+        <div class="lc-answer">Deine Teams liefern nicht, weil die Organisation – oft unbeabsichtigt – verhindert, dass sie an den richtigen Problemen arbeiten. Rollendefinitionen, Freigabeprozesse, die Art, wie Requirements die Teams erreichen: das sind die Hebel. Und nur du kannst sie bewegen.<br><br>Die Teams, die unmotiviert wirken? Sie waren es nicht von Anfang an. Wiederholte strukturelle Ohnmacht macht das mit Menschen. Capability Spaces zeigt dir genau, an welchen Stellen du ansetzen musst – damit deine Teams das tun können, wofür sie hier sind.</div>
       </div>
     </div>
   </div>
@@ -5171,7 +5156,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
     <h2 class="section-title lc-de">Wie das Modell <em>in deinem Framework</em> wirkt</h2>
 
     <p class="lead lc-en">Capability Spaces is not a workshop. It is a set of lightweight, recurring practices — embedded directly into how teams already work.</p>
-    <p class="lead lc-de">Capability Spaces ist kein Workshop. Es ist eine Reihe von leichtgewichtigen, wiederkehrenden Praktiken — eingebettet in die Art, wie Teams bereits arbeiten.</p>
+    <p class="lead lc-de">Capability Spaces ist kein Workshop. Es ist ein Set aus schlanken, wiederkehrenden Praktiken — eingebettet in die Art, wie Teams bereits arbeiten.</p>
 
 
 
@@ -5292,7 +5277,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
         <div class="boundaries-intro-row">
           <div class="bi-col">
             <p class="lc-en">The output is simple: what are the biggest opportunities the team is currently running solution experiments for? Leadership is present to hear exactly that — nothing more. If the team is amber or red, boundaries are named — but only then. The traffic light is a signal, not the agenda.</p>
-            <p class="lc-de">Das Ergebnis ist einfach: Was sind die größten Opportunities, für die das Team gerade Lösungsexperimente macht? Die Führungskraft ist dabei, um genau das zu hören — nicht mehr. Wenn das Team gelb oder rot ist, werden Boundaries benannt — aber erst dann. Die Ampel ist ein Signal, keine Agenda.</p>
+            <p class="lc-de">Das Ergebnis ist einfach: Was sind die größten Opportunities, an denen das Team gerade mit Lösungsexperimenten arbeitet? Die Führungskraft ist dabei, um genau das zu hören — nicht mehr. Wenn das Team gelb oder rot ist, werden Boundaries benannt — aber erst dann. Die Ampel ist ein Signal, keine Agenda.</p>
           </div>
           <div>
             <div class="bi-format">
@@ -7175,13 +7160,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var sections = [
     { id: 'section-pattern',          index: 0 },
-    { id: 'section-model',            index: 1 },
-    { id: 'section-prediction',       index: 2 },
-    { id: 'section-every-team',       index: 3 },
-    { id: 'section-landscape',        index: 4 },
-    { id: 'section-org-development',  index: 5 },
-    { id: 'section-leaders',          index: 6 },
-    { id: 'in-practice',              index: 7 }
+    { id: 'section-why',              index: 1 },
+    { id: 'section-model',            index: 2 },
+    { id: 'section-innovation',       index: 3 },
+    { id: 'section-prediction',       index: 4 },
+    { id: 'section-structural-comfort', index: 5 },
+    { id: 'section-every-team',       index: 6 },
+    { id: 'section-landscape',        index: 7 },
+    { id: 'section-org-development',  index: 8 },
+    { id: 'section-leaders',          index: 9 },
+    { id: 'in-practice',              index: 10 }
   ];
 
   var sideNav  = document.getElementById('cs-sidenav');
