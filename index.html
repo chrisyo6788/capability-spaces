@@ -1354,15 +1354,23 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .cs-sidenav {
   position: fixed;
   top: 50%;
-  left: 20px;
+  left: 0;
   transform: translateY(-50%);
   z-index: 100;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
+  background: rgba(248,247,244,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(27,58,92,0.08);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 16px 18px 16px 16px;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.04);
 }
 .cs-sidenav.visible {
   opacity: 1;
@@ -1373,15 +1381,20 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   align-items: center;
   gap: 10px;
   cursor: pointer;
-  padding: 4px 0;
+  padding: 5px 8px 5px 4px;
   text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.cs-sidenav-item:hover {
+  background: rgba(27,58,92,0.06);
 }
 .cs-sidenav-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(27,58,92,0.35);
-  border: 1px solid rgba(27,58,92,0.25);
+  background: rgba(27,58,92,0.2);
+  border: 1px solid rgba(27,58,92,0.15);
   flex-shrink: 0;
   transition: all 0.25s ease;
   position: relative;
@@ -1392,25 +1405,24 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   box-shadow: 0 0 0 3px rgba(201,162,39,0.2);
 }
 .cs-sidenav-item:hover .cs-sidenav-dot {
-  background: rgba(27,58,92,0.6);
-  border-color: rgba(27,58,92,0.4);
+  background: rgba(27,58,92,0.45);
+  border-color: rgba(27,58,92,0.3);
 }
 .cs-sidenav-label {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: rgba(27,58,92,0.0);
+  color: rgba(27,58,92,0.45);
   white-space: nowrap;
-  transition: color 0.2s, opacity 0.2s;
-  pointer-events: none;
+  transition: color 0.2s;
 }
-.cs-sidenav-item:hover .cs-sidenav-label,
-.cs-sidenav-item.active .cs-sidenav-label {
+.cs-sidenav-item:hover .cs-sidenav-label {
   color: rgba(27,58,92,0.75);
 }
 .cs-sidenav-item.active .cs-sidenav-label {
   color: #C9A227;
+  font-weight: 500;
 }
 
 /* ── Top-Bar (Mobile ≤ 1279px) ── */
@@ -1527,9 +1539,13 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .cs-sidenav-lang-btn:hover:not(.active) {
   color: rgba(255,255,255,0.7);
 }
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .cs-sidenav { display: flex; }
   .cs-topnav  { display: none !important; }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .cs-sidenav { display: none !important; }
+  .cs-topnav  { display: flex; }
 }
 @media (max-width: 1279px) {
   .cs-sidenav { display: none !important; }
@@ -4412,6 +4428,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   line-height: 1.15;
   letter-spacing: -0.8px;
   margin-bottom: 20px;
+  max-width: 640px;
 }
 .pp-title em       { font-style: italic; color: #C9A227; }
 .pp-title em.red   { color: #B03030; }
@@ -5190,8 +5207,8 @@ transition: opacity 0.7s ease, transform 0.7s ease;
           <div>
             <span class="pp-badge map lc-en">01 — The Map</span>
             <span class="pp-badge map lc-de">01 — Die Map</span>
-            <h3 class="pp-title lc-en">From <em>feature factory</em><br>to problem-oriented team</h3>
-            <h3 class="pp-title lc-de">Von der <em>Feature Factory</em><br>zum problemorientierten Team</h3>
+            <h3 class="pp-title lc-en">From <em>feature factory</em> to problem-oriented team</h3>
+            <h3 class="pp-title lc-de">Von der <em>Feature Factory</em> zum problemorientierten Team</h3>
             <p class="pp-intro lc-en">Most product teams build what they are asked for. The Map reorients them toward the problem behind the request — without changing the process, just the thinking.</p>
             <p class="pp-intro lc-de">Die meisten Produktteams bauen, was man ihnen aufträgt. Die Map reorientiert sie auf das Problem hinter dem Auftrag — ohne den Prozess zu ändern, nur das Denken.</p>
           </div>
@@ -7227,7 +7244,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var target = document.getElementById(href.slice(1));
       if (!target) return;
       e.preventDefault();
-      var offset = window.innerWidth < 1280 ? 48 : 0;
+      var offset = window.innerWidth < 1440 ? 48 : 0;
       var top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
