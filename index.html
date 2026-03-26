@@ -1595,6 +1595,11 @@ if (!window.location.hash) window.scrollTo(0, 0);
     <span class="cs-sidenav-label lc-en">Structural Comfort</span>
     <span class="cs-sidenav-label lc-de">Structural Comfort</span>
   </a>
+  <a class="cs-sidenav-item" href="#section-lifecycle">
+    <span class="cs-sidenav-dot"></span>
+    <span class="cs-sidenav-label lc-en">When Outcomes Matter</span>
+    <span class="cs-sidenav-label lc-de">Wann Outcomes zählen</span>
+  </a>
   <a class="cs-sidenav-item" href="#section-every-team">
     <span class="cs-sidenav-dot"></span>
     <span class="cs-sidenav-label lc-en">Beyond Product</span>
@@ -1645,6 +1650,9 @@ if (!window.location.hash) window.scrollTo(0, 0);
   </a>
   <a class="cs-topnav-item" href="#section-structural-comfort">
     <span class="lc-en">Comfort</span><span class="lc-de">Comfort</span>
+  </a>
+  <a class="cs-topnav-item" href="#section-lifecycle">
+    <span class="lc-en">Lifecycle</span><span class="lc-de">Lebenszyklus</span>
   </a>
   <a class="cs-topnav-item" href="#section-every-team">
     <span class="lc-en">Beyond Product</span><span class="lc-de">Jedes Team</span>
@@ -2456,10 +2464,22 @@ if (!window.location.hash) window.scrollTo(0, 0);
     </div>
   </div>
   <div class="compass-grid reveal reveal-d1">
-    <div class="compass-card"><span class="cpc-title">Assumption Testing</span><p>We actively tested assumptions about problems and solutions – and received real feedback that confirmed or corrected our direction.</p></div>
+    <div class="compass-card"><span class="cpc-title">Assumption Testing</span><p>We had a hypothesis about which user behaviour would change — and we tested it. Not by asking users what they think, but by observing whether their behaviour actually changed. A test requires a hypothesis, a method, and a result that can prove the hypothesis wrong.</p></div>
     <div class="compass-card"><span class="cpc-title">Connection</span><p>Through our work we learned about new problems from stakeholders that we are able to solve. Good work opens new doors.</p></div>
     <div class="compass-card"><span class="cpc-title">Knowledge</span><p>We built new knowledge that directly helps solve the problems in our area better. Learning with impact.</p></div>
     <div class="compass-card"><span class="cpc-title">Trust</span><p>We received positive feedback from leaders or stakeholders. External trust strengthens the space to act.</p></div>
+  </div>
+
+  <div class="callout reveal reveal-d2" style="margin-top:16px;">
+    <span class="cl-label">What Assumption Testing requires</span>
+    <p>Assumption Testing is not feedback collection. Showing a prototype to users and asking "do you like this?" produces opinions — not evidence. Opinions tell you what people say they prefer. Evidence tells you what people actually do.</p>
+    <p style="margin-top:14px;">A test requires four things: <strong>a stated hypothesis</strong> — before building anything, the team writes down what it expects to happen and why; <strong>a falsifiable prediction</strong> — "users will like it" is not falsifiable, "checkout completion rate increases by 15%" is; <strong>a method that measures behaviour, not opinion</strong> — clicks, completions, return visits, not self-reported preferences; and <strong>a result that changes the next decision</strong> — if the result doesn't change what the team does next, the test served no purpose.</p>
+    <p style="margin-top:14px;">The method does not need to be an A/B test at scale. It can be a prototype test with five users, a concierge experiment, or a paper sketch in an interview. What matters is that the team had a belief, designed something to challenge that belief, and learned whether it was right. A team that collects feedback will always feel like it is testing assumptions. But if the team has no hypothesis — if it cannot state, before showing anything, what it expects to happen — then what it calls "testing" is confirmation seeking. The result will almost always be positive. This is not a signal. It is noise that feels like a signal.</p>
+  </div>
+
+  <div class="callout green reveal reveal-d3" style="margin-top:16px;">
+    <span class="cl-label">Related thinking · Kohavi, Tang &amp; Xu</span>
+    <p>In <em>Trustworthy Online Controlled Experiments</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Cambridge University Press, 2020)</span>, Kohavi, Tang &amp; Xu — experimentation leaders at Google, LinkedIn, and Microsoft — document the scientific infrastructure required to establish causal relationships between product changes and user behaviour. Their core argument: controlled experiments are the only reliable mechanism to determine whether a change actually caused the observed outcome. Everything else — including user interviews, surveys, and uncontrolled observation — produces correlations that can mislead. The book introduces the concept of an <strong>Overall Evaluation Criterion (OEC)</strong>: a metric that is measurable in the short term but causally connected to long-term strategic goals. Without an OEC, teams cannot distinguish between a change that users liked and a change that produced a real outcome. This is the infrastructure most organisations lack — and its absence is why feedback collection is routinely mistaken for assumption testing.</p>
   </div>
 </div>
 
@@ -2578,10 +2598,22 @@ if (!window.location.hash) window.scrollTo(0, 0);
     </div>
   </div>
   <div class="compass-grid reveal reveal-d1">
-    <div class="compass-card"><span class="cpc-title">Assumption Testing · Annahmen testen</span><p>Wir haben Annahmen über Probleme und Lösungen aktiv getestet – und echtes Feedback bekommen, das unsere Richtung bestätigt oder korrigiert hat.</p></div>
+    <div class="compass-card"><span class="cpc-title">Assumption Testing · Annahmen testen</span><p>Wir hatten eine Hypothese darüber, welches Nutzerverhalten sich ändern würde — und wir haben sie getestet. Nicht indem wir Nutzer gefragt haben, was sie denken, sondern indem wir beobachtet haben, ob sich ihr Verhalten tatsächlich verändert hat. Ein Test braucht eine Hypothese, eine Methode und ein Ergebnis, das die Hypothese widerlegen kann.</p></div>
     <div class="compass-card"><span class="cpc-title">Connection · Verbindung</span><p>Durch unsere Arbeit haben wir neue Probleme von Stakeholdern erfahren, die wir lösen können. Gute Arbeit öffnet neue Türen.</p></div>
     <div class="compass-card"><span class="cpc-title">Knowledge · Wissen</span><p>Wir haben neues Wissen aufgebaut, das direkt hilft, die Probleme in unserem Bereich besser zu lösen. Lernen mit Wirkung.</p></div>
     <div class="compass-card"><span class="cpc-title">Trust · Vertrauen</span><p>Wir haben positives Feedback von Führungskräften oder Stakeholdern bekommen. Vertrauen von außen stärkt den Handlungsspielraum.</p></div>
+  </div>
+
+  <div class="callout reveal reveal-d2" style="margin-top:16px;">
+    <span class="cl-label">Was Assumption Testing erfordert</span>
+    <p>Assumption Testing ist keine Feedback-Sammlung. Nutzern einen Prototyp zu zeigen und zu fragen „Findest du das gut?" erzeugt Meinungen — keine Evidenz. Meinungen sagen dir, was Menschen sagen, dass sie bevorzugen. Evidenz sagt dir, was Menschen tatsächlich tun.</p>
+    <p style="margin-top:14px;">Ein Test braucht vier Dinge: <strong>Eine formulierte Hypothese</strong> — bevor das Team etwas baut, schreibt es auf, was es erwartet und warum; <strong>eine falsifizierbare Vorhersage</strong> — „Nutzer werden es mögen" ist nicht falsifizierbar, „Checkout-Abschlussrate steigt um 15%" schon; <strong>eine Methode, die Verhalten misst, nicht Meinungen</strong> — Klicks, Abschlüsse, Rückkehrbesuche, nicht selbstberichtete Präferenzen; und <strong>ein Ergebnis, das die nächste Entscheidung verändert</strong> — wenn das Ergebnis nicht verändert, was das Team als Nächstes tut, hatte der Test keinen Zweck.</p>
+    <p style="margin-top:14px;">Die Methode muss kein A/B-Test im großen Maßstab sein. Es kann ein Prototyp-Test mit fünf Nutzern sein, ein Concierge-Experiment oder eine Papierskizze in einem Interview. Was zählt ist, dass das Team eine Überzeugung hatte, etwas entworfen hat um diese Überzeugung zu prüfen, und gelernt hat ob sie richtig war. Ein Team, das Feedback sammelt, wird immer das Gefühl haben, Annahmen zu testen. Aber wenn das Team keine Hypothese hat — wenn es nicht vor dem Zeigen sagen kann, was es erwartet — dann ist das, was es „Testen" nennt, Bestätigungssuche. Das Ergebnis wird fast immer positiv sein. Das ist kein Signal. Es ist Rauschen, das sich wie ein Signal anfühlt.</p>
+  </div>
+
+  <div class="callout green reveal reveal-d3" style="margin-top:16px;">
+    <span class="cl-label">Verwandtes Denken · Kohavi, Tang &amp; Xu</span>
+    <p>In <em>Trustworthy Online Controlled Experiments</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Cambridge University Press, 2020)</span> dokumentieren Kohavi, Tang &amp; Xu — Experimentier-Verantwortliche bei Google, LinkedIn und Microsoft — die wissenschaftliche Infrastruktur, die nötig ist, um kausale Zusammenhänge zwischen Produktänderungen und Nutzerverhalten herzustellen. Ihr Kernargument: Kontrollierte Experimente sind der einzige zuverlässige Mechanismus, um festzustellen, ob eine Änderung tatsächlich das beobachtete Ergebnis verursacht hat. Alles andere — einschließlich Nutzerinterviews, Umfragen und unkontrollierte Beobachtung — erzeugt Korrelationen, die in die Irre führen können. Das Buch führt das Konzept eines <strong>Overall Evaluation Criterion (OEC)</strong> ein: eine Metrik, die kurzfristig messbar ist, aber kausal mit langfristigen strategischen Zielen verbunden. Ohne OEC kann ein Team nicht unterscheiden, ob eine Änderung den Nutzern gefallen hat oder ob sie ein echtes Outcome erzeugt hat. Das ist die Infrastruktur, die den meisten Organisationen fehlt — und ihre Abwesenheit ist der Grund, warum Feedback-Sammlung routinemäßig mit Assumption Testing verwechselt wird.</p>
   </div>
 </div>
 
@@ -2683,6 +2715,36 @@ if (!window.location.hash) window.scrollTo(0, 0);
     <span class="cl-label">Related thinking · Agile Manifesto → Seiden → Torres</span>
     <p class="lc-en">This idea is not new. The Agile Manifesto already stated it in 2001: <em>"Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> The intended measure of progress was always real impact on users – not process compliance, not delivery velocity. Eighteen years later, Josh Seiden felt compelled to repeat it in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span>: "Customer behavior is the key metric for business success." Two years after that, Teresa Torres sharpened it once more in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: "An outcome is a change in human behavior that drives business results." Three authors. Twenty years. The same sentence. The industry still hasn't heard it. Capability Spaces diagnoses why – and where the structural lever is.</p>
     <p class="lc-de">Diese Idee ist nicht neu. Das Agile Manifesto hat sie bereits 2001 formuliert: <em>„Working software over comprehensive documentation. Customer collaboration over contract negotiation."</em> Das beabsichtigte Maß für Fortschritt war immer echte Wirkung auf Nutzer – nicht Prozesstreue, nicht Liefergeschwindigkeit. Achtzehn Jahre später wiederholte Josh Seiden es in <em>Outcomes Over Outputs</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2019)</span>: „Kundenverhalten ist die entscheidende Kennzahl für unternehmerischen Erfolg." Zwei Jahre danach schärfte Teresa Torres es erneut in <em>Continuous Discovery Habits</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(2021)</span>: „Ein Outcome ist eine Veränderung im menschlichen Verhalten, die Business-Ergebnisse erzeugt." Drei Autoren. Zwanzig Jahre. Derselbe Satz. Die Industrie hat ihn noch immer nicht gehört. Capability Spaces diagnostiziert, warum – und wo der strukturelle Hebel liegt.</p>
+  </div>
+
+  <div class="callout green reveal reveal-d3" style="margin-top:24px;">
+    <span class="cl-label">
+      <span class="lc-en">Why this matters · Schumpeter, Drucker, Rogers</span>
+      <span class="lc-de">Warum das entscheidend ist · Schumpeter, Drucker, Rogers</span>
+    </span>
+    <p class="lc-en">The distinction between output and outcome is not a modern invention. It reaches back to the foundations of innovation economics. Joseph Schumpeter, in <em>The Theory of Economic Development</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1911)</span>, defined innovation not as an idea, but as the <em>Durchsetzung neuer Kombinationen</em> — the carrying out of new combinations. An idea that is never implemented, a product that is never adopted, is not an innovation. It is an unrealised combination. Innovation exists only in the moment it changes economic reality.</p>
+    <p class="lc-en" style="margin-top:14px;">Peter Drucker made the same point in economic language: innovation is not invention — it is a term of economics, not of technology <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Innovation and Entrepreneurship, 1985)</span>. His McDonald's example is instructive: McDonald's invented nothing. But by asking <em>"what is value to the customer?"</em> and reorganising every process around the answer, it created a new market and a new customer. That is innovation — not because something was built, but because behaviour changed at scale.</p>
+    <p class="lc-en" style="margin-top:14px;">Everett Rogers arrived at the same insight from the demand side. In <em>Diffusion of Innovations</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1962, 5th ed. 2003)</span>, he defined adoption as the moment when a person does something differently than before. Without adoption, there is no diffusion. Without diffusion, there is no innovation — only output.</p>
+    <p class="lc-en" style="margin-top:14px;">The iPhone is the clearest modern illustration: it was not an innovation because it was designed, engineered, or announced. It was an innovation because people used it — and the way they used it transformed how entire industries operate. Had nobody adopted it, it would have remained an invention: impressive, perhaps, but economically inert.</p>
+    <p class="lc-en" style="margin-top:14px;">This is why Capability Spaces insists on outcomes. Not as a judgement of teams, but as a diagnosis of the organisation. The question is not whether a team is "good enough" to produce innovation. The question is whether the organisation has built the conditions under which the team's work can become an outcome at all — the chain from business goal to user problem to measurable behaviour change. Without that chain, even excellent work remains structurally invisible: output without outcome, invention without innovation.</p>
+    <p class="lc-de">Die Unterscheidung zwischen Output und Outcome ist keine moderne Erfindung. Sie reicht zurück zu den Grundlagen der Innovationsökonomik. Joseph Schumpeter definierte in der <em>Theorie der wirtschaftlichen Entwicklung</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1911)</span> Innovation nicht als Idee, sondern als <em>Durchsetzung neuer Kombinationen</em>. Eine Idee, die nie umgesetzt wird, ein Produkt, das nie genutzt wird, ist keine Innovation. Es ist eine unrealisierte Kombination. Innovation existiert erst in dem Moment, in dem sie die ökonomische Realität verändert.</p>
+    <p class="lc-de" style="margin-top:14px;">Peter Drucker formulierte denselben Punkt ökonomisch: Innovation ist nicht Erfindung — es ist ein Begriff der Ökonomie, nicht der Technologie <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Innovation and Entrepreneurship, 1985)</span>. Sein McDonald's-Beispiel ist aufschlussreich: McDonald's hat nichts erfunden. Aber indem es fragte <em>„Was ist Wert für den Kunden?"</em> und jeden Prozess um die Antwort herum reorganisierte, schuf es einen neuen Markt und einen neuen Kunden. Das ist Innovation — nicht weil etwas gebaut wurde, sondern weil sich Verhalten im großen Maßstab veränderte.</p>
+    <p class="lc-de" style="margin-top:14px;">Everett Rogers kam von der Nachfrageseite zur selben Erkenntnis. In <em>Diffusion of Innovations</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1962, 5. Aufl. 2003)</span> definierte er Adoption als den Moment, in dem eine Person etwas anders tut als zuvor. Ohne Adoption gibt es keine Diffusion. Ohne Diffusion gibt es keine Innovation — nur Output.</p>
+    <p class="lc-de" style="margin-top:14px;">Das iPhone ist die klarste moderne Illustration: Es war keine Innovation, weil es designt, entwickelt oder angekündigt wurde. Es war eine Innovation, weil Menschen es nutzten — und die Art, wie sie es nutzten, die Funktionsweise ganzer Industrien veränderte. Hätte es niemand genutzt, wäre es eine Erfindung geblieben: beeindruckend vielleicht, aber ökonomisch wirkungslos.</p>
+    <p class="lc-de" style="margin-top:14px;">Deshalb besteht Capability Spaces auf Outcomes. Nicht als Bewertung von Teams, sondern als Diagnose der Organisation. Die Frage ist nicht, ob ein Team „gut genug" ist, um Innovation hervorzubringen. Die Frage ist, ob die Organisation die Bedingungen geschaffen hat, unter denen die Arbeit des Teams überhaupt ein Outcome werden kann — die Kette von Business-Ziel zu Nutzerproblem zu messbarer Verhaltensänderung. Ohne diese Kette bleibt selbst exzellente Arbeit strukturell unsichtbar: Output ohne Outcome, Erfindung ohne Innovation.</p>
+  </div>
+
+  <div class="callout reveal reveal-d3" style="margin-top:24px;border-left-color:#B03030;">
+    <span class="cl-label" style="color:#B03030;">
+      <span class="lc-en">The strategic risk · Why feature factories won't survive</span>
+      <span class="lc-de">Das strategische Risiko · Warum Feature Factories nicht überleben werden</span>
+    </span>
+    <p class="lc-en">Not every organisation can be innovative — and that is not a failure. If every output were an innovation, the term would be meaningless. Innovation is rare by definition, because it requires real behaviour change, and real behaviour change requires scientific work: hypotheses, tests, measurement, learning. But here is the strategic question every leadership team must answer: <strong>does your organisation need to be innovative to survive?</strong> In a tightening market with increasing competition, the answer is almost always yes.</p>
+    <p class="lc-en" style="margin-top:14px;">A Feature Factory is an organisation that produces output without ever asking whether that output changes anything. It ships, but it does not learn. For decades, this was a viable model. It no longer is. AI can produce output faster, cheaper, and more reliably than any human team. Code generation, design automation, content creation — the output layer is being commoditised. An organisation that competes on output speed is competing against a force it cannot outrun.</p>
+    <p class="lc-en" style="margin-top:14px;">What AI cannot do is the work that comes before the output: understanding the problem, framing the hypothesis, designing the experiment, interpreting the result, and deciding what to do next. That is scientific work. It requires judgement, context, empathy, and the ability to navigate ambiguity — exactly the capabilities that a Capability Space is designed to protect and grow. The Feature Factory doesn't break. It simply becomes irrelevant.</p>
+    <p class="lc-de">Nicht jede Organisation kann innovativ sein — und das ist kein Versagen. Wenn jeder Output eine Innovation wäre, wäre der Begriff bedeutungslos. Innovation ist per Definition selten, weil sie echte Verhaltensänderung erfordert, und echte Verhaltensänderung erfordert wissenschaftliche Arbeit: Hypothesen, Tests, Messung, Lernen. Aber hier ist die strategische Frage, die jedes Führungsteam beantworten muss: <strong>Muss eure Organisation innovativ sein, um zu überleben?</strong> In einem enger werdenden Markt mit zunehmender Konkurrenz lautet die Antwort fast immer Ja.</p>
+    <p class="lc-de" style="margin-top:14px;">Eine Feature Factory ist eine Organisation, die Output produziert, ohne je zu fragen, ob dieser Output etwas verändert. Sie liefert, aber sie lernt nicht. Jahrzehntelang war das ein tragfähiges Modell. Das ist es nicht mehr. KI kann Output schneller, günstiger und zuverlässiger produzieren als jedes menschliche Team. Code-Generierung, Design-Automatisierung, Content-Erstellung — die Output-Ebene wird zur Commodity. Eine Organisation, die auf Output-Geschwindigkeit setzt, konkurriert gegen eine Kraft, die sie nicht überholen kann.</p>
+    <p class="lc-de" style="margin-top:14px;">Was KI nicht kann, ist die Arbeit, die vor dem Output kommt: das Problem verstehen, die Hypothese formulieren, das Experiment designen, das Ergebnis interpretieren und entscheiden, was als Nächstes zu tun ist. Das ist wissenschaftliche Arbeit. Sie erfordert Urteilsvermögen, Kontext, Empathie und die Fähigkeit, mit Ambiguität umzugehen — genau die Fähigkeiten, die ein Capability Space schützen und wachsen lassen soll. Die Feature Factory bricht nicht zusammen. Sie wird einfach irrelevant.</p>
   </div>
 
   <!-- ── In-Practice Example: UX team + Review anti-pattern ── -->
@@ -2971,9 +3033,7 @@ if (!window.location.hash) window.scrollTo(0, 0);
       <br><br>
       And leadership? Leadership never asked the question, because there was no signal to ask it. No complaints, no missed deadlines, no visible friction. The system looked healthy. It was, in fact, fragile — held together by a single person's capacity to absorb complexity that should have been shared.
       <br><br>
-      This is Structural Comfort. Not a failure. Not incompetence. A <strong style="color:#B8860B;">stable equilibrium that prevents growth</strong> — invisible to everyone inside it, and durable enough to persist for years. Until the PO leaves. Until the market shifts. Until someone introduces outcome-oriented goals and the team discovers it has no idea how to work with them.
-      <br><br>
-      That is the moment the comfort breaks. And it breaks without warning, because nobody built the diagnostic to see it coming.
+      This is Structural Comfort. Not a failure. Not incompetence. A <strong style="color:#B8860B;">stable equilibrium that prevents growth</strong> — invisible to everyone inside it, and durable enough to persist for years. It does not break on its own. It requires a diagnostic that asks a question nobody inside the system is asking: is this team's Capability Space connected to outcomes that matter?
     </p>
     <p style="font-size:17px;font-style:normal;font-weight:300;color:#2C2C2C;line-height:1.75;" class="lc-de">
       Stell dir ein Produktteam vor. Fünf Entwickler, eine Designerin, ein Product Owner. Sie arbeiten in Sprints, haben ein Board, machen Reviews. Alle zwei Wochen zeigen sie, was sie gebaut haben. Stakeholder nicken, sagen, das sieht toll aus, schlagen ein paar Dinge für den nächsten Sprint vor. Das Team fühlt sich wertgeschätzt. Der PO fühlt sich wirksam. Die Führung sieht ein funktionierendes Team.
@@ -2984,9 +3044,63 @@ if (!window.location.hash) window.scrollTo(0, 0);
       <br><br>
       Und die Führung? Die Führung hat die Frage nie gestellt, weil es kein Signal gab, sie zu stellen. Keine Beschwerden, keine verpassten Deadlines, keine sichtbare Reibung. Das System sah gesund aus. In Wirklichkeit war es fragil — zusammengehalten durch die Kapazität einer einzelnen Person, Komplexität zu absorbieren, die eigentlich geteilt werden müsste.
       <br><br>
-      Das ist Structural Comfort — kein Versagen, keine Inkompetenz, sondern ein <strong style="color:#B8860B;">stabiles Gleichgewicht, das Wachstum verhindert</strong>. Unsichtbar für alle, die darin stecken, und dauerhaft genug, um Jahre zu bestehen. Bis der PO geht, bis sich der Markt verändert, bis jemand outcome-orientierte Ziele einführt und das Team feststellt, dass es keine Ahnung hat, wie es damit arbeiten soll.
+      Das ist Structural Comfort — kein Versagen, keine Inkompetenz, sondern ein <strong style="color:#B8860B;">stabiles Gleichgewicht, das Wachstum verhindert</strong>. Unsichtbar für alle, die darin stecken, und dauerhaft genug, um Jahre zu bestehen. Es bricht nicht von allein. Es braucht eine Diagnostik, die eine Frage stellt, die niemand im System stellt: Ist der Capability Space dieses Teams mit Outcomes verbunden, die zählen?
+    </p>
+  </div>
+
+  <div class="reveal reveal-d1">
+    <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:#1B3A5C;margin:48px 0 8px;">
+      <span class="lc-en">How Structural Comfort forms</span>
+      <span class="lc-de">Wie Structural Comfort entsteht</span>
+    </h3>
+    <p class="lead" style="font-style:italic;color:#5A5A5A;max-width:720px;margin-bottom:24px;">
+      <span class="lc-en">The most common path into Structural Comfort is a leadership intervention that solved the wrong problem.</span>
+      <span class="lc-de">Der häufigste Weg in Structural Comfort ist eine Führungsintervention, die das falsche Problem gelöst hat.</span>
+    </p>
+  </div>
+
+  <div class="hero-story reveal reveal-d1" style="max-width:720px;margin:0 0 40px;background:rgba(27,58,92,0.04);border:1px solid rgba(27,58,92,0.12);border-left:3px solid #4A6B8A;">
+    <p style="font-size:17px;font-style:normal;font-weight:300;color:#2C2C2C;line-height:1.75;" class="lc-en">
+      Not every team in Structural Comfort started passive. Some of the most capable teams arrive there through a specific sequence — one that begins with real autonomy and ends with its withdrawal.
       <br><br>
-      Das ist der Moment, in dem der Comfort bricht. Und er bricht ohne Vorwarnung, weil niemand die Diagnostik gebaut hat, um ihn kommen zu sehen.
+      Consider a product team that talks to users, runs experiments, and frames its work around real problems. The team is trying to work in an outcome-oriented way. It identifies user needs, tests hypotheses, builds solutions based on what it learns. The team's satisfaction is high, and for good reason.
+      <br><br>
+      But the company's goal framework doesn't match. OKRs describe activities, not outcomes. The goals the team receives are output-oriented: ship this feature, launch this module, complete this migration. The team knows this. It sees the gap between what it is trying to do — change user behaviour — and what it is being asked to deliver — finished features. So it works around the gap. Internally, it does discovery. Externally, it reports outputs.
+      <br><br>
+      Here is the structural problem the team cannot solve alone: <strong style="color:#4A6B8A;">outcomes are an organisational achievement, not a team achievement.</strong> A team can identify a user problem. It can build a solution. It can test whether users respond differently. But whether user behaviour actually changes at scale — whether retention improves, whether adoption increases, whether a workflow is truly transformed — depends on whether the entire organisation supports that change. Marketing needs to reach the right users. Sales needs to set the right expectations. Service needs to support the new workflow. Operations needs to enable it. A single team can run an experiment. Only the organisation can produce an outcome.
+      <br><br>
+      This means that even a team doing excellent discovery work cannot prove that its work generates outcomes — because the infrastructure to measure and attribute outcomes does not exist. The team works outcome-oriented in a system that only measures outputs. Its best work is structurally invisible.
+      <br><br>
+      The Compass <em>appears</em> active — and that is part of what makes this state so difficult to diagnose. The team collects user feedback. It shows prototypes. It runs what it calls experiments. But there is a critical difference between feedback collection and assumption testing. Feedback collection asks users what they think. Assumption testing states a hypothesis about what users will <em>do</em>, designs an intervention, and measures whether the predicted behaviour change occurs. Most teams in this state do the former and call it the latter — not because they lack rigour, but because the organisation has never built the infrastructure that real testing requires. Without outcome-oriented goals, there is no hypothesis to test against. Without a chain from business goal to user behaviour, there is no metric that would tell the team whether its experiment actually mattered. The Compass looks strong because the team is busy doing things that resemble testing. But the signal is noise. The direction is unvalidated.
+      <br><br>
+      Leadership, meanwhile, senses a discrepancy. The team is engaged, productive, talking about users and experiments — and yet the results don't seem to align with the goals leadership has defined. This perception is correct, but the diagnosis is wrong. The team is not working "past" the goals. The goals are not outcome-oriented. Leadership has never learned to define measurable outcomes, because the organisation has never built the capability to think that way. So the gap feels like a team problem — not a structural one.
+      <br><br>
+      Without a diagnostic language that separates <em>direction</em> from <em>autonomy</em>, leadership reaches for the only lever it knows: direct intervention. Requirements appear. Features get specified from above. Approval processes are introduced. "Can you build X — we need it for Y." The intervention is not malicious. It is an attempt to create alignment. But it conflates two different problems. To point the team in the right direction, leadership takes away its ability to navigate.
+      <br><br>
+      What happens next depends on the team's stability and how long it has existed. If the team has a Product Owner who begins to absorb the pressure — filtering requirements, translating them into tickets, shielding the team from the raw demands — the system stabilises. The team stops fighting. The PO becomes the buffer. Leadership sees calm. Within months, the pattern has crystallised into the buffer equilibrium described above. Structural Comfort has formed — not because anyone planned it, but because the intervention created the exact conditions for it.
+      <br><br>
+      If the team has no buffer, or if it is too experienced to accept the constraint silently, the result is different: frustration, conflict, attrition. The team knows it is being restricted and pushes back. This is painful — but it is the more addressable outcome, because the friction is visible. Visible friction can be diagnosed and resolved. The silent equilibrium of Structural Comfort requires a different kind of diagnostic — one that asks the question the system has stopped asking.
+    </p>
+    <p style="font-size:17px;font-style:normal;font-weight:300;color:#2C2C2C;line-height:1.75;" class="lc-de">
+      Nicht jedes Team in Structural Comfort hat passiv angefangen. Einige der fähigsten Teams landen dort über eine bestimmte Abfolge — eine, die mit echter Autonomie beginnt und mit ihrem Entzug endet.
+      <br><br>
+      Stell dir ein Produktteam vor, das mit Nutzern spricht, Experimente durchführt und seine Arbeit um echte Probleme herum aufbaut. Das Team versucht, outcome-orientiert zu arbeiten. Es identifiziert Nutzerbedürfnisse, testet Hypothesen, baut Lösungen auf Basis dessen, was es lernt. Die Zufriedenheit im Team ist hoch, und das aus gutem Grund.
+      <br><br>
+      Aber das Ziel-Framework des Unternehmens passt nicht dazu. OKRs beschreiben Aktivitäten, keine Outcomes. Die Ziele, die das Team erhält, sind output-orientiert: dieses Feature liefern, dieses Modul launchen, diese Migration abschließen. Das Team weiß das. Es sieht die Lücke zwischen dem, was es versucht zu tun — Nutzerverhalten verändern — und dem, was es liefern soll — fertige Features. Also arbeitet es um die Lücke herum. Intern betreibt es Discovery. Nach außen berichtet es Outputs.
+      <br><br>
+      Das strukturelle Problem, das das Team allein nicht lösen kann: <strong style="color:#4A6B8A;">Outcomes sind eine organisatorische Leistung, keine Team-Leistung.</strong> Ein Team kann ein Nutzerproblem identifizieren. Es kann eine Lösung bauen. Es kann testen, ob Nutzer anders reagieren. Aber ob sich Nutzerverhalten tatsächlich im großen Maßstab verändert — ob Retention steigt, ob Adoption zunimmt, ob ein Workflow wirklich transformiert wird — hängt davon ab, ob die gesamte Organisation diesen Wandel unterstützt. Marketing muss die richtigen Nutzer erreichen. Sales muss die richtigen Erwartungen setzen. Service muss den neuen Workflow unterstützen. Operations muss ihn ermöglichen. Ein einzelnes Team kann ein Experiment durchführen. Nur die Organisation kann ein Outcome erzeugen.
+      <br><br>
+      Das bedeutet: Selbst ein Team, das exzellente Discovery-Arbeit leistet, kann nicht beweisen, dass seine Arbeit Outcomes erzeugt — weil die Infrastruktur, um Outcomes zu messen und zuzuordnen, nicht existiert. Das Team arbeitet outcome-orientiert in einem System, das nur Outputs misst. Seine beste Arbeit ist strukturell unsichtbar.
+      <br><br>
+      Der Compass <em>wirkt</em> aktiv — und genau das macht diesen Zustand so schwer zu diagnostizieren. Das Team sammelt Nutzerfeedback. Es zeigt Prototypen. Es führt durch, was es Experimente nennt. Aber es gibt einen entscheidenden Unterschied zwischen Feedback-Sammlung und Assumption Testing. Feedback-Sammlung fragt Nutzer, was sie denken. Assumption Testing formuliert eine Hypothese darüber, was Nutzer <em>tun</em> werden, designt eine Intervention und misst, ob die vorhergesagte Verhaltensänderung eintritt. Die meisten Teams in diesem Zustand tun Ersteres und nennen es Letzteres — nicht weil ihnen die Sorgfalt fehlt, sondern weil die Organisation die Infrastruktur, die echtes Testen erfordert, nie aufgebaut hat. Ohne outcome-orientierte Ziele gibt es keine Hypothese, gegen die getestet werden kann. Ohne eine Kette vom Business-Ziel zum Nutzerverhalten gibt es keine Metrik, die dem Team sagen würde, ob sein Experiment tatsächlich relevant war. Der Compass sieht stark aus, weil das Team aktiv Dinge tut, die wie Testen aussehen. Aber das Signal ist Rauschen. Die Richtung ist unvalidiert.
+      <br><br>
+      Die Führung spürt unterdessen eine Diskrepanz. Das Team ist engagiert, produktiv, spricht über Nutzer und Experimente — und trotzdem scheinen die Ergebnisse nicht mit den Zielen übereinzustimmen, die die Führung definiert hat. Diese Wahrnehmung ist richtig, aber die Diagnose ist falsch. Das Team arbeitet nicht „an den Zielen vorbei". Die Ziele sind nicht outcome-orientiert. Die Führung hat nie gelernt, messbare Outcomes zu definieren, weil die Organisation die Fähigkeit, so zu denken, nie aufgebaut hat. Also fühlt sich die Lücke wie ein Team-Problem an — nicht wie ein strukturelles.
+      <br><br>
+      Ohne eine diagnostische Sprache, die <em>Richtung</em> von <em>Autonomie</em> trennt, greift die Führung zum einzigen Hebel, den sie kennt: direkte Intervention. Anforderungen tauchen auf. Features werden von oben spezifiziert. Freigabeprozesse werden eingeführt. „Könnt ihr mal X bauen — wir brauchen das für Y." Die Intervention ist nicht böswillig. Sie ist ein Versuch, Alignment herzustellen. Aber sie vermischt zwei verschiedene Probleme. Um das Team in die richtige Richtung zu lenken, nimmt die Führung ihm die Fähigkeit zu navigieren.
+      <br><br>
+      Was dann passiert, hängt von der Stabilität des Teams ab und davon, wie lange es schon existiert. Wenn das Team einen Product Owner hat, der beginnt, den Druck zu absorbieren — Anforderungen filtert, sie in Tickets übersetzt, das Team vor den rohen Demands abschirmt — stabilisiert sich das System. Das Team hört auf zu kämpfen. Der PO wird zum Puffer. Die Führung sieht Ruhe. Innerhalb von Monaten hat sich das Muster zum oben beschriebenen Buffer-Gleichgewicht verfestigt. Structural Comfort ist entstanden — nicht weil irgendjemand es geplant hat, sondern weil die Intervention genau die Bedingungen dafür geschaffen hat.
+      <br><br>
+      Wenn das Team keinen Puffer hat, oder wenn es zu erfahren ist, um die Einschränkung still zu akzeptieren, ist das Ergebnis ein anderes: Frustration, Konflikte, Fluktuation. Das Team weiß, dass es eingeschränkt wird, und wehrt sich. Das ist schmerzhaft — aber es ist das adressierbarere Ergebnis, weil die Reibung sichtbar ist. Sichtbare Reibung kann diagnostiziert und gelöst werden. Das stille Gleichgewicht von Structural Comfort braucht eine andere Art von Diagnostik — eine, die die Frage stellt, die das System aufgehört hat zu stellen.
     </p>
   </div>
 
@@ -2996,7 +3110,9 @@ if (!window.location.hash) window.scrollTo(0, 0);
       <span class="lc-de">Wie sich Structural Comfort zeigt</span>
     </h3>
     <p class="body lc-en">A team believes it is doing Scrum. It has sprints, a Product Owner, reviews, retrospectives. The reviews show what the team built. Stakeholders say "great work" and contribute ideas — which are, in reality, new requirements disguised as collaboration. Nobody asks whether anything the team delivered changed user behaviour. Nobody asks whether the team is working on the right problem. The traffic light would show Green — if you asked the team. But the question that Capability Spaces asks goes deeper: is the team working on opportunities, or on tickets that someone else identified as opportunities?</p>
+    <p class="body lc-en">In many cases, this pattern did not start here. The team may once have worked with real user contact, real experiments, real discovery — and lost it through a well-intentioned intervention that replaced direction with control. The comfort is the end state. The origin is a structural decision that nobody recognised as such.</p>
     <p class="body lc-de">Ein Team glaubt, es mache Scrum. Es hat Sprints, einen Product Owner, Reviews, Retrospektiven. Die Reviews zeigen, was das Team gebaut hat. Stakeholder sagen „toll gemacht" und bringen Ideen ein — die in Wirklichkeit neue Requirements sind, verpackt als Zusammenarbeit. Niemand fragt, ob irgendetwas, das das Team geliefert hat, Nutzerverhalten verändert hat. Niemand fragt, ob das Team am richtigen Problem arbeitet. Das Ampel-System würde Grün zeigen — wenn man das Team fragt. Aber die Frage, die Capability Spaces stellt, geht tiefer: Arbeitet das Team an Opportunities, oder an Tickets, die jemand anders als Opportunities identifiziert hat?</p>
+    <p class="body lc-de">In vielen Fällen hat dieses Muster nicht hier angefangen. Das Team hatte möglicherweise einmal echten Nutzerkontakt, echte Experimente, echte Discovery — und hat sie durch eine gut gemeinte Intervention verloren, die Richtung durch Kontrolle ersetzt hat. Der Comfort ist der Endzustand. Der Ursprung ist eine strukturelle Entscheidung, die niemand als solche erkannt hat.</p>
   </div>
 
   <div class="boundary-grid reveal reveal-d1">
@@ -3047,8 +3163,8 @@ if (!window.location.hash) window.scrollTo(0, 0);
       <span class="lc-en">The diagnostic difference</span>
       <span class="lc-de">Der diagnostische Unterschied</span>
     </span>
-    <p class="lc-en">A healthy team with a small Capability Space <em>knows</em> its space is small — and can name why. A team in Structural Comfort does not know. It has no reference point. And leadership doesn't either, because it never asked: what <em>could</em> this team achieve if we gave it the room?</p>
-    <p class="lc-de">Ein gesundes Team mit einem kleinen Capability Space <em>weiß</em>, dass sein Space klein ist — und kann benennen, warum. Ein Team in Structural Comfort weiß es nicht. Es hat keinen Referenzpunkt. Und die Führung auch nicht, weil sie nie gefragt hat: Was <em>könnte</em> dieses Team leisten, wenn wir ihm den Raum gäben?</p>
+    <p class="lc-en">A healthy team with a small Capability Space <em>knows</em> its space is small — and can name why. A team in Structural Comfort does not know. It has no reference point. And leadership doesn't either, because it never asked: what <em>could</em> this team achieve if we gave it the room? In many cases, leadership once had the right instinct — the team wasn't aligned — but addressed it by removing autonomy instead of building the connection. The diagnostic question was never asked. A structural decision was made in its place.</p>
+    <p class="lc-de">Ein gesundes Team mit einem kleinen Capability Space <em>weiß</em>, dass sein Space klein ist — und kann benennen, warum. Ein Team in Structural Comfort weiß es nicht. Es hat keinen Referenzpunkt. Und die Führung auch nicht, weil sie nie gefragt hat: Was <em>könnte</em> dieses Team leisten, wenn wir ihm den Raum gäben? In vielen Fällen hatte die Führung den richtigen Instinkt — das Team war nicht aligned — aber hat ihn adressiert, indem sie Autonomie entzogen hat, statt die Verbindung herzustellen. Die diagnostische Frage wurde nie gestellt. Eine strukturelle Entscheidung wurde an ihrer Stelle getroffen.</p>
   </div>
 
   <div class="reveal reveal-d2">
@@ -3058,8 +3174,8 @@ if (!window.location.hash) window.scrollTo(0, 0);
     </h3>
     <p class="body lc-en">Structural Comfort creates a feedback loop that protects itself. Results are "good enough", the team doesn't complain, so there is no signal that would trigger action. This is not a leadership failure in the classic sense — it is a structural pattern in which the organisation's own diagnostic ability is constrained. Leadership has its own Capability Space — and in this area, it is small too.</p>
     <p class="body lc-de">Structural Comfort erzeugt eine Rückkopplungsschleife, die sich selbst schützt. Die Ergebnisse sind „gut genug", das Team beschwert sich nicht, also gibt es kein Signal, das Handlung auslösen würde. Das ist kein Führungsversagen im klassischen Sinne — es ist ein strukturelles Muster, in dem die Diagnosefähigkeit der Organisation selbst eingeschränkt ist. Führung hat ihren eigenen Capability Space — und der ist in diesem Bereich ebenfalls klein.</p>
-    <p class="body lc-en">It can persist for years. It only becomes visible when the environment changes: the buffer person leaves, market conditions shift, or someone changes the system around the team so that the old patterns stop working.</p>
-    <p class="body lc-de">Es kann Jahre bestehen bleiben. Sichtbar wird es erst, wenn sich die Umgebung verändert: die Puffer-Person geht, die Marktbedingungen ändern sich, oder jemand verändert das System um das Team herum, sodass die alten Muster nicht mehr funktionieren.</p>
+    <p class="body lc-en">It can persist for years — not only until an external shock makes it visible, but precisely <em>because</em> no external shock arrives. The intervention that created the comfort also removed the signals that would reveal it. The team no longer pushes back, because it has stopped trying. The PO no longer escalates, because absorbing complexity has become their identity. Leadership no longer questions, because silence looks like health. The system is stable. That is its danger.</p>
+    <p class="body lc-de">Es kann Jahre bestehen bleiben — nicht nur bis ein externer Schock es sichtbar macht, sondern gerade <em>weil</em> kein externer Schock kommt. Die Intervention, die den Comfort erzeugt hat, hat auch die Signale beseitigt, die ihn sichtbar machen würden. Das Team wehrt sich nicht mehr, weil es aufgehört hat, es zu versuchen. Der PO eskaliert nicht mehr, weil das Absorbieren von Komplexität zu seiner Identität geworden ist. Die Führung hinterfragt nicht mehr, weil Stille nach Gesundheit aussieht. Das System ist stabil. Das ist seine Gefahr.</p>
   </div>
 
   <div class="callout blue reveal reveal-d3">
@@ -3076,8 +3192,16 @@ if (!window.location.hash) window.scrollTo(0, 0);
       <span class="lc-en">What breaks Structural Comfort</span>
       <span class="lc-de">Was Structural Comfort aufbricht</span>
     </span>
-    <p class="lc-en">You don't break Structural Comfort by telling the team its review is wrong. The team will not understand, because from its perspective, everything works. You break it by changing the system around the team: introduce outcome-oriented goals (OKRs that work), make the team responsible for outcomes, not just outputs, and create a format where leadership experiences boundaries live. The contrast between what the team does now and what outcome-orientation demands will surface the gap on its own. The insight must come from experience, not from instruction.</p>
-    <p class="lc-de">Man bricht Structural Comfort nicht auf, indem man dem Team sagt, dass sein Review falsch ist. Das Team wird es nicht verstehen, weil aus seiner Perspektive alles funktioniert. Man bricht es auf, indem man das System um das Team herum verändert: outcome-orientierte Ziele einführen (OKRs, die funktionieren), das Team für Outcomes verantwortlich machen statt nur für Outputs, und ein Format schaffen, in dem Führung Boundaries live erlebt. Der Kontrast zwischen dem, was das Team jetzt tut, und dem, was Outcome-Orientierung verlangt, macht die Lücke von selbst sichtbar. Die Erkenntnis muss aus der Erfahrung kommen, nicht aus Belehrung.</p>
+    <p class="lc-en">You don't break Structural Comfort by telling the team its review is wrong. The team will not understand, because from its perspective, everything works. You break it by making the structural shape of the comfort visible — through a diagnostic that reads Map, Boundaries and Compass together.</p>
+    <p class="lc-en" style="margin-top:14px;">But there is a deeper question: how do you prevent the response to the diagnosis from repeating the pattern that created the comfort in the first place? Leadership's instinct, when confronted with a gap between team output and organisational goals, is to intervene directly — to specify, to require, to control. This instinct is well-documented. Gerwin &amp; Moffat <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Management Science, 1997)</span> showed that the withdrawal of team autonomy is negatively correlated with both task and process performance — and that its primary drivers are a lack of shared process understanding and managers' discomfort with delegated authority. The intervention that creates alignment by removing autonomy destroys the conditions that made the team capable in the first place.</p>
+    <p class="lc-en" style="margin-top:14px;">The reason this instinct is so persistent is that leadership typically lacks the ability to define the connection it wants. If an organisation has never learned to think in outcomes — if it has no practice of defining business goals as changes in user behaviour, no infrastructure to measure whether those changes occur — then leadership cannot provide direction without providing control. It does not know how to say "here is the outcome we need" and let the team figure out how to get there. It only knows how to say "build this feature."</p>
+    <p class="lc-en" style="margin-top:14px;">What Capability Spaces provides is the diagnostic language that separates these two problems. The <em>direction</em> problem — the team's work is not connected to business outcomes — is solved by building the chain: outcome-oriented goals, a clear connection from business goal to stakeholder problem to team objective. This is not just a team-level fix. It requires the organisation to learn something it has never practised: defining success as a change in behaviour, not as a list of deliverables. And it requires acknowledging that <strong>outcomes are an organisational achievement</strong> — a single team can test a hypothesis, but only the organisation can produce the sustained change in user behaviour that constitutes a real outcome. The <em>autonomy</em> problem — the team needs the freedom to navigate within that chain — is solved by removing Boundaries, not by adding them.</p>
+    <p class="lc-en" style="margin-top:14px;">The insight must come from experience, not from instruction. The contrast between what the team does now and what outcome-orientation demands will surface the gap on its own. The role of the diagnostic is to ensure that when the gap becomes visible, the response is a structural connection — not a structural restriction.</p>
+    <p class="lc-de">Man bricht Structural Comfort nicht auf, indem man dem Team sagt, dass sein Review falsch ist. Das Team wird es nicht verstehen, weil aus seiner Perspektive alles funktioniert. Man bricht es auf, indem man die strukturelle Form des Comforts sichtbar macht — durch eine Diagnostik, die Map, Boundaries und Compass zusammen liest.</p>
+    <p class="lc-de" style="margin-top:14px;">Aber es gibt eine tiefere Frage: Wie verhindert man, dass die Reaktion auf die Diagnose genau das Muster wiederholt, das den Comfort überhaupt erzeugt hat? Der Instinkt der Führung, wenn sie mit einer Lücke zwischen Team-Output und Organisationszielen konfrontiert wird, ist direkte Intervention — spezifizieren, anfordern, kontrollieren. Dieser Instinkt ist gut dokumentiert. Gerwin &amp; Moffat <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Management Science, 1997)</span> zeigten, dass der Entzug von Team-Autonomie negativ mit Aufgaben- und Prozess-Performance korreliert — und dass seine Haupttreiber fehlendes gemeinsames Prozessverständnis und das Unbehagen von Managern mit delegierter Autorität sind. Die Intervention, die Alignment durch Autonomie-Entzug herstellt, zerstört die Bedingungen, die das Team überhaupt fähig gemacht haben.</p>
+    <p class="lc-de" style="margin-top:14px;">Der Grund, warum dieser Instinkt so beständig ist: Die Führung kann die Verbindung, die sie will, typischerweise selbst nicht definieren. Wenn eine Organisation nie gelernt hat, in Outcomes zu denken — wenn sie keine Praxis hat, Business-Ziele als Veränderungen im Nutzerverhalten zu definieren, keine Infrastruktur, um zu messen, ob diese Veränderungen eintreten — dann kann die Führung keine Richtung geben, ohne Kontrolle auszuüben. Sie weiß nicht, wie man sagt „hier ist das Outcome, das wir brauchen" und das Team den Weg finden lässt. Sie weiß nur, wie man sagt „baut dieses Feature."</p>
+    <p class="lc-de" style="margin-top:14px;">Was Capability Spaces liefert, ist die diagnostische Sprache, die diese beiden Probleme trennt. Das <em>Richtungsproblem</em> — die Arbeit des Teams ist nicht mit Business-Outcomes verbunden — wird gelöst, indem man die Kette baut: outcome-orientierte Ziele, eine klare Verbindung von Business-Ziel über Stakeholder-Problem zu Team-Objective. Das ist nicht nur ein Fix auf Team-Ebene. Es erfordert, dass die Organisation etwas lernt, das sie nie geübt hat: Erfolg als Verhaltensänderung zu definieren, nicht als Liste von Deliverables. Und es erfordert die Anerkennung, dass <strong>Outcomes eine organisatorische Leistung sind</strong> — ein einzelnes Team kann eine Hypothese testen, aber nur die Organisation kann die nachhaltige Veränderung im Nutzerverhalten erzeugen, die ein echtes Outcome darstellt. Das <em>Autonomieproblem</em> — das Team braucht die Freiheit, innerhalb dieser Kette zu navigieren — wird gelöst, indem man Boundaries entfernt, nicht indem man sie hinzufügt.</p>
+    <p class="lc-de" style="margin-top:14px;">Die Erkenntnis muss aus der Erfahrung kommen, nicht aus Belehrung. Der Kontrast zwischen dem, was das Team jetzt tut, und dem, was Outcome-Orientierung verlangt, macht die Lücke von selbst sichtbar. Die Rolle der Diagnostik ist sicherzustellen, dass wenn die Lücke sichtbar wird, die Reaktion eine strukturelle Verbindung ist — keine strukturelle Einschränkung.</p>
   </div>
 
   <div class="callout green reveal reveal-d3" style="margin-top:16px;">
@@ -3086,7 +3210,20 @@ if (!window.location.hash) window.scrollTo(0, 0);
       <span class="lc-de">Verwandtes Denken · Chris Argyris</span>
     </span>
     <p class="lc-en">In <em>Overcoming Organizational Defenses</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1990)</span> and his earlier HBR article <em>Skilled Incompetence</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1986)</span>, Argyris describes how organisations develop <strong>defensive routines</strong> — systematic patterns that make problems invisible, and make the invisibility itself undiscussable. His core insight: the most important problems in organisations are the ones that cannot be talked about, and the fact that they cannot be talked about is also undiscussable. Structural Comfort is what happens when these defensive routines succeed completely: not a single actor experiences friction, so no one initiates diagnosis. Argyris explains <em>why</em> the pattern stays hidden. Capability Spaces provides the diagnostic to make it visible — by reading Map, Boundaries and Compass together, the structural shape of the comfort becomes nameable.</p>
+    <p class="lc-en" style="margin-top:14px;">The formation pattern adds a layer to Argyris's analysis: the defensive routine can be <em>created</em> by a leadership intervention. When the organisation withdraws autonomy to enforce alignment, it installs precisely the boundaries that make the resulting constraint undiscussable. The team adapts. The PO absorbs. The discomfort disappears. What remains is a system in which the original problem — the missing connection between team and organisation — has been replaced by a new problem that is harder to see: a team that no longer tries to connect.</p>
     <p class="lc-de">In <em>Overcoming Organizational Defenses</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1990)</span> und seinem früheren HBR-Artikel <em>Skilled Incompetence</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1986)</span> beschreibt Argyris, wie Organisationen <strong>Defensive Routines</strong> entwickeln — systematische Muster, die Probleme unsichtbar machen und die Unsichtbarkeit selbst undiskutierbar. Seine zentrale Erkenntnis: Die wichtigsten Probleme in Organisationen sind die, über die nicht gesprochen werden kann — und die Tatsache, dass nicht darüber gesprochen werden kann, ist ebenfalls undiskutierbar. Structural Comfort ist das, was passiert, wenn diese Defensive Routines vollständig gelingen: Kein einziger Akteur erlebt Reibung, also initiiert niemand eine Diagnose. Argyris erklärt, <em>warum</em> das Muster verborgen bleibt. Capability Spaces liefert die Diagnostik, um es sichtbar zu machen — indem Map, Boundaries und Compass zusammen gelesen werden, wird die strukturelle Form des Comforts benennbar.</p>
+    <p class="lc-de" style="margin-top:14px;">Das Entstehungsmuster fügt Argyris' Analyse eine Ebene hinzu: Die Defensive Routine kann durch eine Führungsintervention <em>erzeugt</em> werden. Wenn die Organisation Autonomie entzieht, um Alignment zu erzwingen, installiert sie genau die Boundaries, die die resultierende Einschränkung undiskutierbar machen. Das Team passt sich an. Der PO absorbiert. Das Unbehagen verschwindet. Was bleibt, ist ein System, in dem das ursprüngliche Problem — die fehlende Verbindung zwischen Team und Organisation — durch ein neues Problem ersetzt wurde, das schwerer zu sehen ist: ein Team, das nicht mehr versucht, sich zu verbinden.</p>
+  </div>
+
+  <div class="callout green reveal reveal-d3" style="margin-top:16px;">
+    <span class="cl-label">
+      <span class="lc-en">Related thinking · Gonzalez-Mulé et al.</span>
+      <span class="lc-de">Verwandtes Denken · Gonzalez-Mulé et al.</span>
+    </span>
+    <p class="lc-en">In <em>Channeled Autonomy</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Journal of Management, 2016)</span>, Gonzalez-Mulé, Courtright, DeGeest, Seong &amp; Hong studied 110 teams in a manufacturing firm and found that the effect of autonomy on team performance is not linear — it depends entirely on whether the team has clarity about the organisation's goals. Autonomous teams with high performance feedback outperformed all other configurations, because the feedback channeled their autonomy toward organisational goals. Autonomous teams <em>without</em> that feedback performed at the lowest levels — worse than teams with low autonomy — because they lacked the reference point to connect their work to what the organisation needed.</p>
+    <p class="lc-en" style="margin-top:14px;">This maps directly onto Capability Spaces. The chain from business goal to stakeholder problem to team objective <em>is</em> the feedback mechanism that Gonzalez-Mulé describes. When it is missing, the team has autonomy without direction — and the predictable management response, documented by Gerwin &amp; Moffat <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Management Science, 1997)</span>, is to withdraw autonomy rather than build the chain. Capability Spaces diagnoses whether the chain exists, where it breaks, and what needs to change — so that leadership can channel the team's autonomy instead of withdrawing it.</p>
+    <p class="lc-de">In <em>Channeled Autonomy</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Journal of Management, 2016)</span> untersuchten Gonzalez-Mulé, Courtright, DeGeest, Seong &amp; Hong 110 Teams in einem Industrieunternehmen und fanden, dass die Wirkung von Autonomie auf Team-Performance nicht linear ist — sie hängt vollständig davon ab, ob das Team Klarheit über die Organisationsziele hat. Autonome Teams mit hohem Performance-Feedback übertrafen alle anderen Konfigurationen, weil das Feedback ihre Autonomie in Richtung der Organisationsziele kanalisierte. Autonome Teams <em>ohne</em> dieses Feedback performten am schlechtesten — schlechter als Teams mit niedriger Autonomie — weil ihnen der Referenzpunkt fehlte, um ihre Arbeit mit dem zu verbinden, was die Organisation brauchte.</p>
+    <p class="lc-de" style="margin-top:14px;">Das überträgt sich direkt auf Capability Spaces. Die Kette von Business-Ziel über Stakeholder-Problem zu Team-Objective <em>ist</em> der Feedback-Mechanismus, den Gonzalez-Mulé beschreibt. Wenn sie fehlt, hat das Team Autonomie ohne Richtung — und die vorhersagbare Management-Reaktion, dokumentiert von Gerwin &amp; Moffat <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Management Science, 1997)</span>, ist der Entzug von Autonomie statt des Aufbaus der Kette. Capability Spaces diagnostiziert, ob die Kette existiert, wo sie bricht und was sich ändern muss — damit die Führung die Autonomie des Teams kanalisieren kann, statt sie zu entziehen.</p>
   </div>
 
   <!-- The common objection -->
@@ -3107,6 +3244,188 @@ if (!window.location.hash) window.scrollTo(0, 0);
   </div>
 
 </div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════ WHEN OUTCOMES MATTER ═════════════════════ -->
+
+<style>
+.lifecycle-section {
+  background: #FFFFFF;
+  padding: 100px 64px;
+}
+.lifecycle-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.lifecycle-phase {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid #E4E2DC;
+  max-width: 860px;
+}
+.lifecycle-phase:last-child { border-bottom: none; }
+.lp-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+.lp-badge.foundation { color: #4A9CC9; }
+.lp-badge.validation { color: #C9A227; }
+.lp-badge.innovation { color: #2E7D52; }
+.lp-badge.mature     { color: #B8860B; }
+.lp-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1B3A5C;
+  margin-bottom: 10px;
+}
+.lp-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #5A5A5A;
+}
+.lp-outcome {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #8A8A8A;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E4E2DC;
+  line-height: 1.5;
+}
+@media (max-width: 840px) {
+  .lifecycle-section { padding: 64px 28px; }
+  .lifecycle-phase { grid-template-columns: 1fr; gap: 12px; }
+}
+</style>
+
+<div class="lifecycle-section" id="section-lifecycle">
+  <div class="lifecycle-inner">
+
+    <div class="reveal">
+      <span class="section-label">
+        <span class="lc-en">When Outcomes Matter</span>
+        <span class="lc-de">Wann Outcomes zählen</span>
+      </span>
+      <h2 class="section-title">
+        <span class="lc-en">Not every outcome is an innovation.<br><em>But every innovation is an outcome.</em></span>
+        <span class="lc-de">Nicht jedes Outcome ist eine Innovation.<br><em>Aber jede Innovation ist ein Outcome.</em></span>
+      </h2>
+      <p class="lead lc-en">Outcomes are always changes in human behaviour. A user who completes a registration without confusion — that is an outcome. A customer who changes how they make decisions because of your product — that is also an outcome. The first is expected. The second might be innovative. Both require user-centred work. But they require different levels of organisational maturity, and they carry different levels of risk.</p>
+      <p class="lead lc-de">Outcomes sind immer Veränderungen im menschlichen Verhalten. Ein Nutzer, der eine Registrierung ohne Verwirrung abschließt — das ist ein Outcome. Ein Kunde, der aufgrund deines Produkts anders entscheidet — das ist auch ein Outcome. Das Erste wird erwartet. Das Zweite könnte innovativ sein. Beides erfordert nutzerzentriertes Arbeiten. Aber beides erfordert unterschiedliche organisatorische Reife und birgt unterschiedliches Risiko.</p>
+    </div>
+
+    <!-- EN Phases -->
+    <div class="lc-en">
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge foundation">Phase 1</span></div>
+        <div>
+          <div class="lp-title">Foundation · Building what users expect</div>
+          <p class="lp-body">Login, registration, navigation, profile settings — these are industry-standard interactions. Every user has seen them a thousand times. Building them well is outcome-oriented work: the goal is an intuitive experience where pain points, desires, and usability problems never make it into the product in the first place. The team builds closely with users — not to innovate, but to <strong>eliminate friction before it exists.</strong></p>
+          <p class="lp-body" style="margin-top:12px;">The purpose is also economic: by building the foundation in close collaboration with users, the team minimises the need to react later — to rework, to fix, to rebuild what should have been right from the start. The goal is to push technical debt toward zero, so that when the product reaches the point where its core hypothesis can be tested, the team is free to do that work.</p>
+          <div class="lp-outcome">Outcome type: Known and established. The team is not testing a new hypothesis. It is executing on patterns the industry has already validated.</div>
+        </div>
+      </div>
+
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge validation">Phase 2</span></div>
+        <div>
+          <div class="lp-title">Validation · Testing the core hypothesis</div>
+          <p class="lp-body">Every product rests on a hypothesis — a belief that a specific change in user behaviour is possible and valuable. But this hypothesis is not testable until the foundation is solid. A closed beta is typically the first moment where the organisation can observe whether the product idea works — whether users actually do something differently because the product exists.</p>
+          <p class="lp-body" style="margin-top:12px;">This is also the moment of highest risk. The organisation has invested significantly — in design, engineering, infrastructure — before it has evidence that the core hypothesis holds. Eric Ries called the unit of progress in this phase <em>validated learning</em>: not features shipped, but truths discovered about whether the business model is viable <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(The Lean Startup, 2011)</span>. The risk of burning capital before product-market fit is not avoidable — it is the defining characteristic of product development. What is avoidable is burning it without learning.</p>
+          <div class="lp-outcome">Outcome type: Unknown. The team is testing a hypothesis that may fail. Failure is a legitimate result — if it produces learning.</div>
+        </div>
+      </div>
+
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge innovation">Phase 3</span></div>
+        <div>
+          <div class="lp-title">Innovation · Changing behaviour at scale</div>
+          <p class="lp-body">If the validation phase confirms the hypothesis — users do something differently, and that difference creates business value — the product enters the phase where innovation becomes possible. This is scientific work: observation, measurement, experimentation, and the willingness to be wrong. The outcomes being pursued are not yet established, not yet proven, and not yet a pattern anyone can copy.</p>
+          <p class="lp-body" style="margin-top:12px;">Not every product reaches this phase. And not every product needs to. An application whose core experience consists entirely of established interactions may deliver outcomes without ever being innovative. That is not a failure — but it is a strategic choice that should be made consciously, not by default.</p>
+          <div class="lp-outcome">Outcome type: Novel. The team produces behaviour changes that did not exist before. This is where outcome-oriented work becomes innovation.</div>
+        </div>
+      </div>
+
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge mature">Phase 4</span></div>
+        <div>
+          <div class="lp-title">Maturity · The Structural Comfort trap</div>
+          <p class="lp-body">The product is established. Customers are reasonably satisfied. The team delivers. Leadership sees no signal to act. This is where Structural Comfort becomes most dangerous — because there is no visible crisis that would trigger a diagnosis.</p>
+          <p class="lp-body" style="margin-top:12px;">The common objection at this stage is: <em>"We don't have room for innovation anymore."</em> Research tells a different story. Dougherty &amp; Hardy studied 15 firms averaging 96 years of age and found that the primary obstacle to sustained innovation was not lack of ideas — it was the inability to connect new products with organisational resources, processes, and strategy <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Academy of Management Journal, 1996)</span>. The innovators lacked the power to make these connections. That is a Capability Space problem.</p>
+          <p class="lp-body" style="margin-top:12px;">Christensen's <em>The Innovator's Dilemma</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1997)</span> showed that the threat to established products does not come from within. It comes from below — from simpler, cheaper alternatives that mature organisations dismiss until it is too late. A product in Structural Comfort is not safe because it has no competitors. It is exposed precisely because it has stopped asking the question that would reveal them.</p>
+          <p class="lp-body" style="margin-top:12px;">The question is not whether a mature product should pursue outcomes. The question is whether it still can — or whether technical debt, Structural Comfort, and years of output-oriented work have made outcome-oriented thinking structurally impossible. Capability Spaces answers that question.</p>
+          <p class="lp-body" style="margin-top:12px;">There is a common reflex at this stage that feels like a response to competition but accelerates the problem: copying features from competitors. A rival launches a new capability. Leadership says <em>"we need that too."</em> The team builds it. The feature ships. Nobody asks whether the competitor's feature actually worked — whether it changed user behaviour, whether it drove retention, whether it solved a real problem. The team has no data on the competitor's outcomes, only on their output. By copying the output, the organisation imports someone else's hypothesis without testing it — and deepens its own Feature Factory pattern. Worse: the one advantage a mature product has over its competitors — deep knowledge of its own users — is the one thing this reflex never activates. The team copies what it can see (features) and ignores what it already has (user understanding). Each copied feature adds complexity, increases technical debt, and moves the team further from the work that would actually differentiate the product. The competitive response that looks like action is, structurally, the opposite of it.</p>
+          <div class="lp-outcome">Strategic risk: The product looks stable. The market is moving. The team has stopped looking. This is the most common entry point for disruption.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DE Phases -->
+    <div class="lc-de">
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge foundation">Phase 1</span></div>
+        <div>
+          <div class="lp-title">Grundlage · Bauen, was Nutzer erwarten</div>
+          <p class="lp-body">Login, Registrierung, Navigation, Profil-Einstellungen — das sind Industrie-Standard-Interaktionen. Jeder Nutzer hat sie tausendmal gesehen. Sie gut zu bauen ist outcome-orientierte Arbeit: Das Ziel ist ein intuitives Erlebnis, bei dem Pain Points, Desires und Usability-Probleme gar nicht erst ins Produkt gelangen. Das Team baut eng mit Nutzern — nicht um zu innovieren, sondern um <strong>Reibung zu eliminieren, bevor sie entsteht.</strong></p>
+          <p class="lp-body" style="margin-top:12px;">Der Zweck ist auch ökonomisch: Indem man die Grundlage in enger Zusammenarbeit mit Nutzern baut, minimiert das Team die Notwendigkeit, später zu reagieren — nachzuarbeiten, zu reparieren, neu zu bauen. Das Ziel ist, technische Schulden gegen Null zu drücken, damit das Team frei ist für die eigentliche Arbeit, wenn die Kernhypothese testbar wird.</p>
+          <div class="lp-outcome">Outcome-Typ: Bekannt und etabliert. Das Team testet keine neue Hypothese. Es setzt auf Patterns um, die die Industrie bereits validiert hat.</div>
+        </div>
+      </div>
+
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge validation">Phase 2</span></div>
+        <div>
+          <div class="lp-title">Validierung · Die Kernhypothese testen</div>
+          <p class="lp-body">Jedes Produkt basiert auf einer Hypothese — der Überzeugung, dass eine bestimmte Veränderung im Nutzerverhalten möglich und wertvoll ist. Aber diese Hypothese ist erst testbar, wenn die Grundlage steht. Eine Closed Beta ist typischerweise der erste Moment, in dem die Organisation beobachten kann, ob die Produktidee funktioniert — ob Nutzer tatsächlich etwas anders machen, weil das Produkt existiert.</p>
+          <p class="lp-body" style="margin-top:12px;">Das ist auch der Moment des höchsten Risikos. Die Organisation hat erheblich investiert — in Design, Engineering, Infrastruktur — bevor sie Evidenz hat, dass die Kernhypothese trägt. Eric Ries nannte den Fortschrittsmaßstab in dieser Phase <em>Validated Learning</em>: nicht gelieferte Features, sondern entdeckte Wahrheiten darüber, ob das Geschäftsmodell tragfähig ist <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(The Lean Startup, 2011)</span>. Das Risiko, Kapital vor dem Product-Market Fit zu verbrennen, ist nicht vermeidbar — es ist das definierende Merkmal von Produktentwicklung. Was vermeidbar ist, ist es ohne Lernen zu verbrennen.</p>
+          <div class="lp-outcome">Outcome-Typ: Unbekannt. Das Team testet eine Hypothese, die scheitern kann. Scheitern ist ein legitimes Ergebnis — wenn es Lernen erzeugt.</div>
+        </div>
+      </div>
+
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge innovation">Phase 3</span></div>
+        <div>
+          <div class="lp-title">Innovation · Verhalten im großen Maßstab verändern</div>
+          <p class="lp-body">Wenn die Validierungsphase die Hypothese bestätigt — Nutzer tun etwas anders, und dieser Unterschied erzeugt Business-Wert — tritt das Produkt in die Phase ein, in der Innovation möglich wird. Das ist wissenschaftliche Arbeit: Beobachtung, Messung, Experimentation und die Bereitschaft, falsch zu liegen. Die angestrebten Outcomes sind noch nicht etabliert, noch nicht bewiesen und noch nicht als Pattern kopierbar.</p>
+          <p class="lp-body" style="margin-top:12px;">Nicht jedes Produkt erreicht diese Phase. Und nicht jedes muss es. Eine Anwendung, deren Kernerlebnis vollständig aus etablierten Interaktionen besteht, kann Outcomes liefern, ohne je innovativ zu sein. Das ist kein Versagen — aber es ist eine strategische Entscheidung, die bewusst getroffen werden sollte, nicht aus Versehen.</p>
+          <div class="lp-outcome">Outcome-Typ: Neuartig. Das Team erzeugt Verhaltensänderungen, die vorher nicht existierten. Hier wird outcome-orientierte Arbeit zu Innovation.</div>
+        </div>
+      </div>
+
+      <div class="lifecycle-phase reveal reveal-d1">
+        <div><span class="lp-badge mature">Phase 4</span></div>
+        <div>
+          <div class="lp-title">Reife · Die Structural-Comfort-Falle</div>
+          <p class="lp-body">Das Produkt ist etabliert. Kunden sind einigermaßen zufrieden. Das Team liefert. Die Führung sieht kein Signal zum Handeln. Hier wird Structural Comfort am gefährlichsten — weil es keine sichtbare Krise gibt, die eine Diagnose auslösen würde.</p>
+          <p class="lp-body" style="margin-top:12px;">Der häufigste Einwand in dieser Phase: <em>„Wir haben keinen Raum mehr für Innovation."</em> Die Forschung erzählt eine andere Geschichte. Dougherty &amp; Hardy untersuchten 15 Unternehmen mit durchschnittlich 96 Jahren und fanden, dass das Haupthindernis für nachhaltige Innovation nicht fehlende Ideen waren — sondern die Unfähigkeit, neue Produkte mit den Ressourcen, Prozessen und der Strategie der Organisation zu verbinden <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(Academy of Management Journal, 1996)</span>. Die Innovatoren hatten nicht die Macht, diese Verbindungen herzustellen. Das ist ein Capability-Space-Problem.</p>
+          <p class="lp-body" style="margin-top:12px;">Christensens <em>The Innovator's Dilemma</em> <span style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8A8A;">(1997)</span> zeigte, dass die Bedrohung für etablierte Produkte nicht von innen kommt. Sie kommt von unten — von einfacheren, günstigeren Alternativen, die reife Organisationen so lange ignorieren, bis es zu spät ist. Ein Produkt in Structural Comfort ist nicht sicher, weil es keine Konkurrenten hat. Es ist exponiert, weil es aufgehört hat, die Frage zu stellen, die sie sichtbar machen würde.</p>
+          <p class="lp-body" style="margin-top:12px;">Die Frage ist nicht, ob ein reifes Produkt Outcomes verfolgen sollte. Die Frage ist, ob es das noch kann — oder ob technische Schulden, Structural Comfort und Jahre output-orientierter Arbeit outcome-orientiertes Denken strukturell unmöglich gemacht haben. Capability Spaces beantwortet diese Frage.</p>
+          <p class="lp-body" style="margin-top:12px;">Es gibt einen verbreiteten Reflex in dieser Phase, der sich wie eine Reaktion auf Konkurrenz anfühlt, das Problem aber beschleunigt: Features von Wettbewerbern kopieren. Ein Konkurrent launcht eine neue Funktion. Die Führung sagt <em>„Das brauchen wir auch."</em> Das Team baut es. Das Feature wird ausgeliefert. Niemand fragt, ob das Feature beim Konkurrenten tatsächlich funktioniert hat — ob es Nutzerverhalten verändert, Retention getrieben oder ein echtes Problem gelöst hat. Das Team hat keine Daten über die Outcomes des Konkurrenten, nur über dessen Output. Indem es den Output kopiert, importiert die Organisation die Hypothese eines anderen, ohne sie zu testen — und vertieft das eigene Feature-Factory-Muster. Schlimmer noch: Der eine Vorteil, den ein reifes Produkt gegenüber seinen Wettbewerbern hat — tiefes Wissen über die eigenen Nutzer — wird durch diesen Reflex nie aktiviert. Das Team kopiert, was es sehen kann (Features), und ignoriert, was es bereits hat (Nutzerverständnis). Jedes kopierte Feature erhöht die Komplexität, vergrößert die technischen Schulden und entfernt das Team weiter von der Arbeit, die das Produkt tatsächlich differenzieren würde. Die Wettbewerbsreaktion, die nach Handeln aussieht, ist strukturell das Gegenteil davon.</p>
+          <div class="lp-outcome">Strategisches Risiko: Das Produkt sieht stabil aus. Der Markt bewegt sich. Das Team hat aufgehört hinzuschauen. Das ist der häufigste Einstiegspunkt für Disruption.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout reveal reveal-d2" style="margin-top:40px;">
+      <span class="cl-label">
+        <span class="lc-en">The question for leadership</span>
+        <span class="lc-de">Die Frage an die Führung</span>
+      </span>
+      <p class="lc-en">Every product is somewhere on this curve. Capability Spaces does not prescribe where a product should be — it diagnoses where it is, and whether the organisation's structure matches the demands of that phase. A team in Phase 1 needs user proximity and freedom from unnecessary process. A team in Phase 2 needs the right to fail. A team in Phase 3 needs outcome-oriented goals and the infrastructure to measure them. A team in Phase 4 needs a diagnostic that asks the question it has stopped asking itself. <strong>The structural requirements change. Capability Spaces makes the mismatch visible.</strong></p>
+      <p class="lc-de">Jedes Produkt befindet sich irgendwo auf dieser Kurve. Capability Spaces schreibt nicht vor, wo ein Produkt sein sollte — es diagnostiziert, wo es ist, und ob die Struktur der Organisation zu den Anforderungen dieser Phase passt. Ein Team in Phase 1 braucht Nutzernähe und Freiheit von unnötigem Prozess. Ein Team in Phase 2 braucht das Recht zu scheitern. Ein Team in Phase 3 braucht outcome-orientierte Ziele und die Infrastruktur, um sie zu messen. Ein Team in Phase 4 braucht eine Diagnostik, die die Frage stellt, die es selbst nicht mehr stellt. <strong>Die strukturellen Anforderungen ändern sich. Capability Spaces macht den Mismatch sichtbar.</strong></p>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
 
 <style>
 .everyteam-section {
@@ -7191,11 +7510,12 @@ document.addEventListener('DOMContentLoaded', function() {
     { id: 'section-innovation',       index: 3 },
     { id: 'section-prediction',       index: 4 },
     { id: 'section-structural-comfort', index: 5 },
-    { id: 'section-every-team',       index: 6 },
-    { id: 'section-landscape',        index: 7 },
-    { id: 'section-org-development',  index: 8 },
-    { id: 'section-leaders',          index: 9 },
-    { id: 'in-practice',              index: 10 }
+    { id: 'section-lifecycle',        index: 6 },
+    { id: 'section-every-team',       index: 7 },
+    { id: 'section-landscape',        index: 8 },
+    { id: 'section-org-development',  index: 9 },
+    { id: 'section-leaders',          index: 10 },
+    { id: 'in-practice',              index: 11 }
   ];
 
   var sideNav  = document.getElementById('cs-sidenav');
