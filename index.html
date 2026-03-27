@@ -1354,7 +1354,7 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .cs-sidenav {
   position: fixed;
   top: 50%;
-  left: 0;
+  left: 20px;
   transform: translateY(-50%);
   z-index: 100;
   display: flex;
@@ -1362,15 +1362,20 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   gap: 2px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
-  background: rgba(248,247,244,0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-right: 1px solid rgba(27,58,92,0.08);
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  padding: 16px 18px 16px 16px;
-  box-shadow: 2px 0 16px rgba(0,0,0,0.04);
+  transition: opacity 0.4s ease, width 0.3s ease;
+  background: rgba(15, 34, 56, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201,162,39,0.15);
+  border-radius: 10px;
+  padding: 18px 12px 18px 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  overflow: hidden;
+  width: 36px; /* collapsed: only dots visible */
+}
+.cs-sidenav:hover {
+  width: 220px; /* expanded: labels visible */
+  padding: 18px 20px 18px 18px;
 }
 .cs-sidenav.visible {
   opacity: 1;
@@ -1387,14 +1392,14 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   transition: background 0.15s;
 }
 .cs-sidenav-item:hover {
-  background: rgba(27,58,92,0.06);
+  background: rgba(255,255,255,0.06);
 }
 .cs-sidenav-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(27,58,92,0.2);
-  border: 1px solid rgba(27,58,92,0.15);
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
   flex-shrink: 0;
   transition: all 0.25s ease;
   position: relative;
@@ -1405,20 +1410,26 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   box-shadow: 0 0 0 3px rgba(201,162,39,0.2);
 }
 .cs-sidenav-item:hover .cs-sidenav-dot {
-  background: rgba(27,58,92,0.45);
-  border-color: rgba(27,58,92,0.3);
+  background: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.35);
 }
 .cs-sidenav-label {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: rgba(27,58,92,0.45);
+  color: rgba(255,255,255,0.45);
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color 0.2s, opacity 0.2s;
+  opacity: 0;
+  pointer-events: none;
+}
+.cs-sidenav:hover .cs-sidenav-label {
+  opacity: 1;
+  pointer-events: auto;
 }
 .cs-sidenav-item:hover .cs-sidenav-label {
-  color: rgba(27,58,92,0.75);
+  color: rgba(255,255,255,0.8);
 }
 .cs-sidenav-item.active .cs-sidenav-label {
   color: #C9A227;
@@ -1516,7 +1527,15 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   gap: 4px;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid rgba(27,58,92,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: opacity 0.2s, max-height 0.3s;
+}
+.cs-sidenav:hover .cs-sidenav-lang {
+  opacity: 1;
+  max-height: 100px;
 }
 .cs-sidenav-lang-btn {
   font-family: 'DM Mono', monospace;
@@ -1524,9 +1543,9 @@ transition: opacity 0.7s ease, transform 0.7s ease;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 5px 8px;
-  border: 1px solid rgba(27,58,92,0.15);
+  border: 1px solid rgba(255,255,255,0.15);
   background: transparent;
-  color: rgba(27,58,92,0.35);
+  color: rgba(255,255,255,0.4);
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
@@ -1535,11 +1554,11 @@ transition: opacity 0.7s ease, transform 0.7s ease;
 .cs-sidenav-lang-btn.active {
   border-color: #C9A227;
   color: #C9A227;
-  background: rgba(201,162,39,0.08);
+  background: rgba(201,162,39,0.1);
 }
 .cs-sidenav-lang-btn:hover:not(.active) {
-  color: rgba(27,58,92,0.7);
-  border-color: rgba(27,58,92,0.3);
+  color: rgba(255,255,255,0.75);
+  border-color: rgba(255,255,255,0.3);
 }
 @media (min-width: 1440px) {
   .cs-sidenav { display: flex; }
